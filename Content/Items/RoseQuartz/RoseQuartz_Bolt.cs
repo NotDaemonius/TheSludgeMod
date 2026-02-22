@@ -17,7 +17,7 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
         {
             Projectile.CloneDefaults(ProjectileID.AmethystBolt);
         }
-
+        //goy
         public override void AI()
         {
             for (int i = 0; i < 2; i++)
