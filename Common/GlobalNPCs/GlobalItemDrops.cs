@@ -15,13 +15,29 @@ namespace TheSludgeMod.Common.GlobalNPCs
     {
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
         {
-            // First, we need to check the npc.type to see if the code is running for the vanilla NPC we want to change
             if (npc.type == NPCID.DemonEye || npc.type== NPCID.DemonEye2)
             {
-                // This is where we add item drop rules for VampireBat, here is a simple example:
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DemonsEye>(), 10));
             }
-            // We can use other if statements here to adjust the drop rules of other vanilla NPC
         }
+
+        public override void OnKill(NPC npc)
+        {
+            if (Main.eclipse && npc.type == 598)
+            {
+                if (npc.lastInteraction != -1 && Main.projectile[npc.lastInteraction].type == ProjectileID.Chik)
+                {
+                    Item.NewItem(npc.GetSource_Loot(), npc.getRect(), ModContent.ItemType<DefaultItem>(), Main.rand.Next(10, 51));
+                }
+            }
+            if (Main.dayRate > 30 && npc.type == 423)
+            {
+                if (npc.lastInteraction != -1 && Main.projectile[npc.lastInteraction].type == ProjectileID.SporeCloud)
+                {
+                    Item.NewItem(npc.GetSource_Loot(), npc.getRect(), ModContent.ItemType<PlaceholderItem>(), Main.rand.Next(10, 51));
+                }
+            }
+        }
+
     }
 }

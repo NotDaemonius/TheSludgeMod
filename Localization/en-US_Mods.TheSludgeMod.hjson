@@ -88,6 +88,91 @@ Items: {
 		DisplayName: Rose Quartz Stone Block
 		Tooltip: ""
 	}
+
+	Basher: {
+		DisplayName: Basher
+		Tooltip: ""
+	}
+
+	Battery: {
+		DisplayName: Battery
+		Tooltip: ""
+	}
+
+	BouncySquareBomb: {
+		DisplayName: Bouncy Square Bomb
+		Tooltip: ""
+	}
+
+	CD: {
+		DisplayName: C D
+		Tooltip: ""
+	}
+
+	CoolSword: {
+		DisplayName: Cool Sword
+		Tooltip: ""
+	}
+
+	DefaultItem: {
+		DisplayName: Default Item
+		Tooltip: ""
+	}
+
+	OrbitalRadiance: {
+		DisplayName: Orbital Radiance
+		Tooltip: ""
+	}
+
+	Paper: {
+		DisplayName: Paper
+		Tooltip: ""
+	}
+
+	PlaceholderItem: {
+		DisplayName: Placeholder Item
+		Tooltip: ""
+	}
+
+	Plastic: {
+		DisplayName: Plastic
+		Tooltip: ""
+	}
+
+	Record: {
+		DisplayName: Record
+		Tooltip: ""
+	}
+
+	ShadowvoidBar: {
+		DisplayName: Shadowvoid Bar
+		Tooltip: ""
+	}
+
+	ShadowvoidOre: {
+		DisplayName: Shadowvoid Ore
+		Tooltip: ""
+	}
+
+	SpeckOfDust: {
+		DisplayName: Speck Of Dust
+		Tooltip: ""
+	}
+
+	SquareBomb: {
+		DisplayName: Square Bomb
+		Tooltip: ""
+	}
+
+	StickySquareBomb: {
+		DisplayName: Sticky Square Bomb
+		Tooltip: ""
+	}
+
+	XShotBlaster: {
+		DisplayName: X Shot Blaster
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -95,11 +180,18 @@ Projectiles: {
 	DevilKnife.DisplayName: Devil Knife
 	RoseQuartz_Bolt.DisplayName: Rose Quartz_ Bolt
 	RoseQuartzHookProjectile.DisplayName: Rose Quartz Hook Projectile
+	BouncySquareBombProjectile.DisplayName: Bouncy Square Bomb Projectile
+	CDProj.DisplayName: C D Proj
+	CoolSwordProj.DisplayName: Cool Sword Proj
+	RecordProj.DisplayName: Record Proj
+	SquareBombProjectile.DisplayName: Square Bomb Projectile
+	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
 }
 
 Tiles: {
 	RoseQuartzTile.MapEntry: Rose Quartz Tile
 	RoseQuartzStoneTile.MapEntry: Rose Quartz Stone Tile
+	ShadowvoidOre.MapEntry: Shadowvoid Ore
 }
 
 WorldGen: {
