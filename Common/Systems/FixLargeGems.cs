@@ -21,7 +21,7 @@ namespace TheSludgeMod.Common.Systems
             On_Player.Update += On_Player_Update;
             On_PlayerDrawLayers.DrawPlayer_36_CTG += On_PlayerDrawLayers_DrawPlayer_36_CTG;
         }
-
+        //hii
         private void On_PlayerDrawLayers_DrawPlayer_36_CTG(On_PlayerDrawLayers.orig_DrawPlayer_36_CTG orig, ref PlayerDrawSet drawinfo)
         {
             if (drawinfo.shadow == 0f && drawinfo.drawPlayer.ownedLargeGems > 0)
