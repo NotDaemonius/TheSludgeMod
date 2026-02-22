@@ -1,0 +1,108 @@
+Items: {
+	DemonsEye: {
+		DisplayName: Demons Eye
+		Tooltip: ""
+	}
+
+	TheDevilsKnifes: {
+		DisplayName: The Devils Knifes
+		Tooltip: ""
+	}
+
+	MagnetPickaxe: {
+		DisplayName: Magnet Pickaxe
+		Tooltip: ""
+	}
+
+	Bat: {
+		DisplayName: Bat
+		Tooltip: ""
+	}
+
+	TheRedRobin: {
+		DisplayName: The Red Robin
+		Tooltip: ""
+	}
+
+	DartInABottle: {
+		DisplayName: Dart In A Bottle
+		Tooltip: ""
+	}
+
+	RoseQuartz: {
+		DisplayName: Rose Quartz
+		Tooltip: ""
+	}
+
+	RoseQuartzPhaseblade: {
+		DisplayName: Rose Quartz Phaseblade
+		Tooltip: ""
+	}
+
+	RoseQuartzPhasesaber: {
+		DisplayName: Rose Quartz Phasesaber
+		Tooltip: ""
+	}
+
+	PinkPhaseblade: {
+		DisplayName: Pink Phaseblade
+		Tooltip: ""
+	}
+
+	PinkPhasesaber: {
+		DisplayName: Pink Phasesaber
+		Tooltip: ""
+	}
+
+	GiantRoseQuartz: {
+		DisplayName: Giant Rose Quartz
+		Tooltip: ""
+	}
+
+	RoseQuartzStaff: {
+		DisplayName: Rose Quartz Staff
+		Tooltip: ""
+	}
+
+	ItemRoseQuartzStaff: {
+		Tooltip: ""
+		DisplayName: Item Rose Quartz Staff
+	}
+
+	RoseQuartzHook: {
+		Tooltip: ""
+		DisplayName: Rose Quartz Hook
+	}
+
+	RoseQuartzRobe: {
+		DisplayName: Rose Quartz Robe
+		Tooltip: ""
+	}
+
+	RoseQuartzAcorn: {
+		DisplayName: Rose Quartz Acorn
+		Tooltip: ""
+	}
+
+	RoseQuartzStoneBlock: {
+		DisplayName: Rose Quartz Stone Block
+		Tooltip: ""
+	}
+}
+
+Projectiles: {
+	DemonsEyeEye.DisplayName: Demons Eye Eye
+	DevilKnife.DisplayName: Devil Knife
+	RoseQuartz_Bolt.DisplayName: Rose Quartz_ Bolt
+	RoseQuartzHookProjectile.DisplayName: Rose Quartz Hook Projectile
+}
+
+Tiles: {
+	RoseQuartzTile.MapEntry: Rose Quartz Tile
+	RoseQuartzStoneTile.MapEntry: Rose Quartz Stone Tile
+}
+
+WorldGen: {
+	ExampleOrePassMessage: Mods.TheSludgeMod.WorldGen.ExampleOrePassMessage
+	BlessedWithExampleOreMessage: Mods.TheSludgeMod.WorldGen.BlessedWithExampleOreMessage
+}
