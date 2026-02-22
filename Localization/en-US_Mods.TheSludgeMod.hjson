@@ -188,12 +188,22 @@ Items: {
 
 	Cassette: {
 		DisplayName: Cassette
-		Tooltip: "I am old people and this is my music"
+		Tooltip: I am old people and this is my music
 	}
 
 	PeaShooter: {
 		DisplayName: Pea Shooter
 		Tooltip: ""
+	}
+
+	SlimeHoard: {
+		DisplayName: Slime Hord
+		Tooltip: Summons 4 slimes for the price of one!
+	}
+
+	SlimeHord: {
+		DisplayName: Slime Hord
+		Tooltip: Summons 4 slimes for the price of one!
 	}
 }
 
@@ -208,6 +218,9 @@ Projectiles: {
 	RecordProj.DisplayName: Record Projectile
 	SquareBombProjectile.DisplayName: Square Bomb Projectile
 	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
+	CassetteProj.DisplayName: Cassette Proj
+	Pea.DisplayName: Pea
+	SlimeHoardProjectile.DisplayName: Slime Hord Projectile
 }
 
 Tiles: {
@@ -220,4 +233,11 @@ Tiles: {
 WorldGen: {
 	ExampleOrePassMessage: Mods.TheSludgeMod.WorldGen.ExampleOrePassMessage
 	BlessedWithExampleOreMessage: Mods.TheSludgeMod.WorldGen.BlessedWithExampleOreMessage
+}
+
+Buffs: {
+	SlimeHoardBuff: {
+		DisplayName: Slime Hord
+		Description: 4 slimes for the price of one!
+	}
 }
