@@ -190,12 +190,12 @@ Items: {
 Projectiles: {
 	DemonsEyeEye.DisplayName: Demons Eye Eye
 	DevilKnife.DisplayName: Devil Knife
-	RoseQuartz_Bolt.DisplayName: Rose Quartz_ Bolt
+	RoseQuartz_Bolt.DisplayName: Rose Quartz Bolt
 	RoseQuartzHookProjectile.DisplayName: Rose Quartz Hook Projectile
 	BouncySquareBombProjectile.DisplayName: Bouncy Square Bomb Projectile
-	CDProj.DisplayName: C D Proj
-	CoolSwordProj.DisplayName: Cool Sword Proj
-	RecordProj.DisplayName: Record Proj
+	CDProj.DisplayName: CD Projectile
+	CoolSwordProj.DisplayName: Cool Sword Projectile
+	RecordProj.DisplayName: Record Projectile
 	SquareBombProjectile.DisplayName: Square Bomb Projectile
 	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
 }
@@ -204,6 +204,7 @@ Tiles: {
 	RoseQuartzTile.MapEntry: Rose Quartz Tile
 	RoseQuartzStoneTile.MapEntry: Rose Quartz Stone Tile
 	ShadowvoidOre.MapEntry: Shadowvoid Ore
+	ShadowvoidBar.MapEntry: Shadowvoid Bar
 }
 
 WorldGen: {
