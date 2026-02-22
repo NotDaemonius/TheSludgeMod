@@ -185,6 +185,11 @@ Items: {
 		DisplayName: Plastic
 		Tooltip: ""
 	}
+
+	PeaShooter: {
+		DisplayName: Pea Shooter
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -198,6 +203,7 @@ Projectiles: {
 	RecordProj.DisplayName: Record Projectile
 	SquareBombProjectile.DisplayName: Square Bomb Projectile
 	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
+	Pea.DisplayName: Pea
 }
 
 Tiles: {
