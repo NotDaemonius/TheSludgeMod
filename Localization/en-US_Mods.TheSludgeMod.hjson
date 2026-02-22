@@ -200,8 +200,6 @@ Items: {
 		DisplayName: Slime Hoard
 		Tooltip: Summons 4 slimes for the price of one!
 	}
-
-
 	ToySword: {
 		DisplayName: Toy Sword
 		Tooltip: Batteries not included.
