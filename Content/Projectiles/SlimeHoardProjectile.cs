@@ -311,7 +311,7 @@ namespace TheSludgeMod.Content.Projectiles
             Rectangle src = new Rectangle(0, Projectile.frame * fh, tex.Width, fh);
 
             if (color == Color.AliceBlue)
-                color = Main.hslToRgb(Main.rand.NextFloat(), 1f, 0.5f) * Projectile.Opacity;
+                color = Main.hslToRgb(Main.rand.NextFloat(), 1f, Main.rand.NextFloat()) * Projectile.Opacity;
 
             SpriteEffects flip = Projectile.spriteDirection == 1 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
             Main.EntitySpriteDraw(tex, Projectile.Center - Main.screenPosition + new Vector2(-1f, -5f), src, color, Projectile.rotation, new Vector2(src.Width * 0.5f, src.Height * 0.5f), Projectile.scale, flip, 0);
