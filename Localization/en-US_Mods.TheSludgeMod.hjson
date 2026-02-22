@@ -196,6 +196,12 @@ Items: {
 		Tooltip: ""
 	}
 
+	SlimeHoard: {
+		DisplayName: Slime Hoard
+		Tooltip: Summons 4 slimes for the price of one!
+	}
+
+
 	ToySword: {
 		DisplayName: Toy Sword
 		Tooltip: Batteries not included.
@@ -220,7 +226,6 @@ Projectiles: {
 	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
 	CassetteProj.DisplayName: Cassette Proj
 	Pea.DisplayName: Pea
-	TheRulebookProj.DisplayName: The Rulebook Proj
 }
 
 Tiles: {
@@ -233,4 +238,11 @@ Tiles: {
 WorldGen: {
 	ExampleOrePassMessage: Mods.TheSludgeMod.WorldGen.ExampleOrePassMessage
 	BlessedWithExampleOreMessage: Mods.TheSludgeMod.WorldGen.BlessedWithExampleOreMessage
+}
+
+Buffs: {
+	SlimeHoardBuff: {
+		DisplayName: Slime Hord
+		Description: 4 slimes for the price of one!
+	}
 }
