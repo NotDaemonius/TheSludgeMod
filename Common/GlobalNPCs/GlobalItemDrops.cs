@@ -19,6 +19,11 @@ namespace TheSludgeMod.Common.GlobalNPCs
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DemonsEye>(), 10));
             }
+            if (npc.type == NPCID.PirateCrossbower)
+            {
+
+            }
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TheRedRobin>(), 10));
         }
 
         public override void OnKill(NPC npc)
