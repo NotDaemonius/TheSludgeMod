@@ -196,10 +196,11 @@ Items: {
 		Tooltip: ""
 	}
 
-	SlimeHoard: {
-		DisplayName: Slime Hoard
+	SlimeHoardStaff: {
+		DisplayName: Slime Hoard Staff
 		Tooltip: Summons 4 slimes for the price of one!
 	}
+
 	ToySword: {
 		DisplayName: Toy Sword
 		Tooltip: Batteries not included.
@@ -224,6 +225,8 @@ Projectiles: {
 	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
 	CassetteProj.DisplayName: Cassette Proj
 	Pea.DisplayName: Pea
+	SlimeHoardProjectile.DisplayName: Slime Hoard Projectile
+	TheRulebookProj.DisplayName: The Rulebook Proj
 }
 
 Tiles: {
