@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 
 namespace TheSludgeMod.Content.Projectiles
 {
-    public class DemonsEyeEye : ModProjectile
+    public class Pea : ModProjectile
     {
         public override void SetDefaults()
         {

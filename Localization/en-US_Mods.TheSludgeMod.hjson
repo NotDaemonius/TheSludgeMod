@@ -208,7 +208,7 @@ Items: {
 
 	ToySword: {
 		DisplayName: Toy Sword
-		Tooltip: "Batteries not included."
+		Tooltip: Batteries not included.
 	}
 }
 
@@ -223,6 +223,9 @@ Projectiles: {
 	RecordProj.DisplayName: Record Projectile
 	SquareBombProjectile.DisplayName: Square Bomb Projectile
 	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
+	CassetteProj.DisplayName: Cassette Proj
+	Pea.DisplayName: Pea
+	SlimeHoardProjectile.DisplayName: Slime Hoard Projectile
 }
 
 Tiles: {
