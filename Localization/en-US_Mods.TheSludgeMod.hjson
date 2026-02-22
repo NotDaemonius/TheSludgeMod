@@ -207,6 +207,12 @@ Items: {
 	}
 }
 
+	ToySword: {
+		DisplayName: Toy Sword
+		Tooltip: "Batteries not included."
+	}
+}
+
 Projectiles: {
 	DemonsEyeEye.DisplayName: Demons Eye Eye
 	DevilKnife.DisplayName: Devil Knife
@@ -218,9 +224,6 @@ Projectiles: {
 	RecordProj.DisplayName: Record Projectile
 	SquareBombProjectile.DisplayName: Square Bomb Projectile
 	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
-	CassetteProj.DisplayName: Cassette Proj
-	Pea.DisplayName: Pea
-	SlimeHoardProjectile.DisplayName: Slime Hord Projectile
 }
 
 Tiles: {
