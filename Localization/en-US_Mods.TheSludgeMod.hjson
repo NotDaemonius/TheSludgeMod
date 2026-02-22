@@ -198,7 +198,12 @@ Items: {
 
 	ToySword: {
 		DisplayName: Toy Sword
-		Tooltip: "Batteries not included."
+		Tooltip: Batteries not included.
+	}
+
+	TheRulebook: {
+		DisplayName: The Rulebook
+		Tooltip: "[c/773300:Football!]"
 	}
 }
 
@@ -215,6 +220,7 @@ Projectiles: {
 	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
 	CassetteProj.DisplayName: Cassette Proj
 	Pea.DisplayName: Pea
+	TheRulebookProj.DisplayName: The Rulebook Proj
 }
 
 Tiles: {
