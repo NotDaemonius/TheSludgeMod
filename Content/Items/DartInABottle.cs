@@ -23,6 +23,11 @@ namespace TheSludgeMod.Content.Items
         {
             player.GetJumpState<SimpleExtraJump>().Enable();
         }
+
+        public override void AddRecipes()
+        {
+            CreateRecipe().AddIngredient(ItemID.DartTrap).AddIngredient(ItemID.Bottle).AddTile(TileID.TinkerersWorkbench);
+        }
     }
 
     public class SimpleExtraJump : ExtraJump
