@@ -66,7 +66,7 @@ Items: {
 
 	ItemRoseQuartzStaff: {
 		Tooltip: ""
-		DisplayName: Item Rose Quartz Staff
+		DisplayName: Rose Quartz Staff
 	}
 
 	RoseQuartzHook: {
@@ -185,6 +185,11 @@ Items: {
 		DisplayName: Plastic
 		Tooltip: ""
 	}
+
+	Cassette: {
+		DisplayName: Cassette
+		Tooltip: "I am old people and this is my music"
+	}
 }
 
 Projectiles: {
@@ -198,6 +203,7 @@ Projectiles: {
 	RecordProj.DisplayName: Record Projectile
 	SquareBombProjectile.DisplayName: Square Bomb Projectile
 	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
+	CassetteProj.DisplayName: Cassette Proj
 }
 
 Tiles: {
