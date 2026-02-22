@@ -22,7 +22,7 @@ namespace TheSludgeMod.Content.Items
             Item.width = 62; // Hitbox width of the item.
             Item.height = 32; // Hitbox height of the item.
             Item.scale = 0.75f;
-            Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
+            Item.rare = ItemRarityID.Purple; // The color that the item's name will be in-game.
 
             // Use Properties
             Item.useTime = 45; // The item's use time in ticks (60 ticks == 1 second.)
