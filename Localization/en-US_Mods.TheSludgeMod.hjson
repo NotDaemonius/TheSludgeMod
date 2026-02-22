@@ -185,6 +185,7 @@ Items: {
 		DisplayName: Plastic
 		Tooltip: ""
 	}
+}
 
 Projectiles: {
 	DemonsEyeEye.DisplayName: Demons Eye Eye
