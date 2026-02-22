@@ -21,5 +21,12 @@ namespace TheSludgeMod.Content.Items
 			Item.height = 16;
 			Item.rare = ItemRarityID.White;
 		}
-	}
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe(2);
+            recipe.AddRecipeGroup(RecipeGroupID.Wood, 1);
+            recipe.AddTile(TileID.Sawmill);
+            recipe.Register();
+        }
+    }
 }

@@ -188,12 +188,17 @@ Items: {
 
 	Cassette: {
 		DisplayName: Cassette
-		Tooltip: "I am old people and this is my music"
+		Tooltip: I am old people and this is my music
 	}
 
 	PeaShooter: {
 		DisplayName: Pea Shooter
 		Tooltip: ""
+	}
+
+	ToySword: {
+		DisplayName: Toy Sword
+		Tooltip: "Batteries not included."
 	}
 }
 
@@ -208,6 +213,8 @@ Projectiles: {
 	RecordProj.DisplayName: Record Projectile
 	SquareBombProjectile.DisplayName: Square Bomb Projectile
 	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
+	CassetteProj.DisplayName: Cassette Proj
+	Pea.DisplayName: Pea
 }
 
 Tiles: {
