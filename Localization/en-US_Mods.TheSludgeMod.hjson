@@ -89,38 +89,90 @@ Items: {
 		Tooltip: ""
 	}
 
-	Basher: {
-		DisplayName: Basher
-		Tooltip: ""
-	}
-
-	Battery: {
-		DisplayName: Battery
-		Tooltip: ""
-	}
-
-	BouncySquareBomb: {
-		DisplayName: Bouncy Square Bomb
-		Tooltip: ""
-	}
-
-	CD: {
-		DisplayName: C D
-		Tooltip: ""
-	}
-
 	CoolSword: {
 		DisplayName: Cool Sword
-		Tooltip: ""
+		Tooltip: "[c/770000:The souls of polarity given form once more.]"
+	}
+
+	Basher: {
+		Tooltip:
+			'''
+			[c/7700ff:'In highschool, they used to call me Basher, because]
+			[c/7700ff:I used to bash people's heads in the lockers.']
+			'''
+		DisplayName: Basher
+	}
+
+	ShadowvoidBar: {
+		DisplayName: Shadowvoid Bar
+		Tooltip: "[c/7700ff:Contains the darkness of a million universes.]"
+	}
+
+	ShadowvoidOre: {
+		DisplayName: Shadowvoid Ore
+		Tooltip: "[c/7700ff:Pure darkness taken form. Or, impure darkness, for that matter.]"
 	}
 
 	DefaultItem: {
 		DisplayName: Default Item
-		Tooltip: ""
+		Tooltip: Description Template
+	}
+
+	SquareBomb: {
+		Tooltip: A small explosion that will destroy most tiles in a square shape.
+		DisplayName: Square Bomb
+	}
+
+	StickySquareBomb: {
+		DisplayName: Sticky Square Bomb
+		Tooltip:
+			'''
+			A small explosion that will destroy most tiles in a square shape.
+			Tossing may be difficult.
+			'''
+	}
+
+	BouncySquareBomb: {
+		DisplayName: Bouncy Square Bomb
+		Tooltip:
+			'''
+			A small explosion that will destroy most tiles in a square shape.
+			Very bouncy.
+			'''
 	}
 
 	OrbitalRadiance: {
 		DisplayName: Orbital Radiance
+		Tooltip: "[c/55ffff:Summons 5 deadly glowing orbs around the player.]"
+	}
+
+	PlaceholderItem: {
+		Tooltip: Tooltip Placeholder
+		DisplayName: Placeholder Item
+	}
+
+	Record: {
+		Tooltip: *jazz music stops*
+		DisplayName: Record
+	}
+
+	XShotBlaster: {
+		Tooltip: "[c/ff0000:It's X-Shot or Nothing!]"
+		DisplayName: X-Shot Blaster
+	}
+
+	CD: {
+		DisplayName: CD
+		Tooltip: EFG
+	}
+
+	SpeckOfDust: {
+		Tooltip: ""
+		DisplayName: Speck Of Dust
+	}
+
+	Battery: {
+		DisplayName: Battery
 		Tooltip: ""
 	}
 
@@ -129,51 +181,10 @@ Items: {
 		Tooltip: ""
 	}
 
-	PlaceholderItem: {
-		DisplayName: Placeholder Item
-		Tooltip: ""
-	}
-
 	Plastic: {
 		DisplayName: Plastic
 		Tooltip: ""
 	}
-
-	Record: {
-		DisplayName: Record
-		Tooltip: ""
-	}
-
-	ShadowvoidBar: {
-		DisplayName: Shadowvoid Bar
-		Tooltip: ""
-	}
-
-	ShadowvoidOre: {
-		DisplayName: Shadowvoid Ore
-		Tooltip: ""
-	}
-
-	SpeckOfDust: {
-		DisplayName: Speck Of Dust
-		Tooltip: ""
-	}
-
-	SquareBomb: {
-		DisplayName: Square Bomb
-		Tooltip: ""
-	}
-
-	StickySquareBomb: {
-		DisplayName: Sticky Square Bomb
-		Tooltip: ""
-	}
-
-	XShotBlaster: {
-		DisplayName: X Shot Blaster
-		Tooltip: ""
-	}
-}
 
 Projectiles: {
 	DemonsEyeEye.DisplayName: Demons Eye Eye
