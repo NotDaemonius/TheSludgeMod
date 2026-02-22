@@ -47,10 +47,11 @@ namespace TheSludgeMod.Content.Items
 
         public override void AddRecipes()
         {
-            CreateRecipe()
-                .AddIngredient(ItemID.Hellstone, 50)
-                .AddTile(TileID.MythrilAnvil)
-                .Register();
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient<Plastic>(10);
+            recipe.AddIngredient<Battery>(1);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
         }
     }
     public class ToySwordGlowLayer : PlayerDrawLayer
