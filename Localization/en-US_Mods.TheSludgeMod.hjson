@@ -269,6 +269,16 @@ Items: {
 		DisplayName: Scythophant
 		Tooltip: "[c/0000ff:Spins around the player when held and shoots a spiral of shadow fireballs.]"
 	}
+
+	RoseQuartzGemsparkBlock: {
+		DisplayName: Rose Quartz Gemspark Block
+		Tooltip: ""
+	}
+
+	RoarMegaphone: {
+		Tooltip: "[c/ff0000:rooOORGH]"
+		DisplayName: Roar Megaphone
+	}
 }
 
 Projectiles: {
@@ -304,6 +314,7 @@ Tiles: {
 	ShadowvoidBar.MapEntry: Shadowvoid Bar
 	ShadowvoidBrick.MapEntry: Shadowvoid Brick
 	ElectronicsTable.MapEntry: Electronics Table
+	RoseQuartzGemsparkBlockTile.MapEntry: Rose Quartz Gemspark Block Tile
 }
 
 WorldGen: {
