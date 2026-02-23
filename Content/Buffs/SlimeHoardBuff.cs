@@ -10,12 +10,11 @@ namespace TheSludgeMod.Content.Buffs
             Main.buffNoSave[Type] = true;
             Main.buffNoTimeDisplay[Type] = true;
         }
-
         public override void Update(Player player, ref int buffIndex)
         {
             player.buffTime[buffIndex] = 18000;
-
             bool anyAlive = false;
+
             for (int i = 0; i < Main.maxProjectiles; i++)
             {
                 Projectile p = Main.projectile[i];
@@ -27,7 +26,7 @@ namespace TheSludgeMod.Content.Buffs
             }
 
             if (!anyAlive)
-                player.DelBuff(buffIndex);
+            player.DelBuff(buffIndex);
         }
     }
 }

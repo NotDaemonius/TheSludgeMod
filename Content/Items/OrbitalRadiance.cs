@@ -12,7 +12,6 @@ namespace TheSludgeMod.Content.Items
     public class OrbitalRadiance : ModItem
     {
         internal static bool SpawningOrb = false;
-
         public override void SetDefaults()
         {
             Item.width = 24;
@@ -21,7 +20,6 @@ namespace TheSludgeMod.Content.Items
             Item.rare = ItemRarityID.Yellow;
             Item.value = Item.sellPrice(gold: 5);
         }
-
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             int projectileType = 731;

@@ -17,7 +17,6 @@ namespace TheSludgeMod.Content.Items
             Item.height = 64;
             Item.useTime = 12;
             Item.useAnimation = 12;
-            // Shoot style lets our swing projectile handle all visuals and hit detection
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 8;
             Item.value = Item.buyPrice(silver: 80);
@@ -25,7 +24,6 @@ namespace TheSludgeMod.Content.Items
             Item.UseSound = SoundID.Item152;
             Item.autoReuse = true;
             Item.useTurn = true;
-            // The swing projectile owns melee contact and the drawn graphic
             Item.noMelee = true;
             Item.noUseGraphic = true;
             Item.shoot = ModContent.ProjectileType<CoolSwordSwingProj>();
@@ -43,14 +41,13 @@ namespace TheSludgeMod.Content.Items
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            // 1. Spawn the custom swing projectile (handles animation, melee hit, effects)
             Projectile.NewProjectile(source, player.Center, velocity,
-                ModContent.ProjectileType<CoolSwordSwingProj>(), damage, knockback, player.whoAmI);
+            ModContent.ProjectileType<CoolSwordSwingProj>(), damage, knockback, player.whoAmI);
 
-            // 2. Original spread of energy projectiles — behaviour unchanged
             float numberProjectiles = 2 + Main.rand.Next(3);
             float rotation = MathHelper.ToRadians(10);
             Vector2 spawnPos = position + Vector2.Normalize(velocity) * 10f;
+
             for (int i = 0; i < numberProjectiles; i++)
             {
                 Vector2 perturbedSpeed = velocity.RotatedBy(

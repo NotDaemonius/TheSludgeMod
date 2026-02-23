@@ -18,7 +18,6 @@ namespace TheSludgeMod.Content.Items
                 GlowTexture = ModContent.Request<Texture2D>(Texture + "Glowmask");
             }
         }
-
         public override void SetDefaults()
         {
             Item.damage = 22;
@@ -44,7 +43,6 @@ namespace TheSludgeMod.Content.Items
             Texture2D texture = GlowTexture.Value;
             spriteBatch.Draw(texture, new Vector2(Item.position.X - Main.screenPosition.X + Item.width / 2, Item.position.Y - Main.screenPosition.Y + Item.height - texture.Height / 2), new Rectangle(0, 0, texture.Width, texture.Height), Color.White, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
         }
-
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
@@ -65,15 +63,11 @@ namespace TheSludgeMod.Content.Items
         protected override void Draw(ref PlayerDrawSet drawInfo)
         {
             Item item = drawInfo.drawPlayer.HeldItem;
-
             Texture2D texture = ToySword.GlowTexture.Value;
-
             Vector2 position = new Vector2((int)(drawInfo.ItemLocation.X - Main.screenPosition.X), (int)(drawInfo.ItemLocation.Y - Main.screenPosition.Y));
             Rectangle frame = new Rectangle(0, 0, texture.Width, texture.Height);
             Vector2 origin = new Vector2(drawInfo.drawPlayer.direction == -1 ? texture.Width : 0, drawInfo.drawPlayer.gravDir == -1 ? 0 : texture.Height);
-
             DrawData drawData = new DrawData(texture, position, frame, Color.White, drawInfo.drawPlayer.itemRotation, origin, item.scale, drawInfo.playerEffect, 0);
-
             drawInfo.DrawDataCache.Add(drawData);
         }
     }

@@ -18,7 +18,5 @@ namespace TheSludgeMod.Common.GlobalItems
                 player.Heal(24);
             }
         }
-
-
     }
 }

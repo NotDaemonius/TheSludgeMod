@@ -32,7 +32,6 @@ namespace TheSludgeMod.Content.Items
         {
             return player.ownedProjectileCounts[Item.shoot] < 1;
         }
-
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();

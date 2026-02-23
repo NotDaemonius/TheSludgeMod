@@ -22,14 +22,10 @@ namespace TheSludgeMod.Content.Items
             Item.rare = ItemRarityID.Yellow;
             Item.mana = 10;
             Item.autoReuse = true;
-
             Item.shoot = ModContent.ProjectileType<TheRulebookProj>();
             Item.shootSpeed = 8f;
-
-            // Makes it look like a magic book when held
-            Item.UseSound = SoundID.Item43; // Magic book sound
+            Item.UseSound = SoundID.Item43;
         }
-
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();

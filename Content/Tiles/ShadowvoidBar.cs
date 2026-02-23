@@ -38,9 +38,11 @@ namespace TheSludgeMod.Content.Tiles
     		b = 1f;
 		}
 		public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak) {
+
 			if (!WorldGen.SolidTileAllowBottomSlope(i, j + 1)) {
 				WorldGen.KillTile(i, j);
 			}
+
 			return true;
 		}
 	}

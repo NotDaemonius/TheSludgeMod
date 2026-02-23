@@ -35,17 +35,12 @@ namespace TheSludgeMod.Content.Items
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             Vector2 offset = velocity.RotatedBy(MathHelper.PiOver2);
-
             offset.Normalize();
-
             offset *= 4f; 
-
             Vector2 position1 = position + offset;
             Vector2 position2 = position - offset;
-
             Projectile.NewProjectile(source, position1, velocity, type, damage, knockback, player.whoAmI);
             Projectile.NewProjectile(source, position2, velocity, type, damage, knockback, player.whoAmI);
-
             return false;
         }
     }

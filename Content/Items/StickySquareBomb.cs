@@ -26,7 +26,6 @@ namespace TheSludgeMod.Content.Items
             Item.shootSpeed = 5f;
             Item.UseSound = SoundID.Item1;
         }
-
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(5);

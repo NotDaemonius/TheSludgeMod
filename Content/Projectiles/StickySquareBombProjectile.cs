@@ -9,7 +9,6 @@ namespace TheSludgeMod.Content.Projectiles
     public class StickySquareBombProjectile : ModProjectile
     {
         private const int ExplosionRadius = 4;
-
         public override void SetDefaults()
         {
             Projectile.width = 22;
@@ -21,16 +20,13 @@ namespace TheSludgeMod.Content.Projectiles
             Projectile.penetrate = -1;
             Projectile.tileCollide = true;
         }
-
         public override void AI()
         {
             if (Projectile.ai[1] == 1f)
             {
                 Projectile.velocity = Vector2.Zero;
                 Projectile.tileCollide = false;
-
                 bool isStillStuck = false;
-
                 int minX = (int)((Projectile.position.X - 2) / 16f);
                 int maxX = (int)((Projectile.position.X + Projectile.width + 2) / 16f);
                 int minY = (int)((Projectile.position.Y - 2) / 16f);
@@ -43,6 +39,7 @@ namespace TheSludgeMod.Content.Projectiles
                         if (WorldGen.InWorld(x, y))
                         {
                             Tile tile = Main.tile[x, y];
+
                             if (tile.HasUnactuatedTile && (Main.tileSolid[tile.TileType] || Main.tileSolidTop[tile.TileType]))
                             {
                                 isStillStuck = true;
@@ -60,14 +57,12 @@ namespace TheSludgeMod.Content.Projectiles
                 }
             }
         }
-
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
             Projectile.ai[1] = 1f;
             Projectile.velocity = Vector2.Zero;
             return false;
         }
-
         public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough, ref Vector2 hitboxCenterFrac)
         {
             width = 2;
@@ -75,19 +70,18 @@ namespace TheSludgeMod.Content.Projectiles
             fallThrough = true;
             return true;
         }
-
         public override void OnKill(int timeLeft)
         {
             SoundEngine.PlaySound(SoundID.Item14, Projectile.Center);
 
             for (int d = 0; d < 30; d++)
-                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, Main.rand.NextFloat(-4f, 4f), Main.rand.NextFloat(-4f, 4f));
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, Main.rand.NextFloat(-4f, 4f), Main.rand.NextFloat(-4f, 4f));
 
             for (int d = 0; d < 20; d++)
-                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, Main.rand.NextFloat(-6f, 6f), Main.rand.NextFloat(-6f, 6f));
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, Main.rand.NextFloat(-6f, 6f), Main.rand.NextFloat(-6f, 6f));
 
             if (Main.netMode == NetmodeID.MultiplayerClient)
-                return;
+            return;
 
             int centerTileX = (int)(Projectile.Center.X / 16f);
             int centerTileY = (int)(Projectile.Center.Y / 16f);
@@ -99,14 +93,15 @@ namespace TheSludgeMod.Content.Projectiles
                     if (!WorldGen.InWorld(x, y, 1)) continue;
 
                     Tile tile = Main.tile[x, y];
+
                     if (tile.HasTile && (Main.tileDungeon[tile.TileType] || tile.TileType == TileID.LihzahrdBrick || tile.TileType == TileID.DemonAltar))
-                        continue;
+                    continue;
 
                     WorldGen.KillTile(x, y, false, false, false);
                     WorldGen.KillWall(x, y);
 
                     if (Main.netMode == NetmodeID.Server)
-                        NetMessage.SendTileSquare(-1, x, y, 1);
+                    NetMessage.SendTileSquare(-1, x, y, 1);
                 }
             }
         }

@@ -8,14 +8,11 @@ namespace TheSludgeMod.Content.Projectiles
 {
     public class TheRulebookProj : ModProjectile
     {
-        // ai[0] is used by the Football AI, so use ai[1] as our sound cooldown timer
         private ref float SoundCooldown => ref Projectile.ai[1];
-
         public override void SetStaticDefaults()
         {
             Main.projFrames[Projectile.type] = 4;
         }
-
         public override void SetDefaults()
         {
             Projectile.CloneDefaults(ProjectileID.Football);
@@ -29,45 +26,38 @@ namespace TheSludgeMod.Content.Projectiles
             Projectile.tileCollide = true;
             Projectile.noDropItem = true;
         }
-
         public override void AI()
         {
-            // Count the cooldown down each tick
             if (SoundCooldown > 0)
-                SoundCooldown--;
+            SoundCooldown--;
 
             Projectile.frameCounter++;
+
             if (Projectile.frameCounter >= 6)
             {
                 Projectile.frameCounter = 0;
                 Projectile.frame = (Projectile.frame + 1) % Main.projFrames[Projectile.type];
             }
         }
-
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
             const float bounceDamping = 0.65f;
 
             if (Projectile.velocity.X != oldVelocity.X)
-                Projectile.velocity.X = -oldVelocity.X * bounceDamping;
+            Projectile.velocity.X = -oldVelocity.X * bounceDamping;
 
             if (Projectile.velocity.Y != oldVelocity.Y)
-                Projectile.velocity.Y = -oldVelocity.Y * bounceDamping;
+            Projectile.velocity.Y = -oldVelocity.Y * bounceDamping;
 
-            // Only play the sound if the ball was moving fast enough on the axis that got hit
             const float soundThreshold = 2.5f;
-            bool hitHard = (Projectile.velocity.X != oldVelocity.X && Math.Abs(oldVelocity.X) > soundThreshold)
-                        || (Projectile.velocity.Y != oldVelocity.Y && Math.Abs(oldVelocity.Y) > soundThreshold);
+            bool hitHard = (Projectile.velocity.X != oldVelocity.X && Math.Abs(oldVelocity.X) > soundThreshold) || (Projectile.velocity.Y != oldVelocity.Y && Math.Abs(oldVelocity.Y) > soundThreshold);
 
             if (hitHard)
-                Terraria.Audio.SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
+            Terraria.Audio.SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
 
             return false;
         }
 
-        public override void OnKill(int timeLeft)
-        {
-            // No item drop
-        }
+        public override void OnKill(int timeLeft){}
     }
 }

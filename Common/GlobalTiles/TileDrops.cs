@@ -11,14 +11,7 @@ namespace TheSludgeMod.Common.GlobalTiles
         {
             if (type == TileID.Dirt && !fail && Main.rand.NextBool(2000))
             {
-                Item.NewItem(
-                    new Terraria.DataStructures.EntitySource_TileBreak(i, j), 
-                    i * 16, 
-                    j * 16, 
-                    16, 
-                    16, 
-                    ModContent.ItemType<SpeckOfDust>()
-                );
+                Item.NewItem(new Terraria.DataStructures.EntitySource_TileBreak(i, j),  i * 16,  j * 16,  16,  16, ModContent.ItemType<SpeckOfDust>());
             }
         }
     }

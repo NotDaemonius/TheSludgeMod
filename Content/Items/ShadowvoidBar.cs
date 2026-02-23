@@ -10,7 +10,6 @@ namespace TheSludgeMod.Content.Items
 {
 	public class ShadowvoidBar : ModItem
 	{
-		
 		public override void SetStaticDefaults() 
 		{
 			Item.ResearchUnlockCount = 25;
@@ -24,7 +23,6 @@ namespace TheSludgeMod.Content.Items
 			Item.value = Item.buyPrice(gold: 15);
 			Item.rare = ItemRarityID.Purple;
 		}
-
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();

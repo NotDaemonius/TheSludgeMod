@@ -9,7 +9,6 @@ namespace TheSludgeMod.Content.Items
 {
 	public class ShadowvoidOre : ModItem
 	{
-		
 		public override void SetStaticDefaults() 
 		{
 			Item.ResearchUnlockCount = 100;

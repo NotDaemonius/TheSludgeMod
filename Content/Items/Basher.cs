@@ -24,8 +24,6 @@ namespace TheSludgeMod.Content.Items
             Item.UseSound = SoundID.Item153;
             Item.autoReuse = true;
             Item.useTurn = true;
-
-            // Keeps the custom swing visuals active
             Item.noMelee = true;
             Item.noUseGraphic = true;
             Item.shoot = ModContent.ProjectileType<BasherSwing>();
@@ -46,18 +44,14 @@ namespace TheSludgeMod.Content.Items
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            // Spawn the custom sword swing animation once
             Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI, 0, player.direction);
 
-            // YOUR ORIGINAL PROJECTILE LOGIC
             float numberProjectiles = 10;
             float rotation = MathHelper.ToRadians(5);
             for (int i = 0; i < numberProjectiles; i++)
             {
                 position += Vector2.Normalize(velocity) * 10f;
                 Vector2 peturbedSpeed = velocity.RotatedBy(MathHelper.Lerp(-rotation * i, rotation * i, i / (numberProjectiles - 1)));
-
-                // We use 967 here to ensure it fires the original projectile type
                 Projectile.NewProjectile(source, position, peturbedSpeed, 967, damage, knockback, player.whoAmI);
             }
 

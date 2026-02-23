@@ -16,12 +16,11 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
         {
             Item.staff[Type] = true;
         }
-
         public override void SetDefaults()
         {
             Item.mana = 6;
             Item.UseSound = SoundID.Item43;
-            Item.useStyle = ItemUseStyleID.Shoot;  // same as 5, just clearer
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.damage = 18;
             Item.useAnimation = 34;
             Item.useTime = 34;
@@ -33,18 +32,17 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
             Item.value = 10000;
             Item.DamageType = DamageClass.Magic;
             Item.autoReuse = true;
-            Item.rare = ItemRarityID.Blue;  // same as 1, just clearer
+            Item.rare = ItemRarityID.Blue;
             Item.noMelee = true;
-            Item.channel = true;           // ← this is what was missing
+            Item.channel = true;
         }
-
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ModContent.ItemType<RoseQuartz>(), 8)
-                .AddIngredient(ItemID.IronBar, 10)
-                .AddTile(TileID.Anvils)
-                .Register();
+            .AddIngredient(ModContent.ItemType<RoseQuartz>(), 8)
+            .AddIngredient(ItemID.IronBar, 10)
+            .AddTile(TileID.Anvils)
+            .Register();
         }
     }
 }
