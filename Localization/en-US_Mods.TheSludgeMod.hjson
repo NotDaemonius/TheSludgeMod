@@ -254,14 +254,10 @@ Items: {
 		DisplayName: Gun-Gnir
 		Tooltip: "[c/ffff77:Now with 100% more gun!]"
 	}
+
 	ShadowvoidBrick: {
 		Tooltip: ""
 		DisplayName: Shadowvoid Brick
-	}
-
-	GunGnir: {
-		DisplayName: Gun-Gnir
-		Tooltip: "[c/ffff77:Now with 100% more gun!]"
 	}
 }
 
