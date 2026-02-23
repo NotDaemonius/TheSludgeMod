@@ -20,7 +20,8 @@ namespace TheSludgeMod.Content.Items
 			Item.width = 16;
 			Item.height = 16;
 			Item.rare = ItemRarityID.White;
-		}
+            Item.maxStack = 9999;
+        }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(2);

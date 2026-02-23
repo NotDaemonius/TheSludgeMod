@@ -8,9 +8,8 @@ using TheSludgeMod.Content.Projectiles;
 
 namespace TheSludgeMod.Content.Items
 {
-	public class Battery : ModItem
+	public class Electronics : ModItem
 	{
-		
 		public override void SetStaticDefaults() 
 		{
 			Item.ResearchUnlockCount = 100;
@@ -19,16 +18,17 @@ namespace TheSludgeMod.Content.Items
 		{
 			Item.width = 16;
 			Item.height = 16;
-			Item.rare = ItemRarityID.White;
+			Item.rare = ItemRarityID.Green;
             Item.maxStack = 9999;
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(5);
+            Recipe recipe = CreateRecipe(2);
             recipe.AddIngredient(ItemID.CopperOre, 1);
-            recipe.AddIngredient(ItemID.LeadOre, 1);
-            recipe.AddIngredient<Plastic>(1);
-            recipe.AddTile(TileID.TinkerersWorkbench);
+            recipe.AddIngredient(ItemID.GoldOre, 1);
+            recipe.AddIngredient(ItemID.SandBlock, 5);
+            recipe.AddIngredient<Plastic>(5);
+            recipe.AddTile(TileID.Furnaces);
             recipe.Register();
         }
     }

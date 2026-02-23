@@ -211,6 +211,20 @@ Items: {
 		Tooltip: "[c/773300:Football!]"
 	}
 
+	Electronics: {
+		DisplayName: Electronics
+		Tooltip: "[c/00ff00:People are becoming scientific]"
+	}
+
+	BloodThinner: {
+		Tooltip:
+			'''
+			[c/ff0000:Doubles the length of potion sickness, but]
+			[c/ffff77:triples] [c/ff0000:the effectiveness of health potions.]
+			'''
+		DisplayName: Blood Thinner
+	}
+
 	TinOfSpinach: {
 		Tooltip: ""
 		DisplayName: Tin Of Spinach
