@@ -22,7 +22,8 @@ namespace TheSludgeMod.Content.Items
 			Item.height = 20;
 			Item.value = Item.buyPrice(gold: 15);
 			Item.rare = ItemRarityID.Purple;
-		}
+            Item.material = true;
+        }
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();

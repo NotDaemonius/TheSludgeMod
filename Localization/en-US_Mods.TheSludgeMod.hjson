@@ -224,6 +224,11 @@ Items: {
 			'''
 		DisplayName: Blood Thinner
 	}
+
+	ShadowvoidBrick: {
+		Tooltip: ""
+		DisplayName: Shadowvoid Brick
+	}
 }
 
 Projectiles: {
@@ -250,6 +255,7 @@ Tiles: {
 	RoseQuartzStoneTile.MapEntry: Rose Quartz Stone Tile
 	ShadowvoidOre.MapEntry: Shadowvoid Ore
 	ShadowvoidBar.MapEntry: Shadowvoid Bar
+	ShadowvoidBrick.MapEntry: Shadowvoid Brick
 }
 
 WorldGen: {

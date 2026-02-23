@@ -24,6 +24,7 @@ namespace TheSludgeMod.Content.Items
 			Item.rare = ItemRarityID.Purple;
 			Item.autoReuse = true;
 			Item.useTurn = true;
-		}
+            Item.material = true;
+        }
 	}
 }

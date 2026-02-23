@@ -14,6 +14,7 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
         {
             Item.CloneDefaults(ItemID.Sapphire);
             Item.createTile = ModContent.TileType<RoseQuartzTile>();
+            Item.material = true;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.BluePhaseblade);
+            Item.material = true;
         }
         public override void AddRecipes()
         {
