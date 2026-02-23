@@ -250,6 +250,11 @@ Items: {
 		Tooltip: ""
 	}
 
+	GunGnir: {
+		DisplayName: Gun-Gnir
+		Tooltip: "[c/ffff77:Now with 100% more gun!]"
+	}
+
 	ShadowvoidBrick: {
 		Tooltip: ""
 		DisplayName: Shadowvoid Brick
@@ -273,10 +278,6 @@ Projectiles: {
 	TheRulebookProj.DisplayName: The Rulebook Projectile
 	CoolSwordSwingProj.DisplayName: Cool Sword Swing Proj
 	BasherSwing.DisplayName: Basher Swing
-	RopeWhipProjectile.DisplayName: Rope Whip Projectile
-	SilkRopeWhipProjectile.DisplayName: Silk Rope Whip Projectile
-	VineRopeWhipProjectile.DisplayName: Vine Rope Whip Projectile
-	WebRopeWhipProjectile.DisplayName: Web Rope Whip Projectile
 }
 
 Tiles: {
