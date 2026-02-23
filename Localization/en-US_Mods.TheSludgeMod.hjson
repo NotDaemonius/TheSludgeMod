@@ -279,6 +279,41 @@ Items: {
 		Tooltip: "[c/ff0000:rooOORGH]"
 		DisplayName: Roar Megaphone
 	}
+
+	DeathWhistleMegaphone: {
+		Tooltip: ""
+		DisplayName: Death Whistle Megaphone
+	}
+
+	ExpertRoarMegaphone: {
+		DisplayName: Expert Roar Megaphone
+		Tooltip: ""
+	}
+
+	Meowgaphone: {
+		Tooltip: ""
+		DisplayName: Meowgaphone
+	}
+
+	MoonLordMegaphone: {
+		Tooltip: ""
+		DisplayName: Moon Lord Megaphone
+	}
+
+	GiggleMegaphone: {
+		Tooltip: ""
+		DisplayName: Giggle Megaphone
+	}
+
+	FartMegaphone: {
+		Tooltip: ""
+		DisplayName: Fart Megaphone
+	}
+
+	MurderMegaphone: {
+		DisplayName: Murder Megaphone
+		Tooltip: ""
+	}
 }
 
 Projectiles: {

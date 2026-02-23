@@ -6,18 +6,18 @@ using Microsoft.Xna.Framework;
 
 namespace TheSludgeMod.Content.Items.Tools
 {
-    public class RoarMegaphone : ModItem
+    public class DeathWhistleMegaphone : ModItem
     {
         public override void SetDefaults()
         {
             Item.width = 32;
             Item.height = 32;
-            Item.useTime = 120;
-            Item.useAnimation = 120;
+            Item.useTime = 150;
+            Item.useAnimation = 150;
             Item.useStyle = ItemUseStyleID.HoldUp;
             Item.noMelee = true;
-            Item.rare = ItemRarityID.Green;
-            Item.UseSound = SoundID.Roar;
+            Item.rare = ItemRarityID.Yellow;
+            Item.UseSound = new SoundStyle("TheSludgeMod/Content/Items/Tools/Roar_2.wav");
         }
         public override void UseStyle(Player player, Rectangle heldItemFrame)
         {
@@ -27,8 +27,8 @@ namespace TheSludgeMod.Content.Items.Tools
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.DemoniteBar, 2);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(ItemID.BeetleShell, 1);
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
     }
