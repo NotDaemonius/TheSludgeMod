@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using System.Linq;
-using TheSludgeMod.Content.Items;
+using TheSludgeMod.Content.Items.Weapons;
 
 namespace TheSludgeMod
 {
