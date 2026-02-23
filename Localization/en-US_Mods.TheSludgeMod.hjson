@@ -224,6 +224,7 @@ Items: {
 			'''
 		DisplayName: Blood Thinner
 	}
+
 	TinOfSpinach: {
 		Tooltip: ""
 		DisplayName: Tin Of Spinach
