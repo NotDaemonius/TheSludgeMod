@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Items;
 
-namespace YourModName
+namespace TheSludgeMod.Common.Systems
 {
     public class VanillaRecipes : ModSystem
     {
