@@ -230,6 +230,30 @@ Items: {
 		DisplayName: Tin Of Spinach
 	}
 
+	RopeWhip: {
+		DisplayName: Rope Whip
+		Tooltip: ""
+	}
+
+	SilkRopeWhip: {
+		DisplayName: Silk Rope Whip
+		Tooltip: ""
+	}
+
+	VineRopeWhip: {
+		DisplayName: Vine Rope Whip
+		Tooltip: ""
+	}
+
+	WebRopeWhip: {
+		DisplayName: Web Rope Whip
+		Tooltip: ""
+	}
+
+	GunGnir: {
+		DisplayName: Gun-Gnir
+		Tooltip: "[c/ffff77:Now with 100% more gun!]"
+	}
 	ShadowvoidBrick: {
 		Tooltip: ""
 		DisplayName: Shadowvoid Brick
@@ -258,7 +282,6 @@ Projectiles: {
 	TheRulebookProj.DisplayName: The Rulebook Projectile
 	CoolSwordSwingProj.DisplayName: Cool Sword Swing Proj
 	BasherSwing.DisplayName: Basher Swing
-	GungnirBullet.DisplayName: Gungnir Bullet
 }
 
 Tiles: {
