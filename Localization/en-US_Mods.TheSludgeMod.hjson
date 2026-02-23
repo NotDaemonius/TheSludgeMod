@@ -264,6 +264,11 @@ Items: {
 		DisplayName: Electronics Table
 		Tooltip: ""
 	}
+
+	Scythophant: {
+		DisplayName: Scythophant
+		Tooltip: "[c/0000ff:Spins around the player when held and shoots a spiral of shadow fireballs.]"
+	}
 }
 
 Projectiles: {
@@ -288,6 +293,8 @@ Projectiles: {
 	SilkRopeWhipProjectile.DisplayName: Silk Rope Whip Projectile
 	VineRopeWhipProjectile.DisplayName: Vine Rope Whip Projectile
 	WebRopeWhipProjectile.DisplayName: Web Rope Whip Projectile
+	ScythophantProj.DisplayName: Scythophant Projectile
+	ScythophantProj2.DisplayName: Scythophant Orb Projectile
 }
 
 Tiles: {

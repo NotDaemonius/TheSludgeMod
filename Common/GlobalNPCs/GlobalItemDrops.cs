@@ -29,6 +29,10 @@ namespace TheSludgeMod.Common.GlobalNPCs
             if (npc.type == NPCID.Plantera) {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PeaShooter>(), 2));
             }
+            if (npc.type == NPCID.CultistBoss)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Scythophant>(), 2));
+            }
 
         }
         public override void OnKill(NPC npc)

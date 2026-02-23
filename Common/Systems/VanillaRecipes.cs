@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Items.Materials;
+using TheSludgeMod.Content.Tiles;
 
 namespace TheSludgeMod.Common.Systems
 {
@@ -35,23 +36,23 @@ namespace TheSludgeMod.Common.Systems
             kwad.AddIngredient<Battery>(3);
             kwad.AddIngredient(ItemID.TitaniumBar, 5);
             kwad.AddIngredient<Plastic>(20);
-            kwad.AddTile(TileID.HeavyWorkBench);
+            kwad.AddTile<ElectronicsTable>();
             kwad.Register();
 
             Recipe FPV = Recipe.Create(ItemID.JimsDroneVisor);
-            kwad.AddIngredient<Electronics>(1);
+            FPV.AddIngredient<Electronics>(1);
             FPV.AddIngredient<Battery>(1);
             FPV.AddIngredient(ItemID.Ectoplasm, 1);
             FPV.AddIngredient(ItemID.Glass, 10);
             FPV.AddIngredient<Plastic>(10);
-            FPV.AddTile(TileID.HeavyWorkBench);
+            FPV.AddTile<ElectronicsTable>();
             FPV.Register();
 
             Recipe fastclock = Recipe.Create(ItemID.FastClock);
             fastclock.AddIngredient(ItemID.GoldWatch, 1);
             fastclock.AddIngredient<Battery>(3);
             fastclock.AddIngredient(ItemID.PixieDust, 10);
-            fastclock.AddTile(TileID.TinkerersWorkbench);
+            fastclock.AddTile<ElectronicsTable>();
             fastclock.Register();
         }
     }
