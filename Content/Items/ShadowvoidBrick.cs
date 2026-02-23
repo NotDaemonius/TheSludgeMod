@@ -2,15 +2,13 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
-using Terraria.GameContent;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Projectiles;
 
 namespace TheSludgeMod.Content.Items
 {
-	public class Battery : ModItem
+	public class ShadowvoidBrick : ModItem
 	{
-		
 		public override void SetStaticDefaults() 
 		{
 			Item.ResearchUnlockCount = 100;
@@ -19,17 +17,20 @@ namespace TheSludgeMod.Content.Items
 		{
 			Item.width = 16;
 			Item.height = 16;
-			Item.rare = ItemRarityID.White;
-            Item.maxStack = 9999;
+			Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.ShadowvoidBrick>());
+			Item.useStyle = ItemUseStyleID.Swing;
+			Item.value = Item.buyPrice(silver: 2);
+			Item.rare = ItemRarityID.Purple;
+			Item.autoReuse = true;
+			Item.useTurn = true;
             Item.material = true;
         }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(5);
-            recipe.AddIngredient(ItemID.CopperOre, 1);
-            recipe.AddIngredient(ItemID.LeadOre, 1);
-            recipe.AddIngredient<Plastic>(1);
-            recipe.AddTile(TileID.TinkerersWorkbench);
+            recipe.AddIngredient(ItemID.StoneBlock, 5);
+            recipe.AddIngredient<ShadowvoidOre>(1);
+            recipe.AddTile(TileID.Furnaces);
             recipe.Register();
         }
     }

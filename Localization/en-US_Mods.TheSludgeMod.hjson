@@ -224,7 +224,6 @@ Items: {
 			'''
 		DisplayName: Blood Thinner
 	}
-
 	TinOfSpinach: {
 		Tooltip: ""
 		DisplayName: Tin Of Spinach
@@ -248,6 +247,11 @@ Items: {
 	WebRopeWhip: {
 		DisplayName: Web Rope Whip
 		Tooltip: ""
+	}
+
+	ShadowvoidBrick: {
+		Tooltip: ""
+		DisplayName: Shadowvoid Brick
 	}
 }
 
@@ -279,6 +283,7 @@ Tiles: {
 	RoseQuartzStoneTile.MapEntry: Rose Quartz Stone Tile
 	ShadowvoidOre.MapEntry: Shadowvoid Ore
 	ShadowvoidBar.MapEntry: Shadowvoid Bar
+	ShadowvoidBrick.MapEntry: Shadowvoid Brick
 }
 
 WorldGen: {

@@ -19,5 +19,15 @@ namespace TheSludgeMod.Content.Items
         {
             player.GetModPlayer<BloodThinnerPlayer>().bloodThinnerEquipped = true;
         }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.ChlorophyteBar, 1);
+            recipe.AddIngredient(ItemID.LifeFruit, 1);
+            recipe.AddIngredient(ItemID.LifeCrystal, 5);
+            recipe.AddIngredient<Plastic>(30);
+            recipe.AddTile(TileID.Furnaces);
+            recipe.Register();
+        }
     }
 }
