@@ -129,7 +129,7 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
         }
         public override bool PreDraw(ref Color lightColor)
         {
-            Texture2D tex = ModContent.Request<Texture2D>("TheSludgeMod/Content/Projectiles/CoolSwordProj", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+            Texture2D tex = ModContent.Request<Texture2D>("TheSludgeMod/Content/Projectiles/Weapons/CoolSwordProj", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
             Vector2 origin = tex.Size() / 2f;
             SpriteBatch sb = Main.spriteBatch;
 
@@ -152,7 +152,7 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
             sb.End();
             sb.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, RasterizerState.CullNone, null, Main.GameViewMatrix.TransformationMatrix);
             sb.Draw(tex, Projectile.Center - Main.screenPosition, null, lightColor, Projectile.rotation, origin, Projectile.scale, SpriteEffects.None, 0f);
-            Texture2D texture = ModContent.Request<Texture2D>("TheSludgeMod/Content/Projectiles/CoolSwordProjGlowmask", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+            Texture2D texture = ModContent.Request<Texture2D>("TheSludgeMod/Content/Projectiles/Weapons/CoolSwordProjGlowmask", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
             Main.spriteBatch.Draw(texture, Projectile.Center - Main.screenPosition, new Rectangle(0, 0, texture.Width, texture.Height), Color.White, Projectile.rotation, texture.Size() * 0.5f, Projectile.scale, SpriteEffects.None, 0f);
 
             return false;

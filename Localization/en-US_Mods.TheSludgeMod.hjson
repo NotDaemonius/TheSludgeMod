@@ -259,6 +259,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: Shadowvoid Brick
 	}
+
+	ElectronicsTable: {
+		DisplayName: Electronics Table
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -291,6 +296,7 @@ Tiles: {
 	ShadowvoidOre.MapEntry: Shadowvoid Ore
 	ShadowvoidBar.MapEntry: Shadowvoid Bar
 	ShadowvoidBrick.MapEntry: Shadowvoid Brick
+	ElectronicsTable.MapEntry: Electronics Table
 }
 
 WorldGen: {

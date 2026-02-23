@@ -5,6 +5,7 @@ using Terraria.ID;
 using Terraria.GameContent;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Projectiles;
+using TheSludgeMod.Content.Tiles;
 
 namespace TheSludgeMod.Content.Items.Materials
 {
@@ -29,7 +30,7 @@ namespace TheSludgeMod.Content.Items.Materials
             recipe.AddIngredient(ItemID.GoldOre, 1);
             recipe.AddIngredient(ItemID.SandBlock, 5);
             recipe.AddIngredient<Plastic>(5);
-            recipe.AddTile(TileID.Furnaces);
+            recipe.AddTile<ElectronicsTable>();
             recipe.Register();
         }
     }
