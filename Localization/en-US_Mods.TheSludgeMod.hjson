@@ -278,6 +278,11 @@ Projectiles: {
 	TheRulebookProj.DisplayName: The Rulebook Projectile
 	CoolSwordSwingProj.DisplayName: Cool Sword Swing Proj
 	BasherSwing.DisplayName: Basher Swing
+	GungnirBullet.DisplayName: Gungnir Bullet
+	RopeWhipProjectile.DisplayName: Rope Whip Projectile
+	SilkRopeWhipProjectile.DisplayName: Silk Rope Whip Projectile
+	VineRopeWhipProjectile.DisplayName: Vine Rope Whip Projectile
+	WebRopeWhipProjectile.DisplayName: Web Rope Whip Projectile
 }
 
 Tiles: {
