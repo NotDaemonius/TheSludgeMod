@@ -210,6 +210,11 @@ Items: {
 		DisplayName: The Rulebook
 		Tooltip: "[c/773300:Football!]"
 	}
+
+	TinOfSpinach: {
+		Tooltip: ""
+		DisplayName: Tin Of Spinach
+	}
 }
 
 Projectiles: {
