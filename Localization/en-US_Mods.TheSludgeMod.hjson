@@ -224,13 +224,20 @@ Items: {
 			'''
 		DisplayName: Blood Thinner
 	}
+
 	TinOfSpinach: {
 		Tooltip: ""
 		DisplayName: Tin Of Spinach
 	}
+
 	ShadowvoidBrick: {
 		Tooltip: ""
 		DisplayName: Shadowvoid Brick
+	}
+
+	GunGnir: {
+		DisplayName: Gun-Gnir
+		Tooltip: "[c/ffff77:Now with 100% more gun!]"
 	}
 }
 
@@ -251,6 +258,7 @@ Projectiles: {
 	TheRulebookProj.DisplayName: The Rulebook Projectile
 	CoolSwordSwingProj.DisplayName: Cool Sword Swing Proj
 	BasherSwing.DisplayName: Basher Swing
+	GungnirBullet.DisplayName: Gungnir Bullet
 }
 
 Tiles: {
