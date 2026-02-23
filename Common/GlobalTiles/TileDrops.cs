@@ -1,7 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TheSludgeMod.Content.Items;
+using TheSludgeMod.Content.Items.Junk;
 
 namespace TheSludgeMod.Common.GlobalTiles
 {

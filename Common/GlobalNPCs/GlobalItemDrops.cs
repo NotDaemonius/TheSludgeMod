@@ -7,7 +7,8 @@ using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TheSludgeMod.Content.Items;
+using TheSludgeMod.Content.Items.Junk;
+using TheSludgeMod.Content.Items.Weapons;
 
 namespace TheSludgeMod.Common.GlobalNPCs
 {

@@ -1,5 +1,7 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
+using TheSludgeMod.Content.Projectiles;
+using TheSludgeMod.Content.Projectiles.Weapons;
 
 namespace TheSludgeMod.Content.Buffs
 {
@@ -18,7 +20,7 @@ namespace TheSludgeMod.Content.Buffs
             for (int i = 0; i < Main.maxProjectiles; i++)
             {
                 Projectile p = Main.projectile[i];
-                if (p.active && p.owner == player.whoAmI && p.type == ModContent.ProjectileType<Projectiles.SlimeHoardProjectile>())
+                if (p.active && p.owner == player.whoAmI && p.type == ModContent.ProjectileType<SlimeHoardProjectile>())
                 {
                     anyAlive = true;
                     break;
