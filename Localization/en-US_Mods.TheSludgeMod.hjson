@@ -223,10 +223,12 @@ Projectiles: {
 	RecordProj.DisplayName: Record Projectile
 	SquareBombProjectile.DisplayName: Square Bomb Projectile
 	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
-	CassetteProj.DisplayName: Cassette Proj
+	CassetteProj.DisplayName: Cassette Projectile
 	Pea.DisplayName: Pea
 	SlimeHoardProjectile.DisplayName: Slime Hoard Projectile
-	TheRulebookProj.DisplayName: The Rulebook Proj
+	TheRulebookProj.DisplayName: The Rulebook Projectile
+	CoolSwordSwingProj.DisplayName: Cool Sword Swing Proj
+	BasherSwing.DisplayName: Basher Swing
 }
 
 Tiles: {
@@ -243,7 +245,18 @@ WorldGen: {
 
 Buffs: {
 	SlimeHoardBuff: {
-		DisplayName: Slime Hord
+		DisplayName: Slime Hoard
 		Description: 4 slimes for the price of one!
+	}
+}
+
+Configs: {
+	ClientConfig: {
+		DisplayName: Client Config
+
+		DisableScreenShake: {
+			Label: Disable Screen Shake
+			Tooltip: Disables screen shake for all weapons.
+		}
 	}
 }
