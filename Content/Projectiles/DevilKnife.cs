@@ -13,17 +13,16 @@ namespace TheSludgeMod.Content.Projectiles
     {
         public override void SetDefaults()
         {
-            Projectile.width = 8; // The width of projectile hitbox
-            Projectile.height = 8; // The height of projectile hitbox
-            Projectile.aiStyle = ProjAIStyleID.ThrownProjectile; // The ai style of the projectile, please reference the source code of Terraria
-            Projectile.friendly = true; // Can the projectile deal damage to enemies?
-            Projectile.hostile = false; // Can the projectile deal damage to the player?
-            Projectile.timeLeft = 120; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
-            Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
-            Projectile.tileCollide = true; // Can the projectile collide with tiles?
-            AIType = ProjectileID.Bullet; // Act exactly like default Bullet
+            Projectile.width = 8;
+            Projectile.height = 8;
+            Projectile.aiStyle = ProjAIStyleID.ThrownProjectile;
+            Projectile.friendly = true;
+            Projectile.hostile = false;
+            Projectile.timeLeft = 120;
+            Projectile.ignoreWater = true;
+            Projectile.tileCollide = true;
+            AIType = ProjectileID.Bullet;
         }
-
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (!target.friendly && Random.Shared.Next(0, 5) == 4)

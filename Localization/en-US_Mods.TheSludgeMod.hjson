@@ -196,19 +196,19 @@ Items: {
 		Tooltip: ""
 	}
 
-	SlimeHoard: {
-		DisplayName: Slime Hord
-		Tooltip: Summons 4 slimes for the price of one!
-	}
-
-	SlimeHord: {
-		DisplayName: Slime Hord
+	SlimeHoardStaff: {
+		DisplayName: Slime Hoard Staff
 		Tooltip: Summons 4 slimes for the price of one!
 	}
 
 	ToySword: {
 		DisplayName: Toy Sword
 		Tooltip: Batteries not included.
+	}
+
+	TheRulebook: {
+		DisplayName: The Rulebook
+		Tooltip: "[c/773300:Football!]"
 	}
 }
 
@@ -223,9 +223,12 @@ Projectiles: {
 	RecordProj.DisplayName: Record Projectile
 	SquareBombProjectile.DisplayName: Square Bomb Projectile
 	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
-	CassetteProj.DisplayName: Cassette Proj
+	CassetteProj.DisplayName: Cassette Projectile
 	Pea.DisplayName: Pea
 	SlimeHoardProjectile.DisplayName: Slime Hoard Projectile
+	TheRulebookProj.DisplayName: The Rulebook Projectile
+	CoolSwordSwingProj.DisplayName: Cool Sword Swing Proj
+	BasherSwing.DisplayName: Basher Swing
 }
 
 Tiles: {
@@ -242,7 +245,18 @@ WorldGen: {
 
 Buffs: {
 	SlimeHoardBuff: {
-		DisplayName: Slime Hord
+		DisplayName: Slime Hoard
 		Description: 4 slimes for the price of one!
+	}
+}
+
+Configs: {
+	ClientConfig: {
+		DisplayName: Client Config
+
+		DisableScreenShake: {
+			Label: Disable Screen Shake
+			Tooltip: Disables screen shake for all weapons.
+		}
 	}
 }

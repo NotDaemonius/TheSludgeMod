@@ -21,7 +21,6 @@ namespace TheSludgeMod.Common.Systems
             On_Player.Update += On_Player_Update;
             On_PlayerDrawLayers.DrawPlayer_36_CTG += On_PlayerDrawLayers_DrawPlayer_36_CTG;
         }
-        //hii
         private void On_PlayerDrawLayers_DrawPlayer_36_CTG(On_PlayerDrawLayers.orig_DrawPlayer_36_CTG orig, ref PlayerDrawSet drawinfo)
         {
             if (drawinfo.shadow == 0f && drawinfo.drawPlayer.ownedLargeGems > 0)
@@ -29,6 +28,7 @@ namespace TheSludgeMod.Common.Systems
                 bool flag = false;
                 BitsByte ownedLargeGems = drawinfo.drawPlayer.ownedLargeGems;
                 float num = 0f;
+
                 for (int i = 0; i < 8; i++)
                 {
                     if (ownedLargeGems[i])
@@ -36,8 +36,10 @@ namespace TheSludgeMod.Common.Systems
                         num += 1f;
                     }
                 }
+
                 float num2 = 1f - num * 0.06f;
                 float num3 = (num - 1f) * 4f;
+
                 switch ((int)num)
                 {
                     case 2:
@@ -62,32 +64,41 @@ namespace TheSludgeMod.Common.Systems
                         num3 += 0f;
                         break;
                 }
+
                 float num4 = (float)drawinfo.drawPlayer.miscCounter / 300f * 6.2831855f;
+
                 if (num > 0f)
                 {
                     float num5 = 6.2831855f / num;
                     float num6 = 0f;
                     Vector2 one = new Vector2(1.3f, 0.65f);
+
                     if (!flag)
                     {
                         one = Vector2.One;
                     }
+
                     List<DrawData> list = new List<DrawData>();
+
                     for (int j = 0; j < 8; j++)
                     {
                         if (!ownedLargeGems[j])
                         {
                             num6 += 1f;
                         }
+
                         else
                         {
                             Vector2 vector = (num4 + num5 * ((float)j - num6)).ToRotationVector2();
                             float num7 = num2;
+
                             if (flag)
                             {
                                 num7 = MathHelper.Lerp(num2 * 0.7f, 1f, vector.Y / 2f + 0.5f);
                             }
+
                             Texture2D value;
+
                             if (j == 7)
                             {
                                  value = (Texture2D)ModContent.Request<Texture2D>("TheSludgeMod/Content/Items/RoseQuartz/GiantRoseQuartz", AssetRequestMode.ImmediateLoad);
@@ -95,14 +106,17 @@ namespace TheSludgeMod.Common.Systems
                             {
                                  value = TextureAssets.Gem[j].Value;
                             }
+
                             DrawData item = new DrawData(value, new Vector2((float)((int)(drawinfo.Position.X - Main.screenPosition.X + (float)(drawinfo.drawPlayer.width / 2))), (float)((int)(drawinfo.Position.Y - Main.screenPosition.Y + (float)drawinfo.drawPlayer.height - 80f))) + vector * one * num3, null, new Color(250, 250, 250, (int)(Main.mouseTextColor / 2)), 0f, value.Size() / 2f, ((float)Main.mouseTextColor / 1000f + 0.8f) * num7, SpriteEffects.None, 0f);
                             list.Add(item);
                         }
                     }
+
                     if (flag)
                     {
                         list.Sort(new Comparison<DrawData>(DelegateMethods.CompareDrawSorterByYScale));
                     }
+
                     drawinfo.DrawDataCache.AddRange(list);
                 }
             }

@@ -18,14 +18,18 @@ namespace TheSludgeMod.Common.Systems
             int itemsToPlaceInFrozenChestsChoice = 0;
             int itemsPlaced = 0;
             int maxItems = 6;
+
             for (int chestIndex = 0; chestIndex < Main.maxChests; chestIndex++)
             {
                 Chest chest = Main.chest[chestIndex];
+
                 if (chest == null)
                 {
                     continue;
                 }
+
                 Tile chestTile = Main.tile[chest.x, chest.y];
+
                 if (chestTile.TileType == TileID.Containers && chestTile.TileFrameX == 4 * 36)
                 {
                     if (chest.item[0].type == ItemID.None)
@@ -45,6 +49,7 @@ namespace TheSludgeMod.Common.Systems
                         }
                     }
                 }
+
                 if (itemsPlaced >= maxItems)
                 {
                     break;

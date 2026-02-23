@@ -12,7 +12,6 @@ namespace TheSludgeMod.Content.Items
 		public override void SetDefaults()
 		{
 			Item.damage = 25;
-			
 			Item.width = 32;
 			Item.height = 32;
 			Item.useTime = 15;
@@ -32,7 +31,6 @@ namespace TheSludgeMod.Content.Items
         {
             return player.ownedProjectileCounts[Item.shoot] < 1;
         }
-
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();

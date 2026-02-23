@@ -10,7 +10,6 @@ namespace TheSludgeMod.Content.Items
 {
 	public class SpeckOfDust : ModItem
 	{
-		
 		public override void SetStaticDefaults() 
 		{
 			Item.ResearchUnlockCount = 2;

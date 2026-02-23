@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace TheSludgeMod.Content.Items
 {
-    public class SlimeHord : ModItem
+    public class SlimeHoardStaff : ModItem
     {
         public override void SetDefaults()
         {
@@ -20,21 +20,16 @@ namespace TheSludgeMod.Content.Items
             Item.value = Item.buyPrice(0, 5, 0, 0);
             Item.rare = ItemRarityID.Orange;
             Item.UseSound = SoundID.Item44;
-
             Item.damage = 32;
             Item.knockBack = 1f;
             Item.shoot = ModContent.ProjectileType<Projectiles.SlimeHoardProjectile>();
             Item.shootSpeed = 10f;
             Item.buffType = ModContent.BuffType<Buffs.SlimeHoardBuff>();
         }
-
-
-
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             player.AddBuff(Item.buffType, 2);
 
-            // Spawn 4 slimes, slightly spread apart so they don't stack exactly
             for (int i = 0; i < 4; i++)
             {
                 Vector2 spawnPos = position + new Vector2(i * 20f - 30f, 0f);

@@ -15,13 +15,12 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
             Item.CloneDefaults(ItemID.LargeSapphire);
           
         }
-
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ModContent.ItemType<RoseQuartz>(), 15)
-                .AddTile(TileID.Anvils)
-                .Register();
+            .AddIngredient(ModContent.ItemType<RoseQuartz>(), 15)
+            .AddTile(TileID.Anvils)
+            .Register();
         }
     }
 }

@@ -9,16 +9,14 @@ using Terraria.ModLoader;
 
 namespace TheSludgeMod.Common.GlobalItems
 {
-    public class ImSuchAChud : GlobalItem
+    public class HPPotionBuff : GlobalItem
     {
         public override void OnConsumeItem(Item item, Player player)
         {
             if (item.type == ItemID.LesserHealingPotion)
             {
-                player.Heal(25);
+                player.Heal(24);
             }
         }
-
-
     }
 }

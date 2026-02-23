@@ -15,14 +15,13 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
             Item.CloneDefaults(ItemID.EmeraldStoneBlock);
             Item.createTile = ModContent.TileType<RoseQuartzStoneTile>();
         }
-
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ModContent.ItemType<RoseQuartz>(), 1)
-                .AddIngredient(ItemID.StoneBlock, 1)
-                .AddTile(TileID.HeavyWorkBench)
-                .Register();
+            .AddIngredient(ModContent.ItemType<RoseQuartz>(), 1)
+            .AddIngredient(ItemID.StoneBlock, 1)
+            .AddTile(TileID.HeavyWorkBench)
+            .Register();
         }
     }
 }

@@ -7,7 +7,6 @@ namespace TheSludgeMod.Content.Projectiles
 {
     public class RecordProj : ModProjectile
     {
-
         public override void SetDefaults()
         {
             Projectile.CloneDefaults(ProjectileID.ThornChakram);

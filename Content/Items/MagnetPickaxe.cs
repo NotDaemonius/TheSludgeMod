@@ -19,7 +19,6 @@ namespace TheSludgeMod.Content.Items
             Item.DamageType = DamageClass.Melee;
             Item.width = 40;
             Item.height = 40;
-
             Item.useTime = 10;
             Item.useAnimation = 10;
             Item.useStyle = ItemUseStyleID.Swing;
@@ -28,11 +27,9 @@ namespace TheSludgeMod.Content.Items
             Item.rare = ItemRarityID.Orange;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
-
             Item.pick = 115; 
             Item.attackSpeedOnlyAffectsWeaponAnimation = true; 
         }
-
         public override void HoldItem(Player player)
         {
             foreach (Item item in Main.ActiveItems)
