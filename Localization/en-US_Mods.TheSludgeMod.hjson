@@ -229,6 +229,26 @@ Items: {
 		Tooltip: ""
 		DisplayName: Tin Of Spinach
 	}
+
+	RopeWhip: {
+		DisplayName: Rope Whip
+		Tooltip: ""
+	}
+
+	SilkRopeWhip: {
+		DisplayName: Silk Rope Whip
+		Tooltip: ""
+	}
+
+	VineRopeWhip: {
+		DisplayName: Vine Rope Whip
+		Tooltip: ""
+	}
+
+	WebRopeWhip: {
+		DisplayName: Web Rope Whip
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -248,6 +268,10 @@ Projectiles: {
 	TheRulebookProj.DisplayName: The Rulebook Projectile
 	CoolSwordSwingProj.DisplayName: Cool Sword Swing Proj
 	BasherSwing.DisplayName: Basher Swing
+	RopeWhipProjectile.DisplayName: Rope Whip Projectile
+	SilkRopeWhipProjectile.DisplayName: Silk Rope Whip Projectile
+	VineRopeWhipProjectile.DisplayName: Vine Rope Whip Projectile
+	WebRopeWhipProjectile.DisplayName: Web Rope Whip Projectile
 }
 
 Tiles: {
