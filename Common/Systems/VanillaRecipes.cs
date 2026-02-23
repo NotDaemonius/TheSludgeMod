@@ -31,6 +31,7 @@ namespace YourModName
 
             Recipe kwad = Recipe.Create(ItemID.JimsDrone);
             kwad.AddIngredient(ItemID.Ectoplasm, 1);
+            kwad.AddIngredient<Electronics>(1);
             kwad.AddIngredient<Battery>(3);
             kwad.AddIngredient(ItemID.TitaniumBar, 5);
             kwad.AddIngredient<Plastic>(20);
@@ -38,8 +39,10 @@ namespace YourModName
             kwad.Register();
 
             Recipe FPV = Recipe.Create(ItemID.JimsDroneVisor);
+            kwad.AddIngredient<Electronics>(1);
             FPV.AddIngredient<Battery>(1);
             FPV.AddIngredient(ItemID.Ectoplasm, 1);
+            FPV.AddIngredient(ItemID.Glass, 10);
             FPV.AddIngredient<Plastic>(10);
             FPV.AddTile(TileID.HeavyWorkBench);
             FPV.Register();

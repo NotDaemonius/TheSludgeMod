@@ -213,11 +213,15 @@ Items: {
 
 	Electronics: {
 		DisplayName: Electronics
-		Tooltip: ""
+		Tooltip: "[c/00ff00:People are becoming scientific]"
 	}
 
 	BloodThinner: {
-		Tooltip: ""
+		Tooltip:
+			'''
+			[c/ff0000:Doubles the length of potion sickness, but]
+			[c/ffff77:triples] [c/ff0000:the effectiveness of health potions.]
+			'''
 		DisplayName: Blood Thinner
 	}
 }
