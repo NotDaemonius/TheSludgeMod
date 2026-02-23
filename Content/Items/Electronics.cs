@@ -8,7 +8,7 @@ using TheSludgeMod.Content.Projectiles;
 
 namespace TheSludgeMod.Content.Items
 {
-	public class Plastic : ModItem
+	public class Electronics : ModItem
 	{
 		public override void SetStaticDefaults() 
 		{
@@ -18,13 +18,16 @@ namespace TheSludgeMod.Content.Items
 		{
 			Item.width = 16;
 			Item.height = 16;
-			Item.rare = ItemRarityID.White;
+			Item.rare = ItemRarityID.Green;
 		}
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(5);
-            recipe.AddIngredient(ItemID.FossilOre, 1);
-            recipe.AddTile(TileID.GlassKiln);
+            Recipe recipe = CreateRecipe(2);
+            recipe.AddIngredient(ItemID.CopperOre, 1);
+            recipe.AddIngredient(ItemID.GoldOre, 1);
+            recipe.AddIngredient(ItemID.SandBlock, 5);
+            recipe.AddIngredient<Plastic>(5);
+            recipe.AddTile(TileID.Furnaces);
             recipe.Register();
         }
     }

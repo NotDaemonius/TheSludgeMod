@@ -210,6 +210,16 @@ Items: {
 		DisplayName: The Rulebook
 		Tooltip: "[c/773300:Football!]"
 	}
+
+	Electronics: {
+		DisplayName: Electronics
+		Tooltip: ""
+	}
+
+	BloodThinner: {
+		Tooltip: ""
+		DisplayName: Blood Thinner
+	}
 }
 
 Projectiles: {
