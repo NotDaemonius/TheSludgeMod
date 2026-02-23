@@ -26,6 +26,7 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.autoReuse = true;
             Item.shoot = ModContent.ProjectileType<Pea>(); 
             Item.shootSpeed = 25f;
+            Item.crit = 29;
         }
     }
 }

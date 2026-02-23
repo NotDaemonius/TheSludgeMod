@@ -28,6 +28,7 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.noUseGraphic = true;
             Item.shoot = ModContent.ProjectileType<BasherSwing>();
             Item.shootSpeed = 8f;
+            Item.crit = 50;
         }
 
         public override void AddRecipes()

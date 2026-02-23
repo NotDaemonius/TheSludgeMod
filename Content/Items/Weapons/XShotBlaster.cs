@@ -27,6 +27,7 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.shoot = ProjectileID.Bullet; 
             Item.shootSpeed = 16f;
             Item.useAmmo = AmmoID.Bullet;
+            Item.crit = 16;
         }
         public override bool CanConsumeAmmo(Item ammo, Player player)
         {

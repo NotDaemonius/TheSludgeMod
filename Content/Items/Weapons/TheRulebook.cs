@@ -25,6 +25,7 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.shoot = ModContent.ProjectileType<TheRulebookProj>();
             Item.shootSpeed = 8f;
             Item.UseSound = SoundID.Item43;
+            Item.crit = 56;
         }
         public override void AddRecipes()
         {

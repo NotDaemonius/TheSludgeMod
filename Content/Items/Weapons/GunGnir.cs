@@ -24,6 +24,7 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.autoReuse = true;
             Item.shoot = ModContent.ProjectileType<GungnirBullet>();
             Item.shootSpeed = 32f;
+            Item.crit = 12;
         }
 
         public override void AddRecipes()
