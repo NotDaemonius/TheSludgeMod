@@ -314,6 +314,26 @@ Items: {
 		DisplayName: Murder Megaphone
 		Tooltip: ""
 	}
+
+	ZincOre: {
+		DisplayName: Zinc Ore
+		Tooltip: ""
+	}
+
+	NickelOre: {
+		DisplayName: Nickel Ore
+		Tooltip: ""
+	}
+
+	AluminiumOre: {
+		DisplayName: Aluminium Ore
+		Tooltip: ""
+	}
+
+	IridiumOre: {
+		DisplayName: Iridium Ore
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -343,13 +363,16 @@ Projectiles: {
 }
 
 Tiles: {
-	RoseQuartzTile.MapEntry: Rose Quartz Tile
-	RoseQuartzStoneTile.MapEntry: Rose Quartz Stone Tile
+	RoseQuartzTile.MapEntry: Rose Quartz
+	RoseQuartzStoneTile.MapEntry: Rose Quartz Stone
 	ShadowvoidOre.MapEntry: Shadowvoid Ore
 	ShadowvoidBar.MapEntry: Shadowvoid Bar
 	ShadowvoidBrick.MapEntry: Shadowvoid Brick
 	ElectronicsTable.MapEntry: Electronics Table
-	RoseQuartzGemsparkBlockTile.MapEntry: Rose Quartz Gemspark Block Tile
+	ZincOreTile.MapEntry: Zinc Ore
+	NickelOreTile.MapEntry: Nickel Ore
+	AluminiumOreTile.MapEntry: Aluminium Ore
+	IridiumOreTile.MapEntry: Iridium Ore
 }
 
 WorldGen: {
