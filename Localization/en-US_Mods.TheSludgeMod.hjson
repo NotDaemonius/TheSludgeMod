@@ -549,6 +549,21 @@ Items: {
 		DisplayName: Iridium Watch
 		Tooltip: ""
 	}
+
+	AluminiumChandelier: {
+		DisplayName: Aluminium Chandelier
+		Tooltip: ""
+	}
+
+	IridiumChandelier: {
+		DisplayName: Iridium Chandelier
+		Tooltip: ""
+	}
+
+	ZincChandelier: {
+		DisplayName: Zinc Chandelier
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
