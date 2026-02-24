@@ -334,6 +334,26 @@ Items: {
 		DisplayName: Iridium Ore
 		Tooltip: ""
 	}
+
+	ZincBar: {
+		DisplayName: Zinc Bar
+		Tooltip: ""
+	}
+
+	AluminiumBar: {
+		DisplayName: Aluminium Bar
+		Tooltip: ""
+	}
+
+	IridiumBar: {
+		DisplayName: Iridium Bar
+		Tooltip: ""
+	}
+
+	NickelBar: {
+		DisplayName: Nickel Bar
+		Tooltip: ""
+	}
 }
 
 Projectiles: {

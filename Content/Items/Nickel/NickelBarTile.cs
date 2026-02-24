@@ -11,9 +11,9 @@ using Terraria.WorldBuilding;
 using Terraria.ObjectData;
 using TheSludgeMod.Content.Projectiles;
 
-namespace TheSludgeMod.Content.Tiles
+namespace TheSludgeMod.Content.Items.Nickel
 {
-	public class ShadowvoidBar : ModTile
+	public class NickelBarTile : ModTile
 	{
 		public override void SetStaticDefaults()
 		{
@@ -29,13 +29,7 @@ namespace TheSludgeMod.Content.Tiles
 
 			VanillaFallbackOnModDeletion = TileID.MetalBars;
 
-			AddMapEntry(new Color(51, 0, 255));
-		}
-		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
-		{
-    		r = 0.2f;
-    		g = 0f;
-    		b = 1f;
+			AddMapEntry(new Color(130, 156, 114));
 		}
 		public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak) {
 
