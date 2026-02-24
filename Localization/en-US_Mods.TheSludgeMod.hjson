@@ -564,6 +564,21 @@ Items: {
 		DisplayName: Zinc Chandelier
 		Tooltip: ""
 	}
+
+	NickelAnvil: {
+		DisplayName: Nickel Anvil
+		Tooltip: ""
+	}
+
+	AluminiumBullet: {
+		DisplayName: Aluminium Bullet
+		Tooltip: ""
+	}
+
+	IridiumCrownHead: {
+		DisplayName: Iridium Crown
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -607,6 +622,7 @@ Tiles: {
 	NickelOreTile.MapEntry: Nickel Ore
 	AluminiumOreTile.MapEntry: Aluminium Ore
 	IridiumOreTile.MapEntry: Iridium Ore
+	NickelAnvilTile.MapEntry: Nickel Anvil Tile
 }
 
 WorldGen: {

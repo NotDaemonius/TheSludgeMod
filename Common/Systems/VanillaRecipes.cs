@@ -96,6 +96,44 @@ namespace TheSludgeMod.Common.Systems
             iridiumgps.AddIngredient(ItemID.Compass, 1);
             iridiumgps.AddTile(TileID.TinkerersWorkbench);
             iridiumgps.Register();
+
+            Recipe iridiumsc = Recipe.Create(ItemID.SlimeCrown);
+            iridiumsc.AddIngredient(ItemID.Gel, 20);
+            iridiumsc.AddIngredient<IridiumCrownHead>(1);
+            iridiumsc.AddTile(TileID.DemonAltar);
+            iridiumsc.Register();
+
+            Recipe iridiummm = Recipe.Create(ItemID.MagicMirror);
+            iridiummm.AddIngredient(ItemID.Glass, 10);
+            iridiummm.AddIngredient<IridiumBar>(8);
+            iridiummm.AddIngredient(ItemID.Diamond, 3);
+            iridiummm.AddTile(TileID.Furnaces);
+            iridiummm.Register();
+
+            Recipe iridiumt = Recipe.Create(ItemID.Throne);
+            iridiumt.AddIngredient<IridiumBar>(30);
+            iridiumt.AddIngredient(ItemID.Silk, 20);
+            iridiumt.AddTile(TileID.Anvils);
+            iridiumt.Register();
+
+            Recipe iridiumffc = Recipe.Create(ItemID.FlinxFurCoat);
+            iridiumffc.AddIngredient(ItemID.Silk, 10);
+            iridiumffc.AddIngredient(ItemID.FlinxFur, 10);
+            iridiumffc.AddIngredient<IridiumBar>(8);
+            iridiumffc.AddTile(TileID.Loom);
+            iridiumffc.Register();
+
+            Recipe iridiumfs = Recipe.Create(ItemID.FlinxStaff);
+            iridiumfs.AddIngredient<IridiumBar>(10);
+            iridiumfs.AddIngredient(ItemID.FlinxFur, 6);
+            iridiumfs.AddTile(TileID.WorkBenches);
+            iridiumfs.Register();
+
+            Recipe iridiumpc = Recipe.Create(ItemID.PeaceCandle);
+            iridiumpc.AddIngredient<IridiumBar>(2);
+            iridiumpc.AddIngredient(ItemID.PinkTorch, 1);
+            iridiumpc.AddTile(TileID.WorkBenches);
+            iridiumpc.Register();
         }
     }
 }
