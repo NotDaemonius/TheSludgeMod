@@ -354,6 +354,126 @@ Items: {
 		DisplayName: Nickel Bar
 		Tooltip: ""
 	}
+
+	ZincPickaxe: {
+		DisplayName: Zinc Pickaxe
+		Tooltip: ""
+	}
+
+	AluminiumPickaxe: {
+		DisplayName: Aluminium Pickaxe
+		Tooltip: ""
+	}
+
+	IridiumPickaxe: {
+		DisplayName: Iridium Pickaxe
+		Tooltip: ""
+	}
+
+	NickelPickaxe: {
+		DisplayName: Nickel Pickaxe
+		Tooltip: ""
+	}
+
+	ZincAxe: {
+		DisplayName: Zinc Axe
+		Tooltip: ""
+	}
+
+	AluminiumAxe: {
+		DisplayName: Aluminium Axe
+		Tooltip: ""
+	}
+
+	IridiumAxe: {
+		DisplayName: Iridium Axe
+		Tooltip: ""
+	}
+
+	NickelAxe: {
+		DisplayName: Nickel Axe
+		Tooltip: ""
+	}
+
+	ZincHammer: {
+		DisplayName: Zinc Hammer
+		Tooltip: ""
+	}
+
+	AluminiumHammer: {
+		DisplayName: Aluminium Hammer
+		Tooltip: ""
+	}
+
+	IridiumHammer: {
+		DisplayName: Iridium Hammer
+		Tooltip: ""
+	}
+
+	NickelHammer: {
+		DisplayName: Nickel Hammer
+		Tooltip: ""
+	}
+
+	ZincBroadsword: {
+		DisplayName: Zinc Broadsword
+		Tooltip: ""
+	}
+
+	AluminiumBroadsword: {
+		DisplayName: Aluminium Broadsword
+		Tooltip: ""
+	}
+
+	IridiumBroadsword: {
+		DisplayName: Iridium Broadsword
+		Tooltip: ""
+	}
+
+	NickelBroadsword: {
+		DisplayName: Nickel Broadsword
+		Tooltip: ""
+	}
+
+	ZincBow: {
+		DisplayName: Zinc Bow
+		Tooltip: ""
+	}
+
+	AluminiumBow: {
+		DisplayName: Aluminium Bow
+		Tooltip: ""
+	}
+
+	IridiumBow: {
+		DisplayName: Iridium Bow
+		Tooltip: ""
+	}
+
+	NickelBow: {
+		DisplayName: Nickel Bow
+		Tooltip: ""
+	}
+
+	ZincShortsword: {
+		DisplayName: Zinc Shortsword
+		Tooltip: ""
+	}
+
+	AluminiumShortsword: {
+		DisplayName: Aluminium Shortsword
+		Tooltip: ""
+	}
+
+	IridiumShortsword: {
+		DisplayName: Iridium Shortsword
+		Tooltip: ""
+	}
+
+	NickelShortsword: {
+		DisplayName: Nickel Shortsword
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -380,6 +500,10 @@ Projectiles: {
 	WebRopeWhipProjectile.DisplayName: Web Rope Whip Projectile
 	ScythophantProj.DisplayName: Scythophant Projectile
 	ScythophantProj2.DisplayName: Scythophant Orb Projectile
+	ZincShortswordProj.DisplayName: Zinc Shortsword Proj
+	AluminiumShortswordProj.DisplayName: Aluminium Shortsword Proj
+	IridiumShortswordProj.DisplayName: Iridium Shortsword Proj
+	NickelShortswordProj.DisplayName: Nickel Shortsword Proj
 }
 
 Tiles: {

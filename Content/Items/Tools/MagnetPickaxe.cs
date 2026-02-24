@@ -28,7 +28,8 @@ namespace TheSludgeMod.Content.Items.Tools
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.pick = 115; 
-            Item.attackSpeedOnlyAffectsWeaponAnimation = true; 
+            Item.attackSpeedOnlyAffectsWeaponAnimation = true;
+            Item.useTurn = true;
         }
         public override void HoldItem(Player player)
         {
