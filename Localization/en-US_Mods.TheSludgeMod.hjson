@@ -474,6 +474,81 @@ Items: {
 		DisplayName: Nickel Shortsword
 		Tooltip: ""
 	}
+
+	ZincArmorBody: {
+		DisplayName: Zinc Chainmail
+		Tooltip: ""
+	}
+
+	ZincArmorHead: {
+		DisplayName: Zinc Helmet
+		Tooltip: ""
+	}
+
+	ZincArmorLegs: {
+		DisplayName: Zinc Greaves
+		Tooltip: ""
+	}
+
+	NickelArmorBody: {
+		DisplayName: Nickel Chainmail
+		Tooltip: ""
+	}
+
+	NickelArmorHead: {
+		DisplayName: Nickel Helmet
+		Tooltip: ""
+	}
+
+	NickelArmorLegs: {
+		DisplayName: Nickel Greaves
+		Tooltip: ""
+	}
+
+	AluminiumArmorBody: {
+		Tooltip: ""
+		DisplayName: Aluminium Chainmail
+	}
+
+	AluminiumArmorHead: {
+		DisplayName: Aluminium Helmet
+		Tooltip: ""
+	}
+
+	AluminiumArmorLegs: {
+		DisplayName: Aluminium Greaves
+		Tooltip: ""
+	}
+
+	IridiumArmorBody: {
+		DisplayName: Iridium Chainmail
+		Tooltip: ""
+	}
+
+	IridiumArmorHead: {
+		DisplayName: Iridium Helmet
+		Tooltip: ""
+	}
+
+	IridiumArmorLegs: {
+		DisplayName: Iridium Greaves
+		Tooltip: ""
+	}
+
+	ZincWatch: {
+		DisplayName: Zinc Watch
+		Tooltip: ""
+	}
+
+	AluminiumWatch: {
+		DisplayName: Aluminium Watch
+		Tooltip: ""
+	}
+
+	IridiumWatch: {
+		DisplayName: Iridium Watch
+		Tooltip: ""
+	}
 }
 
 Projectiles: {

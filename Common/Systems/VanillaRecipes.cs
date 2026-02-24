@@ -2,6 +2,9 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Items.Materials;
+using TheSludgeMod.Content.Items.Zinc;
+using TheSludgeMod.Content.Items.Aluminium;
+using TheSludgeMod.Content.Items.Iridium;
 using TheSludgeMod.Content.Tiles;
 
 namespace TheSludgeMod.Common.Systems
@@ -54,6 +57,45 @@ namespace TheSludgeMod.Common.Systems
             fastclock.AddIngredient(ItemID.PixieDust, 10);
             fastclock.AddTile<ElectronicsTable>();
             fastclock.Register();
+
+            Recipe fastclock1 = Recipe.Create(ItemID.FastClock);
+            fastclock1.AddIngredient(ItemID.PlatinumWatch, 1);
+            fastclock1.AddIngredient<Battery>(3);
+            fastclock1.AddIngredient(ItemID.PixieDust, 10);
+            fastclock1.AddTile<ElectronicsTable>();
+            fastclock1.Register();
+
+            Recipe fastclock2 = Recipe.Create(ItemID.FastClock);
+            fastclock2.AddIngredient<IridiumWatch>(1);
+            fastclock2.AddIngredient<Battery>(3);
+            fastclock2.AddIngredient(ItemID.PixieDust, 10);
+            fastclock2.AddTile<ElectronicsTable>();
+            fastclock2.Register();
+
+            Recipe zinc5 = Recipe.Create(ItemID.Timer5Second);
+            zinc5.AddIngredient(ItemID.Wire, 1);
+            zinc5.AddIngredient<ZincWatch>(1);
+            zinc5.AddTile(TileID.Anvils);
+            zinc5.Register();
+
+            Recipe aluminium3 = Recipe.Create(ItemID.Timer3Second);
+            aluminium3.AddIngredient(ItemID.Wire, 1);
+            aluminium3.AddIngredient<AluminiumWatch>(1);
+            aluminium3.AddTile(TileID.Anvils);
+            aluminium3.Register();
+
+            Recipe iridium1 = Recipe.Create(ItemID.Timer1Second);
+            iridium1.AddIngredient(ItemID.Wire, 1);
+            iridium1.AddIngredient<IridiumWatch>(1);
+            iridium1.AddTile(TileID.Anvils);
+            iridium1.Register();
+
+            Recipe iridiumgps = Recipe.Create(ItemID.GPS);
+            iridiumgps.AddIngredient<IridiumWatch>(1);
+            iridiumgps.AddIngredient(ItemID.DepthMeter, 1);
+            iridiumgps.AddIngredient(ItemID.Compass, 1);
+            iridiumgps.AddTile(TileID.TinkerersWorkbench);
+            iridiumgps.Register();
         }
     }
 }
