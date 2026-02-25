@@ -15,6 +15,7 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
             Projectile.width = 8;
             Projectile.height = 8;
             Projectile.friendly = true;
+            Projectile.aiStyle = ProjAIStyleID.Arrow;
             Projectile.hostile = false;
             Projectile.timeLeft = 600;
             Projectile.ignoreWater = true;

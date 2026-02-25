@@ -11,16 +11,55 @@ using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Items.RoseQuartz;
+using TheSludgeMod.Content.Items.Weapons;
 
 namespace TheSludgeMod.Common.Systems
 {
     public class FixLargeGems :  ModSystem
     {
-        public override void Load()
-        {
+        public override void Load() {
+
+
+            On_Player.ItemCheck_ApplyHoldStyle += On_Player_ItemCheck_ApplyHoldStyle;
             On_Player.Update += On_Player_Update;
+
             On_PlayerDrawLayers.DrawPlayer_36_CTG += On_PlayerDrawLayers_DrawPlayer_36_CTG;
         }
+
+        private void On_Player_ItemCheck_ApplyHoldStyle(On_Player.orig_ItemCheck_ApplyHoldStyle orig, Player self, float mountOffset, Item sItem, Rectangle heldItemFrame)
+        {
+            Main.NewText("AHH");
+            bool flag = !self.isDisplayDollOrInanimate;
+            if (true)
+            {
+
+                self.itemRotation = 0f;
+                self.itemLocation.X = sItem.position.X + (float)self.width * 0.5f - (float)(16 * self.direction);
+                self.itemLocation.Y = self.position.Y + 22f + mountOffset;
+                if (flag)
+                {
+                    self.fallStart = (int)(self.position.Y / 16f);
+                }
+                if (self.gravDir == -1f)
+                {
+                    self.itemRotation = -self.itemRotation;
+                    self.itemLocation.Y = self.position.Y + (float)self.height + (self.position.Y - self.itemLocation.Y);
+                    if (self.velocity.Y < -2f && !self.controlDown)
+                    {
+                        self.velocity.Y = -2f;
+                        return;
+                    }
+                }
+                else if (self.velocity.Y > 2f && !self.controlDown)
+                {
+                    self.velocity.Y = 2f;
+                    return;
+                }
+            }
+
+            orig.Invoke(self, mountOffset, sItem, heldItemFrame);
+        }
+
         private void On_PlayerDrawLayers_DrawPlayer_36_CTG(On_PlayerDrawLayers.orig_DrawPlayer_36_CTG orig, ref PlayerDrawSet drawinfo)
         {
             if (drawinfo.shadow == 0f && drawinfo.drawPlayer.ownedLargeGems > 0)

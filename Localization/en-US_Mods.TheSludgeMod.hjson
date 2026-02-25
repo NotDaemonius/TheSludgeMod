@@ -259,6 +259,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: Shadowvoid Brick
 	}
+
+	TungstenEnforcedUmbrella: {
+		DisplayName: Tungsten Enforced Umbrella
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
