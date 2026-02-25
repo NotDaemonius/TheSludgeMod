@@ -24,7 +24,7 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.DamageType = DamageClass.Melee;
             Item.damage = 6;
             Item.knockBack = 8;
-            Item.crit = 6;
+            Item.crit = 12;
             Item.value = Item.buyPrice(copper: 40);
             Item.rare = ItemRarityID.White;
             Item.UseSound = SoundID.Item1;

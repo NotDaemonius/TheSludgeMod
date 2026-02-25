@@ -25,12 +25,13 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.autoReuse = true; 
             Item.DamageType = DamageClass.Ranged;
-            Item.damage = 182;
+            Item.damage = 112;
             Item.knockBack = 5f;
             Item.noMelee = true;
             Item.UseSound = SoundID.Item14;
             Item.shoot = ProjectileID.CannonballFriendly;
             Item.shootSpeed = 5f;
+            Item.crit = 96;
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {

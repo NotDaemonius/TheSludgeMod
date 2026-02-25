@@ -29,7 +29,7 @@ namespace TheSludgeMod.Content.Tiles
 
 			VanillaFallbackOnModDeletion = TileID.MetalBars;
 
-			AddMapEntry(new Color(200, 200, 200));
+			AddMapEntry(new Color(51, 0, 255));
 		}
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
 		{

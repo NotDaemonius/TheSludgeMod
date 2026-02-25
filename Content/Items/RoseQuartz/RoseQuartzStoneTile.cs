@@ -32,11 +32,6 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
             VanillaFallbackOnModDeletion = TileID.Emerald;
             HitSound = SoundID.Tink;
         }
-        public override bool IsTileBiomeSightable(int i, int j, ref Color sightColor)
-        {
-            sightColor = new Color(205, 113, 151);
-            return true;
-        }
         public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             return new List<Item>() { new Item(ModContent.ItemType<RoseQuartz>()) };

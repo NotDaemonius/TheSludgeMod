@@ -28,6 +28,7 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.noUseGraphic = true;
             Item.shoot = ModContent.ProjectileType<CoolSwordSwingProj>();
             Item.shootSpeed = 12f;
+            Item.crit = 44;
         }
 
         public override void AddRecipes()

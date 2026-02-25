@@ -104,7 +104,7 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
         }
         public override bool PreDraw(ref Color lightColor)
         {
-            Texture2D tex = ModContent.Request<Texture2D>("TheSludgeMod/Content/Items/CoolSword", AssetRequestMode.ImmediateLoad).Value;
+            Texture2D tex = ModContent.Request<Texture2D>("TheSludgeMod/Content/Items/Weapons/CoolSword", AssetRequestMode.ImmediateLoad).Value;
             Vector2 origin = tex.Size() / 2f;
             SpriteBatch sb = Main.spriteBatch;
 

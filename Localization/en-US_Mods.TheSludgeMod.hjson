@@ -260,8 +260,329 @@ Items: {
 		DisplayName: Shadowvoid Brick
 	}
 
+	ElectronicsTable: {
+		DisplayName: Electronics Table
+		Tooltip: ""
+	}
+
+	Scythophant: {
+		DisplayName: Scythophant
+		Tooltip: "[c/0000ff:Spins around the player when held and shoots a spiral of shadow fireballs.]"
+	}
+
+	RoseQuartzGemsparkBlock: {
+		DisplayName: Rose Quartz Gemspark Block
+		Tooltip: ""
+	}
+
+	RoarMegaphone: {
+		Tooltip: "[c/ff0000:rooOORGH]"
+		DisplayName: Roar Megaphone
+	}
+
+	DeathWhistleMegaphone: {
+		Tooltip: ""
+		DisplayName: Death Whistle Megaphone
+	}
+
+	ExpertRoarMegaphone: {
+		DisplayName: Expert Roar Megaphone
+		Tooltip: ""
+	}
+
+	Meowgaphone: {
+		Tooltip: ""
+		DisplayName: Meowgaphone
+	}
+
+	MoonLordMegaphone: {
+		Tooltip: ""
+		DisplayName: Moon Lord Megaphone
+	}
+
+	GiggleMegaphone: {
+		Tooltip: ""
+		DisplayName: Giggle Megaphone
+	}
+
+	FartMegaphone: {
+		Tooltip: ""
+		DisplayName: Fart Megaphone
+	}
+
+	MurderMegaphone: {
+		DisplayName: Murder Megaphone
+		Tooltip: ""
+	}
+
+	ZincOre: {
+		DisplayName: Zinc Ore
+		Tooltip: ""
+	}
+
+	NickelOre: {
+		DisplayName: Nickel Ore
+		Tooltip: ""
+	}
+
+	AluminiumOre: {
+		DisplayName: Aluminium Ore
+		Tooltip: ""
+	}
+
+	IridiumOre: {
+		DisplayName: Iridium Ore
+		Tooltip: ""
+	}
+
+	ZincBar: {
+		DisplayName: Zinc Bar
+		Tooltip: ""
+	}
+
+	AluminiumBar: {
+		DisplayName: Aluminium Bar
+		Tooltip: ""
+	}
+
+	IridiumBar: {
+		DisplayName: Iridium Bar
+		Tooltip: ""
+	}
+
+	NickelBar: {
+		DisplayName: Nickel Bar
+		Tooltip: ""
+	}
+
+	ZincPickaxe: {
+		DisplayName: Zinc Pickaxe
+		Tooltip: ""
+	}
+
+	AluminiumPickaxe: {
+		DisplayName: Aluminium Pickaxe
+		Tooltip: ""
+	}
+
+	IridiumPickaxe: {
+		DisplayName: Iridium Pickaxe
+		Tooltip: ""
+	}
+
+	NickelPickaxe: {
+		DisplayName: Nickel Pickaxe
+		Tooltip: ""
+	}
+
+	ZincAxe: {
+		DisplayName: Zinc Axe
+		Tooltip: ""
+	}
+
+	AluminiumAxe: {
+		DisplayName: Aluminium Axe
+		Tooltip: ""
+	}
+
+	IridiumAxe: {
+		DisplayName: Iridium Axe
+		Tooltip: ""
+	}
+
+	NickelAxe: {
+		DisplayName: Nickel Axe
+		Tooltip: ""
+	}
+
+	ZincHammer: {
+		DisplayName: Zinc Hammer
+		Tooltip: ""
+	}
+
+	AluminiumHammer: {
+		DisplayName: Aluminium Hammer
+		Tooltip: ""
+	}
+
+	IridiumHammer: {
+		DisplayName: Iridium Hammer
+		Tooltip: ""
+	}
+
+	NickelHammer: {
+		DisplayName: Nickel Hammer
+		Tooltip: ""
+	}
+
+	ZincBroadsword: {
+		DisplayName: Zinc Broadsword
+		Tooltip: ""
+	}
+
+	AluminiumBroadsword: {
+		DisplayName: Aluminium Broadsword
+		Tooltip: ""
+	}
+
+	IridiumBroadsword: {
+		DisplayName: Iridium Broadsword
+		Tooltip: ""
+	}
+
+	NickelBroadsword: {
+		DisplayName: Nickel Broadsword
+		Tooltip: ""
+	}
+
+	ZincBow: {
+		DisplayName: Zinc Bow
+		Tooltip: ""
+	}
+
+	AluminiumBow: {
+		DisplayName: Aluminium Bow
+		Tooltip: ""
+	}
+
+	IridiumBow: {
+		DisplayName: Iridium Bow
+		Tooltip: ""
+	}
+
+	NickelBow: {
+		DisplayName: Nickel Bow
+		Tooltip: ""
+	}
+
+	ZincShortsword: {
+		DisplayName: Zinc Shortsword
+		Tooltip: ""
+	}
+
+	AluminiumShortsword: {
+		DisplayName: Aluminium Shortsword
+		Tooltip: ""
+	}
+
+	IridiumShortsword: {
+		DisplayName: Iridium Shortsword
+		Tooltip: ""
+	}
+
+	NickelShortsword: {
+		DisplayName: Nickel Shortsword
+		Tooltip: ""
+	}
+
+	ZincArmorBody: {
+		DisplayName: Zinc Chainmail
+		Tooltip: ""
+	}
+
+	ZincArmorHead: {
+		DisplayName: Zinc Helmet
+		Tooltip: ""
+	}
+
+	ZincArmorLegs: {
+		DisplayName: Zinc Greaves
+		Tooltip: ""
+	}
+
+	NickelArmorBody: {
+		DisplayName: Nickel Chainmail
+		Tooltip: ""
+	}
+
+	NickelArmorHead: {
+		DisplayName: Nickel Helmet
+		Tooltip: ""
+	}
+
+	NickelArmorLegs: {
+		DisplayName: Nickel Greaves
+		Tooltip: ""
+	}
+
+	AluminiumArmorBody: {
+		Tooltip: ""
+		DisplayName: Aluminium Chainmail
+	}
+
+	AluminiumArmorHead: {
+		DisplayName: Aluminium Helmet
+		Tooltip: ""
+	}
+
+	AluminiumArmorLegs: {
+		DisplayName: Aluminium Greaves
+		Tooltip: ""
+	}
+
+	IridiumArmorBody: {
+		DisplayName: Iridium Chainmail
+		Tooltip: ""
+	}
+
+	IridiumArmorHead: {
+		DisplayName: Iridium Helmet
+		Tooltip: ""
+	}
+
+	IridiumArmorLegs: {
+		DisplayName: Iridium Greaves
+		Tooltip: ""
+	}
+
+	ZincWatch: {
+		DisplayName: Zinc Watch
+		Tooltip: ""
+	}
+
+	AluminiumWatch: {
+		DisplayName: Aluminium Watch
+		Tooltip: ""
+	}
+
+	IridiumWatch: {
+		DisplayName: Iridium Watch
+		Tooltip: ""
+	}
+
+	AluminiumChandelier: {
+		DisplayName: Aluminium Chandelier
+		Tooltip: ""
+	}
+
 	TungstenEnforcedUmbrella: {
 		DisplayName: Tungsten Enforced Umbrella
+		Tooltip: ""
+	}
+
+
+	IridiumChandelier: {
+		DisplayName: Iridium Chandelier
+		Tooltip: ""
+	}
+
+	ZincChandelier: {
+		DisplayName: Zinc Chandelier
+		Tooltip: ""
+	}
+
+	NickelAnvil: {
+		DisplayName: Nickel Anvil
+		Tooltip: ""
+	}
+
+	AluminiumBullet: {
+		DisplayName: Aluminium Bullet
+		Tooltip: ""
+	}
+
+	IridiumCrownHead: {
+		DisplayName: Iridium Crown
 		Tooltip: ""
 	}
 }
@@ -288,14 +609,26 @@ Projectiles: {
 	SilkRopeWhipProjectile.DisplayName: Silk Rope Whip Projectile
 	VineRopeWhipProjectile.DisplayName: Vine Rope Whip Projectile
 	WebRopeWhipProjectile.DisplayName: Web Rope Whip Projectile
+	ScythophantProj.DisplayName: Scythophant Projectile
+	ScythophantProj2.DisplayName: Scythophant Orb Projectile
+	ZincShortswordProj.DisplayName: Zinc Shortsword Proj
+	AluminiumShortswordProj.DisplayName: Aluminium Shortsword Proj
+	IridiumShortswordProj.DisplayName: Iridium Shortsword Proj
+	NickelShortswordProj.DisplayName: Nickel Shortsword Proj
 }
 
 Tiles: {
-	RoseQuartzTile.MapEntry: Rose Quartz Tile
-	RoseQuartzStoneTile.MapEntry: Rose Quartz Stone Tile
+	RoseQuartzTile.MapEntry: Rose Quartz
+	RoseQuartzStoneTile.MapEntry: Rose Quartz Stone
 	ShadowvoidOre.MapEntry: Shadowvoid Ore
 	ShadowvoidBar.MapEntry: Shadowvoid Bar
 	ShadowvoidBrick.MapEntry: Shadowvoid Brick
+	ElectronicsTable.MapEntry: Electronics Table
+	ZincOreTile.MapEntry: Zinc Ore
+	NickelOreTile.MapEntry: Nickel Ore
+	AluminiumOreTile.MapEntry: Aluminium Ore
+	IridiumOreTile.MapEntry: Iridium Ore
+	NickelAnvilTile.MapEntry: Nickel Anvil Tile
 }
 
 WorldGen: {

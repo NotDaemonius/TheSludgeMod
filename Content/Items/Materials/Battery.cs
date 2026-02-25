@@ -5,6 +5,7 @@ using Terraria.ID;
 using Terraria.GameContent;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Projectiles;
+using TheSludgeMod.Content.Tiles;
 
 namespace TheSludgeMod.Content.Items.Materials
 {
@@ -29,7 +30,7 @@ namespace TheSludgeMod.Content.Items.Materials
             recipe.AddIngredient(ItemID.CopperOre, 1);
             recipe.AddIngredient(ItemID.LeadOre, 1);
             recipe.AddIngredient<Plastic>(1);
-            recipe.AddTile(TileID.TinkerersWorkbench);
+            recipe.AddTile<ElectronicsTable>();
             recipe.Register();
         }
     }
