@@ -754,6 +754,21 @@ Items: {
 		Tooltip: ""
 		DisplayName: Bismuth Fauchard
 	}
+
+	GiantToothbrush: {
+		Tooltip: ""
+		DisplayName: Giant Toothbrush
+	}
+
+	Flute: {
+		DisplayName: Flute
+		Tooltip: ""
+	}
+
+	MagicalFlute: {
+		DisplayName: Magical Flute
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -796,6 +811,7 @@ Projectiles: {
 	UraniumBidentProj.DisplayName: Uranium Bident Proj
 	OsmiumCorsequeProj.DisplayName: Osmium Corseque Proj
 	BismuthFauchardProj.DisplayName: Bismuth Fauchard Proj
+	GiantToothbrushProj.DisplayName: Giant Toothbrush Proj
 }
 
 Tiles: {
