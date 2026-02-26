@@ -679,6 +679,46 @@ Items: {
 		Tooltip: ""
 		DisplayName: Pebble
 	}
+
+	AmethystBlade: {
+		DisplayName: Amethyst Blade
+		Tooltip: ""
+	}
+
+	RoseQuartzBlade: {
+		DisplayName: Rose Quartz Blade
+		Tooltip: ""
+	}
+
+	AmberBlade: {
+		DisplayName: Amber Blade
+		Tooltip: ""
+	}
+
+	DiamondBlade: {
+		DisplayName: Diamond Blade
+		Tooltip: ""
+	}
+
+	EmeraldBlade: {
+		DisplayName: Emerald Blade
+		Tooltip: ""
+	}
+
+	RubyBlade: {
+		DisplayName: Ruby Blade
+		Tooltip: ""
+	}
+
+	SapphireBlade: {
+		DisplayName: Sapphire Blade
+		Tooltip: ""
+	}
+
+	TopazBlade: {
+		DisplayName: Topaz Blade
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
