@@ -674,6 +674,11 @@ Items: {
 		DisplayName: Bismuth Drill
 		Tooltip: ""
 	}
+
+	Pebble: {
+		Tooltip: ""
+		DisplayName: Pebble
+	}
 }
 
 Projectiles: {
@@ -710,6 +715,7 @@ Projectiles: {
 	OsmiumChainsawProj.DisplayName: Osmium Chainsaw Proj
 	BismuthChainsawProj.DisplayName: Bismuth Chainsaw Proj
 	BismuthDrillProj.DisplayName: Bismuth Drill Proj
+	PebbleProj.DisplayName: Pebble Proj
 }
 
 Tiles: {
