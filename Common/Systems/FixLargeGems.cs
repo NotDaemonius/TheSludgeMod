@@ -20,13 +20,13 @@ namespace TheSludgeMod.Common.Systems
         public override void Load() {
 
 
-            On_Player.ItemCheck_ApplyHoldStyle += On_Player_ItemCheck_ApplyHoldStyle;
-            //On_Player.Update += On_Player_Update;
+            //On_Player.ItemCheck_ApplyHoldStyle += On_Player_ItemCheck_ApplyHoldStyle;
+            On_Player.Update += On_Player_Update;
 
             On_PlayerDrawLayers.DrawPlayer_36_CTG += On_PlayerDrawLayers_DrawPlayer_36_CTG;
         }
 
-        private void On_Player_ItemCheck_ApplyHoldStyle(On_Player.orig_ItemCheck_ApplyHoldStyle orig, Player self, float mountOffset, Item sItem, Rectangle heldItemFrame)
+        /*private void On_Player_ItemCheck_ApplyHoldStyle(On_Player.orig_ItemCheck_ApplyHoldStyle orig, Player self, float mountOffset, Item sItem, Rectangle heldItemFrame)
         {
 
             bool flag = !self.isDisplayDollOrInanimate;
@@ -57,7 +57,7 @@ namespace TheSludgeMod.Common.Systems
             }
 
             orig.Invoke(self, mountOffset, sItem, heldItemFrame);
-        }
+        }*/
 
         private void On_PlayerDrawLayers_DrawPlayer_36_CTG(On_PlayerDrawLayers.orig_DrawPlayer_36_CTG orig, ref PlayerDrawSet drawinfo)
         {

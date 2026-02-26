@@ -21,7 +21,7 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
         {
             for (int i = 0; i < 2; i++)
             {
-                int dustIndex = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.GemDiamond, Projectile.velocity.X, Projectile.velocity.Y, 50, new Color(205, 113, 151), 1.2f);
+                int dustIndex = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.CrystalPulse, Projectile.velocity.X, Projectile.velocity.Y, 50, new Color(205, 113, 151), 1.2f);
                 Main.dust[dustIndex].noGravity = true;
                 Main.dust[dustIndex].velocity *= 0.3f;
             }
@@ -37,7 +37,7 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
             SoundEngine.PlaySound(SoundID.Dig, new Vector2(Projectile.position.X, Projectile.position.Y));
             for (int i = 0; i < 6; i++)
             {
-                int dustIndex = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.GemDiamond, Projectile.velocity.X, Projectile.velocity.Y, 50, new Color(205, 113, 151), 1.1f);
+                int dustIndex = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.CrystalPulse, Projectile.velocity.X, Projectile.velocity.Y, 50, new Color(205, 113, 151), 1.1f);
                 Main.dust[dustIndex].position = (Main.dust[dustIndex].position + Projectile.Center) / 2f;
                 Main.dust[dustIndex].noGravity = true;
                 Main.dust[dustIndex].velocity *= 0.3f;
