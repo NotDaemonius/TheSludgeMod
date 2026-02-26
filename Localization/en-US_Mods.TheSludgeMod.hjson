@@ -732,7 +732,12 @@ Items: {
 
 	DodgyBuilder: {
 		DisplayName: Dodgy Builder
-		Tooltip: "Makes block placement inconsistent when in inventory."
+		Tooltip: Makes block placement inconsistent when in inventory.
+	}
+
+	ScoutingPotion: {
+		DisplayName: Scouting Potion
+		Tooltip: ""
 	}
 }
 
@@ -806,6 +811,11 @@ Buffs: {
 	ChilledDebuff: {
 		DisplayName: Chilled Debuff
 		Description: Mods.TheSludgeMod.Buffs.ChilledDebuff.Description
+	}
+
+	ScoutingBuff: {
+		DisplayName: Scouting Buff
+		Description: Mods.TheSludgeMod.Buffs.ScoutingBuff.Description
 	}
 }
 
