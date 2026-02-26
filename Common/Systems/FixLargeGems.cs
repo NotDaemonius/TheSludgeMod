@@ -28,11 +28,10 @@ namespace TheSludgeMod.Common.Systems
 
         /*private void On_Player_ItemCheck_ApplyHoldStyle(On_Player.orig_ItemCheck_ApplyHoldStyle orig, Player self, float mountOffset, Item sItem, Rectangle heldItemFrame)
         {
-            Main.NewText("AHH");
-            bool flag = !self.isDisplayDollOrInanimate;
-            if (true)
-            {
 
+            bool flag = !self.isDisplayDollOrInanimate;
+            if (sItem.type == ModContent.ItemType<TungstenEnforcedUmbrella>())
+            {
                 self.itemRotation = 0f;
                 self.itemLocation.X = sItem.position.X + (float)self.width * 0.5f - (float)(16 * self.direction);
                 self.itemLocation.Y = self.position.Y + 22f + mountOffset;

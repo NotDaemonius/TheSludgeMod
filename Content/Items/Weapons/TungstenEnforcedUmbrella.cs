@@ -11,6 +11,8 @@ namespace TheSludgeMod.Content.Items.Weapons
 {
     public class TungstenEnforcedUmbrella : ModItem
     {
+
+
         public override void SetDefaults()
         {
             Item.damage = 18;
