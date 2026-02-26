@@ -10,8 +10,12 @@ namespace TheSludgeMod.Content.Items.Weapons
 {
     public class TungstenEnforcedUmbrella : ModItem
     {
+
+
         public override void SetDefaults()
         {
+
+            
             Item.width = 44;
             Item.height = 44;
             Item.rare = 1;
@@ -24,6 +28,7 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.knockBack = 5f;
             Item.UseSound = SoundID.Item1;
             Item.DamageType = DamageClass.Melee;
+            
         }
     }
 }

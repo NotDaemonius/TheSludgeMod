@@ -23,51 +23,62 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
             Main.tileLavaDeath[Type] = true;
-            TileID.Sets.TreeSapling[Type] = true;
-            TileID.Sets.CommonSapling[Type] = true;
+
+            // This tells the game engine "this is a sapling"
+            //TileID.Sets.TreeSapling[Type] = true;
+            TileID.Sets.SwaysInWindBasic[Type] = true; // Makes it sway in the breeze
+
+            // Setting up the 1x2 dimensions and placement rules
             TileObjectData.newTile.Width = 1;
             TileObjectData.newTile.Height = 2;
-            TileObjectData.newTile.Origin = new Point16(0, 1);
+            TileObjectData.newTile.Origin = new Point16(0, 1); // Anchor at the bottom block
+            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
+
+            // Allow placement in water if your mushroom tree grows in swamps
+            TileObjectData.newTile.WaterPlacement = LiquidPlacement.Allowed;
+            TileObjectData.newTile.LavaPlacement = LiquidPlacement.NotAllowed;
+
+            // WHAT SOIL CAN IT BE PLACED ON? (Add your custom grass here if needed)
+            TileObjectData.newTile.AnchorValidTiles = new int[] {
+                TileID.Dirt,
+                TileID.Grass,          // Normal Green Grass
+            };
+
+            // Sprite and framing data
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.newTile.CoordinatePadding = 2;
-            TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.DrawFlipHorizontal = true;
-            TileObjectData.newTile.RandomStyleRange = 3;
-            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
-            TileObjectData.newTile.AnchorValidTiles = new int[] { TileID.Stone };
-            TileObjectData.newTile.UsesCustomCanPlace = true;
-            TileObjectData.newTile.LavaDeath = true;
+            TileObjectData.newTile.StyleHorizontal = true; // Use if you have multiple sapling styles
+            TileObjectData.newTile.RandomStyleRange = 3; // Number of different sapling sprites
+
             TileObjectData.addTile(Type);
-            AddMapEntry(new Color(255, 182, 193), Language.GetText("MapObject.Sapling"));
+
+            // Give it a name on the map
+            AddMapEntry(new Color(50, 50, 255), Terraria.Localization.Language.GetText("MapObject.Sapling"));
+            DustType = DustID.GlowingMushroom;
         }
-        public override void NumDust(int i, int j, bool fail, ref int num)
-        {
-            num = fail ? 1 : 3;
-        }
+
+        // --- NATURAL GROWTH LOGIC ---
+        // This makes the sapling naturally attempt to grow over time
         public override void RandomUpdate(int i, int j)
         {
-            if (!WorldGen.genRand.NextBool(20))
-            {
-                return;
-            }
-            Tile tile = Framing.GetTileSafely(i, j);
-            bool growSuccess;
-
-            if (tile.TileFrameX < 54)
-            {
-                growSuccess = WorldGen.GrowTree(i, j);
-            }
-            else
-            {
-                growSuccess = WorldGen.GrowPalmTree(i, j);
-            }
-
             bool isPlayerNear = WorldGen.PlayerLOS(i, j);
+            bool success = WorldGen.AttemptToGrowTreeFromSapling(i, j, false);
 
-            if (growSuccess && isPlayerNear)
+            // If it successfully grew and a player is watching, spawn some dust effects
+            if (success && isPlayerNear)
             {
                 WorldGen.TreeGrowFXCheck(i, j);
+            }
+        }
+
+        // --- WIND SWAY LOGIC ---
+        public override void SetSpriteEffects(int i, int j, ref SpriteEffects effects)
+        {
+            if (i % 2 == 1)
+            {
+                effects = SpriteEffects.FlipHorizontally;
             }
         }
     }

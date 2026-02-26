@@ -8,9 +8,6 @@
 		
 	</PropertyGroup>
 	<ItemGroup>
-	  <Folder Include="Common\GlobalTiles\" />
-	</ItemGroup>
-	<ItemGroup>
 	  <None Include="Content\Items\Weapons\XShotBlaster.cs" />
 	</ItemGroup>
 
