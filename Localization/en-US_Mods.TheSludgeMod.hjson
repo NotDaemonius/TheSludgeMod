@@ -724,6 +724,11 @@ Items: {
 		DisplayName: Diamond Sword
 		Tooltip: ""
 	}
+
+	IceArrow: {
+		DisplayName: Ice Arrow
+		Tooltip: "Briefly slows down enemies on hit."
+	}
 }
 
 Projectiles: {
@@ -762,6 +767,7 @@ Projectiles: {
 	BismuthDrillProj.DisplayName: Bismuth Drill Proj
 	PebbleProj.DisplayName: Pebble Proj
 	TungstenEnforcedUmbrellaProj.DisplayName: Tungsten Enforced Umbrella Proj
+	IceArrowProj.DisplayName: Ice Arrow Proj
 }
 
 Tiles: {
@@ -790,6 +796,11 @@ Buffs: {
 	SlimeHoardBuff: {
 		DisplayName: Slime Hoard
 		Description: 4 slimes for the price of one!
+	}
+
+	ChilledDebuff: {
+		DisplayName: Chilled Debuff
+		Description: Mods.TheSludgeMod.Buffs.ChilledDebuff.Description
 	}
 }
 
