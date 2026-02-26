@@ -727,7 +727,12 @@ Items: {
 
 	IceArrow: {
 		DisplayName: Ice Arrow
-		Tooltip: "Briefly slows down enemies on hit."
+		Tooltip: Briefly slows down enemies on hit.
+	}
+
+	DodgyBuilder: {
+		DisplayName: Dodgy Builder
+		Tooltip: "Makes block placement inconsistent when in inventory."
 	}
 }
 
