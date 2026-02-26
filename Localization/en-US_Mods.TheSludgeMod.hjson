@@ -719,6 +719,11 @@ Items: {
 		DisplayName: Topaz Blade
 		Tooltip: ""
 	}
+
+	DiamondSword: {
+		DisplayName: Diamond Sword
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -756,6 +761,7 @@ Projectiles: {
 	BismuthChainsawProj.DisplayName: Bismuth Chainsaw Proj
 	BismuthDrillProj.DisplayName: Bismuth Drill Proj
 	PebbleProj.DisplayName: Pebble Proj
+	TungstenEnforcedUmbrellaProj.DisplayName: Tungsten Enforced Umbrella Proj
 }
 
 Tiles: {
