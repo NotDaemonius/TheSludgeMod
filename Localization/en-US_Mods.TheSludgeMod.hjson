@@ -560,7 +560,6 @@ Items: {
 		Tooltip: ""
 	}
 
-
 	IridiumChandelier: {
 		DisplayName: Iridium Chandelier
 		Tooltip: ""
@@ -583,6 +582,96 @@ Items: {
 
 	IridiumCrownHead: {
 		DisplayName: Iridium Crown
+		Tooltip: ""
+	}
+
+	UraniumBar: {
+		DisplayName: Uranium Bar
+		Tooltip: ""
+	}
+
+	UraniumOre: {
+		DisplayName: Uranium Ore
+		Tooltip: ""
+	}
+
+	OsmiumBar: {
+		DisplayName: Osmium Bar
+		Tooltip: ""
+	}
+
+	OsmiumOre: {
+		DisplayName: Osmium Ore
+		Tooltip: ""
+	}
+
+	BismuthBar: {
+		DisplayName: Bismuth Bar
+		Tooltip: ""
+	}
+
+	BismuthOre: {
+		DisplayName: Bismuth Ore
+		Tooltip: ""
+	}
+
+	UraniumPickaxe: {
+		DisplayName: Uranium Pickaxe
+		Tooltip: ""
+	}
+
+	OsmiumPickaxe: {
+		DisplayName: Osmium Pickaxe
+		Tooltip: ""
+	}
+
+	OsmiumWaraxe: {
+		DisplayName: Osmium Waraxe
+		Tooltip: ""
+	}
+
+	UraniumWaraxe: {
+		DisplayName: Uranium Waraxe
+		Tooltip: ""
+	}
+
+	BismuthPickaxe: {
+		DisplayName: Bismuth Pickaxe
+		Tooltip: ""
+	}
+
+	BismuthWaraxe: {
+		DisplayName: Bismuth Waraxe
+		Tooltip: ""
+	}
+
+	UraniumDrill: {
+		DisplayName: Uranium Drill
+		Tooltip: ""
+	}
+
+	UraniumChainsaw: {
+		Tooltip: ""
+		DisplayName: Uranium Chainsaw
+	}
+
+	OsmiumDrill: {
+		Tooltip: ""
+		DisplayName: Osmium Drill
+	}
+
+	OsmiumChainsaw: {
+		Tooltip: ""
+		DisplayName: Osmium Chainsaw
+	}
+
+	BismuthChainsaw: {
+		DisplayName: Bismuth Chainsaw
+		Tooltip: ""
+	}
+
+	BismuthDrill: {
+		DisplayName: Bismuth Drill
 		Tooltip: ""
 	}
 }
@@ -615,6 +704,12 @@ Projectiles: {
 	AluminiumShortswordProj.DisplayName: Aluminium Shortsword Proj
 	IridiumShortswordProj.DisplayName: Iridium Shortsword Proj
 	NickelShortswordProj.DisplayName: Nickel Shortsword Proj
+	UraniumDrillProj.DisplayName: Uranium Drill Proj
+	UraniumChainsawProj.DisplayName: Uranium Chainsaw Proj
+	OsmiumDrillProj.DisplayName: Osmium Drill Proj
+	OsmiumChainsawProj.DisplayName: Osmium Chainsaw Proj
+	BismuthChainsawProj.DisplayName: Bismuth Chainsaw Proj
+	BismuthDrillProj.DisplayName: Bismuth Drill Proj
 }
 
 Tiles: {
@@ -629,6 +724,9 @@ Tiles: {
 	AluminiumOreTile.MapEntry: Aluminium Ore
 	IridiumOreTile.MapEntry: Iridium Ore
 	NickelAnvilTile.MapEntry: Nickel Anvil Tile
+	UraniumOreTile.MapEntry: Uranium Ore Tile
+	OsmiumOreTile.MapEntry: Osmium Ore Tile
+	BismuthOreTile.MapEntry: Bismuth Ore Tile
 }
 
 WorldGen: {
