@@ -963,6 +963,16 @@ Items: {
 			12% increased critical strike chance
 			'''
 	}
+
+	OsmiumAnvil: {
+		DisplayName: Osmium Anvil
+		Tooltip: ""
+	}
+
+	BismuthForge: {
+		DisplayName: Bismuth Forge
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1025,6 +1035,8 @@ Tiles: {
 	UraniumOreTile.MapEntry: Uranium Ore Tile
 	OsmiumOreTile.MapEntry: Osmium Ore Tile
 	BismuthOreTile.MapEntry: Bismuth Ore Tile
+	OsmiumAnvilTile.MapEntry: Osmium Anvil Tile
+	BismuthForgeTile.MapEntry: Bismuth Forge Tile
 }
 
 WorldGen: {
