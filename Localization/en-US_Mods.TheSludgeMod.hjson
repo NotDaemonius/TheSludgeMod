@@ -973,6 +973,11 @@ Items: {
 		DisplayName: Bismuth Forge
 		Tooltip: ""
 	}
+
+	SolunarChronowarper: {
+		Tooltip: "A powerful ancient artifact that cycles time when used."
+		DisplayName: Solunar Chronowarper
+	}
 }
 
 Projectiles: {
