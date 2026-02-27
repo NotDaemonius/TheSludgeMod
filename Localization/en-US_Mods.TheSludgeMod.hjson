@@ -899,6 +899,80 @@ Items: {
 			15% increased melee speed
 			'''
 	}
+
+	UraniumRepeater: {
+		DisplayName: Uranium Repeater
+		Tooltip: ""
+	}
+
+	BismuthRepeater: {
+		DisplayName: Bismuth Repeater
+		Tooltip: ""
+	}
+
+	OsmiumRepeater: {
+		DisplayName: Osmium Repeater
+		Tooltip: ""
+	}
+
+	BismuthBreastplateBody: {
+		DisplayName: Bismuth Breastplate
+		Tooltip:
+			'''
+			8% increased damage
+			8% increased critical strike chance
+			'''
+	}
+
+	BismuthCrownHead: {
+		DisplayName: Bismuth Crown
+		Tooltip:
+			'''
+			Increases maximum mana by 80
+			18% increased magic damage
+			18% increased magic critical strike chance
+			'''
+	}
+
+	BismuthCrystalHead: {
+		DisplayName: Bismuth Crystal
+		Tooltip:
+			'''
+			15% increased movement speed
+			18% increased melee damage
+			18% increased melee speed
+			'''
+	}
+
+	BismuthHelmetHead: {
+		DisplayName: Bismuth Helmet
+		Tooltip:
+			'''
+			15% increased movement speed
+			18% increased ranged damage
+			18% increased ranged critical strike chance
+			'''
+	}
+
+	BismuthLeggingsLegs: {
+		DisplayName: Bismuth Leggings
+		Tooltip:
+			'''
+			12% increased movement speed
+			12% increased damage
+			12% increased critical strike chance
+			'''
+	}
+
+	OsmiumAnvil: {
+		DisplayName: Osmium Anvil
+		Tooltip: ""
+	}
+
+	BismuthForge: {
+		DisplayName: Bismuth Forge
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -961,6 +1035,8 @@ Tiles: {
 	UraniumOreTile.MapEntry: Uranium Ore Tile
 	OsmiumOreTile.MapEntry: Osmium Ore Tile
 	BismuthOreTile.MapEntry: Bismuth Ore Tile
+	OsmiumAnvilTile.MapEntry: Osmium Anvil Tile
+	BismuthForgeTile.MapEntry: Bismuth Forge Tile
 }
 
 WorldGen: {
