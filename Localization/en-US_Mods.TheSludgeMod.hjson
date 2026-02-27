@@ -737,7 +737,7 @@ Items: {
 
 	ScoutingPotion: {
 		DisplayName: Scouting Potion
-		Tooltip: "Increases spawn rate of bound NPCs by 500%"
+		Tooltip: Increases spawn rate of bound NPCs by 500%
 	}
 
 	UraniumBident: {
@@ -767,7 +767,6 @@ Items: {
 
 	MagicalFlute: {
 		DisplayName: Magical Flute
-		Tooltip: ""
 		Tooltip: Makes block placement inconsistent when in inventory.
 	}
 
@@ -782,28 +781,66 @@ Items: {
 	}
 
 	UraniumGreathelmHead: {
-		Tooltip: "10% increased movement speed\n10% increased melee damage\n10% increased melee speed"
+		Tooltip:
+			'''
+			10% increased movement speed
+			10% increased melee damage
+			10% increased melee speed
+			'''
 		DisplayName: Uranium Greathelm
 	}
 
 	UraniumCowlHead: {
-		Tooltip: "12% increased ranged damage\n12% increased ranged critical strike chance"
+		Tooltip:
+			'''
+			12% increased ranged damage
+			12% increased ranged critical strike chance
+			'''
 		DisplayName: Uranium Cowl
 	}
 
 	UraniumBreastplateBody: {
-		Tooltip: "2% increased damage\n3% increased critical strike chance"
+		Tooltip:
+			'''
+			2% increased damage
+			3% increased critical strike chance
+			'''
 		DisplayName: Uranium Breastplate
 	}
 
 	UraniumHeadgearHead: {
 		DisplayName: Uranium Headgear
-		Tooltip: "Increases maximum mana by 40\n12% increased magic damage\n12% increased magic critical strike chance"
+		Tooltip:
+			'''
+			Increases maximum mana by 40
+			12% increased magic damage
+			12% increased magic critical strike chance
+			'''
 	}
 
 	UraniumLeggingsLegs: {
 		DisplayName: Uranium Leggings
-		Tooltip: "8% increased movement speed\n2% increased damage\n2% increased critical strike chance"
+		Tooltip:
+			'''
+			8% increased movement speed
+			2% increased damage
+			2% increased critical strike chance
+			'''
+	}
+
+	BismuthExaclibur: {
+		DisplayName: Bismuth Exaclibur
+		Tooltip: ""
+	}
+
+	OsmiumWarblade: {
+		DisplayName: Osmium Warblade
+		Tooltip: ""
+	}
+
+	UraniumCleaver: {
+		DisplayName: Uranium Cleaver
+		Tooltip: ""
 	}
 }
 
