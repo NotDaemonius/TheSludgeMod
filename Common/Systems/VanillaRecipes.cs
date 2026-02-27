@@ -134,6 +134,12 @@ namespace TheSludgeMod.Common.Systems
             iridiumpc.AddIngredient(ItemID.PinkTorch, 1);
             iridiumpc.AddTile(TileID.WorkBenches);
             iridiumpc.Register();
+
+            Recipe hf = Recipe.Create(ItemID.Hellforge);
+            hf.AddIngredient(ItemID.Hellstone, 30);
+            hf.AddIngredient(ItemID.Furnace, 1);
+            hf.AddTile(TileID.WorkBenches);
+            hf.Register();
         }
     }
 }
