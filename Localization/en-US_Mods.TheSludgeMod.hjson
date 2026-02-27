@@ -737,7 +737,7 @@ Items: {
 
 	ScoutingPotion: {
 		DisplayName: Scouting Potion
-		Tooltip: ""
+		Tooltip: "Increases spawn rate of bound NPCs by 500%"
 	}
 
 	UraniumBident: {
@@ -768,6 +768,36 @@ Items: {
 	MagicalFlute: {
 		DisplayName: Magical Flute
 		Tooltip: ""
+	}
+
+	Maelthorn: {
+		DisplayName: Maelthorn
+		Tooltip: ""
+	}
+
+	UraniumGreathelmHead: {
+		Tooltip: "10% increased movement speed\n10% increased melee damage\n10% increased melee speed"
+		DisplayName: Uranium Greathelm
+	}
+
+	UraniumCowlHead: {
+		Tooltip: "12% increased ranged damage\n12% increased ranged critical strike chance"
+		DisplayName: Uranium Cowl
+	}
+
+	UraniumBreastplateBody: {
+		Tooltip: "2% increased damage\n3% increased critical strike chance"
+		DisplayName: Uranium Breastplate
+	}
+
+	UraniumHeadgearHead: {
+		DisplayName: Uranium Headgear
+		Tooltip: "Increases maximum mana by 40\n12% increased magic damage\n12% increased magic critical strike chance"
+	}
+
+	UraniumLeggingsLegs: {
+		DisplayName: Uranium Leggings
+		Tooltip: "8% increased movement speed\n2% increased damage\n2% increased critical strike chance"
 	}
 }
 
@@ -812,6 +842,7 @@ Projectiles: {
 	OsmiumCorsequeProj.DisplayName: Osmium Corseque Proj
 	BismuthFauchardProj.DisplayName: Bismuth Fauchard Proj
 	GiantToothbrushProj.DisplayName: Giant Toothbrush Proj
+	MaelthornProjectile.DisplayName: Maelthorn Projectile
 }
 
 Tiles: {
