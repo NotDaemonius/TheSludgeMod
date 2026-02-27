@@ -896,6 +896,21 @@ Items: {
 			15% increased melee speed
 			'''
 	}
+
+	UraniumRepeater: {
+		DisplayName: Uranium Repeater
+		Tooltip: ""
+	}
+
+	BismuthRepeater: {
+		DisplayName: Bismuth Repeater
+		Tooltip: ""
+	}
+
+	OsmiumRepeater: {
+		DisplayName: Osmium Repeater
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
