@@ -735,6 +735,42 @@ Items: {
 		Tooltip: Makes block placement inconsistent when in inventory.
 	}
 
+	ScoutingPotion: {
+		DisplayName: Scouting Potion
+		Tooltip: ""
+	}
+
+	UraniumBident: {
+		DisplayName: Uranium Bident
+		Tooltip: ""
+	}
+
+	OsmiumCorseque: {
+		DisplayName: Osmium Corseque
+		Tooltip: ""
+	}
+
+	BismuthFauchard: {
+		Tooltip: ""
+		DisplayName: Bismuth Fauchard
+	}
+
+	GiantToothbrush: {
+		Tooltip: ""
+		DisplayName: Giant Toothbrush
+	}
+
+	Flute: {
+		DisplayName: Flute
+		Tooltip: ""
+	}
+
+	MagicalFlute: {
+		DisplayName: Magical Flute
+		Tooltip: ""
+		Tooltip: Makes block placement inconsistent when in inventory.
+	}
+
 	GalaxyBlaster: {
 		DisplayName: Galaxy Blaster
 		Tooltip: ""
@@ -778,6 +814,10 @@ Projectiles: {
 	PebbleProj.DisplayName: Pebble Proj
 	TungstenEnforcedUmbrellaProj.DisplayName: Tungsten Enforced Umbrella Proj
 	IceArrowProj.DisplayName: Ice Arrow Proj
+	UraniumBidentProj.DisplayName: Uranium Bident Proj
+	OsmiumCorsequeProj.DisplayName: Osmium Corseque Proj
+	BismuthFauchardProj.DisplayName: Bismuth Fauchard Proj
+	GiantToothbrushProj.DisplayName: Giant Toothbrush Proj
 }
 
 Tiles: {
@@ -811,6 +851,11 @@ Buffs: {
 	ChilledDebuff: {
 		DisplayName: Chilled Debuff
 		Description: Mods.TheSludgeMod.Buffs.ChilledDebuff.Description
+	}
+
+	ScoutingBuff: {
+		DisplayName: Scouting Buff
+		Description: Mods.TheSludgeMod.Buffs.ScoutingBuff.Description
 	}
 }
 

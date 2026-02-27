@@ -14,8 +14,8 @@ namespace TheSludgeMod.Content.Items.Bismuth
         }
         public override void SetDefaults()
         {
-            Projectile.width = 26;
-            Projectile.height = 48;
+            Projectile.width = 20;
+            Projectile.height = 20;
             Projectile.friendly = true;
             Projectile.tileCollide = false;
             Projectile.penetrate = -1;
@@ -23,6 +23,15 @@ namespace TheSludgeMod.Content.Items.Bismuth
             Projectile.ownerHitCheck = true;
             Projectile.aiStyle = ProjAIStyleID.Drill;
             Projectile.hide = true;
+        }
+        public override void ModifyDamageHitbox(ref Rectangle hitbox)
+        {
+            int spriteHalfLength = 26;
+
+            Vector2 offset = Vector2.Normalize(Projectile.velocity) * spriteHalfLength;
+
+            hitbox.X += (int)offset.X;
+            hitbox.Y += (int)offset.Y;
         }
     }
 }
