@@ -802,6 +802,12 @@ Items: {
 	UraniumCowlHead: {
 		Tooltip:
 			'''
+			Increases maximum mana by 40
+			12% increased magic damage
+			12% increased magic critical strike chance
+			'''
+		Tooltip:
+			'''
 			12% increased ranged damage
 			12% increased ranged critical strike chance
 			'''
@@ -821,9 +827,8 @@ Items: {
 		DisplayName: Uranium Headgear
 		Tooltip:
 			'''
-			Increases maximum mana by 40
-			12% increased magic damage
-			12% increased magic critical strike chance
+			12% increased ranged damage
+			12% increased ranged critical strike chance
 			'''
 	}
 
@@ -834,6 +839,70 @@ Items: {
 			8% increased movement speed
 			2% increased damage
 			2% increased critical strike chance
+			'''
+	}
+
+	BismuthExaclibur: {
+		DisplayName: Bismuth Exaclibur
+		Tooltip: ""
+	}
+
+	OsmiumWarblade: {
+		DisplayName: Osmium Warblade
+		Tooltip: ""
+	}
+
+	UraniumCleaver: {
+		DisplayName: Uranium Cleaver
+		Tooltip: ""
+	}
+
+	OsmiumBreastplateBody: {
+		DisplayName: Osmium Breastplate
+		Tooltip:
+			'''
+			5% increased damage
+			5% increased critical strike chance
+			'''
+	}
+
+	OsmiumHeadpieceHead: {
+		DisplayName: Osmium Headpiece
+		Tooltip:
+			'''
+			Increases maximum mana by 60
+			15% increased magic damage
+			15% increased magic critical strike chance
+			'''
+	}
+
+	OsmiumHelmHead: {
+		DisplayName: Osmium Helm
+		Tooltip:
+			'''
+			12% increased movement speed
+			15% increased ranged damage
+			15% increased ranged critical strike chance
+			'''
+	}
+
+	OsmiumLeggingsLegs: {
+		DisplayName: Osmium Leggings
+		Tooltip:
+			'''
+			9% increased movement speed
+			9% increased damage
+			9% increased critical strike chance
+			'''
+	}
+
+	OsmiumSeerHead: {
+		DisplayName: Osmium Seer
+		Tooltip:
+			'''
+			12% increased movement speed
+			15% increased melee damage
+			15% increased melee speed
 			'''
 	}
 }
