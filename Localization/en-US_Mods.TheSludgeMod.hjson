@@ -768,6 +768,12 @@ Items: {
 	MagicalFlute: {
 		DisplayName: Magical Flute
 		Tooltip: ""
+		Tooltip: Makes block placement inconsistent when in inventory.
+	}
+
+	GalaxyBlaster: {
+		DisplayName: Galaxy Blaster
+		Tooltip: ""
 	}
 
 	Maelthorn: {
