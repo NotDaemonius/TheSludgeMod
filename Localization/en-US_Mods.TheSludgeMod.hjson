@@ -11,12 +11,12 @@ Items: {
 
 	MagnetPickaxe: {
 		DisplayName: Magnet Pickaxe
-		Tooltip: ""
+		Tooltip: Sucks and Fucks Up Ores
 	}
 
 	Bat: {
 		DisplayName: Bat
-		Tooltip: ""
+		Tooltip: Tung Tung Tung
 	}
 
 	TheRedRobin: {
@@ -26,7 +26,7 @@ Items: {
 
 	DartInABottle: {
 		DisplayName: Dart In A Bottle
-		Tooltip: ""
+		Tooltip: Allows the holder to double jump
 	}
 
 	RoseQuartz: {
@@ -76,12 +76,16 @@ Items: {
 
 	RoseQuartzRobe: {
 		DisplayName: Rose Quartz Robe
-		Tooltip: ""
+		Tooltip:
+			'''
+			Increases maximum mana by 80
+			9% reduced mana cost
+			'''
 	}
 
 	RoseQuartzAcorn: {
 		DisplayName: Rose Quartz Acorn
-		Tooltip: ""
+		Tooltip: Fuck you.
 	}
 
 	RoseQuartzStoneBlock: {
@@ -193,7 +197,7 @@ Items: {
 
 	PeaShooter: {
 		DisplayName: Pea Shooter
-		Tooltip: ""
+		Tooltip: Specializes in killing zombies
 	}
 
 	SlimeHoardStaff: {
@@ -801,6 +805,11 @@ Items: {
 			Increases maximum mana by 40
 			12% increased magic damage
 			12% increased magic critical strike chance
+			'''
+		Tooltip:
+			'''
+			12% increased ranged damage
+			12% increased ranged critical strike chance
 			'''
 		DisplayName: Uranium Cowl
 	}

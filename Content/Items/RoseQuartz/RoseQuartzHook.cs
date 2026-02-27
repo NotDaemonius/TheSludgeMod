@@ -12,6 +12,9 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.AmethystHook);
+            Item.useStyle = ItemUseStyleID.None;
+            Item.useTime = 0;
+            Item.useAnimation = 0;
             Item.shootSpeed = 18f;
             Item.shoot = ModContent.ProjectileType<RoseQuartzHookProjectile>();
         }
@@ -50,7 +53,7 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
         }
         public override float GrappleRange()
         {
-            return 500f;
+            return 375f;
         }
         public override void NumGrappleHooks(Player player, ref int numHooks)
         {
@@ -63,13 +66,6 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
         public override void GrapplePullSpeed(Player player, ref float speed)
         {
             speed = 10;
-        }
-        public override void GrappleTargetPoint(Player player, ref float grappleX, ref float grappleY)
-        {
-            Vector2 dirToPlayer = Projectile.DirectionTo(player.Center);
-            float hangDist = 50f;
-            grappleX += dirToPlayer.X * hangDist;
-            grappleY += dirToPlayer.Y * hangDist;
         }
         public override bool PreDrawExtras()
         {
