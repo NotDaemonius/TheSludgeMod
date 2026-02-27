@@ -732,7 +732,12 @@ Items: {
 
 	DodgyBuilder: {
 		DisplayName: Dodgy Builder
-		Tooltip: "Makes block placement inconsistent when in inventory."
+		Tooltip: Makes block placement inconsistent when in inventory.
+	}
+
+	GalaxyBlaster: {
+		DisplayName: Galaxy Blaster
+		Tooltip: ""
 	}
 }
 
