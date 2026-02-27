@@ -767,12 +767,16 @@ Items: {
 
 	MagicalFlute: {
 		DisplayName: Magical Flute
-		Tooltip: ""
 		Tooltip: Makes block placement inconsistent when in inventory.
 	}
 
 	GalaxyBlaster: {
 		DisplayName: Galaxy Blaster
+		Tooltip: ""
+	}
+
+	BigBullet: {
+		DisplayName: Big Bullet
 		Tooltip: ""
 	}
 }
@@ -818,6 +822,7 @@ Projectiles: {
 	OsmiumCorsequeProj.DisplayName: Osmium Corseque Proj
 	BismuthFauchardProj.DisplayName: Bismuth Fauchard Proj
 	GiantToothbrushProj.DisplayName: Giant Toothbrush Proj
+	BigBulletProjectile.DisplayName: Big Bullet Projectile
 }
 
 Tiles: {

@@ -15,7 +15,7 @@ using TheSludgeMod.Content.Items.Weapons;
 
 namespace TheSludgeMod.Common.Systems
 {
-    public class FixLargeGems :  ModSystem
+    public class GenrealDetour :  ModSystem
     {
         public override void Load() {
 

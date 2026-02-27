@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Common;
 using TheSludgeMod.Content.Projectiles.Weapons;
 
 namespace TheSludgeMod.Content.Items.Weapons
@@ -26,6 +27,11 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.UseSound = SoundID.Item35;
             Item.autoReuse = true;
             Item.shoot = ProjectileID.QuarterNote;
+        }
+
+        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+        {
+            position = HelperFunctions.AdjustMuzzleOffset(player, ref position, velocity, 50f);
         }
     }
 }
