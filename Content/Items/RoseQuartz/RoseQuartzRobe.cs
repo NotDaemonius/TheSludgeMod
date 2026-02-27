@@ -28,8 +28,17 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
         }
         public override void SetDefaults()
         {
-            Item.CloneDefaults(ItemID.SapphireRobe);
+            Item.width = 18;
+            Item.height = 14;
+            Item.rare = ItemRarityID.Green;
+            Item.defense = 3;
         }
+        public override void UpdateEquip(Player player)
+        {
+            player.statManaMax2 += 80;
+            player.manaCost *= 0.91f;
+        }
+
         public override void SetMatch(bool male, ref int equipSlot, ref bool robes)
         {
             robes = true;

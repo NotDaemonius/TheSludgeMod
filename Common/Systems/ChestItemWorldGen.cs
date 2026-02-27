@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Content.Items.Accessories;
 using TheSludgeMod.Content.Items.Tools;
 
 namespace TheSludgeMod.Common.Systems
@@ -14,45 +15,41 @@ namespace TheSludgeMod.Common.Systems
     {
         public override void PostWorldGen()
         {
-            int[] itemsToPlaceInFrozenChests = [ModContent.ItemType<MagnetPickaxe>()];
-            int itemsToPlaceInFrozenChestsChoice = 0;
-            int itemsPlaced = 0;
-            int maxItems = 6;
-
-            for (int chestIndex = 0; chestIndex < Main.maxChests; chestIndex++)
+            void appendChestItem(int itemID, Chest chest)
             {
-                Chest chest = Main.chest[chestIndex];
-
-                if (chest == null)
+                for (int slot = 0; slot < chest.item.Length; slot++)
                 {
-                    continue;
-                }
-
-                Tile chestTile = Main.tile[chest.x, chest.y];
-
-                if (chestTile.TileType == TileID.Containers && chestTile.TileFrameX == 4 * 36)
-                {
-                    if (chest.item[0].type == ItemID.None)
-                        continue;
-
-                    if (WorldGen.genRand.NextBool(3))
-                        continue;
-
-                    for (int inventoryIndex = 0; inventoryIndex < Chest.maxItems; inventoryIndex++)
+                    if (chest.item[slot].type == ItemID.None)
                     {
-                        if (chest.item[inventoryIndex].type == ItemID.None)
-                        {
-                            chest.item[inventoryIndex].SetDefaults(itemsToPlaceInFrozenChests[itemsToPlaceInFrozenChestsChoice]);
-                            itemsToPlaceInFrozenChestsChoice = (itemsToPlaceInFrozenChestsChoice + 1) % itemsToPlaceInFrozenChests.Length;
-                            itemsPlaced++;
-                            break;
-                        }
+                        chest.item[slot].SetDefaults(itemID);
+                        break;
                     }
                 }
+            }
 
-                if (itemsPlaced >= maxItems)
+            void replaceChestItem(int slot, int itemID, Chest chest)
+            {
+                chest.item[slot].SetDefaults(itemID);
+            }
+
+            for (int i = 0; i < Main.maxChests; i++)
+            {
+                Chest chest = Main.chest[i];
+                if (chest == null)
+                    continue;
+
+                Tile tile = Main.tile[chest.x, chest.y];
+
+                // Granite
+                if (tile.TileType == TileID.Containers2 && tile.TileFrameX / 36 == 11)
                 {
-                    break;
+                    replaceChestItem(0, ModContent.ItemType<OrbitalRadiance>(), chest);
+                } else if (tile.TileType == TileID.Containers && tile.TileFrameX == 4 * 36) // Shadow
+                {
+                    if (Random.Shared.Next(3) == 0)
+                    {
+                        appendChestItem(ModContent.ItemType<MagnetPickaxe>(), chest);
+                    }
                 }
             }
         }
