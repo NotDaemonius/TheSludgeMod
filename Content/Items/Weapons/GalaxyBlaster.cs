@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Common;
 using TheSludgeMod.Content.Projectiles.Weapons;
 
 namespace TheSludgeMod.Content.Items.Weapons
@@ -41,14 +42,7 @@ namespace TheSludgeMod.Content.Items.Weapons
 
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
-            Vector2 muzzleOffset = Vector2.Normalize(velocity) * 28f;
-            Vector2 perp = Vector2.Normalize(new Vector2(velocity.Y, -velocity.X));
-
-            if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
-            {
-                position -= muzzleOffset;
-                position += perp * 8f * player.direction;
-            }
+            position = HelperFunctions.AdjustMuzzleOffset(player, ref position, velocity, -28f);
         }
     }
 }   

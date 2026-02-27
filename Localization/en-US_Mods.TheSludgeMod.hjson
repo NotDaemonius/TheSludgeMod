@@ -780,6 +780,11 @@ Items: {
 		Tooltip: ""
 	}
 
+	BigBullet: {
+		DisplayName: Big Bullet
+		Tooltip: ""
+	}
+
 	UraniumGreathelmHead: {
 		Tooltip:
 			'''
@@ -885,7 +890,6 @@ Projectiles: {
 	OsmiumCorsequeProj.DisplayName: Osmium Corseque Proj
 	BismuthFauchardProj.DisplayName: Bismuth Fauchard Proj
 	GiantToothbrushProj.DisplayName: Giant Toothbrush Proj
-	MaelthornProjectile.DisplayName: Maelthorn Projectile
 }
 
 Tiles: {

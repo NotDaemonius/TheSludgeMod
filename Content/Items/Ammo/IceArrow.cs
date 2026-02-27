@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Projectiles.Weapons;
 
-namespace TheSludgeMod.Content.Items.Weapons
+namespace TheSludgeMod.Content.Items.Ammo
 {
     public class IceArrow : ModItem
     {
