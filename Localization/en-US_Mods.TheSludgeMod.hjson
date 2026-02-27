@@ -802,12 +802,6 @@ Items: {
 	UraniumCowlHead: {
 		Tooltip:
 			'''
-			Increases maximum mana by 40
-			12% increased magic damage
-			12% increased magic critical strike chance
-			'''
-		Tooltip:
-			'''
 			12% increased ranged damage
 			12% increased ranged critical strike chance
 			'''
