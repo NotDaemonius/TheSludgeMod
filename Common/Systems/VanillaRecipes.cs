@@ -6,6 +6,7 @@ using TheSludgeMod.Content.Items.Zinc;
 using TheSludgeMod.Content.Items.Aluminium;
 using TheSludgeMod.Content.Items.Iridium;
 using TheSludgeMod.Content.Tiles;
+using TheSludgeMod.Content.Items.Bismuth;
 
 namespace TheSludgeMod.Common.Systems
 {
@@ -140,6 +141,42 @@ namespace TheSludgeMod.Common.Systems
             hf.AddIngredient(ItemID.Furnace, 1);
             hf.AddTile(TileID.WorkBenches);
             hf.Register();
+
+            Recipe bfm = Recipe.Create(ItemID.AncientBattleArmorHat);
+            bfm.AddIngredient<BismuthBar>(10);
+            bfm.AddIngredient(ItemID.AncientBattleArmorMaterial, 1);
+            bfm.AddTile(TileID.MythrilAnvil);
+            bfm.Register();
+
+            Recipe bfr = Recipe.Create(ItemID.AncientBattleArmorShirt);
+            bfr.AddIngredient<BismuthBar>(20);
+            bfr.AddIngredient(ItemID.AncientBattleArmorMaterial, 1);
+            bfr.AddTile(TileID.MythrilAnvil);
+            bfr.Register();
+
+            Recipe bft = Recipe.Create(ItemID.AncientBattleArmorPants);
+            bft.AddIngredient<BismuthBar>(16);
+            bft.AddIngredient(ItemID.AncientBattleArmorMaterial, 1);
+            bft.AddTile(TileID.MythrilAnvil);
+            bft.Register();
+
+            Recipe bfrb = Recipe.Create(ItemID.FrostHelmet);
+            bfrb.AddIngredient<BismuthBar>(10);
+            bfrb.AddIngredient(ItemID.FrostCore, 1);
+            bfrb.AddTile(TileID.MythrilAnvil);
+            bfrb.Register();
+
+            Recipe bfrh = Recipe.Create(ItemID.FrostBreastplate);
+            bfrh.AddIngredient<BismuthBar>(20);
+            bfrh.AddIngredient(ItemID.FrostCore, 1);
+            bfrh.AddTile(TileID.MythrilAnvil);
+            bfrh.Register();
+
+            Recipe bfrl = Recipe.Create(ItemID.FrostLeggings);
+            bfrl.AddIngredient<BismuthBar>(16);
+            bfrl.AddIngredient(ItemID.FrostCore, 1);
+            bfrl.AddTile(TileID.MythrilAnvil);
+            bfrl.Register();
         }
     }
 }

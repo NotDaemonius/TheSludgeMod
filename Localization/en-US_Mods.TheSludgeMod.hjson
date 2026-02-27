@@ -973,6 +973,16 @@ Items: {
 		DisplayName: Bismuth Forge
 		Tooltip: ""
 	}
+
+	SolunarChronowarper: {
+		Tooltip: A powerful ancient artifact that cycles time when used.
+		DisplayName: Solunar Chronowarper
+	}
+
+	ElderStaff: {
+		Tooltip: ""
+		DisplayName: Elder Staff
+	}
 }
 
 Projectiles: {
@@ -1018,6 +1028,7 @@ Projectiles: {
 	GiantToothbrushProj.DisplayName: Giant Toothbrush Proj
 	BigBulletProjectile.DisplayName: Big Bullet Projectile
 	MaelthornProjectile.DisplayName: Maelthorn Projectile
+	ElderStaffProj.DisplayName: Elder Staff Proj
 }
 
 Tiles: {
@@ -1031,12 +1042,12 @@ Tiles: {
 	NickelOreTile.MapEntry: Nickel Ore
 	AluminiumOreTile.MapEntry: Aluminium Ore
 	IridiumOreTile.MapEntry: Iridium Ore
-	NickelAnvilTile.MapEntry: Nickel Anvil Tile
-	UraniumOreTile.MapEntry: Uranium Ore Tile
-	OsmiumOreTile.MapEntry: Osmium Ore Tile
-	BismuthOreTile.MapEntry: Bismuth Ore Tile
-	OsmiumAnvilTile.MapEntry: Osmium Anvil Tile
-	BismuthForgeTile.MapEntry: Bismuth Forge Tile
+	NickelAnvilTile.MapEntry: Nickel Anvil
+	UraniumOreTile.MapEntry: Uranium Ore
+	OsmiumOreTile.MapEntry: Osmium Ore
+	BismuthOreTile.MapEntry: Bismuth Ore
+	OsmiumAnvilTile.MapEntry: Osmium Anvil
+	BismuthForgeTile.MapEntry: Bismuth Forge
 }
 
 WorldGen: {
@@ -1051,13 +1062,18 @@ Buffs: {
 	}
 
 	ChilledDebuff: {
-		DisplayName: Chilled Debuff
-		Description: Mods.TheSludgeMod.Buffs.ChilledDebuff.Description
+		DisplayName: Chilled
+		Description: How do you have this debuff?
 	}
 
 	ScoutingBuff: {
-		DisplayName: Scouting Buff
-		Description: Mods.TheSludgeMod.Buffs.ScoutingBuff.Description
+		DisplayName: Scouting
+		Description: Increases spawn rate of bound NPCs
+	}
+
+	ElderInsanityDebuff: {
+		Description: Mods.TheSludgeMod.Buffs.ElderInsanityDebuff.Description
+		DisplayName: Elder Insanity Debuff
 	}
 }
 
