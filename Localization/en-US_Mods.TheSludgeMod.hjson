@@ -1087,3 +1087,8 @@ Configs: {
 		}
 	}
 }
+
+NPCs: {
+	TheMainframe.DisplayName: The Mainframe
+	TheMainframeHand.DisplayName: The Mainframe Hand
+}
