@@ -983,6 +983,41 @@ Items: {
 		Tooltip: ""
 		DisplayName: Elder Staff
 	}
+
+	MainframeTrophy: {
+		Tooltip: ""
+		DisplayName: Mainframe Trophy
+	}
+
+	MainframeMaskHead: {
+		Tooltip: ""
+		DisplayName: Mainframe Mask
+	}
+
+	MainframeBossBag: {
+		DisplayName: Mainframe Treasure Bag
+		Tooltip: ""
+	}
+
+	MainframeRelic: {
+		DisplayName: Mainframe Relic
+		Tooltip: ""
+	}
+
+	SoulofSpite: {
+		DisplayName: Soul of Spite
+		Tooltip: "'The essence of hatred and malice'"
+	}
+
+	MechanicalBrain: {
+		DisplayName: Mechanical Brain
+		Tooltip: "Summons The Mainframe"
+	}
+
+	NeuralCrystal: {
+		DisplayName: Neural Crystal
+		Tooltip: "Summons a tiny Mainframe"
+	}
 }
 
 Projectiles: {
@@ -1029,6 +1064,7 @@ Projectiles: {
 	BigBulletProjectile.DisplayName: Big Bullet Projectile
 	MaelthornProjectile.DisplayName: Maelthorn Projectile
 	ElderStaffProj.DisplayName: Elder Staff Proj
+	NeuralCrystalProj.DisplayName: Neural Crystal Proj
 }
 
 Tiles: {
@@ -1072,8 +1108,13 @@ Buffs: {
 	}
 
 	ElderInsanityDebuff: {
-		Description: Mods.TheSludgeMod.Buffs.ElderInsanityDebuff.Description
-		DisplayName: Elder Insanity Debuff
+		Description: Your sanity is melting!
+		DisplayName: Elder Insanity
+	}
+
+	NeuralCrystalBuff: {
+		DisplayName: Tiny Mainframe
+		Description: HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE.
 	}
 }
 
