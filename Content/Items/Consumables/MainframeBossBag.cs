@@ -2,7 +2,9 @@ using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Content.Items.Materials;
 using TheSludgeMod.Content.Items.Vanity;
+using TheSludgeMod.Content.NPCs.TheMainframe;
 
 namespace TheSludgeMod.Content.Items.Consumables
 {
@@ -34,8 +36,8 @@ namespace TheSludgeMod.Content.Items.Consumables
         public override void ModifyItemLoot(ItemLoot itemLoot)
         {
             itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<MainframeMaskHead>(), 7));
-            //itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ExampleItem>(), 1, 12, 16));
-            //itemLoot.Add(ItemDropRule.CoinsBasedOnNPCValue(ModContent.NPCType<MinionBossBody>()));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulofSpite>(), 1, 25, 40));
+            itemLoot.Add(ItemDropRule.CoinsBasedOnNPCValue(ModContent.NPCType<TheMainframe>()));
         }
     }
 }

@@ -13,10 +13,15 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Items.RoseQuartz;
+using TheSludgeMod.Content.Items.Placeable;
+using TheSludgeMod.Content.Items.Vanity;
+using TheSludgeMod.Content.Items.Consumables;
+using TheSludgeMod.Content.Pets;
+using TheSludgeMod.Content.Items.Materials;
 
 namespace TheSludgeMod.Content.NPCs.TheMainframe
 {
-    // Add boss map icon
+    [AutoloadBossHead]
     public class TheMainframe : ModNPC
     {
         //public override LocalizedText DeathMessage => Language.GetText("Announcement.HasBeenDefeated_Plural").WithFormatArgs(this.GetLocalization("BossFightName")); Add Death message
@@ -63,6 +68,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
         {
             // Add beastiary shit
         }
+
         public override void SetDefaults()
         {
             NPC.width = 242;
@@ -89,15 +95,17 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
             // Add boss bar
         }
-
-        /*
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MainframeTrophy>(), 10));
+            LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
+            notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MainframeMaskHead>(), 7));
+            notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<SoulofSpite>(), 1, 25, 40));
+            npcLoot.Add(notExpertRule);
+            npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<MainframeBossBag>()));
+            npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<MainframeRelic>()));
+            npcLoot.Add(ItemDropRule.MasterModeDropOnAllPlayers(ModContent.ItemType<NeuralCrystal>(), 4));
         }
-        */
-
-
         /*
         public override void OnKill()
         {
@@ -131,6 +139,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
         {
             // Here you'd want to change the potion type that drops when the boss is defeated. Because this boss is early pre-hardmode, we keep it unchanged
             // (Lesser Healing Potion). If you wanted to change it, simply write "potionType = ItemID.HealingPotion;" or any other potion type
+            potionType = ItemID.GreaterHealingPotion;
         }
 
         // boss imunity frame shit
