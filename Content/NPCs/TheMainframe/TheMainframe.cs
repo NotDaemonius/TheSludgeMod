@@ -76,7 +76,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
             NPC.damage = 12;
             NPC.defense = 10;
             NPC.lifeMax = 65000;
-            NPC.HitSound = SoundID.NPCHit1;
+            NPC.HitSound = SoundID.NPCHit4;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0f;
             NPC.noGravity = true;
@@ -175,8 +175,6 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                         {
                             Vector2 offsetDir = Main.rand.NextVector2Unit();
                             TargetPos = player.Center + offsetDir * Main.rand.Next(30, 500);
-
-
                         }
 
                         BossSpeed = 20f;
