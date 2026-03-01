@@ -1011,12 +1011,12 @@ Items: {
 
 	MechanicalBrain: {
 		DisplayName: Mechanical Brain
-		Tooltip: "Summons The Mainframe"
+		Tooltip: Summons The Mainframe
 	}
 
 	NeuralCrystal: {
 		DisplayName: Neural Crystal
-		Tooltip: "Summons a tiny Mainframe"
+		Tooltip: Summons a tiny Mainframe
 	}
 }
 
