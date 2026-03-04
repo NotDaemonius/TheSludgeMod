@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Content.Items.Accessories.Balloons;
 using TheSludgeMod.Content.Items.Aluminium;
 using TheSludgeMod.Content.Items.Bismuth;
 using TheSludgeMod.Content.Items.Iridium;
@@ -17,7 +18,7 @@ using TheSludgeMod.Content.Items.Zinc;
 
 namespace TheSludgeMod.Common.GlobalItems
 {
-    public class ModifiyCrateLoot  : GlobalItem
+    public class ModifiyCrateLoot : GlobalItem
     {
         private static readonly int[] PreHMCrates =
         {
@@ -69,6 +70,46 @@ namespace TheSludgeMod.Common.GlobalItems
                 loot.Add(ItemDropRule.Common(ModContent.ItemType<UraniumBar>(), 7, 2, 5));
                 loot.Add(ItemDropRule.Common(ModContent.ItemType<OsmiumBar>(), 7, 2, 5));
                 loot.Add(ItemDropRule.Common(ModContent.ItemType<BismuthBar>(), 7, 2, 5));
+            }
+
+            if (item.type == ItemID.FloatingIslandFishingCrate || item.type == ItemID.FloatingIslandFishingCrateHard)
+            {
+                // Remove the four vanilla sky item rules
+                loot.RemoveWhere(rule =>
+                    rule is CommonDrop cd &&
+                    (cd.itemId == ItemID.Starfury ||
+                     cd.itemId == ItemID.LuckyHorseshoe ||
+                     cd.itemId == ItemID.CelestialMagnet ||
+                     cd.itemId == ItemID.ShinyRedBalloon)
+                );
+
+                int[] balloons = new int[]
+                {
+                ItemID.ShinyRedBalloon,
+                ModContent.ItemType<ShinyBlackBalloon>(),
+                ModContent.ItemType<ShinyBlueBalloon>(),
+                ModContent.ItemType<ShinyBrownBalloon>(),
+                ModContent.ItemType<ShinyCyanBalloon>(),
+                ModContent.ItemType<ShinyGreenBalloon>(),
+                ModContent.ItemType<ShinyLimeBalloon>(),
+                ModContent.ItemType<ShinyOrangeBalloon>(),
+                ModContent.ItemType<ShinyPinkBalloon>(),
+                ModContent.ItemType<ShinyPurpleBalloon>(),
+                ModContent.ItemType<ShinySilverBalloon>(),
+                ModContent.ItemType<ShinySkyBlueBalloon>(),
+                ModContent.ItemType<ShinyTealBalloon>(),
+                ModContent.ItemType<ShinyVioletBalloon>(),
+                ModContent.ItemType<ShinyYellowBalloon>()
+                };
+
+                // Always drops exactly one: 1/4 for each of the three vanilla items,
+                // 1/4 for the balloon pool (1/60 per balloon × 15 = 1/4)
+                loot.Add(new OneFromRulesRule(1,
+                    ItemDropRule.Common(ItemID.Starfury, 1),
+                    ItemDropRule.Common(ItemID.LuckyHorseshoe, 1),
+                    ItemDropRule.Common(ItemID.CelestialMagnet, 1),
+                    ItemDropRule.OneFromOptions(1, balloons)
+                ));
             }
         }
     }

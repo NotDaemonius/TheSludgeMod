@@ -42,6 +42,11 @@ namespace TheSludgeMod.Common.GlobalNPCs
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Scythophant>(), 2));
             }
 
+            if (npc.type == NPCID.Golem)
+            {
+                npcLoot.Add(ItemDropRule.Common(ItemID.Autohammer, 1));
+            }
+
             if (npc.type == NPCID.Clown)
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Scythophant>(), 10));
@@ -67,6 +72,11 @@ namespace TheSludgeMod.Common.GlobalNPCs
             if (npc.type == NPCID.GoldFrog)
             {
                 npcLoot.Add(ItemDropRule.Common(ItemID.FrogLeg, 4));
+            }
+
+            if (npc.type == NPCID.Plantera)
+            {
+                npcLoot.Add(ItemDropRule.Common(ItemID.TheAxe, 1));
             }
         }
         public override void OnKill(NPC npc)

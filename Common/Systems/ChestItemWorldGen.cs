@@ -8,6 +8,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using TheSludgeMod.Content.Items.Accessories;
+using TheSludgeMod.Content.Items.Accessories.Balloons;
 using TheSludgeMod.Content.Items.Aluminium;
 using TheSludgeMod.Content.Items.Iridium;
 using TheSludgeMod.Content.Items.Nickel;
@@ -79,6 +80,35 @@ namespace TheSludgeMod.Common.Systems
                     if (Random.Shared.Next(3) == 0)
                     {
                         appendChestItem(ModContent.ItemType<MagnetPickaxe>(), chest);
+                    }
+                }
+                else if (tile.TileType == TileID.Containers && tile.TileFrameX / 36 == 13) // Skyware
+                {
+                    for (int slot = 0; slot < chest.item.Length; slot++)
+                    {
+                        if (chest.item[slot].type == ItemID.ShinyRedBalloon)
+                        {
+                            int[] balloons = new int[]
+                            {
+                                ItemID.ShinyRedBalloon,
+ModContent.ItemType<ShinyBlackBalloon>(),
+ModContent.ItemType<ShinyBlueBalloon>(),
+ModContent.ItemType<ShinyBrownBalloon>(),
+ModContent.ItemType<ShinyCyanBalloon>(),
+ModContent.ItemType<ShinyGreenBalloon>(),
+ModContent.ItemType<ShinyLimeBalloon>(),
+ModContent.ItemType<ShinyOrangeBalloon>(),
+ModContent.ItemType<ShinyPinkBalloon>(),
+ModContent.ItemType<ShinyPurpleBalloon>(),
+ModContent.ItemType<ShinySilverBalloon>(),
+ModContent.ItemType<ShinySkyBlueBalloon>(),
+ModContent.ItemType<ShinyTealBalloon>(),
+ModContent.ItemType<ShinyVioletBalloon>(),
+ModContent.ItemType<ShinyYellowBalloon>()
+                            };
+                            replaceChestItem(slot, balloons[Main.rand.Next(balloons.Length)], chest);
+                            break;
+                        }
                     }
                 }
             }

@@ -1,12 +1,13 @@
-﻿using Terraria;
+﻿using System.Linq;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Content.Items.Aluminium;
+using TheSludgeMod.Content.Items.Bismuth;
+using TheSludgeMod.Content.Items.Iridium;
 using TheSludgeMod.Content.Items.Materials;
 using TheSludgeMod.Content.Items.Zinc;
-using TheSludgeMod.Content.Items.Aluminium;
-using TheSludgeMod.Content.Items.Iridium;
 using TheSludgeMod.Content.Tiles;
-using TheSludgeMod.Content.Items.Bismuth;
 
 namespace TheSludgeMod.Common.Systems
 {
@@ -177,6 +178,37 @@ namespace TheSludgeMod.Common.Systems
             bfrl.AddIngredient(ItemID.FrostCore, 1);
             bfrl.AddTile(TileID.MythrilAnvil);
             bfrl.Register();
+        }
+        public override void PostAddRecipes()
+        {
+            foreach (Recipe recipe in Main.recipe.Take(Recipe.numRecipes))
+            {
+                if (recipe.HasResult(ItemID.CloudinaBalloon) && recipe.HasIngredient(ItemID.ShinyRedBalloon))
+                {
+                    recipe.RemoveIngredient(ItemID.ShinyRedBalloon);
+                    recipe.AddRecipeGroup("TheSludgeMod:AnyShinyBalloon");
+                }
+                if (recipe.HasResult(ItemID.BlizzardinaBalloon) && recipe.HasIngredient(ItemID.ShinyRedBalloon))
+                {
+                    recipe.RemoveIngredient(ItemID.ShinyRedBalloon);
+                    recipe.AddRecipeGroup("TheSludgeMod:AnyShinyBalloon");
+                }
+                if (recipe.HasResult(ItemID.FartInABalloon) && recipe.HasIngredient(ItemID.ShinyRedBalloon))
+                {
+                    recipe.RemoveIngredient(ItemID.ShinyRedBalloon);
+                    recipe.AddRecipeGroup("TheSludgeMod:AnyShinyBalloon");
+                }
+                if (recipe.HasResult(ItemID.HoneyBalloon) && recipe.HasIngredient(ItemID.ShinyRedBalloon))
+                {
+                    recipe.RemoveIngredient(ItemID.ShinyRedBalloon);
+                    recipe.AddRecipeGroup("TheSludgeMod:AnyShinyBalloon");
+                }
+                if (recipe.HasResult(ItemID.SandstorminaBalloon) && recipe.HasIngredient(ItemID.ShinyRedBalloon))
+                {
+                    recipe.RemoveIngredient(ItemID.ShinyRedBalloon);
+                    recipe.AddRecipeGroup("TheSludgeMod:AnyShinyBalloon");
+                }
+            }
         }
     }
 }

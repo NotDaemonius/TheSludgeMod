@@ -1023,6 +1023,76 @@ Items: {
 		Tooltip: ""
 		DisplayName: Slimy Umbrella
 	}
+
+	ShinyBlueBalloon: {
+		Tooltip: Increases jump height
+		DisplayName: Shiny Blue Balloon
+	}
+
+	ShinyBlackBalloon: {
+		DisplayName: Shiny Black Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyBrownBalloon: {
+		DisplayName: Shiny Brown Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyCyanBalloon: {
+		DisplayName: Shiny Cyan Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyGreenBalloon: {
+		DisplayName: Shiny Green Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyLimeBalloon: {
+		DisplayName: Shiny Lime Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyOrangeBalloon: {
+		DisplayName: Shiny Orange Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyPinkBalloon: {
+		DisplayName: Shiny Pink Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyPurpleBalloon: {
+		DisplayName: Shiny Purple Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinySilverBalloon: {
+		DisplayName: Shiny Silver Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinySkyBlueBalloon: {
+		DisplayName: Shiny Sky Blue Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyTealBalloon: {
+		DisplayName: Shiny Teal Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyVioletBalloon: {
+		DisplayName: Shiny Violet Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyYellowBalloon: {
+		DisplayName: Shiny Yellow Balloon
+		Tooltip: Increases jump height
+	}
 }
 
 Projectiles: {
