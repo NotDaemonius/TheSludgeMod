@@ -1018,6 +1018,11 @@ Items: {
 		DisplayName: Neural Crystal
 		Tooltip: Summons a tiny Mainframe
 	}
+
+	SlimyUmbrella: {
+		Tooltip: ""
+		DisplayName: Slimy Umbrella
+	}
 }
 
 Projectiles: {

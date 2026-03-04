@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Content.Items.Consumables;
 using TheSludgeMod.Content.Items.Junk;
 using TheSludgeMod.Content.Items.Weapons;
 
@@ -38,6 +39,11 @@ namespace TheSludgeMod.Common.GlobalNPCs
             if (npc.type == NPCID.Clown)
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Scythophant>(), 10));
+            }
+
+            if (npc.type == NPCID.UmbrellaSlime)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SlimyUmbrella>(), 50));
             }
 
         }
