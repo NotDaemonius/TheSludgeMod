@@ -7,11 +7,18 @@ using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Content.Items.Consumables;
 using TheSludgeMod.Content.Items.Junk;
 using TheSludgeMod.Content.Items.Weapons;
 
 namespace TheSludgeMod.Common.GlobalNPCs
 {
+    public class SkeletronDefeatedCondition : IItemDropRuleCondition
+    {
+        public bool CanDrop(DropAttemptInfo info) => NPC.downedBoss3;
+        public bool CanShowItemDropInUI() => true;
+        public string GetConditionDescription() => "Drops after Skeletron has been defeated";
+    }
     public class GlobalItemDrops : GlobalNPC
     {
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
@@ -40,6 +47,27 @@ namespace TheSludgeMod.Common.GlobalNPCs
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Scythophant>(), 10));
             }
 
+            if (npc.type == NPCID.UmbrellaSlime)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SlimyUmbrella>(), 50));
+            }
+
+            if (npc.type == NPCID.Skeleton)
+            {
+                var skeletronDefeated = new LeadingConditionRule(new SkeletronDefeatedCondition());
+                skeletronDefeated.OnSuccess(ItemDropRule.Common(ItemID.Bone, 1, 1, 2));
+                npcLoot.Add(skeletronDefeated);
+            }
+
+            if (npc.type == NPCID.Frog)
+            {
+                npcLoot.Add(ItemDropRule.Common(ItemID.FrogLeg, 200));
+            }
+
+            if (npc.type == NPCID.GoldFrog)
+            {
+                npcLoot.Add(ItemDropRule.Common(ItemID.FrogLeg, 4));
+            }
         }
         public override void OnKill(NPC npc)
         {
