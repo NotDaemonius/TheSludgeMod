@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,9 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
         {
             Hoaming,
             Circle,
-            NA
+            SwitchToSecondPhase,
+            CircleThing2,
+            NA,
         }
 
         public BossState CurrentStage
@@ -45,6 +48,12 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
             }
         }
 
+        public int rotDir
+        {
+            get => (int)NPC.localAI[0];
+            set => NPC.localAI[0] = (int)value;
+        }
+
         public float BossSpeed;
 
         public float SinOffset;
@@ -57,11 +66,33 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
         public Vector2 MoveAwayVelocity;
 
-        public int rotDir;
+        private TheMainframeHand[] hands = new TheMainframeHand[2];
 
+        private bool inSecondPhase { get => NPC.life < NPC.lifeMax * 0.99f; }
+
+        public bool switchedToSecondPhase;
+
+        private float currentBossRadius;
+
+        // boss vars
+        private float bossTeleportSpeed { get => switchedToSecondPhase ? 32 : 20; }
+        private float minBossSpeed { get => switchedToSecondPhase ? 14f : 10; }
+        private float directionLerpSpeed { get => switchedToSecondPhase ? 0.025f : 0.05f; }
+        private float rotationSinIntenisty { get => switchedToSecondPhase ? 100f : 150f; }
+        private float rotationSinSpeed { get => switchedToSecondPhase ? 10f : 15f; }
+
+        // circlin
+        private float circlingRadius { get => switchedToSecondPhase ? 600f : 350f; }
+        private float circlingSpeed { get => switchedToSecondPhase ? 0.3f : 0.25f; }
+        private float circlingDecel { get => switchedToSecondPhase ? 0.998f : 0.995f; }
+        private float circlingLaserFireSpeed { get => switchedToSecondPhase ? 8f : 12f; }
+
+        private bool doCircle2;
+            
         public override void SetStaticDefaults()
         {
             // Add beastiary shit
+            Main.npcFrameCount[Type] = 2;
         }
         public override void SetDefaults()
         {
@@ -90,6 +121,17 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
             // Add boss bar
         }
 
+        public override void FindFrame(int frameHeight)
+        {
+            if (switchedToSecondPhase)
+            {
+                NPC.frame.Y = 1 * frameHeight;
+            }  else
+            {
+                NPC.frame.Y = 0;
+            }
+        }
+
         /*
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
@@ -109,6 +151,8 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
         	NPC.SetEventFlagCleared(ref DownedBossSystem.downedMinionBoss, -1);
         }
         */
+
+        
 
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
@@ -140,9 +184,35 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
             return true;
         }
 
+        public override void OnSpawn(IEntitySource source)
+        {
+            SpawnHands();
+        }
+
+        private void TryRecoverHands()
+        {
+            int found = 0;
+            for (int i = 0; i < Main.maxNPCs && found < 2; i++)
+            {
+                if (Main.npc[i].active
+                    && Main.npc[i].ModNPC is TheMainframeHand hand
+                    && (int)hand.ParentWhoAmI == NPC.whoAmI)
+                {
+                    hands[found] = hand;
+                    found++;
+                }
+            }
+        }
+
         // this is gonna be hitler
         public override void AI()
         {
+            if (hands[0] == null || !hands[0].NPC.active || hands[1] == null || !hands[1].NPC.active)
+            {
+                TryRecoverHands();
+            }
+
+
             if (NPC.target < 0 || NPC.target == 255 || Main.player[NPC.target].dead || !Main.player[NPC.target].active)
             {
                 NPC.TargetClosest();
@@ -162,13 +232,17 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                 case BossState.Hoaming:
                     if (Timer == 0)
                     {
-                        if (TargetPos == Vector2.Zero)
+                        if (Main.netMode != NetmodeID.MultiplayerClient)
                         {
-                            Vector2 offsetDir = Main.rand.NextVector2Unit();
-                            TargetPos = player.Center + offsetDir * Main.rand.Next(30, 500);
+                            if (TargetPos == Vector2.Zero)
+                            {
+                                Vector2 offsetDir = Main.rand.NextVector2Unit();
+                                TargetPos = player.Center + offsetDir * Main.rand.Next(30, 500);
+                                NPC.netUpdate = true; // force sync the new TargetPos to clients
+                            }
                         }
 
-                        BossSpeed = 20f;
+                        BossSpeed = bossTeleportSpeed;  // v 1
                         MoveAwayVelocity = Vector2.Zero;
 
                         NPC.Center = TargetPos;
@@ -182,14 +256,14 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                         TeleCount += 1;
                     }
 
-                    BossSpeed = MathF.Max(10f, BossSpeed * 0.99f);
+                    BossSpeed = MathF.Max(minBossSpeed, BossSpeed * 0.99f); // v2
 
                     // Move towards player
                     Vector2 directionToPlayer = (player.Center - NPC.Center);
                     float len = directionToPlayer.Length();
                     directionToPlayer.Normalize();
 
-                    Vector2 moveDir = Vector2.Lerp(BossMoveDirection, directionToPlayer, 0.05f);
+                    Vector2 moveDir = Vector2.Lerp(BossMoveDirection, directionToPlayer, directionLerpSpeed); // v3
                     BossMoveDirection = moveDir;
                     moveDir.Normalize(); // idk if this will do shit but might as well
 
@@ -198,9 +272,11 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
                     // Rotation shit
                     float dirChange = (player.Center.X >= (NPC.Center + NPC.velocity).X) ? 0.0872665f : -0.0872665f;
-                    NPC.rotation += (dirChange - (NPC.rotation - MathF.Sin((Timer - 1) / 15) / 150)) / 15; // EASING OLLy
-                    NPC.rotation += MathF.Sin(Timer / 15) / 150;
+                    NPC.rotation += (dirChange - (NPC.rotation - MathF.Sin((Timer - 1) / rotationSinSpeed) / rotationSinIntenisty)) / rotationSinSpeed; // EASING OLLy
+                    NPC.rotation += MathF.Sin(Timer / rotationSinSpeed) / rotationSinIntenisty;
                     Timer += 1;
+
+                    // add second phase wiggle
 
                     if (Timer >= 200)
                     {
@@ -212,10 +288,14 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                             }
                             else
                             {
-                                if (TargetPos == Vector2.Zero)
+                                if (Main.netMode != NetmodeID.MultiplayerClient)
                                 {
-                                    Vector2 offsetDir = Main.rand.NextVector2Unit();
-                                    TargetPos = player.Center + offsetDir * Main.rand.Next(30, 500);
+                                    if (TargetPos == Vector2.Zero)
+                                    {
+                                        Vector2 offsetDir = Main.rand.NextVector2Unit();
+                                        TargetPos = player.Center + offsetDir * Main.rand.Next(30, 500);
+                                        NPC.netUpdate = true; // force sync the new TargetPos to clients
+                                    }
                                 }
 
                                 for (int i = 0; i < 3; i++)
@@ -227,7 +307,31 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                             }
                         } else
                         {
-                            ChangeState(BossState.Circle);
+                            if (doCircle2)
+                            {
+                                ChangeState(BossState.CircleThing2);
+                            } else
+                            {
+                                ChangeState(BossState.Circle);
+                            }
+                        }
+                    } else {
+                        if (Timer >= 20)
+                        {
+                            if (inSecondPhase && !switchedToSecondPhase)
+                            {
+                                ChangeState(BossState.SwitchToSecondPhase);
+                                break;
+                            }
+                        }
+
+                        if (Timer % 40 == 0)
+                        {
+                            ShootFromHands(player, 15f, 0);
+                        } else if ((Timer + 20) % 40 == 0)
+                        {
+                            Main.NewText("agha");
+                            ShootFromHands(player, 15f, 10);
                         }
                     }
 
@@ -235,40 +339,158 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                 case BossState.Circle:
                     if (Timer == 0)
                     {
-                        BossSpeed = 0.25f;
-                        NPC.rotation = 0;
+                        BossSpeed = circlingSpeed;
                         NPC.velocity = Vector2.Zero;
                         rotDir = (player.Center.X > NPC.Center.X) ? 1 : -1;
-                        SinOffset = (NPC.Center - player.Center).ToRotation(); 
-                        StartRadius = Vector2.Distance(NPC.Center, player.Center); 
+                        SinOffset = (NPC.Center - player.Center).ToRotation();
+                        StartRadius = Vector2.Distance(NPC.Center, player.Center);
                     }
 
-                    float spinRadius = MathHelper.Lerp(StartRadius, 350f, Math.Min(1f, Timer / 40));
+                    float spinRadius = MathHelper.Lerp(StartRadius, circlingRadius, Math.Min(1f, Timer / 40));
 
-                    TargetPos = player.Center + new Vector2( MathF.Cos((Timer * BossSpeed * rotDir) + SinOffset) * spinRadius, MathF.Sin((Timer * BossSpeed * rotDir) + SinOffset) * spinRadius  );
-                    BossSpeed *= 0.995f;
+                    TargetPos = player.Center + new Vector2(MathF.Cos((Timer * BossSpeed * rotDir) + SinOffset) * spinRadius, MathF.Sin((Timer * BossSpeed * rotDir) + SinOffset) * spinRadius);
+                    BossSpeed *= circlingDecel;
 
-                    NPC.Center = Vector2.Lerp(NPC.Center, TargetPos, 0.2f); // Soft follow instead of instant
+                    NPC.Center = Vector2.Lerp(NPC.Center, TargetPos, 0.2f);
 
                     //  ROTATION
                     float dirChange2 = (player.Center.X >= (NPC.Center + NPC.velocity).X) ? 0.0872665f : -0.0872665f;
-                    NPC.rotation += (dirChange2 - (NPC.rotation - MathF.Sin((Timer - 1) / 15) / 150)) / 15; // EASING OLLy
-                    NPC.rotation += MathF.Sin(Timer / 15) / 150;
+                    NPC.rotation += (dirChange2 - (NPC.rotation - MathF.Sin((Timer - 1) / rotationSinSpeed) / rotationSinIntenisty)) / rotationSinSpeed; // EASING OLLy
+                    NPC.rotation += MathF.Sin(Timer / rotationSinSpeed) / rotationSinIntenisty;
 
                     Timer += 1;
 
-                    if (Timer % 12 == 0 && Timer >= 24)
+                    if (Timer % circlingLaserFireSpeed == 0 && Timer >= 24)
                     {
-                        Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, (player.Center - NPC.Center).SafeNormalize(Vector2.One) * 10, ProjectileID.EyeLaser, 20, 2);
+                        ShootFromHands(player, 10f);
+                        //Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, (player.Center - NPC.Center).SafeNormalize(Vector2.One) * 10, ProjectileID.EyeLaser, 20, 2);
                     }
 
                     if (Timer >= 120)
                     {
+                        if (switchedToSecondPhase)
+                        {
+                            doCircle2 = true;
+                        }
+
                         ChangeState(BossState.Hoaming);
                         TargetPos = NPC.Center;
                     }
 
                     break;
+                case BossState.CircleThing2:
+                    if (Timer == 0)
+                    {
+                        BossSpeed = circlingSpeed;
+                        NPC.velocity = Vector2.Zero;
+                        rotDir = (player.Center.X > NPC.Center.X) ? 1 : -1;
+                        SinOffset = (NPC.Center - player.Center).ToRotation();
+                        StartRadius = Vector2.Distance(NPC.Center, player.Center);
+                        currentBossRadius = 1400;
+                    }
+
+                    float spinRadius2 = MathHelper.Lerp(StartRadius, currentBossRadius, Math.Min(1f, Timer / 40));
+
+                    currentBossRadius = Math.Max(currentBossRadius * 0.995f, 200);
+
+                    TargetPos = player.Center + new Vector2(MathF.Cos((Timer * BossSpeed * rotDir) + SinOffset) * spinRadius2, MathF.Sin((Timer * BossSpeed * rotDir) + SinOffset) * spinRadius2);
+                    BossSpeed *= 0.9997f;
+
+                    NPC.Center = Vector2.Lerp(NPC.Center, TargetPos, 0.2f);
+
+                    //  ROTATION
+                    float dirChange3 = (player.Center.X >= (NPC.Center + NPC.velocity).X) ? 0.0872665f : -0.0872665f;
+                    NPC.rotation += (dirChange3 - (NPC.rotation - MathF.Sin((Timer - 1) / rotationSinSpeed) / rotationSinIntenisty)) / rotationSinSpeed; // EASING OLLy
+                    NPC.rotation += MathF.Sin(Timer / rotationSinSpeed) / rotationSinIntenisty;
+
+                    Timer += 1;
+
+                    if (Timer % circlingLaserFireSpeed == 0 && Timer >= 24)
+                    {
+                        ShootFromHands(player, 10f);
+                        //Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, (player.Center - NPC.Center).SafeNormalize(Vector2.One) * 10, ProjectileID.EyeLaser, 20, 2);
+                    }
+
+                    if (Timer >= 200)
+                    {
+                        if (switchedToSecondPhase)
+                        {
+                            doCircle2 = false;
+                        }
+
+                        ChangeState(BossState.Hoaming);
+                        TargetPos = NPC.Center;
+                    }
+
+                    break;
+                case BossState.SwitchToSecondPhase:
+                    NPC.velocity *= 0.96f;
+
+                    if (Timer == 0)
+                    {
+                        TargetPos = NPC.Center;
+                    }
+
+                    Timer += 1;
+
+                    if (Timer >= 150) // add effects.
+                    {
+                        ChangeState(BossState.Hoaming);
+                        TargetPos = NPC.Center;
+                        break;
+                    } else if (Timer >= 100)
+                    {
+                        NPC.Center = Vector2.Lerp(NPC.Center, TargetPos, 0.05f);
+                        switchedToSecondPhase = true;
+                    } else
+                    {
+                        NPC.Center = TargetPos + new Vector2(MathF.Sin(Timer * 0.005f * Timer) * Timer, MathF.Cos(Timer * 0.007f * Timer) * Timer);
+                    }
+                    break;
+            }
+        }
+
+        public override void DrawBehind(int index)
+        {
+        }
+
+        private void ShootFromHands(Player player, float speed = 10, int windupTime=0)
+        {
+            if (Main.netMode == NetmodeID.MultiplayerClient)
+                return;
+
+            if (windupTime > 0)
+            {
+                for (int i = 0; i < hands.Length; i++)
+                {
+                    if (hands[i] == null || !hands[i].NPC.active)
+                    {
+                        continue;
+                    }
+
+                    Main.NewText("wa");
+                    hands[i].WindupTimer = 0;
+                    hands[i].WindupDuration = 20;
+                }
+                return;
+            }
+
+            for (int i = 0; i < hands.Length; i++)
+            {
+                if (hands[i] == null || !hands[i].NPC.active) { 
+                    continue; 
+                }
+                Main.NewText("pam");
+                hands[i].WindupTimer = 0;
+                hands[i].WindupDuration = 1;
+                hands[i].pushback = 50;
+
+                Projectile.NewProjectile(
+                    NPC.GetSource_FromAI(),
+                    hands[i].NPC.Center,
+                    (player.Center - player.oldVelocity * 2 - hands[i].NPC.Center).SafeNormalize(Vector2.One) * speed,
+                    ProjectileID.EyeLaser, 20, 2
+                );
             }
         }
 
@@ -278,6 +500,29 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
             CurrentStage = newState;
             Timer = 0;
             TeleCount = 0;
+        }
+
+        public void SpawnHands()
+        {
+            if (Main.netMode == NetmodeID.MultiplayerClient)
+            {
+                return;
+            }
+
+            for (int i = 0; i < 2; i++)
+            {
+                TheMainframeHand handyMandy = (TheMainframeHand)NPC.NewNPCDirect(NPC.GetSource_FromAI(), NPC.Center, ModContent.NPCType<TheMainframeHand>(), NPC.whoAmI).ModNPC;
+                handyMandy.Parent = NPC;
+                handyMandy.Side = i * 2 - 1;
+                handyMandy.ParentWhoAmI = NPC.whoAmI;
+
+                hands[i] = handyMandy;
+
+                if (Main.netMode == NetmodeID.Server)
+                {
+                    NetMessage.SendData(MessageID.SyncNPC, number: handyMandy.NPC.whoAmI);
+                }
+            }
         }
     }
 }
