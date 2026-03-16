@@ -1277,6 +1277,11 @@ Items: {
 			66% chance to save ammo
 			'''
 	}
+
+	FieryGreatsword: {
+		DisplayName: Fiery Greatsword
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
