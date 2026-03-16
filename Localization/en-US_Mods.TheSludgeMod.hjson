@@ -1118,6 +1118,11 @@ Items: {
 			'''
 		DisplayName: Brain Of Perplexity
 	}
+
+	ThePainframe: {
+		Tooltip: ""
+		DisplayName: The Painframe
+	}
 }
 
 Projectiles: {
@@ -1167,6 +1172,7 @@ Projectiles: {
 	NeuralCrystalProj.DisplayName: Neural Crystal Proj
 	TheMainframeLaser.DisplayName: The Mainframe Laser
 	MainframeGhostSpooky.DisplayName: Mainframe Ghost Spooky
+	ThePainframeProjectile.DisplayName: The Painframe Projectile
 }
 
 Tiles: {
