@@ -1093,6 +1093,11 @@ Items: {
 		DisplayName: Shiny Yellow Balloon
 		Tooltip: Increases jump height
 	}
+
+	GemshardObliterator: {
+		DisplayName: Gemshard Obliterator
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
