@@ -6,6 +6,7 @@ using TheSludgeMod.Content.Items.Aluminium;
 using TheSludgeMod.Content.Items.Bismuth;
 using TheSludgeMod.Content.Items.Iridium;
 using TheSludgeMod.Content.Items.Materials;
+using TheSludgeMod.Content.Items.Weapons;
 using TheSludgeMod.Content.Items.Zinc;
 using TheSludgeMod.Content.Tiles;
 
@@ -178,6 +179,11 @@ namespace TheSludgeMod.Common.Systems
             bfrl.AddIngredient(ItemID.FrostCore, 1);
             bfrl.AddTile(TileID.MythrilAnvil);
             bfrl.Register();
+
+            Recipe zen = Recipe.Create(ItemID.Zenith);
+            zen.AddIngredient<ToyZenith>();
+            zen.AddTile(TileID.MythrilAnvil);
+            zen.Register();
         }
         public override void PostAddRecipes()
         {
