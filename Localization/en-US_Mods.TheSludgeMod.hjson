@@ -1140,6 +1140,8 @@ Projectiles: {
 	MaelthornProjectile.DisplayName: Maelthorn Projectile
 	ElderStaffProj.DisplayName: Elder Staff Proj
 	NeuralCrystalProj.DisplayName: Neural Crystal Proj
+	TheMainframeLaser.DisplayName: The Mainframe Laser
+	MainframeGhostSpooky.DisplayName: Mainframe Ghost Spooky
 }
 
 Tiles: {
