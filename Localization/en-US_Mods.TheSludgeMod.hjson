@@ -161,7 +161,12 @@ Items: {
 	}
 
 	XShotBlaster: {
-		Tooltip: "[c/ff0000:It's X-Shot or Nothing!]"
+		Tooltip:
+			'''
+			Shoots a spread of 2 bullets in parallel
+			50% chance to save ammo 
+			[c/ff0000:It's X-Shot or Nothing!]
+			'''
 		DisplayName: X-Shot Blaster
 	}
 
@@ -1262,6 +1267,15 @@ Items: {
 	ZoologistVoodooDoll: {
 		DisplayName: Zoologist Voodoo Doll
 		Tooltip: ""
+	}
+
+	ThePurifier: {
+		DisplayName: The Purifier
+		Tooltip:
+			'''
+			Shoots a spread of 3 bullets in parallel
+			66% chance to save ammo
+			'''
 	}
 }
 
