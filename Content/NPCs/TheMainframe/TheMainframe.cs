@@ -1,12 +1,14 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using ReLogic.Utilities;
-using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameContent;
+using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.Graphics.CameraModifiers;
 using Terraria.ID;
@@ -15,13 +17,14 @@ using TheSludgeMod.Content.Items.Consumables;
 using TheSludgeMod.Content.Items.Materials;
 using TheSludgeMod.Content.Items.Placeable;
 using TheSludgeMod.Content.Items.Vanity;
+using TheSludgeMod.Content.Items.Weapons;
 using TheSludgeMod.Content.Pets;
 
 namespace TheSludgeMod.Content.NPCs.TheMainframe
 {
     public enum BossState
     {
-        Hoaming,
+        Homing,
         Circle,
         SwitchToSecondPhase,
         Spiral,
@@ -31,17 +34,14 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
     [AutoloadBossHead]
     public class TheMainframe : ModNPC
     {
-        //public override LocalizedText DeathMessage => Language.GetText("Announcement.HasBeenDefeated_Plural").WithFormatArgs(this.GetLocalization("BossFightName")); Add Death message
-
-        // Boss stages stats
-        // Hoaming
+        // Boss stage values 
         private float bossTeleportSpeed
         {
-            get => SwitchedToSecondPhase ? 32 : 20; // set to 32, 20
+            get => SwitchedToSecondPhase ? 32 : 20;
         }
         private float minBossSpeed
         {
-            get => SwitchedToSecondPhase ? 14 : 10; // set to 14, 10
+            get => SwitchedToSecondPhase ? 14 : 10;
         }
         private float directionLerpSpeed
         {
@@ -59,8 +59,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
         {
             get => SwitchedToSecondPhase ? 40f : 50f;
         }
-
-        // Circling & Spiral
+        // Circling and spiral values
         private float circlingRadius
         {
             get => SwitchedToSecondPhase ? 600f : 350f;
@@ -120,7 +119,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
         public float CirclingStartOffset;
         public float StartRadius;
         public Vector2 BossMoveDirection;
-        public int HoamingStageRanCount;
+        public int HomingStageRanCount;
         public Vector2 MoveAwayVelocity;
         public float TeleportingTimer;
         public float CurrentBossRadius;
@@ -139,8 +138,15 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
         public override void SetStaticDefaults()
         {
-            // Add beastiary shit
             Main.npcFrameCount[Type] = 8;
+            NPCID.Sets.MPAllowedEnemies[Type] = true;
+            NPCID.Sets.BossBestiaryPriority.Add(Type);
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers()
+            {
+                PortraitScale = 0.5f,
+                PortraitPositionYOverride = -50f,
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
         }
 
         public override void SetDefaults()
@@ -161,7 +167,8 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
             NPC.noGravity = true;
             NPC.noTileCollide = true;
 
-            NPC.value = Item.buyPrice(platinum: 1); // UPDATE LATER
+            NPC.value = Item.buyPrice(gold: 18);
+            NPC.rarity = 3;
 
             NPC.SpawnWithHigherTime(30);
 
@@ -173,8 +180,6 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
             {
                 Music = MusicLoader.GetMusicSlot(Mod, "Assets/Music/TheMainframeTheme");
             }
-
-            // Add boss bar
         }
 
         public override void ModifyNPCLoot(NPCLoot npcLoot)
@@ -183,6 +188,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
             LeadingConditionRule notExpertRule = new LeadingConditionRule(new Conditions.NotExpert());
             notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MainframeMaskHead>(), 7));
             notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<SoulofSpite>(), 1, 25, 40));
+            notExpertRule.OnSuccess(ItemDropRule.OneFromOptions(1, ModContent.ItemType<ThePainframe>(), ModContent.ItemType<GemshardObliterator>(), ModContent.ItemType<Laserstorm>(), ModContent.ItemType<NeuralShardStaff>()));
             npcLoot.Add(notExpertRule);
             npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<MainframeBossBag>()));
             npcLoot.Add(ItemDropRule.MasterModeCommonDrop(ModContent.ItemType<MainframeRelic>()));
@@ -238,7 +244,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
-            if (CurrentStage == BossState.Hoaming)
+            if (CurrentStage == BossState.Homing)
             {
                 Player player = Main.player[NPC.target];
                 if (player.dead)
@@ -290,13 +296,11 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
                 SoundEngine.PlaySound(SoundID.Roar, NPC.Center);
 
-                // This adds a screen shake (screenshake) similar to Deerclops
+                // Screen shake
                 PunchCameraModifier modifier = new PunchCameraModifier(NPC.Center, (Main.rand.NextFloat() * ((float) Math.PI * 2f)).ToRotationVector2(), 20f, 6f, 20, 1000f, FullName);
                 Main.instance.CameraModifiers.Add(modifier);
             }
         }
-
-        // this is gonna be hitler
         public override void AI()
         {
             bool needsRecovery = false;
@@ -319,7 +323,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
             Player player = Main.player[NPC.target];
 
-            if (player.dead || doDeath) // fix this despawn shit
+            if (player.dead || doDeath)
             {
                 if (!doDeath)
                 {
@@ -414,12 +418,12 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
             switch (CurrentStage)
             {
-                case BossState.Hoaming:
+                case BossState.Homing:
                     if (Timer == 0)
                     {
                         if (Main.netMode != NetmodeID.MultiplayerClient)
                         {
-                            // runs only when the boss spawns
+                            //Runs on boss spawn only
                             if (TargetPos == Vector2.Zero)
                             {
                                 TargetPos = player.Center + Main.rand.NextVector2Unit() * Main.rand.Next(30, 500);
@@ -427,18 +431,18 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                             }
                         }
 
-                        CurrentBossSpeed = bossTeleportSpeed; // Set the inital speed
+                        CurrentBossSpeed = bossTeleportSpeed;
 
                         MoveAwayVelocity = Vector2.Zero;
 
                         NPC.Center = TargetPos;
                         NPC.velocity = Vector2.Zero;
 
-                        BossMoveDirection = (player.Center - NPC.Center).SafeNormalize(Vector2.One); // set the inital move dir
+                        BossMoveDirection = (player.Center - NPC.Center).SafeNormalize(Vector2.One);
 
                         TargetPos = Vector2.Zero;
 
-                        HoamingStageRanCount += 1;
+                        HomingStageRanCount += 1;
                     }
 
                     CurrentBossSpeed = MathF.Max(minBossSpeed, CurrentBossSpeed * 0.99f);
@@ -447,9 +451,9 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                     float distanceToPlayer = directionToPlayer.Length();
                     directionToPlayer.Normalize();
 
-                    Vector2 moveDir = Vector2.Lerp(BossMoveDirection, directionToPlayer, directionLerpSpeed); // v3
+                    Vector2 moveDir = Vector2.Lerp(BossMoveDirection, directionToPlayer, directionLerpSpeed);
                     BossMoveDirection = moveDir;
-                    moveDir.Normalize(); // idk if this will do shit but might as well
+                    moveDir.Normalize();
 
                     NPC.velocity = moveDir * CurrentBossSpeed * Math.Max(1f, distanceToPlayer / 500 + 0.5f) + MoveAwayVelocity;
                     if (SwitchedToSecondPhase)
@@ -464,15 +468,15 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                     MoveAwayVelocity *= 0.97f;
                     Timer += 1;
 
-                    // Switch to second phase
+                    // Second phase switch
                     if (Timer >= 20 && inSecondPhase && !SwitchedToSecondPhase)
                     {
                         ChangeState(BossState.SwitchToSecondPhase);
                         return;
                     }
 
-                    // Teleport
-                    if (Timer >= 260 && HoamingStageRanCount < 2)
+                    // Teleportation
+                    if (Timer >= 260 && HomingStageRanCount < 2)
                     {
                         Timer = 0;
                         TeleportingTimer = 0;
@@ -481,7 +485,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
                     if (Timer >= 200)
                     {
-                        if (HoamingStageRanCount < 2)
+                        if (HomingStageRanCount < 2)
                         {
                             if (Main.netMode != NetmodeID.MultiplayerClient)
                             {
@@ -561,7 +565,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                     TargetPos = player.Center + new Vector2(MathF.Cos((Timer * CurrentBossSpeed * rotDir) + CirclingStartOffset) * spinRadius, MathF.Sin((Timer * CurrentBossSpeed * rotDir) + CirclingStartOffset) * spinRadius);
                     NPC.Center = Vector2.Lerp(NPC.Center, TargetPos, 0.2f);
 
-                    //  ROTATION
+                    // Rotation
                     float dirChange2 = (player.Center.X >= (NPC.Center + NPC.velocity).X) ? 0.0872665f : -0.0872665f;
                     NPC.rotation += (dirChange2 - (NPC.rotation - MathF.Sin((Timer - 1) / rotationSinSpeed) / rotationSinIntenisty)) / rotationSinSpeed;
                     NPC.rotation += MathF.Sin(Timer / rotationSinSpeed) / rotationSinIntenisty;
@@ -583,8 +587,8 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                         {
                             DoSpiralNext = true;
                         }
-
-                        ChangeState(BossState.Hoaming);
+                            
+                        ChangeState(BossState.Homing);
                         TargetPos = NPC.Center;
                     }
 
@@ -634,7 +638,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                             DoSpiralNext = false;
                         }
 
-                        ChangeState(BossState.Hoaming);
+                        ChangeState(BossState.Homing);
                         TargetPos = NPC.Center;
                     }
 
@@ -652,7 +656,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
                     if (Timer >= 400)
                     {
-                        ChangeState(BossState.Hoaming);
+                        ChangeState(BossState.Homing);
                         TargetPos = NPC.Center;
                         return;
                     }
@@ -699,7 +703,6 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                         {
                             NPC.Center = TargetPos + Utils.RandomVector2(Main.rand, -20f, 20f) * (Timer / 100);
 
-                            // spawn spark
                             if (Main.rand.NextBool(3))
                             {
                                 Vector2 dustSpawn = new Vector2(Main.rand.Next(-121, 121), Main.rand.Next(-91, 91));
@@ -714,7 +717,6 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                         return;
                     }
 
-                    // slow down  boss into  a state
                     if (Timer == 50)
                     {
                         TargetPos = NPC.Center;
@@ -724,10 +726,11 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                     break;
             }
         }
-
         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
             Texture2D glow = ModContent.Request<Texture2D>(Texture + "_Glow").Value;
+            if (TeleportingTimer <= 0f)
+                return;
             SpriteEffects spriteEffects = (SpriteEffects) 0;
             if (NPC.spriteDirection == 1)
             {
@@ -771,7 +774,6 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
 
         }
-
         public void SpawnHands()
         {
             int amountOfArms = Main.expertMode ? 4 : 2;
@@ -794,7 +796,6 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                 }
             }
         }
-
         private void TryRecoverHands()
         {
             int found = 0;
@@ -809,7 +810,6 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                 }
             }
         }
-
         private void ShootFromHands(Player player, float speed = 10, int windupTime = 0)
         {
             if (Main.netMode == NetmodeID.MultiplayerClient)
@@ -852,14 +852,21 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                 );
             }
         }
-
         public void ChangeState(BossState newState)
         {
             TargetPos = Vector2.Zero;
             CurrentStage = newState;
             Timer = 0;
             TeleportingTimer = 0;
-            HoamingStageRanCount = 0;
+            HomingStageRanCount = 0;
+        }
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            bestiaryEntry.Info.AddRange(new List<IBestiaryInfoElement> {
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                new FlavorTextBestiaryInfoElement("Mods.TheSludgeMod.Bestiary.TheMainframe")
+            });
         }
     }
 }

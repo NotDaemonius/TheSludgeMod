@@ -1128,6 +1128,141 @@ Items: {
 		Tooltip: ""
 		DisplayName: Neural Shard Staff
 	}
+
+	MerchantVoodooDoll: {
+		DisplayName: Merchant Voodoo Doll
+		Tooltip: ""
+	}
+
+	NurseVoodooDoll: {
+		DisplayName: Nurse Voodoo Doll
+		Tooltip: ""
+	}
+
+	PainterVoodooDoll: {
+		DisplayName: Painter Voodoo Doll
+		Tooltip: ""
+	}
+
+	AnglerVoodooDoll: {
+		DisplayName: Angler Voodoo Doll
+		Tooltip: ""
+	}
+
+	ArmsDealerVoodooDoll: {
+		DisplayName: Arms Dealer Voodoo Doll
+		Tooltip: ""
+	}
+
+	CyborgVoodooDoll: {
+		DisplayName: Cyborg Voodoo Doll
+		Tooltip: ""
+	}
+
+	DemolitionistVoodooDoll: {
+		DisplayName: Demolitionist Voodoo Doll
+		Tooltip: ""
+	}
+
+	DryadVoodooDoll: {
+		DisplayName: Dryad Voodoo Doll
+		Tooltip: ""
+	}
+
+	DyeTraderVoodooDoll: {
+		DisplayName: Dye Trader Voodoo Doll
+		Tooltip: ""
+	}
+
+	GoblinTinkererVoodooDoll: {
+		DisplayName: Goblin Tinkerer Voodoo Doll
+		Tooltip: ""
+	}
+
+	GolferVoodooDoll: {
+		DisplayName: Golfer Voodoo Doll
+		Tooltip: ""
+	}
+
+	MechanicVoodooDoll: {
+		DisplayName: Mechanic Voodoo Doll
+		Tooltip: ""
+	}
+
+	OldManVoodooDoll: {
+		DisplayName: Old Man Voodoo Doll
+		Tooltip: ""
+	}
+
+	PartyGirlVoodooDoll: {
+		DisplayName: Party Girl Voodoo Doll
+		Tooltip: ""
+	}
+
+	PirateVoodooDoll: {
+		DisplayName: Pirate Voodoo Doll
+		Tooltip: ""
+	}
+
+	PrincessVoodooDoll: {
+		DisplayName: Princess Voodoo Doll
+		Tooltip: ""
+	}
+
+	SantaClausVoodooDoll: {
+		DisplayName: Santa Claus Voodoo Doll
+		Tooltip: ""
+	}
+
+	SkeletonMerchantVoodooDoll: {
+		DisplayName: Skeleton Merchant Voodoo Doll
+		Tooltip: ""
+	}
+
+	SteampunkerVoodooDoll: {
+		DisplayName: Steampunker Voodoo Doll
+		Tooltip: ""
+	}
+
+	StylistVoodooDoll: {
+		DisplayName: Stylist Voodoo Doll
+		Tooltip: ""
+	}
+
+	TavernkeepVoodooDoll: {
+		DisplayName: Tavernkeep Voodoo Doll
+		Tooltip: ""
+	}
+
+	TaxCollectorVoodooDoll: {
+		DisplayName: Tax Collector Voodoo Doll
+		Tooltip: ""
+	}
+
+	TravellingMerchantVoodooDoll: {
+		DisplayName: Travelling Merchant Voodoo Doll
+		Tooltip: ""
+	}
+
+	TruffleVoodooDoll: {
+		DisplayName: Truffle Voodoo Doll
+		Tooltip: ""
+	}
+
+	WitchDoctorVoodooDoll: {
+		DisplayName: Witch Doctor Voodoo Doll
+		Tooltip: ""
+	}
+
+	WizardVoodooDoll: {
+		DisplayName: Wizard Voodoo Doll
+		Tooltip: ""
+	}
+
+	ZoologistVoodooDoll: {
+		DisplayName: Zoologist Voodoo Doll
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1257,3 +1392,5 @@ NPCs: {
 	TheMainframe.DisplayName: The Mainframe
 	TheMainframeHand.DisplayName: The Mainframe Hand
 }
+
+Bestiary.TheMainframe: A colossal, flying mechanical abomination with the processing power of a billion universes. It uses this power puerly for rage and hatred. And lasers.
