@@ -130,6 +130,11 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
             if (player.dead)
             {
+                float locDistance = OrbitAmount + MathF.Sin((Timer + Side * 2) * 0.05f) * 20;
+                Vector2 targetPos = Parent.Center + new Vector2(locDistance, 0).RotatedBy(RotationThing) * new Vector2(3, 2);
+                NPC.Center = Vector2.Lerp(NPC.Center, targetPos, rotSpeed);
+                UpdateChain();
+
                 return;
             }
 
@@ -191,6 +196,18 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
                     break;
             }
+        }
+
+        public override void SendExtraAI(System.IO.BinaryWriter writer)
+        {
+            writer.Write(WindupTimer);
+            writer.Write(WindupDuration);
+        }
+
+        public override void ReceiveExtraAI(System.IO.BinaryReader reader)
+        {
+            WindupTimer = reader.ReadInt32();
+            WindupDuration = reader.ReadInt32();
         }
 
         public void DoArmRotation(float time, float radius, float rotSpeede, float rotSpeedup, int roDir)
@@ -268,8 +285,9 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
-            bool shouldGlow = WindupDuration > 1 || currentProgress > 0.01f;
+            currentProgress = MathHelper.Lerp(currentProgress, WindupTimer / (float) WindupDuration, 0.4f);
 
+            bool shouldGlow = WindupDuration > 1 || currentProgress > 0.01f;
             if (!shouldGlow)
                 return;
 
@@ -278,8 +296,6 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                 "TheSludgeMod/Content/NPCs/TheMainframe/Gloww",
                 ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
 
-
-            currentProgress = MathHelper.Lerp(currentProgress, (float) WindupTimer / (float) WindupDuration, 0.4f);
             float progress = currentProgress;
             float scale = MathHelper.Lerp(0.1f, 1.5f, progress);
             float alpha = MathHelper.Lerp(0.1f, 0.8f, progress);

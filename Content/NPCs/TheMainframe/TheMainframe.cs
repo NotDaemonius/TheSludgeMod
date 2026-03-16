@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
+using ReLogic.Utilities;
 using System;
 using Terraria;
 using Terraria.Audio;
@@ -54,6 +55,10 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
         {
             get => SwitchedToSecondPhase ? 10f : 15f;
         }
+        private float laserShootAmount
+        {
+            get => SwitchedToSecondPhase ? 40f : 50f;
+        }
 
         // Circling & Spiral
         private float circlingRadius
@@ -70,8 +75,10 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
         }
         private float circlingLaserFireSpeed
         {
-            get => SwitchedToSecondPhase ? 8f : 12f;
+            get => SwitchedToSecondPhase ? 12f : 20f;
         }
+
+        private int laserDamage = 20;
 
         public BossState CurrentStage
         {
@@ -119,11 +126,15 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
         public float CurrentBossRadius;
         private bool doDeath;
 
+        private float _musicVolume = 1f;
+        private SlotId _transitionLoopSlot;
+        private bool _transitionLoopPlaying = false;
+
         private TheMainframeHand[] hands = new TheMainframeHand[2];
 
         private bool inSecondPhase
         {
-            get => NPC.life < NPC.lifeMax * 0.99f;
+            get => NPC.life < NPC.lifeMax * 0.5f;
         }
 
         public override void SetStaticDefaults()
@@ -140,8 +151,9 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
             NPC.damage = 60;
             NPC.knockBackResist = 0f;
 
-            NPC.defense = 10;
-            NPC.lifeMax = 5;
+
+            NPC.defense = 25;
+            NPC.lifeMax = 35000;
 
             NPC.HitSound = SoundID.NPCHit4;
             NPC.DeathSound = SoundID.NPCDeath1;
@@ -149,7 +161,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
             NPC.noGravity = true;
             NPC.noTileCollide = true;
 
-            NPC.value = Item.buyPrice(gold: 5); // UPDATE LATER
+            NPC.value = Item.buyPrice(platinum: 1); // UPDATE LATER
 
             NPC.SpawnWithHigherTime(30);
 
@@ -287,10 +299,17 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
         // this is gonna be hitler
         public override void AI()
         {
-            if (hands[0] == null || !hands[0].NPC.active || hands[1] == null || !hands[1].NPC.active)
+            bool needsRecovery = false;
+            for (int i = 0; i < hands.Length; i++)
             {
-                TryRecoverHands();
+                if (hands[i] == null || !hands[i].NPC.active)
+                {
+                    needsRecovery = true;
+                    break;
+                }
             }
+            if (needsRecovery)
+                TryRecoverHands();
 
 
             if (NPC.target < 0 || NPC.target == 255 || Main.player[NPC.target].dead || !Main.player[NPC.target].active)
@@ -315,6 +334,9 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                 NPC.velocity *= 0.95f;
                 if (TeleportingTimer >= 60)
                 {
+                    PunchCameraModifier modifier = new PunchCameraModifier(NPC.Center, (Main.rand.NextFloat() * ((float) Math.PI * 2f)).ToRotationVector2(), 20f, 6f, 20, 1000f, FullName);
+                    Main.instance.CameraModifiers.Add(modifier);
+
                     for (int i = 0; i < hands.Length; i++)
                     {
                         if (hands[i] == null || !hands[i].NPC.active)
@@ -327,6 +349,67 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                     NPC.active = false;
                 }
                 return;
+            }
+
+            if (Main.dayTime)
+            {
+                NPC.damage = 1000;
+                laserDamage = 1000;
+                NPC.defense = 1000;
+            }
+
+            if (!Main.dedServ)
+            {
+                float targetVolume;
+
+                if (CurrentStage == BossState.SwitchToSecondPhase)
+                {
+                    if (Timer < 100f)
+                    {
+                        targetVolume = MathHelper.Lerp(1f, 0f, Timer / 100f);
+                    } else if (Timer >= 300f)
+                    {
+                        if (_transitionLoopPlaying)
+                        {
+                            SoundEngine.TryGetActiveSound(_transitionLoopSlot, out ActiveSound activeSound);
+                            activeSound?.Stop();
+                            _transitionLoopPlaying = false;
+                        }
+
+                        targetVolume = MathHelper.Lerp(0f, 1f, (Timer - 300f) / 100f);
+                    } else
+                    {
+                        if (!_transitionLoopPlaying)
+                        {
+                            SoundStyle loopStyle = new SoundStyle("TheSludgeMod/Assets/Sounds/MainframeTransitionLoop")
+                            {
+                                IsLooped = true,
+                                Volume = 1f
+                            };
+                            _transitionLoopSlot = SoundEngine.PlaySound(loopStyle, NPC.Center);
+                            _transitionLoopPlaying = true;
+                        } else
+                        {
+                            if (SoundEngine.TryGetActiveSound(_transitionLoopSlot, out ActiveSound activeSound))
+                                activeSound.Position = NPC.Center;
+                        }
+
+                        targetVolume = 0f;
+                    }
+                } else
+                {
+                    if (_transitionLoopPlaying)
+                    {
+                        SoundEngine.TryGetActiveSound(_transitionLoopSlot, out ActiveSound activeSound);
+                        activeSound?.Stop();
+                        _transitionLoopPlaying = false;
+                    }
+
+                    targetVolume = 1f;
+                }
+
+                _musicVolume = MathHelper.Lerp(_musicVolume, targetVolume, 0.15f);
+                Main.musicFade[Music] = _musicVolume;
             }
 
             switch (CurrentStage)
@@ -453,12 +536,12 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                         return;
                     }
 
-                    if (Timer % 40 == 0)
+                    if (Timer % laserShootAmount == 0)
                     {
                         ShootFromHands(player, 15f, 0);
-                    } else if ((Timer + 20) % 40 == 0 && (Timer + 20) < 200)
+                    } else if ((Timer + laserShootAmount / 2) % laserShootAmount == 0 && (Timer + laserShootAmount / 2) < 200)
                     {
-                        ShootFromHands(player, 15f, 10);
+                        ShootFromHands(player, 15f, (int) (laserShootAmount / 2));
                     }
 
                     break;
@@ -743,6 +826,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
 
                     hands[i].WindupTimer = 0;
                     hands[i].WindupDuration = windupTime;
+                    hands[i].NPC.netUpdate = true;
                 }
                 return;
             }
@@ -757,12 +841,14 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                 hands[i].WindupTimer = 0;
                 hands[i].WindupDuration = 1;
                 hands[i].pushback = 50;
+                hands[i].NPC.netUpdate = true;
+
 
                 Projectile.NewProjectile(
                     NPC.GetSource_FromAI(),
                     hands[i].NPC.Center,
-                    (player.Center - player.oldVelocity * 2 - hands[i].NPC.Center).SafeNormalize(Vector2.One) * speed,
-                    ModContent.ProjectileType<TheMainframeLaser>(), 20, 2
+                    (player.oldPosition - hands[i].NPC.Center).SafeNormalize(Vector2.One) * speed,
+                    ModContent.ProjectileType<TheMainframeLaser>(), laserDamage, 2
                 );
             }
         }
