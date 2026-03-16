@@ -1099,6 +1099,11 @@ Items: {
 		Tooltip: ""
 	}
 
+	Laserstorm: {
+		Tooltip: ""
+		DisplayName: Laserstorm
+	}
+
 	ToyZenith: {
 		DisplayName: Toy Zenith
 		Tooltip: ""
