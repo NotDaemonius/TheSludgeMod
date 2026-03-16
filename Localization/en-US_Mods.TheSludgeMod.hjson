@@ -1103,7 +1103,10 @@ Items: {
 		Tooltip: ""
 		DisplayName: Laserstorm
 	}
-
+	ToyZenith: {
+		DisplayName: Toy Zenith
+		Tooltip: ""
+	}
 	BrainOfPerplexity: {
 		Tooltip:
 			'''
