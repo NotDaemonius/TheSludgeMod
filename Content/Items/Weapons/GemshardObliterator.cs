@@ -39,7 +39,7 @@ namespace TheSludgeMod.Content.Items.Weapons
 
         public override Vector2? HoldoutOffset()
         {
-            return new Vector2(0f, 5f);
+            return new Vector2(-10f, 5f);
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
