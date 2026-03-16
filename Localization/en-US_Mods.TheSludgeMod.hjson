@@ -1394,3 +1394,26 @@ NPCs: {
 }
 
 Bestiary.TheMainframe: A colossal, flying mechanical abomination with the processing power of a billion universes. It uses this power puerly for rage and hatred. And lasers.
+
+Prefixes: {
+	Flimsy.DisplayName: Flimsy
+	Brittle.DisplayName: Brittle
+	Fierce.DisplayName: Fierce
+	Heroic.DisplayName: Heroic
+	Draconian.DisplayName: Draconian
+	Inoperable.DisplayName: Inoperable
+	Rigid.DisplayName: Rigid
+	Vigorous.DisplayName: Vigorous
+	Ardent.DisplayName: Ardent
+	Glorious.DisplayName: Glorious
+	Harsh.DisplayName: Harsh
+	Shabby.DisplayName: Shabby
+	Bountiful.DisplayName: Bountiful
+	Vitalizing.DisplayName: Vitalizing
+	Perfect.DisplayName: Perfect
+	Enchanting.DisplayName: Enchanting
+	Acute.DisplayName: Acute
+	Crushing.DisplayName: Crushing
+	Demolishing.DisplayName: Demolishing
+	Piercing.DisplayName: Piercing
+}
