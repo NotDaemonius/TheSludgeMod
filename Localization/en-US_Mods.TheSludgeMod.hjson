@@ -1103,6 +1103,16 @@ Items: {
 		Tooltip: ""
 		DisplayName: Laserstorm
 	}
+
+	BrainOfPerplexity: {
+		Tooltip:
+			'''
+			Has a chance to dodge attacks
+			Temporarily increase critical chance and summon damage after dodge
+			Confuses all nearby enemies after being struck
+			'''
+		DisplayName: Brain Of Perplexity
+	}
 }
 
 Projectiles: {
@@ -1202,6 +1212,11 @@ Buffs: {
 	NeuralCrystalBuff: {
 		DisplayName: Tiny Mainframe
 		Description: HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE.
+	}
+
+	PerplexityBuff: {
+		Description: Increased critical chance and minion damage
+		DisplayName: Perplexity
 	}
 }
 
