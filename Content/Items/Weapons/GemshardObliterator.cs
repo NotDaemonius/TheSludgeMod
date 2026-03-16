@@ -25,11 +25,11 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.useAnimation = 6;
             Item.autoReuse = true;
             Item.shootSpeed = 24;
-            Item.DamageType = DamageClass.Magic;
-            Item.damage = 79;
+            Item.DamageType = DamageClass.Ranged;
+            Item.damage = 56;
             Item.knockBack = 2;
             Item.crit = 12;
-            Item.mana = 3;
+            Item.value = Item.buyPrice(0, 5, 0, 0);
             Item.rare = ItemRarityID.LightPurple;
             Item.UseSound = SoundID.Item157;
             Item.autoReuse = true;
@@ -48,7 +48,9 @@ namespace TheSludgeMod.Content.Items.Weapons
             // After spawning, flip the ownership flags
             Main.projectile[projIndex].friendly = true;
             Main.projectile[projIndex].hostile = false;
-            Main.projectile[projIndex].DamageType = DamageClass.Magic; // or Melee, Ranged, etc.
+            Main.projectile[projIndex].DamageType = DamageClass.Ranged;
+            Main.projectile[projIndex].usesLocalNPCImmunity = true;
+            Main.projectile[projIndex].localNPCHitCooldown = 10;
 
             return false; // return false so the default shoot doesn't also fire
         }
