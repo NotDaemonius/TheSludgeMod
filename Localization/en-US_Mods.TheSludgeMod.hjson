@@ -1123,6 +1123,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: The Painframe
 	}
+
+	NeuralShardStaff: {
+		Tooltip: ""
+		DisplayName: Neural Shard Staff
+	}
 }
 
 Projectiles: {
@@ -1173,6 +1178,7 @@ Projectiles: {
 	TheMainframeLaser.DisplayName: The Mainframe Laser
 	MainframeGhostSpooky.DisplayName: Mainframe Ghost Spooky
 	ThePainframeProjectile.DisplayName: The Painframe Projectile
+	NeuralShardProj.DisplayName: Neural Shard Proj
 }
 
 Tiles: {
@@ -1228,6 +1234,11 @@ Buffs: {
 	PerplexityBuff: {
 		Description: Increased critical chance and minion damage
 		DisplayName: Perplexity
+	}
+
+	NeuralShardBuff: {
+		Description: Mods.TheSludgeMod.Buffs.NeuralShardBuff.Description
+		DisplayName: Neural Shard Buff
 	}
 }
 
