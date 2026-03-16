@@ -6,6 +6,7 @@ using Terraria.GameContent;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Projectiles;
 using TheSludgeMod.Content.Items.Placeable;
+using TheSludgeMod.Content.Rarities;
 
 namespace TheSludgeMod.Content.Items.Materials
 {
@@ -22,7 +23,7 @@ namespace TheSludgeMod.Content.Items.Materials
 			Item.width = 20;
 			Item.height = 20;
 			Item.value = Item.buyPrice(gold: 15);
-			Item.rare = ItemRarityID.Purple;
+			Item.rare = ModContent.RarityType<Indigo>();
             Item.material = true;
         }
 		public override void AddRecipes()

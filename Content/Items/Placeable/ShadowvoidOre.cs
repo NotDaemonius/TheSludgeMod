@@ -4,6 +4,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Projectiles;
+using TheSludgeMod.Content.Rarities;
 
 namespace TheSludgeMod.Content.Items.Placeable
 {
@@ -21,8 +22,8 @@ namespace TheSludgeMod.Content.Items.Placeable
 			Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.ShadowvoidOre>());
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.value = Item.buyPrice(gold: 15);
-			Item.rare = ItemRarityID.Purple;
-			Item.autoReuse = true;
+			Item.rare = ModContent.RarityType<Indigo>();
+            Item.autoReuse = true;
 			Item.useTurn = true;
             Item.material = true;
         }
