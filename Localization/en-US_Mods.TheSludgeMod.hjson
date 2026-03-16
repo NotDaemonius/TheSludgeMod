@@ -1098,6 +1098,11 @@ Items: {
 		DisplayName: Gemshard Obliterator
 		Tooltip: ""
 	}
+
+	ToyZenith: {
+		DisplayName: Toy Zenith
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
