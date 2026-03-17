@@ -1282,6 +1282,11 @@ Items: {
 		DisplayName: Fiery Greatsword
 		Tooltip: ""
 	}
+
+	LifeSickle: {
+		DisplayName: Life Sickle
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1333,6 +1338,7 @@ Projectiles: {
 	MainframeGhostSpooky.DisplayName: Mainframe Ghost Spooky
 	ThePainframeProjectile.DisplayName: The Painframe Projectile
 	NeuralShardProj.DisplayName: Neural Shard Proj
+	LifeSickleProj.DisplayName: Life Sickle Proj
 }
 
 Tiles: {

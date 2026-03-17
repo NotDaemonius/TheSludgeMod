@@ -7,7 +7,7 @@ using Terraria;
 using Terraria.ModLoader;
 using TheSludgeMod.Common.Players;
 
-namespace TheSludgeMod.Content.Items.Unused.Bin
+namespace TheSludgeMod.Content.Items.Unused.Outdated
 {
     public class TinOfSpinach : ModItem
     {
