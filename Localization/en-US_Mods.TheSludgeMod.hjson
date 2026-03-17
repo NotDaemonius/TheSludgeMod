@@ -1287,6 +1287,11 @@ Items: {
 		DisplayName: Life Sickle
 		Tooltip: ""
 	}
+
+	Headlamp: {
+		Tooltip: "Provides light when worn"
+		DisplayName: Headlamp
+	}
 }
 
 Projectiles: {
