@@ -27,7 +27,6 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.value = Item.buyPrice(gold: 1);
             Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item1;
-            Item.autoReuse = true;
         }
     }
 }

@@ -16,7 +16,7 @@ using TheSludgeMod.Content.Items.Zinc;
 
 namespace TheSludgeMod.Common.Systems
 {
-    public class OreGenShit : ModSystem
+    public class OreGenSystem : ModSystem
     {
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
         {

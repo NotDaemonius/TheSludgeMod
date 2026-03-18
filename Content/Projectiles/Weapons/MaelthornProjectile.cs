@@ -45,8 +45,13 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
 			chainTexture = ModContent.Request<Texture2D>(ChainTexturePath);
 			chainTextureExtra = ModContent.Request<Texture2D>(ChainTextureExtraPath);
 		}
+        public override void Unload()
+        {
+            chainTexture = null;
+            chainTextureExtra = null;
+        }
 
-		public override void SetStaticDefaults() {
+        public override void SetStaticDefaults() {
 			// These lines facilitate the trail drawing
 			ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6;
 			ProjectileID.Sets.TrailingMode[Projectile.type] = 2;

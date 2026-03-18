@@ -1,10 +1,16 @@
-﻿using MonoMod.RuntimeDetour;
+﻿using System;
 using System.Reflection;
+using MonoMod.RuntimeDetour;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Rarities;
 
+/// <summary>
+/// Fixes item rarity scaling for items with high-tier prefixes.
+/// Ensures that Red and Purple rarity items don't have their rarity 
+/// incorrectly downgraded when applying prefixes.
+/// </summary>
 public class VanillaRarityFix : ModSystem
 {
     private Hook _prefixHook;
@@ -12,20 +18,44 @@ public class VanillaRarityFix : ModSystem
 
     public override void Load()
     {
-        var method = typeof(Item).GetMethod(
-            "Prefix",
-            BindingFlags.Public | BindingFlags.Instance,
-            null,
-            new[] { typeof(int) },
-            null
-        );
-        _prefixHook = new Hook(method, OnPrefix);
+        try
+        {
+            var method = typeof(Item).GetMethod(
+                "Prefix",
+                BindingFlags.Public | BindingFlags.Instance,
+                null,
+                new[] { typeof(int) },
+                null
+            );
+
+            if (method == null)
+            {
+                Mod.Logger.Error("Failed to find Item.Prefix method for hooking");
+                return;
+            }
+
+            _prefixHook = new Hook(method, OnPrefix);
+        }
+        catch (Exception ex)
+        {
+            Mod.Logger.Error($"Failed to create Item.Prefix hook: {ex.Message}");
+        }
     }
 
     public override void Unload()
     {
-        _prefixHook?.Dispose();
-        _prefixHook = null;
+        try
+        {
+            if (_prefixHook != null)
+            {
+                _prefixHook.Dispose();
+                _prefixHook = null;
+            }
+        }
+        catch (Exception ex)
+        {
+            Mod.Logger.Error($"Failed to dispose Item.Prefix hook: {ex.Message}");
+        }
     }
 
     private static bool OnPrefix(orig_Prefix orig, Item self, int prefixWeWant)

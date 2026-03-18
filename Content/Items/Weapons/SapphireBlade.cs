@@ -27,7 +27,6 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.value = Item.buyPrice(silver: 20);
             Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item1;
-            Item.autoReuse = true;
         }
 
         public override void AddRecipes()

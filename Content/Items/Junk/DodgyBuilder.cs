@@ -17,7 +17,12 @@ namespace TheSludgeMod.Content.Items.Junk
 
         public override void UpdateInventory(Player player)
         {
-            player.GetModPlayer<DodgyBuilderPlayer>().hasDodgyBuilder = true;
+            var modPlayer = player.GetModPlayer<DodgyBuilderPlayer>();
+
+            if (!modPlayer.hasDodgyBuilder)
+            {
+                modPlayer.hasDodgyBuilder = true;
+            }
         }
     }
 }
