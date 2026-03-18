@@ -1289,8 +1289,13 @@ Items: {
 	}
 
 	Headlamp: {
-		Tooltip: "Provides light when worn"
+		Tooltip: Provides light when worn
 		DisplayName: Headlamp
+	}
+
+	StarkaKitchenRules: {
+		Tooltip: "Eat nicely."
+		DisplayName: Starka Kitchen Rules
 	}
 }
 
