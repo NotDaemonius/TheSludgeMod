@@ -26,7 +26,14 @@ namespace TheSludgeMod.Content.Tiles
 
         public override void Load()
         {
+            if (Main.dedServ)
+                return;
+
             flameTexture = ModContent.Request<Texture2D>(Texture + "_Flame");
+        }
+        public override void Unload()
+        {
+            flameTexture = null;
         }
 
         public override void SetStaticDefaults()

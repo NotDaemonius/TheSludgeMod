@@ -31,7 +31,14 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
         private static Asset<Texture2D> chainTexture;
         public override void Load()
         {
+            if (Main.dedServ)
+                return;
+
             chainTexture = ModContent.Request<Texture2D>("TheSludgeMod/Content/Items/RoseQuartz/RoseQuartzHookChain");
+        }
+        public override void Unload()
+        {
+            chainTexture = null;
         }
         public override void SetDefaults()
         {

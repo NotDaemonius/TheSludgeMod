@@ -12,18 +12,22 @@ using Terraria.ModLoader;
 
 namespace TheSludgeMod
 {
-	// Please read https://github.com/tModLoader/tModLoader/wiki/Basic-tModLoader-Modding-Guide#mod-skeleton-contents for more information about the various files in a mod.
 	public class TheSludgeMod : Mod
 	{
         private Asset<Texture2D> _vanillaSkeletronHead;
-
+        private Asset<Texture2D> _modSkeletronHead;
 
         public override void Load()
         {
             if (!Main.dedServ)
             {
                 _vanillaSkeletronHead = TextureAssets.Npc[NPCID.SkeletronHead];
-                TextureAssets.Npc[NPCID.SkeletronHead] = ModContent.Request<Texture2D>("TheSludgeMod/Common/GlobalNPCs/Skeletron_Head", AssetRequestMode.ImmediateLoad);
+                _modSkeletronHead = ModContent.Request<Texture2D>("TheSludgeMod/Common/GlobalNPCs/Skeletron_Head", AssetRequestMode.ImmediateLoad);
+
+                if (_modSkeletronHead != null)
+                {
+                    TextureAssets.Npc[NPCID.SkeletronHead] = _modSkeletronHead;
+                }
             }
         }
 
@@ -31,13 +35,15 @@ namespace TheSludgeMod
         {
             if (!Main.dedServ)
             {
-                if (_vanillaSkeletronHead != null) {
+                if (_vanillaSkeletronHead != null &&
+                    TextureAssets.Npc[NPCID.SkeletronHead] == _modSkeletronHead)
+                {
                     TextureAssets.Npc[NPCID.SkeletronHead] = _vanillaSkeletronHead;
                 }
 
                 _vanillaSkeletronHead = null;
+                _modSkeletronHead = null;
             }
-
             base.Unload();
         }
     }

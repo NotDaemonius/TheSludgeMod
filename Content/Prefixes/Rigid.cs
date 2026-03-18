@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ExampleMod.Content.Prefixes
+namespace TheSludgeMod.Content.Prefixes
 {
     public class Rigid : ModPrefix
     {

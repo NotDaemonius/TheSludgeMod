@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace ExampleMod.Content.Prefixes
+namespace TheSludgeMod.Content.Prefixes
 {
     public class Bountiful : ModPrefix
     {
