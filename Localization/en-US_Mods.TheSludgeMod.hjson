@@ -56,7 +56,7 @@ Items: {
 
 	GiantRoseQuartz: {
 		DisplayName: Large Rose Quartz
-		Tooltip: "For Capture the Gem. It drops when you die"
+		Tooltip: For Capture the Gem. It drops when you die
 	}
 
 	RoseQuartzStaff: {
@@ -1312,6 +1312,11 @@ Items: {
 		DisplayName: Water Balloon
 		Tooltip: ""
 	}
+
+	Glaive: {
+		Tooltip: Jumps between up to 4 enemies.
+		DisplayName: Glaive
+	}
 }
 
 Projectiles: {
@@ -1365,6 +1370,7 @@ Projectiles: {
 	NeuralShardProj.DisplayName: Neural Shard Proj
 	LifeSickleProj.DisplayName: Life Sickle Proj
 	WaterBalloonProj.DisplayName: Water Balloon Proj
+	GlaiveProj.DisplayName: Glaive Proj
 }
 
 Tiles: {
