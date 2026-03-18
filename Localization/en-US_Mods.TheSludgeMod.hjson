@@ -1300,7 +1300,12 @@ Items: {
 
 	Deodorant: {
 		DisplayName: Deodorant
-		Tooltip: "Increases NPC happiness by 10% for 5 minutes"
+		Tooltip: Increases NPC happiness by 10% for 5 minutes
+	}
+
+	DestroyerScarf: {
+		Tooltip: "Reduces damage taken by 30%"
+		DisplayName: Destroyer Scarf
 	}
 }
 
