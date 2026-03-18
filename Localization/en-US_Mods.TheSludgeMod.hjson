@@ -1304,8 +1304,13 @@ Items: {
 	}
 
 	DestroyerScarf: {
-		Tooltip: "Reduces damage taken by 30%"
+		Tooltip: Reduces damage taken by 30%
 		DisplayName: Destroyer Scarf
+	}
+
+	WaterBalloon: {
+		DisplayName: Water Balloon
+		Tooltip: ""
 	}
 }
 
@@ -1359,6 +1364,7 @@ Projectiles: {
 	ThePainframeProjectile.DisplayName: The Painframe Projectile
 	NeuralShardProj.DisplayName: Neural Shard Proj
 	LifeSickleProj.DisplayName: Life Sickle Proj
+	WaterBalloonProj.DisplayName: Water Balloon Proj
 }
 
 Tiles: {
