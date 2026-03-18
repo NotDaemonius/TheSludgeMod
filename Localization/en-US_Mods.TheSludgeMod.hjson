@@ -55,8 +55,8 @@ Items: {
 	}
 
 	GiantRoseQuartz: {
-		DisplayName: Giant Rose Quartz
-		Tooltip: ""
+		DisplayName: Large Rose Quartz
+		Tooltip: "For Capture the Gem. It drops when you die"
 	}
 
 	RoseQuartzStaff: {
@@ -85,7 +85,7 @@ Items: {
 
 	RoseQuartzAcorn: {
 		DisplayName: Rose Quartz Acorn
-		Tooltip: Fuck you.
+		Tooltip: UNIMPLEMENTED
 	}
 
 	RoseQuartzStoneBlock: {

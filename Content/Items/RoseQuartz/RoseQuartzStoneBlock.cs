@@ -10,6 +10,10 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
 {
     public class RoseQuartzStoneBlock : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 100;
+        }
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.EmeraldStoneBlock);

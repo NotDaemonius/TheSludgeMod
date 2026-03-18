@@ -10,6 +10,10 @@ namespace TheSludgeMod.Content.Items.Consumables
 {
     public class SquareBomb : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 99;
+        }
         public override void SetDefaults()
         {
             Item.width = 20;

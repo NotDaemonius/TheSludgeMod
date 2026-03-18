@@ -7,6 +7,10 @@ namespace TheSludgeMod.Content.Items.Weapons
 {
     public class Pebble : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 99;
+        }
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -12,6 +12,10 @@ namespace TheSludgeMod.Content.Items.Ammo
 {
     public class BigBullet : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 99;
+        }
         public override void SetDefaults()
         {
             Item.damage = 12; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
