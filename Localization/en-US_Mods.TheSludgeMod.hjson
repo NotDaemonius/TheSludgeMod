@@ -1317,6 +1317,11 @@ Items: {
 		Tooltip: Jumps between up to 4 enemies.
 		DisplayName: Glaive
 	}
+
+	FrostflamingMace: {
+		DisplayName: Frostflaming Mace
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1371,6 +1376,7 @@ Projectiles: {
 	LifeSickleProj.DisplayName: Life Sickle Proj
 	WaterBalloonProj.DisplayName: Water Balloon Proj
 	GlaiveProj.DisplayName: Glaive Proj
+	FrostflamingMaceProj.DisplayName: Frostflaming Mace Proj
 }
 
 Tiles: {
