@@ -1294,8 +1294,13 @@ Items: {
 	}
 
 	StarkaKitchenRules: {
-		Tooltip: "Eat nicely."
+		Tooltip: Eat nicely.
 		DisplayName: Starka Kitchen Rules
+	}
+
+	Deodorant: {
+		DisplayName: Deodorant
+		Tooltip: "Increases NPC happiness by 10% for 5 minutes"
 	}
 }
 
@@ -1407,8 +1412,13 @@ Buffs: {
 	}
 
 	NeuralShardBuff: {
-		Description: Mods.TheSludgeMod.Buffs.NeuralShardBuff.Description
-		DisplayName: Neural Shard Buff
+		Description: A shard of the Mainframe's essence is following you.
+		DisplayName: Neural Shards
+	}
+
+	DeodorantBuff: {
+		DisplayName: Deodorant
+		Description: NPCs will like you much more now that you don't stink.
 	}
 }
 
