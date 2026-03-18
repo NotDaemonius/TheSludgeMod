@@ -15,11 +15,11 @@ namespace TheSludgeMod.Content.Items.Weapons
         {
             Item.CloneDefaults(ItemID.FlamingMace);
             Item.rare = ItemRarityID.Green;
-            Item.damage = 22;
-            Item.knockBack = 8f;
-            Item.useTime = 27;
-            Item.useAnimation = 27;
-            Item.value = Item.buyPrice(gold: 3);
+            Item.damage = 9;
+            Item.knockBack = 4.6f;
+            Item.useTime = 45;
+            Item.useAnimation = 45;
+            Item.value = Item.buyPrice(gold: 2);
             Item.shoot = ModContent.ProjectileType<FrostflamingMaceProj>();
             Item.shootSpeed = 11f;
         }

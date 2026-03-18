@@ -7,10 +7,16 @@ namespace TheSludgeMod.Common.Players
 {
     public class MyModPlayer : ModPlayer
     {
+        private static readonly bool CalamityLoaded = ModLoader.TryGetMod("CalamityMod", out _);
+
         public override void PostUpdateRunSpeeds()
         {
-            Player.maxRunSpeed = 4.5f;
-            Player.runAcceleration = 0.09f;
+            if (CalamityLoaded)
+                return;
+
+            Player.maxRunSpeed += 1f;
+            Player.runAcceleration += 0.01f;
+            Player.jumpHeight += 4;
         }
     }
 }
