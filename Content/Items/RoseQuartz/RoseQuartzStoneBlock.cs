@@ -10,19 +10,22 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
 {
     public class RoseQuartzStoneBlock : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 100;
+        }
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.EmeraldStoneBlock);
             Item.createTile = ModContent.TileType<RoseQuartzStoneTile>();
         }
-
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ModContent.ItemType<RoseQuartz>(), 1)
-                .AddIngredient(ItemID.StoneBlock, 1)
-                .AddTile(TileID.HeavyWorkBench)
-                .Register();
+            .AddIngredient(ModContent.ItemType<RoseQuartz>(), 1)
+            .AddIngredient(ItemID.StoneBlock, 1)
+            .AddTile(TileID.HeavyWorkBench)
+            .Register();
         }
     }
 }

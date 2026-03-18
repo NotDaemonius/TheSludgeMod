@@ -7,6 +7,9 @@
 	<PropertyGroup>
 		
 	</PropertyGroup>
+	<ItemGroup>
+	  <None Include="Content\Items\Weapons\XShotBlaster.cs" />
+	</ItemGroup>
 
 	<!-- References -->
 

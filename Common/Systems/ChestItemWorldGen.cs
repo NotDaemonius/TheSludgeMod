@@ -6,59 +6,110 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TheSludgeMod.Content.Items;
+using Terraria.ModLoader.IO;
+using TheSludgeMod.Content.Items.Accessories;
+using TheSludgeMod.Content.Items.Accessories.Balloons;
+using TheSludgeMod.Content.Items.Aluminium;
+using TheSludgeMod.Content.Items.Iridium;
+using TheSludgeMod.Content.Items.Nickel;
+using TheSludgeMod.Content.Items.Tools;
+using TheSludgeMod.Content.Items.Zinc;
 
 namespace TheSludgeMod.Common.Systems
 {
     public class ChestItemWorldGen : ModSystem
     {
-        // We use PostWorldGen for this because we want to ensure that all chests have been placed before adding items.
         public override void PostWorldGen()
         {
-            // Place some additional items in Frozen Chests:
-            // These are the 3 new items we will place.
-            int[] itemsToPlaceInFrozenChests = [ModContent.ItemType<MagnetPickaxe>()];
-            // This variable will help cycle through the items so that different Frozen Chests get different items
-            int itemsToPlaceInFrozenChestsChoice = 0;
-            // Rather than place items in each chest, we'll place up to 6 items (2 of each).
-            int itemsPlaced = 0;
-            int maxItems = 6;
-            // Loop over all the chests
-            for (int chestIndex = 0; chestIndex < Main.maxChests; chestIndex++)
+            List<(int, int, int)> barValues = new List<(int, int, int)>() {
+                (ItemID.CopperBar, ItemID.TinBar, ModContent.ItemType<ZincBar>()),
+                (ItemID.IronBar, ItemID.LeadBar, ModContent.ItemType<NickelBar>()),
+                (ItemID.SilverBar, ItemID.TungstenBar, ModContent.ItemType<AluminiumBar>()),
+                (ItemID.GoldBar, ItemID.PlatinumBar, ModContent.ItemType<IridiumBar>()),
+            };
+
+            void appendChestItem(int itemID, Chest chest)
             {
-                Chest chest = Main.chest[chestIndex];
-                if (chest == null)
+                for (int slot = 0; slot < chest.item.Length; slot++)
                 {
-                    continue;
-                }
-                Tile chestTile = Main.tile[chest.x, chest.y];
-                // We need to check if the current chest is the Frozen Chest. We need to check that it exists and has the TileType and TileFrameX values corresponding to the Frozen Chest.
-                // If you look at the sprite for Chests by extracting Tiles_21.xnb, you'll see that the 12th chest is the Frozen Chest. Since we are counting from 0, this is where 11 comes from. 36 comes from the width of each tile including padding. An alternate approach is to check the wiki and looking for the "Internal Tile ID" section in the infobox: https://terraria.wiki.gg/wiki/Frozen_Chest
-                if (chestTile.TileType == TileID.Containers && chestTile.TileFrameX == 3 * 36)
-                {
-                    // We have found a Frozen Chest
-                    // If we don't want to add one of the items to every Frozen Chest, we can randomly skip this chest with a 33% chance.
-                    if (WorldGen.genRand.NextBool(3))
-                        continue;
-                    // Next we need to find the first empty slot for our item
-                    for (int inventoryIndex = 0; inventoryIndex < Chest.maxItems; inventoryIndex++)
+                    if (chest.item[slot].type == ItemID.None)
                     {
-                        if (chest.item[inventoryIndex].type == ItemID.None)
+                        chest.item[slot].SetDefaults(itemID);
+                        break;
+                    }
+                }
+            }
+
+            void replaceChestItem(int slot, int itemID, Chest chest)
+            {
+                chest.item[slot].SetDefaults(itemID);
+                chest.item[slot].stack = 1;
+            }
+
+            for (int i = 0; i < Main.maxChests; i++)
+            {
+                Chest chest = Main.chest[i];
+                if (chest == null)
+                    continue;
+
+                Tile tile = Main.tile[chest.x, chest.y];
+
+                // this code is so bad
+                for (int slot = 0; slot < chest.item.Length; slot++)
+                {
+                    for (int barThing = 0; barThing < barValues.Count; barThing++)
+                    {
+                        if (chest.item[slot].type == barValues[barThing].Item1 || chest.item[slot].type == barValues[barThing].Item2)
                         {
-                            // Place the item
-                            chest.item[inventoryIndex].SetDefaults(itemsToPlaceInFrozenChests[itemsToPlaceInFrozenChestsChoice]);
-                            // Decide on the next item that will be placed.
-                            itemsToPlaceInFrozenChestsChoice = (itemsToPlaceInFrozenChestsChoice + 1) % itemsToPlaceInFrozenChests.Length;
-                            // Alternate approach: Random instead of cyclical: chest.item[inventoryIndex].SetDefaults(WorldGen.genRand.Next(itemsToPlaceInFrozenChests));
-                            itemsPlaced++;
-                            break;
+                            if (Main.rand.NextBool(3))
+                            {
+                                int stack = chest.item[slot].stack;
+                                chest.item[slot].SetDefaults(barValues[barThing].Item3);
+                                chest.item[slot].stack = stack;
+                            }
                         }
                     }
                 }
-                // Once we've placed as many items as we wanted, break out of the loop
-                if (itemsPlaced >= maxItems)
+
+                // Granite
+                if (tile.TileType == TileID.Containers2 && tile.TileFrameX / 36 == 11)
                 {
-                    break;
+                    replaceChestItem(0, ModContent.ItemType<OrbitalRadiance>(), chest);
+                } else if (tile.TileType == TileID.Containers && tile.TileFrameX == 4 * 36) // Shadow
+                {
+                    if (Random.Shared.Next(3) == 0)
+                    {
+                        appendChestItem(ModContent.ItemType<MagnetPickaxe>(), chest);
+                    }
+                }
+                else if (tile.TileType == TileID.Containers && tile.TileFrameX / 36 == 13) // Skyware
+                {
+                    for (int slot = 0; slot < chest.item.Length; slot++)
+                    {
+                        if (chest.item[slot].type == ItemID.ShinyRedBalloon)
+                        {
+                            int[] balloons = new int[]
+                            {
+                                ItemID.ShinyRedBalloon,
+ModContent.ItemType<ShinyBlackBalloon>(),
+ModContent.ItemType<ShinyBlueBalloon>(),
+ModContent.ItemType<ShinyBrownBalloon>(),
+ModContent.ItemType<ShinyCyanBalloon>(),
+ModContent.ItemType<ShinyGreenBalloon>(),
+ModContent.ItemType<ShinyLimeBalloon>(),
+ModContent.ItemType<ShinyOrangeBalloon>(),
+ModContent.ItemType<ShinyPinkBalloon>(),
+ModContent.ItemType<ShinyPurpleBalloon>(),
+ModContent.ItemType<ShinySilverBalloon>(),
+ModContent.ItemType<ShinySkyBlueBalloon>(),
+ModContent.ItemType<ShinyTealBalloon>(),
+ModContent.ItemType<ShinyVioletBalloon>(),
+ModContent.ItemType<ShinyYellowBalloon>()
+                            };
+                            replaceChestItem(slot, balloons[Main.rand.Next(balloons.Length)], chest);
+                            break;
+                        }
+                    }
                 }
             }
         }

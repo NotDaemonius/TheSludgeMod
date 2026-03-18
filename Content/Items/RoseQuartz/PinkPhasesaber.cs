@@ -14,14 +14,13 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
         {
             Item.CloneDefaults(ItemID.OrangePhasesaber);
         }
-
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ModContent.ItemType<PinkPhaseblade>())
-                .AddIngredient(ItemID.CrystalShard, 25)
-                .AddTile(TileID.Anvils)
-                .Register();
+            .AddIngredient(ModContent.ItemType<PinkPhaseblade>())
+            .AddIngredient(ItemID.CrystalShard, 25)
+            .AddTile(TileID.Anvils)
+            .Register();
         }
     }
 }

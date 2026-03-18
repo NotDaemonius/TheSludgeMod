@@ -20,99 +20,54 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
         {
             TileID.Sets.Ore[Type] = true;
             TileID.Sets.FriendlyFairyCanLureTo[Type] = true;
-            Main.tileSpelunker[Type] = true; // The tile will be affected by spelunker highlighting
-            Main.tileOreFinderPriority[Type] = 410; // Metal Detector value, see https://terraria.wiki.gg/wiki/Metal_Detector
-            Main.tileShine2[Type] = true; // Modifies the draw color slightly.
-            Main.tileShine[Type] = 975; // How often tiny dust appear off this tile. Larger is less frequently
+            Main.tileSpelunker[Type] = true;
+            Main.tileOreFinderPriority[Type] = 410;
+            Main.tileShine2[Type] = true;
+            Main.tileShine[Type] = 975;
             Main.tileMergeDirt[Type] = true;
             Main.tileSolid[Type] = true;
-
-
             LocalizedText name = CreateMapEntryName();
             AddMapEntry(new Color(205, 113, 151), name);
-            
-            DustType = DustID.Platinum;
-            VanillaFallbackOnModDeletion = TileID.Silver;
+            DustType = DustID.Stone;
+            VanillaFallbackOnModDeletion = TileID.Emerald;
             HitSound = SoundID.Tink;
-            // MineResist = 4f;
-            // MinPick = 200;
         }
-
-        // Example of how to enable the Biome Sight buff to highlight this tile. Biome Sight is technically intended to show "infected" tiles, so this example is purely for demonstration purposes.
-        public override bool IsTileBiomeSightable(int i, int j, ref Color sightColor)
-        {
-            sightColor = new Color(205, 113, 151);
-            return true;
-        }
-
         public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             return new List<Item>() { new Item(ModContent.ItemType<RoseQuartz>()) };
         }
     }
-
     public class ExampleOreSystem : ModSystem
     {
         public static LocalizedText ExampleOrePassMessage { get; private set; }
         public static LocalizedText BlessedWithExampleOreMessage { get; private set; }
-
         public override void SetStaticDefaults()
         {
             ExampleOrePassMessage = Mod.GetLocalization($"WorldGen.{nameof(ExampleOrePassMessage)}");
             BlessedWithExampleOreMessage = Mod.GetLocalization($"WorldGen.{nameof(BlessedWithExampleOreMessage)}");
         }
-
-        // World generation is explained more in https://github.com/tModLoader/tModLoader/wiki/World-Generation
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
         {
-            // Because world generation is like layering several images on top of each other, we need to do some steps between the original world generation steps.
-
-            // Most vanilla ores are generated in a step called "Shinies", so for maximum compatibility, we will also do this.
-            // First, we find out which step "Shinies" is.
             int ShiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
 
             if (ShiniesIndex != -1)
             {
-                // Next, we insert our pass directly after the original "Shinies" pass.
-                // ExampleOrePass is a class seen bellow
                 tasks.Insert(ShiniesIndex + 1, new ExampleOrePass("Example Mod Ores", 237.4298f));
             }
         }
     }
-
     public class ExampleOrePass : GenPass
     {
-        public ExampleOrePass(string name, float loadWeight) : base(name, loadWeight)
-        {
-        }
-
+        public ExampleOrePass(string name, float loadWeight) : base(name, loadWeight){}
         protected override void ApplyPass(GenerationProgress progress, GameConfiguration configuration)
         {
-            // progress.Message is the message shown to the user while the following code is running.
-            // Try to make your message clear. You can be a little bit clever, but make sure it is descriptive enough for troubleshooting purposes.
             progress.Message = ExampleOreSystem.ExampleOrePassMessage.Value;
 
-            // Ores are quite simple, we simply use a for loop and the WorldGen.TileRunner to place splotches of the specified Tile in the world.
-            // "6E-05" is "scientific notation". It simply means 0.00006 but in some ways is easier to read.
             for (int k = 0; k < (int)(Main.maxTilesX * Main.maxTilesY * 6E-05); k++)
             {
-                // The inside of this for loop corresponds to one single splotch of our Ore.
-                // First, we randomly choose any coordinate in the world by choosing a random x and y value.
                 int x = WorldGen.genRand.Next(0, Main.maxTilesX);
-
-                // WorldGen.worldSurfaceLow is actually the highest surface tile. In practice you might want to use WorldGen.rockLayer or other WorldGen values.
                 int y = WorldGen.genRand.Next((int)GenVars.rockLayerLow, Main.maxTilesY);
-
-                // Then, we call WorldGen.TileRunner with random "strength" and random "steps", as well as the Tile we wish to place.
-                // Feel free to experiment with strength and step to see the shape they generate.
                 WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 6), WorldGen.genRand.Next(2, 6), ModContent.TileType<RoseQuartzStoneTile>());
-
-                // Alternately, we could check the tile already present in the coordinate we are interested.
-                // Wrapping WorldGen.TileRunner in the following condition would make the ore only generate in Snow.
-                // Tile tile = Framing.GetTileSafely(x, y);
-                // if (tile.HasTile && tile.TileType == TileID.SnowBlock) {
-                // 	WorldGen.TileRunner(.....);
-                // }
             }
         }
     }

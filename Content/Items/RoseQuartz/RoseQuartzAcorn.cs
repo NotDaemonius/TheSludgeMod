@@ -10,6 +10,10 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
 {
     public class RoseQuartzAcorn : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 5;
+        }
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.GemTreeDiamondSeed);

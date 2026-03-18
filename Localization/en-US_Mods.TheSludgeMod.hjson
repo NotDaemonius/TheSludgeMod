@@ -11,12 +11,12 @@ Items: {
 
 	MagnetPickaxe: {
 		DisplayName: Magnet Pickaxe
-		Tooltip: ""
+		Tooltip: Sucks and Fucks Up Ores
 	}
 
 	Bat: {
 		DisplayName: Bat
-		Tooltip: ""
+		Tooltip: Tung Tung Tung
 	}
 
 	TheRedRobin: {
@@ -26,7 +26,7 @@ Items: {
 
 	DartInABottle: {
 		DisplayName: Dart In A Bottle
-		Tooltip: ""
+		Tooltip: Allows the holder to double jump
 	}
 
 	RoseQuartz: {
@@ -55,8 +55,8 @@ Items: {
 	}
 
 	GiantRoseQuartz: {
-		DisplayName: Giant Rose Quartz
-		Tooltip: ""
+		DisplayName: Large Rose Quartz
+		Tooltip: For Capture the Gem. It drops when you die
 	}
 
 	RoseQuartzStaff: {
@@ -66,7 +66,7 @@ Items: {
 
 	ItemRoseQuartzStaff: {
 		Tooltip: ""
-		DisplayName: Item Rose Quartz Staff
+		DisplayName: Rose Quartz Staff
 	}
 
 	RoseQuartzHook: {
@@ -76,16 +76,1250 @@ Items: {
 
 	RoseQuartzRobe: {
 		DisplayName: Rose Quartz Robe
-		Tooltip: ""
+		Tooltip:
+			'''
+			Increases maximum mana by 80
+			9% reduced mana cost
+			'''
 	}
 
 	RoseQuartzAcorn: {
 		DisplayName: Rose Quartz Acorn
-		Tooltip: ""
+		Tooltip: UNIMPLEMENTED
 	}
 
 	RoseQuartzStoneBlock: {
 		DisplayName: Rose Quartz Stone Block
+		Tooltip: ""
+	}
+
+	CoolSword: {
+		DisplayName: Cool Sword
+		Tooltip: "[c/770000:The souls of polarity given form once more.]"
+	}
+
+	Basher: {
+		Tooltip:
+			'''
+			[c/7700ff:'In highschool, they used to call me Basher, because]
+			[c/7700ff:I used to bash people's heads in the lockers.']
+			'''
+		DisplayName: Basher
+	}
+
+	ShadowvoidBar: {
+		DisplayName: Shadowvoid Bar
+		Tooltip: "[c/7700ff:Contains the darkness of a million universes.]"
+	}
+
+	ShadowvoidOre: {
+		DisplayName: Shadowvoid Ore
+		Tooltip: "[c/7700ff:Pure darkness taken form. Or, impure darkness, for that matter.]"
+	}
+
+	DefaultItem: {
+		DisplayName: Default Item
+		Tooltip: Description Template
+	}
+
+	SquareBomb: {
+		Tooltip: A small explosion that will destroy most tiles in a square shape.
+		DisplayName: Square Bomb
+	}
+
+	StickySquareBomb: {
+		DisplayName: Sticky Square Bomb
+		Tooltip:
+			'''
+			A small explosion that will destroy most tiles in a square shape.
+			Tossing may be difficult.
+			'''
+	}
+
+	BouncySquareBomb: {
+		DisplayName: Bouncy Square Bomb
+		Tooltip:
+			'''
+			A small explosion that will destroy most tiles in a square shape.
+			Very bouncy.
+			'''
+	}
+
+	OrbitalRadiance: {
+		DisplayName: Orbital Radiance
+		Tooltip: "[c/55ffff:Summons 5 deadly glowing orbs around the player.]"
+	}
+
+	PlaceholderItem: {
+		Tooltip: Tooltip Placeholder
+		DisplayName: Placeholder Item
+	}
+
+	Record: {
+		Tooltip: *jazz music stops*
+		DisplayName: Record
+	}
+
+	XShotBlaster: {
+		Tooltip:
+			'''
+			Shoots a spread of 2 bullets in parallel
+			50% chance to save ammo 
+			[c/ff0000:It's X-Shot or Nothing!]
+			'''
+		DisplayName: X-Shot Blaster
+	}
+
+	CD: {
+		DisplayName: CD
+		Tooltip: EFG
+	}
+
+	SpeckOfDust: {
+		Tooltip: ""
+		DisplayName: Speck Of Dust
+	}
+
+	Battery: {
+		DisplayName: Battery
+		Tooltip: ""
+	}
+
+	Paper: {
+		DisplayName: Paper
+		Tooltip: ""
+	}
+
+	Plastic: {
+		DisplayName: Plastic
+		Tooltip: ""
+	}
+
+	Cassette: {
+		DisplayName: Cassette
+		Tooltip: I am old people and this is my music
+	}
+
+	PeaShooter: {
+		DisplayName: Pea Shooter
+		Tooltip: Specializes in killing zombies
+	}
+
+	SlimeHoardStaff: {
+		DisplayName: Slime Hoard Staff
+		Tooltip: Summons 4 slimes for the price of one!
+	}
+
+	ToySword: {
+		DisplayName: Toy Sword
+		Tooltip: Batteries not included.
+	}
+
+	TheRulebook: {
+		DisplayName: The Rulebook
+		Tooltip: "[c/773300:Football!]"
+	}
+
+	Electronics: {
+		DisplayName: Electronics
+		Tooltip: "[c/00ff00:People are becoming scientific]"
+	}
+
+	BloodThinner: {
+		Tooltip:
+			'''
+			[c/ff0000:Doubles the length of potion sickness, but]
+			[c/ffff77:triples] [c/ff0000:the effectiveness of health potions.]
+			'''
+		DisplayName: Blood Thinner
+	}
+
+	TinOfSpinach: {
+		Tooltip: ""
+		DisplayName: Tin Of Spinach
+	}
+
+	RopeWhip: {
+		DisplayName: Rope Whip
+		Tooltip: ""
+	}
+
+	SilkRopeWhip: {
+		DisplayName: Silk Rope Whip
+		Tooltip: ""
+	}
+
+	VineRopeWhip: {
+		DisplayName: Vine Rope Whip
+		Tooltip: ""
+	}
+
+	WebRopeWhip: {
+		DisplayName: Web Rope Whip
+		Tooltip: ""
+	}
+
+	GunGnir: {
+		DisplayName: Gun-Gnir
+		Tooltip: "[c/ffff77:Now with 100% more gun!]"
+	}
+
+	ShadowvoidBrick: {
+		Tooltip: ""
+		DisplayName: Shadowvoid Brick
+	}
+
+	ElectronicsTable: {
+		DisplayName: Electronics Table
+		Tooltip: ""
+	}
+
+	Scythophant: {
+		DisplayName: Scythophant
+		Tooltip: "[c/0000ff:Spins around the player when held and shoots a spiral of shadow fireballs.]"
+	}
+
+	RoseQuartzGemsparkBlock: {
+		DisplayName: Rose Quartz Gemspark Block
+		Tooltip: ""
+	}
+
+	RoarMegaphone: {
+		Tooltip: "[c/ff0000:rooOORGH]"
+		DisplayName: Roar Megaphone
+	}
+
+	DeathWhistleMegaphone: {
+		Tooltip: ""
+		DisplayName: Death Whistle Megaphone
+	}
+
+	ExpertRoarMegaphone: {
+		DisplayName: Expert Roar Megaphone
+		Tooltip: ""
+	}
+
+	Meowgaphone: {
+		Tooltip: ""
+		DisplayName: Meowgaphone
+	}
+
+	MoonLordMegaphone: {
+		Tooltip: ""
+		DisplayName: Moon Lord Megaphone
+	}
+
+	GiggleMegaphone: {
+		Tooltip: ""
+		DisplayName: Giggle Megaphone
+	}
+
+	FartMegaphone: {
+		Tooltip: ""
+		DisplayName: Fart Megaphone
+	}
+
+	MurderMegaphone: {
+		DisplayName: Murder Megaphone
+		Tooltip: ""
+	}
+
+	ZincOre: {
+		DisplayName: Zinc Ore
+		Tooltip: ""
+	}
+
+	NickelOre: {
+		DisplayName: Nickel Ore
+		Tooltip: ""
+	}
+
+	AluminiumOre: {
+		DisplayName: Aluminium Ore
+		Tooltip: ""
+	}
+
+	IridiumOre: {
+		DisplayName: Iridium Ore
+		Tooltip: ""
+	}
+
+	ZincBar: {
+		DisplayName: Zinc Bar
+		Tooltip: ""
+	}
+
+	AluminiumBar: {
+		DisplayName: Aluminium Bar
+		Tooltip: ""
+	}
+
+	IridiumBar: {
+		DisplayName: Iridium Bar
+		Tooltip: ""
+	}
+
+	NickelBar: {
+		DisplayName: Nickel Bar
+		Tooltip: ""
+	}
+
+	ZincPickaxe: {
+		DisplayName: Zinc Pickaxe
+		Tooltip: ""
+	}
+
+	AluminiumPickaxe: {
+		DisplayName: Aluminium Pickaxe
+		Tooltip: ""
+	}
+
+	IridiumPickaxe: {
+		DisplayName: Iridium Pickaxe
+		Tooltip: ""
+	}
+
+	NickelPickaxe: {
+		DisplayName: Nickel Pickaxe
+		Tooltip: ""
+	}
+
+	ZincAxe: {
+		DisplayName: Zinc Axe
+		Tooltip: ""
+	}
+
+	AluminiumAxe: {
+		DisplayName: Aluminium Axe
+		Tooltip: ""
+	}
+
+	IridiumAxe: {
+		DisplayName: Iridium Axe
+		Tooltip: ""
+	}
+
+	NickelAxe: {
+		DisplayName: Nickel Axe
+		Tooltip: ""
+	}
+
+	ZincHammer: {
+		DisplayName: Zinc Hammer
+		Tooltip: ""
+	}
+
+	AluminiumHammer: {
+		DisplayName: Aluminium Hammer
+		Tooltip: ""
+	}
+
+	IridiumHammer: {
+		DisplayName: Iridium Hammer
+		Tooltip: ""
+	}
+
+	NickelHammer: {
+		DisplayName: Nickel Hammer
+		Tooltip: ""
+	}
+
+	ZincBroadsword: {
+		DisplayName: Zinc Broadsword
+		Tooltip: ""
+	}
+
+	AluminiumBroadsword: {
+		DisplayName: Aluminium Broadsword
+		Tooltip: ""
+	}
+
+	IridiumBroadsword: {
+		DisplayName: Iridium Broadsword
+		Tooltip: ""
+	}
+
+	NickelBroadsword: {
+		DisplayName: Nickel Broadsword
+		Tooltip: ""
+	}
+
+	ZincBow: {
+		DisplayName: Zinc Bow
+		Tooltip: ""
+	}
+
+	AluminiumBow: {
+		DisplayName: Aluminium Bow
+		Tooltip: ""
+	}
+
+	IridiumBow: {
+		DisplayName: Iridium Bow
+		Tooltip: ""
+	}
+
+	NickelBow: {
+		DisplayName: Nickel Bow
+		Tooltip: ""
+	}
+
+	ZincShortsword: {
+		DisplayName: Zinc Shortsword
+		Tooltip: ""
+	}
+
+	AluminiumShortsword: {
+		DisplayName: Aluminium Shortsword
+		Tooltip: ""
+	}
+
+	IridiumShortsword: {
+		DisplayName: Iridium Shortsword
+		Tooltip: ""
+	}
+
+	NickelShortsword: {
+		DisplayName: Nickel Shortsword
+		Tooltip: ""
+	}
+
+	ZincArmorBody: {
+		DisplayName: Zinc Chainmail
+		Tooltip: ""
+	}
+
+	ZincArmorHead: {
+		DisplayName: Zinc Helmet
+		Tooltip: ""
+	}
+
+	ZincArmorLegs: {
+		DisplayName: Zinc Greaves
+		Tooltip: ""
+	}
+
+	NickelArmorBody: {
+		DisplayName: Nickel Chainmail
+		Tooltip: ""
+	}
+
+	NickelArmorHead: {
+		DisplayName: Nickel Helmet
+		Tooltip: ""
+	}
+
+	NickelArmorLegs: {
+		DisplayName: Nickel Greaves
+		Tooltip: ""
+	}
+
+	AluminiumArmorBody: {
+		Tooltip: ""
+		DisplayName: Aluminium Chainmail
+	}
+
+	AluminiumArmorHead: {
+		DisplayName: Aluminium Helmet
+		Tooltip: ""
+	}
+
+	AluminiumArmorLegs: {
+		DisplayName: Aluminium Greaves
+		Tooltip: ""
+	}
+
+	IridiumArmorBody: {
+		DisplayName: Iridium Chainmail
+		Tooltip: ""
+	}
+
+	IridiumArmorHead: {
+		DisplayName: Iridium Helmet
+		Tooltip: ""
+	}
+
+	IridiumArmorLegs: {
+		DisplayName: Iridium Greaves
+		Tooltip: ""
+	}
+
+	ZincWatch: {
+		DisplayName: Zinc Watch
+		Tooltip: ""
+	}
+
+	AluminiumWatch: {
+		DisplayName: Aluminium Watch
+		Tooltip: ""
+	}
+
+	IridiumWatch: {
+		DisplayName: Iridium Watch
+		Tooltip: ""
+	}
+
+	AluminiumChandelier: {
+		DisplayName: Aluminium Chandelier
+		Tooltip: ""
+	}
+
+	TungstenEnforcedUmbrella: {
+		DisplayName: Tungsten Enforced Umbrella
+		Tooltip: ""
+	}
+
+	IridiumChandelier: {
+		DisplayName: Iridium Chandelier
+		Tooltip: ""
+	}
+
+	ZincChandelier: {
+		DisplayName: Zinc Chandelier
+		Tooltip: ""
+	}
+
+	NickelAnvil: {
+		DisplayName: Nickel Anvil
+		Tooltip: ""
+	}
+
+	AluminiumBullet: {
+		DisplayName: Aluminium Bullet
+		Tooltip: ""
+	}
+
+	IridiumCrownHead: {
+		DisplayName: Iridium Crown
+		Tooltip: ""
+	}
+
+	UraniumBar: {
+		DisplayName: Uranium Bar
+		Tooltip: ""
+	}
+
+	UraniumOre: {
+		DisplayName: Uranium Ore
+		Tooltip: ""
+	}
+
+	OsmiumBar: {
+		DisplayName: Osmium Bar
+		Tooltip: ""
+	}
+
+	OsmiumOre: {
+		DisplayName: Osmium Ore
+		Tooltip: ""
+	}
+
+	BismuthBar: {
+		DisplayName: Bismuth Bar
+		Tooltip: ""
+	}
+
+	BismuthOre: {
+		DisplayName: Bismuth Ore
+		Tooltip: ""
+	}
+
+	UraniumPickaxe: {
+		DisplayName: Uranium Pickaxe
+		Tooltip: ""
+	}
+
+	OsmiumPickaxe: {
+		DisplayName: Osmium Pickaxe
+		Tooltip: ""
+	}
+
+	OsmiumWaraxe: {
+		DisplayName: Osmium Waraxe
+		Tooltip: ""
+	}
+
+	UraniumWaraxe: {
+		DisplayName: Uranium Waraxe
+		Tooltip: ""
+	}
+
+	BismuthPickaxe: {
+		DisplayName: Bismuth Pickaxe
+		Tooltip: ""
+	}
+
+	BismuthWaraxe: {
+		DisplayName: Bismuth Waraxe
+		Tooltip: ""
+	}
+
+	UraniumDrill: {
+		DisplayName: Uranium Drill
+		Tooltip: ""
+	}
+
+	UraniumChainsaw: {
+		Tooltip: ""
+		DisplayName: Uranium Chainsaw
+	}
+
+	OsmiumDrill: {
+		Tooltip: ""
+		DisplayName: Osmium Drill
+	}
+
+	OsmiumChainsaw: {
+		Tooltip: ""
+		DisplayName: Osmium Chainsaw
+	}
+
+	BismuthChainsaw: {
+		DisplayName: Bismuth Chainsaw
+		Tooltip: ""
+	}
+
+	BismuthDrill: {
+		DisplayName: Bismuth Drill
+		Tooltip: ""
+	}
+
+	Pebble: {
+		Tooltip: ""
+		DisplayName: Pebble
+	}
+
+	AmethystBlade: {
+		DisplayName: Amethyst Blade
+		Tooltip: ""
+	}
+
+	RoseQuartzBlade: {
+		DisplayName: Rose Quartz Blade
+		Tooltip: ""
+	}
+
+	AmberBlade: {
+		DisplayName: Amber Blade
+		Tooltip: ""
+	}
+
+	DiamondBlade: {
+		DisplayName: Diamond Blade
+		Tooltip: ""
+	}
+
+	EmeraldBlade: {
+		DisplayName: Emerald Blade
+		Tooltip: ""
+	}
+
+	RubyBlade: {
+		DisplayName: Ruby Blade
+		Tooltip: ""
+	}
+
+	SapphireBlade: {
+		DisplayName: Sapphire Blade
+		Tooltip: ""
+	}
+
+	TopazBlade: {
+		DisplayName: Topaz Blade
+		Tooltip: ""
+	}
+
+	DiamondSword: {
+		DisplayName: Diamond Sword
+		Tooltip: ""
+	}
+
+	IceArrow: {
+		DisplayName: Ice Arrow
+		Tooltip: Briefly slows down enemies on hit.
+	}
+
+	DodgyBuilder: {
+		DisplayName: Dodgy Builder
+		Tooltip: Makes block placement inconsistent when in inventory.
+	}
+
+	ScoutingPotion: {
+		DisplayName: Scouting Potion
+		Tooltip: Increases spawn rate of bound NPCs by 500%
+	}
+
+	UraniumBident: {
+		DisplayName: Uranium Bident
+		Tooltip: ""
+	}
+
+	OsmiumCorseque: {
+		DisplayName: Osmium Corseque
+		Tooltip: ""
+	}
+
+	BismuthFauchard: {
+		Tooltip: ""
+		DisplayName: Bismuth Fauchard
+	}
+
+	GiantToothbrush: {
+		Tooltip: ""
+		DisplayName: Giant Toothbrush
+	}
+
+	Flute: {
+		DisplayName: Flute
+		Tooltip: ""
+	}
+
+	MagicalFlute: {
+		DisplayName: Magical Flute
+		Tooltip: Makes block placement inconsistent when in inventory.
+	}
+
+	GalaxyBlaster: {
+		DisplayName: Galaxy Blaster
+		Tooltip: ""
+	}
+
+	Maelthorn: {
+		DisplayName: Maelthorn
+		Tooltip: ""
+	}
+
+	BigBullet: {
+		DisplayName: Big Bullet
+		Tooltip: ""
+	}
+
+	UraniumGreathelmHead: {
+		Tooltip:
+			'''
+			10% increased movement speed
+			10% increased melee damage
+			10% increased melee speed
+			'''
+		DisplayName: Uranium Greathelm
+	}
+
+	UraniumCowlHead: {
+		Tooltip:
+			'''
+			12% increased ranged damage
+			12% increased ranged critical strike chance
+			'''
+		DisplayName: Uranium Cowl
+	}
+
+	UraniumBreastplateBody: {
+		Tooltip:
+			'''
+			2% increased damage
+			3% increased critical strike chance
+			'''
+		DisplayName: Uranium Breastplate
+	}
+
+	UraniumHeadgearHead: {
+		DisplayName: Uranium Headgear
+		Tooltip:
+			'''
+			12% increased ranged damage
+			12% increased ranged critical strike chance
+			'''
+	}
+
+	UraniumLeggingsLegs: {
+		DisplayName: Uranium Leggings
+		Tooltip:
+			'''
+			8% increased movement speed
+			2% increased damage
+			2% increased critical strike chance
+			'''
+	}
+
+	BismuthExaclibur: {
+		DisplayName: Bismuth Exaclibur
+		Tooltip: ""
+	}
+
+	OsmiumWarblade: {
+		DisplayName: Osmium Warblade
+		Tooltip: ""
+	}
+
+	UraniumCleaver: {
+		DisplayName: Uranium Cleaver
+		Tooltip: ""
+	}
+
+	OsmiumBreastplateBody: {
+		DisplayName: Osmium Breastplate
+		Tooltip:
+			'''
+			5% increased damage
+			5% increased critical strike chance
+			'''
+	}
+
+	OsmiumHeadpieceHead: {
+		DisplayName: Osmium Headpiece
+		Tooltip:
+			'''
+			Increases maximum mana by 60
+			15% increased magic damage
+			15% increased magic critical strike chance
+			'''
+	}
+
+	OsmiumHelmHead: {
+		DisplayName: Osmium Helm
+		Tooltip:
+			'''
+			12% increased movement speed
+			15% increased ranged damage
+			15% increased ranged critical strike chance
+			'''
+	}
+
+	OsmiumLeggingsLegs: {
+		DisplayName: Osmium Leggings
+		Tooltip:
+			'''
+			9% increased movement speed
+			9% increased damage
+			9% increased critical strike chance
+			'''
+	}
+
+	OsmiumSeerHead: {
+		DisplayName: Osmium Seer
+		Tooltip:
+			'''
+			12% increased movement speed
+			15% increased melee damage
+			15% increased melee speed
+			'''
+	}
+
+	UraniumRepeater: {
+		DisplayName: Uranium Repeater
+		Tooltip: ""
+	}
+
+	BismuthRepeater: {
+		DisplayName: Bismuth Repeater
+		Tooltip: ""
+	}
+
+	OsmiumRepeater: {
+		DisplayName: Osmium Repeater
+		Tooltip: ""
+	}
+
+	BismuthBreastplateBody: {
+		DisplayName: Bismuth Breastplate
+		Tooltip:
+			'''
+			8% increased damage
+			8% increased critical strike chance
+			'''
+	}
+
+	BismuthCrownHead: {
+		DisplayName: Bismuth Crown
+		Tooltip:
+			'''
+			Increases maximum mana by 80
+			18% increased magic damage
+			18% increased magic critical strike chance
+			'''
+	}
+
+	BismuthCrystalHead: {
+		DisplayName: Bismuth Crystal
+		Tooltip:
+			'''
+			15% increased movement speed
+			18% increased melee damage
+			18% increased melee speed
+			'''
+	}
+
+	BismuthHelmetHead: {
+		DisplayName: Bismuth Helmet
+		Tooltip:
+			'''
+			15% increased movement speed
+			18% increased ranged damage
+			18% increased ranged critical strike chance
+			'''
+	}
+
+	BismuthLeggingsLegs: {
+		DisplayName: Bismuth Leggings
+		Tooltip:
+			'''
+			12% increased movement speed
+			12% increased damage
+			12% increased critical strike chance
+			'''
+	}
+
+	OsmiumAnvil: {
+		DisplayName: Osmium Anvil
+		Tooltip: ""
+	}
+
+	BismuthForge: {
+		DisplayName: Bismuth Forge
+		Tooltip: ""
+	}
+
+	SolunarChronowarper: {
+		Tooltip: A powerful ancient artifact that cycles time when used.
+		DisplayName: Solunar Chronowarper
+	}
+
+	ElderStaff: {
+		Tooltip: ""
+		DisplayName: Elder Staff
+	}
+
+	MainframeTrophy: {
+		Tooltip: ""
+		DisplayName: Mainframe Trophy
+	}
+
+	MainframeMaskHead: {
+		Tooltip: ""
+		DisplayName: Mainframe Mask
+	}
+
+	MainframeBossBag: {
+		DisplayName: Mainframe Treasure Bag
+		Tooltip: ""
+	}
+
+	MainframeRelic: {
+		DisplayName: Mainframe Relic
+		Tooltip: ""
+	}
+
+	SoulofSpite: {
+		DisplayName: Soul of Spite
+		Tooltip: "'The essence of hatred and malice'"
+	}
+
+	MechanicalBrain: {
+		DisplayName: Mechanical Brain
+		Tooltip: Summons The Mainframe
+	}
+
+	NeuralCrystal: {
+		DisplayName: Neural Crystal
+		Tooltip: Summons a tiny Mainframe
+	}
+
+	SlimyUmbrella: {
+		Tooltip: ""
+		DisplayName: Slimy Umbrella
+	}
+
+	ShinyBlueBalloon: {
+		Tooltip: Increases jump height
+		DisplayName: Shiny Blue Balloon
+	}
+
+	ShinyBlackBalloon: {
+		DisplayName: Shiny Black Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyBrownBalloon: {
+		DisplayName: Shiny Brown Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyCyanBalloon: {
+		DisplayName: Shiny Cyan Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyGreenBalloon: {
+		DisplayName: Shiny Green Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyLimeBalloon: {
+		DisplayName: Shiny Lime Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyOrangeBalloon: {
+		DisplayName: Shiny Orange Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyPinkBalloon: {
+		DisplayName: Shiny Pink Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyPurpleBalloon: {
+		DisplayName: Shiny Purple Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinySilverBalloon: {
+		DisplayName: Shiny Silver Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinySkyBlueBalloon: {
+		DisplayName: Shiny Sky Blue Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyTealBalloon: {
+		DisplayName: Shiny Teal Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyVioletBalloon: {
+		DisplayName: Shiny Violet Balloon
+		Tooltip: Increases jump height
+	}
+
+	ShinyYellowBalloon: {
+		DisplayName: Shiny Yellow Balloon
+		Tooltip: Increases jump height
+	}
+
+	GemshardObliterator: {
+		DisplayName: Gemshard Obliterator
+		Tooltip: ""
+	}
+
+	Laserstorm: {
+		Tooltip: ""
+		DisplayName: Laserstorm
+	}
+
+	ToyZenith: {
+		DisplayName: Toy Zenith
+		Tooltip: ""
+	}
+
+	BrainOfPerplexity: {
+		Tooltip:
+			'''
+			Has a chance to dodge attacks
+			Temporarily increase critical chance and summon damage after dodge
+			Confuses all nearby enemies after being struck
+			'''
+		DisplayName: Brain Of Perplexity
+	}
+
+	ThePainframe: {
+		Tooltip: ""
+		DisplayName: The Painframe
+	}
+
+	NeuralShardStaff: {
+		Tooltip: ""
+		DisplayName: Neural Shard Staff
+	}
+
+	MerchantVoodooDoll: {
+		DisplayName: Merchant Voodoo Doll
+		Tooltip: ""
+	}
+
+	NurseVoodooDoll: {
+		DisplayName: Nurse Voodoo Doll
+		Tooltip: ""
+	}
+
+	PainterVoodooDoll: {
+		DisplayName: Painter Voodoo Doll
+		Tooltip: ""
+	}
+
+	AnglerVoodooDoll: {
+		DisplayName: Angler Voodoo Doll
+		Tooltip: ""
+	}
+
+	ArmsDealerVoodooDoll: {
+		DisplayName: Arms Dealer Voodoo Doll
+		Tooltip: ""
+	}
+
+	CyborgVoodooDoll: {
+		DisplayName: Cyborg Voodoo Doll
+		Tooltip: ""
+	}
+
+	DemolitionistVoodooDoll: {
+		DisplayName: Demolitionist Voodoo Doll
+		Tooltip: ""
+	}
+
+	DryadVoodooDoll: {
+		DisplayName: Dryad Voodoo Doll
+		Tooltip: ""
+	}
+
+	DyeTraderVoodooDoll: {
+		DisplayName: Dye Trader Voodoo Doll
+		Tooltip: ""
+	}
+
+	GoblinTinkererVoodooDoll: {
+		DisplayName: Goblin Tinkerer Voodoo Doll
+		Tooltip: ""
+	}
+
+	GolferVoodooDoll: {
+		DisplayName: Golfer Voodoo Doll
+		Tooltip: ""
+	}
+
+	MechanicVoodooDoll: {
+		DisplayName: Mechanic Voodoo Doll
+		Tooltip: ""
+	}
+
+	OldManVoodooDoll: {
+		DisplayName: Old Man Voodoo Doll
+		Tooltip: ""
+	}
+
+	PartyGirlVoodooDoll: {
+		DisplayName: Party Girl Voodoo Doll
+		Tooltip: ""
+	}
+
+	PirateVoodooDoll: {
+		DisplayName: Pirate Voodoo Doll
+		Tooltip: ""
+	}
+
+	PrincessVoodooDoll: {
+		DisplayName: Princess Voodoo Doll
+		Tooltip: ""
+	}
+
+	SantaClausVoodooDoll: {
+		DisplayName: Santa Claus Voodoo Doll
+		Tooltip: ""
+	}
+
+	SkeletonMerchantVoodooDoll: {
+		DisplayName: Skeleton Merchant Voodoo Doll
+		Tooltip: ""
+	}
+
+	SteampunkerVoodooDoll: {
+		DisplayName: Steampunker Voodoo Doll
+		Tooltip: ""
+	}
+
+	StylistVoodooDoll: {
+		DisplayName: Stylist Voodoo Doll
+		Tooltip: ""
+	}
+
+	TavernkeepVoodooDoll: {
+		DisplayName: Tavernkeep Voodoo Doll
+		Tooltip: ""
+	}
+
+	TaxCollectorVoodooDoll: {
+		DisplayName: Tax Collector Voodoo Doll
+		Tooltip: ""
+	}
+
+	TravellingMerchantVoodooDoll: {
+		DisplayName: Travelling Merchant Voodoo Doll
+		Tooltip: ""
+	}
+
+	TruffleVoodooDoll: {
+		DisplayName: Truffle Voodoo Doll
+		Tooltip: ""
+	}
+
+	WitchDoctorVoodooDoll: {
+		DisplayName: Witch Doctor Voodoo Doll
+		Tooltip: ""
+	}
+
+	WizardVoodooDoll: {
+		DisplayName: Wizard Voodoo Doll
+		Tooltip: ""
+	}
+
+	ZoologistVoodooDoll: {
+		DisplayName: Zoologist Voodoo Doll
+		Tooltip: ""
+	}
+
+	ThePurifier: {
+		DisplayName: The Purifier
+		Tooltip:
+			'''
+			Shoots a spread of 3 bullets in parallel
+			66% chance to save ammo
+			'''
+	}
+
+	FieryGreatsword: {
+		DisplayName: Fiery Greatsword
+		Tooltip: ""
+	}
+
+	LifeSickle: {
+		DisplayName: Life Sickle
+		Tooltip: ""
+	}
+
+	Headlamp: {
+		Tooltip: Provides light when worn
+		DisplayName: Headlamp
+	}
+
+	StarkaKitchenRules: {
+		Tooltip: Eat nicely.
+		DisplayName: Starka Kitchen Rules
+	}
+
+	Deodorant: {
+		DisplayName: Deodorant
+		Tooltip: Increases NPC happiness by 10% for 5 minutes
+	}
+
+	DestroyerScarf: {
+		Tooltip: Reduces damage taken by 30%
+		DisplayName: Destroyer Scarf
+	}
+
+	WaterBalloon: {
+		DisplayName: Water Balloon
+		Tooltip: ""
+	}
+
+	Glaive: {
+		Tooltip: Jumps between up to 4 enemies.
+		DisplayName: Glaive
+	}
+
+	FrostflamingMace: {
+		DisplayName: Frostflaming Mace
 		Tooltip: ""
 	}
 }
@@ -93,16 +1327,161 @@ Items: {
 Projectiles: {
 	DemonsEyeEye.DisplayName: Demons Eye Eye
 	DevilKnife.DisplayName: Devil Knife
-	RoseQuartz_Bolt.DisplayName: Rose Quartz_ Bolt
+	RoseQuartz_Bolt.DisplayName: Rose Quartz Bolt
 	RoseQuartzHookProjectile.DisplayName: Rose Quartz Hook Projectile
+	BouncySquareBombProjectile.DisplayName: Bouncy Square Bomb Projectile
+	CDProj.DisplayName: CD Projectile
+	CoolSwordProj.DisplayName: Cool Sword Projectile
+	RecordProj.DisplayName: Record Projectile
+	SquareBombProjectile.DisplayName: Square Bomb Projectile
+	StickySquareBombProjectile.DisplayName: Sticky Square Bomb Projectile
+	CassetteProj.DisplayName: Cassette Projectile
+	Pea.DisplayName: Pea
+	SlimeHoardProjectile.DisplayName: Slime Hoard Projectile
+	TheRulebookProj.DisplayName: The Rulebook Projectile
+	CoolSwordSwingProj.DisplayName: Cool Sword Swing Proj
+	BasherSwing.DisplayName: Basher Swing
+	GungnirBullet.DisplayName: Gungnir Bullet
+	RopeWhipProjectile.DisplayName: Rope Whip Projectile
+	SilkRopeWhipProjectile.DisplayName: Silk Rope Whip Projectile
+	VineRopeWhipProjectile.DisplayName: Vine Rope Whip Projectile
+	WebRopeWhipProjectile.DisplayName: Web Rope Whip Projectile
+	ScythophantProj.DisplayName: Scythophant Projectile
+	ScythophantProj2.DisplayName: Scythophant Orb Projectile
+	ZincShortswordProj.DisplayName: Zinc Shortsword Proj
+	AluminiumShortswordProj.DisplayName: Aluminium Shortsword Proj
+	IridiumShortswordProj.DisplayName: Iridium Shortsword Proj
+	NickelShortswordProj.DisplayName: Nickel Shortsword Proj
+	UraniumDrillProj.DisplayName: Uranium Drill Proj
+	UraniumChainsawProj.DisplayName: Uranium Chainsaw Proj
+	OsmiumDrillProj.DisplayName: Osmium Drill Proj
+	OsmiumChainsawProj.DisplayName: Osmium Chainsaw Proj
+	BismuthChainsawProj.DisplayName: Bismuth Chainsaw Proj
+	BismuthDrillProj.DisplayName: Bismuth Drill Proj
+	PebbleProj.DisplayName: Pebble Proj
+	TungstenEnforcedUmbrellaProj.DisplayName: Tungsten Enforced Umbrella Proj
+	IceArrowProj.DisplayName: Ice Arrow Proj
+	UraniumBidentProj.DisplayName: Uranium Bident Proj
+	OsmiumCorsequeProj.DisplayName: Osmium Corseque Proj
+	BismuthFauchardProj.DisplayName: Bismuth Fauchard Proj
+	GiantToothbrushProj.DisplayName: Giant Toothbrush Proj
+	BigBulletProjectile.DisplayName: Big Bullet Projectile
+	MaelthornProjectile.DisplayName: Maelthorn Projectile
+	ElderStaffProj.DisplayName: Elder Staff Proj
+	NeuralCrystalProj.DisplayName: Neural Crystal Proj
+	TheMainframeLaser.DisplayName: The Mainframe Laser
+	MainframeGhostSpooky.DisplayName: Mainframe Ghost Spooky
+	ThePainframeProjectile.DisplayName: The Painframe Projectile
+	NeuralShardProj.DisplayName: Neural Shard Proj
+	LifeSickleProj.DisplayName: Life Sickle Proj
+	WaterBalloonProj.DisplayName: Water Balloon Proj
+	GlaiveProj.DisplayName: Glaive Proj
+	FrostflamingMaceProj.DisplayName: Frostflaming Mace Proj
 }
 
 Tiles: {
-	RoseQuartzTile.MapEntry: Rose Quartz Tile
-	RoseQuartzStoneTile.MapEntry: Rose Quartz Stone Tile
+	RoseQuartzTile.MapEntry: Rose Quartz
+	RoseQuartzStoneTile.MapEntry: Rose Quartz Stone
+	ShadowvoidOre.MapEntry: Shadowvoid Ore
+	ShadowvoidBar.MapEntry: Shadowvoid Bar
+	ShadowvoidBrick.MapEntry: Shadowvoid Brick
+	ElectronicsTable.MapEntry: Electronics Table
+	ZincOreTile.MapEntry: Zinc Ore
+	NickelOreTile.MapEntry: Nickel Ore
+	AluminiumOreTile.MapEntry: Aluminium Ore
+	IridiumOreTile.MapEntry: Iridium Ore
+	NickelAnvilTile.MapEntry: Nickel Anvil
+	UraniumOreTile.MapEntry: Uranium Ore
+	OsmiumOreTile.MapEntry: Osmium Ore
+	BismuthOreTile.MapEntry: Bismuth Ore
+	OsmiumAnvilTile.MapEntry: Osmium Anvil
+	BismuthForgeTile.MapEntry: Bismuth Forge
 }
 
 WorldGen: {
 	ExampleOrePassMessage: Mods.TheSludgeMod.WorldGen.ExampleOrePassMessage
 	BlessedWithExampleOreMessage: Mods.TheSludgeMod.WorldGen.BlessedWithExampleOreMessage
+}
+
+Buffs: {
+	SlimeHoardBuff: {
+		DisplayName: Slime Hoard
+		Description: 4 slimes for the price of one!
+	}
+
+	ChilledDebuff: {
+		DisplayName: Chilled
+		Description: How do you have this debuff?
+	}
+
+	ScoutingBuff: {
+		DisplayName: Scouting
+		Description: Increases spawn rate of bound NPCs
+	}
+
+	ElderInsanityDebuff: {
+		Description: Your sanity is melting!
+		DisplayName: Elder Insanity
+	}
+
+	NeuralCrystalBuff: {
+		DisplayName: Tiny Mainframe
+		Description: HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE.
+	}
+
+	PerplexityBuff: {
+		Description: Increased critical chance and minion damage
+		DisplayName: Perplexity
+	}
+
+	NeuralShardBuff: {
+		Description: A shard of the Mainframe's essence is following you.
+		DisplayName: Neural Shards
+	}
+
+	DeodorantBuff: {
+		DisplayName: Deodorant
+		Description: NPCs will like you much more now that you don't stink.
+	}
+}
+
+Configs: {
+	ClientConfig: {
+		DisplayName: Client Config
+
+		DisableScreenShake: {
+			Label: Disable Screen Shake
+			Tooltip: Disables screen shake for all weapons.
+		}
+	}
+}
+
+NPCs: {
+	TheMainframe.DisplayName: The Mainframe
+	TheMainframeHand.DisplayName: The Mainframe Hand
+}
+
+Bestiary.TheMainframe: A colossal, flying mechanical abomination with the processing power of a billion universes. It uses this power puerly for rage and hatred. And lasers.
+
+Prefixes: {
+	Flimsy.DisplayName: Flimsy
+	Brittle.DisplayName: Brittle
+	Fierce.DisplayName: Fierce
+	Heroic.DisplayName: Heroic
+	Draconian.DisplayName: Draconian
+	Inoperable.DisplayName: Inoperable
+	Rigid.DisplayName: Rigid
+	Vigorous.DisplayName: Vigorous
+	Ardent.DisplayName: Ardent
+	Glorious.DisplayName: Glorious
+	Harsh.DisplayName: Harsh
+	Shabby.DisplayName: Shabby
+	Bountiful.DisplayName: Bountiful
+	Vitalizing.DisplayName: Vitalizing
+	Perfect.DisplayName: Perfect
+	Enchanting.DisplayName: Enchanting
+	Acute.DisplayName: Acute
+	Crushing.DisplayName: Crushing
+	Demolishing.DisplayName: Demolishing
+	Piercing.DisplayName: Piercing
 }

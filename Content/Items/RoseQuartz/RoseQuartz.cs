@@ -10,10 +10,15 @@ namespace TheSludgeMod.Content.Items.RoseQuartz
 {
     public class RoseQuartz : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 15;
+        }
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.Sapphire);
             Item.createTile = ModContent.TileType<RoseQuartzTile>();
+            Item.material = true;
         }
     }
 }
