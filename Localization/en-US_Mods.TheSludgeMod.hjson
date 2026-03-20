@@ -1322,6 +1322,15 @@ Items: {
 		DisplayName: Frostflaming Mace
 		Tooltip: ""
 	}
+
+	Steroids: {
+		DisplayName: Steroids
+		Tooltip: 
+			'''
+			Provides a 50% damage increase for 15 seconds
+			After the 15 seconds is up, decreases damage by 20% and movement speed by 20% for 60 seconds
+			'''
+	}
 }
 
 Projectiles: {
@@ -1442,6 +1451,16 @@ Buffs: {
 	DeodorantBuff: {
 		DisplayName: Deodorant
 		Description: NPCs will like you much more now that you don't stink.
+	}
+
+	SteroidsBuff: {
+		DisplayName: Steroid Boost
+		Description: The devil shivers when a nice guy gets mad...
+	}
+
+	SteroidsDebuff: {
+		DisplayName: Steroid Crash
+		Description: Owwww! Ouch... Owie...
 	}
 }
 
