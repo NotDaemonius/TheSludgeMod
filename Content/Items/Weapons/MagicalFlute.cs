@@ -17,7 +17,7 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.useTime = 11;
             Item.useAnimation = 11;
             Item.autoReuse = true;
-            Item.shootSpeed = 4.5f;
+            Item.shootSpeed = 11f;
             Item.DamageType = DamageClass.Magic;
             Item.damage = 45;
             Item.knockBack = 2;

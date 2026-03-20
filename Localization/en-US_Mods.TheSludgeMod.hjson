@@ -1459,9 +1459,13 @@ Configs: {
 NPCs: {
 	TheMainframe.DisplayName: The Mainframe
 	TheMainframeHand.DisplayName: The Mainframe Hand
+	OrangeSlime.DisplayName: Orange Slime
 }
 
-Bestiary.TheMainframe: A colossal, flying mechanical abomination with the processing power of a billion universes. It uses this power puerly for rage and hatred. And lasers.
+Bestiary: {
+	TheMainframe: A colossal, flying mechanical abomination with the processing power of a billion universes. It uses this power puerly for rage and hatred. And lasers.
+	OrangeSlime: A massive, gelatinous creature that struggles to jump due to its size, opting to instead rapidly hop through the caverns.
+}
 
 Prefixes: {
 	Flimsy.DisplayName: Flimsy
