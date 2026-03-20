@@ -1325,11 +1325,16 @@ Items: {
 
 	Steroids: {
 		DisplayName: Steroids
-		Tooltip: 
+		Tooltip:
 			'''
 			Provides a 50% damage increase for 15 seconds
 			After the 15 seconds is up, decreases damage by 20% and movement speed by 20% for 60 seconds
 			'''
+	}
+
+	LeadPaint: {
+		DisplayName: Lead Paint
+		Tooltip: ""
 	}
 }
 
@@ -1386,6 +1391,8 @@ Projectiles: {
 	WaterBalloonProj.DisplayName: Water Balloon Proj
 	GlaiveProj.DisplayName: Glaive Proj
 	FrostflamingMaceProj.DisplayName: Frostflaming Mace Proj
+	LeadPaintProj.DisplayName: Lead Paint Proj
+	LeadPaintPuddle.DisplayName: Lead Paint Puddle
 }
 
 Tiles: {
