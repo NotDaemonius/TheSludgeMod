@@ -9,6 +9,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Items.Consumables;
 using TheSludgeMod.Content.Items.Junk;
+using TheSludgeMod.Content.Items.Tools;
 using TheSludgeMod.Content.Items.Weapons;
 
 namespace TheSludgeMod.Common.GlobalNPCs
@@ -49,7 +50,7 @@ namespace TheSludgeMod.Common.GlobalNPCs
 
             if (npc.type == NPCID.Clown)
             {
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Scythophant>(), 10));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GiggleMegaphone>(), 10));
             }
 
             if (npc.type == NPCID.UmbrellaSlime)
@@ -78,10 +79,16 @@ namespace TheSludgeMod.Common.GlobalNPCs
             {
                 npcLoot.Add(ItemDropRule.Common(ItemID.TheAxe, 1));
             }
+
+            if (npc.type == NPCID.EyeofCthulhu)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CthulhuEyeStaff>(), 4));
+            }
+
         }
         public override void OnKill(NPC npc)
         {
-            if (Main.eclipse && npc.type == 598)
+            if (Main.eclipse && npc.type == NPCID.OrangeDragonfly)
             {
                 if (npc.lastInteraction != -1 && Main.projectile[npc.lastInteraction].type == ProjectileID.Chik)
                 {
@@ -89,7 +96,7 @@ namespace TheSludgeMod.Common.GlobalNPCs
                 }
             }
 
-            if (Main.dayRate > 30 && npc.type == 423)
+            if (Main.dayRate > 30 && npc.type == NPCID.NebulaBeast)
             {
                 if (npc.lastInteraction != -1 && Main.projectile[npc.lastInteraction].type == ProjectileID.SporeCloud)
                 {

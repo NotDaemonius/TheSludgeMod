@@ -14,7 +14,7 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
             Projectile.width = 2;
             Projectile.height = 2;
             Projectile.friendly = true;
-            Projectile.DamageType = DamageClass.Melee;
+            Projectile.DamageType = DamageClass.Ranged;
             Projectile.tileCollide = true;
             Projectile.ignoreWater = true;
             Projectile.penetrate = -1;

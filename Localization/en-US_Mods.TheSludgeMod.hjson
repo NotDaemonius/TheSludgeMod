@@ -1336,6 +1336,11 @@ Items: {
 		DisplayName: Lead Paint
 		Tooltip: ""
 	}
+
+	CthulhuEyeStaff: {
+		DisplayName: Cthulhu Eye Staff
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1393,6 +1398,7 @@ Projectiles: {
 	FrostflamingMaceProj.DisplayName: Frostflaming Mace Proj
 	LeadPaintProj.DisplayName: Lead Paint Proj
 	LeadPaintPuddle.DisplayName: Lead Paint Puddle
+	CthulhuEyeStaffProj.DisplayName: Cthulhu Eye Staff Proj
 }
 
 Tiles: {
@@ -1468,6 +1474,11 @@ Buffs: {
 	SteroidsDebuff: {
 		DisplayName: Steroid Crash
 		Description: Owwww! Ouch... Owie...
+	}
+
+	CthulhuEyeBuff: {
+		DisplayName: Cthulhu Eye Buff
+		Description: Mods.TheSludgeMod.Buffs.CthulhuEyeBuff.Description
 	}
 }
 

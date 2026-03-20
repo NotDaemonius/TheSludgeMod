@@ -12,7 +12,7 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.width = 28;
             Item.height = 28;
             Item.damage = 18;
-            Item.DamageType = DamageClass.Melee;
+            Item.DamageType = DamageClass.Ranged;
             Item.knockBack = 2f;
             Item.useTime = 30;
             Item.useAnimation = 30;
