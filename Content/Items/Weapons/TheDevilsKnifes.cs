@@ -26,16 +26,16 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.UseSound = SoundID.DD2_GoblinBomberThrow;
             Item.noUseGraphic = true;
             Item.DamageType = DamageClass.Ranged;
-            Item.damage = 10;
-            Item.knockBack = 6f;
+            Item.damage = 12;
+            Item.knockBack = 3f;
             Item.noMelee = true;
             Item.shoot = ProjectileID.PurificationPowder;
             Item.shootSpeed = 15f;
-            Item.crit = 17;
+            Item.crit = 6;
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            const int NumProjectiles = 20;
+            const int NumProjectiles = 10;
 
             for (int i = 0; i < NumProjectiles; i++)
             {

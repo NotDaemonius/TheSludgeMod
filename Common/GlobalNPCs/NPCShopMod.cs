@@ -29,7 +29,7 @@ namespace TheSludgeMod
 
             if (npc.type == NPCID.ArmsDealer)
             {
-                if (NPC.downedBoss3)
+                if (Main.hardMode)
                 {
                     for (int i = 0; i < items.Length; i++)
                     {

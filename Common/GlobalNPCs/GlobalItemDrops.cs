@@ -11,6 +11,7 @@ using TheSludgeMod.Content.Items.Consumables;
 using TheSludgeMod.Content.Items.Junk;
 using TheSludgeMod.Content.Items.Tools;
 using TheSludgeMod.Content.Items.Weapons;
+using TheSludgeMod.Content.Items.Accessories.VoodooDolls;
 
 namespace TheSludgeMod.Common.GlobalNPCs
 {
@@ -24,7 +25,7 @@ namespace TheSludgeMod.Common.GlobalNPCs
     {
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
         {
-            if (npc.type == NPCID.DemonEye || npc.type== NPCID.DemonEye2)
+            if (npc.type == NPCID.DemonEye || npc.type == NPCID.DemonEye2)
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DemonsEye>(), 10));
             }
@@ -83,6 +84,117 @@ namespace TheSludgeMod.Common.GlobalNPCs
             if (npc.type == NPCID.EyeofCthulhu)
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CthulhuEyeStaff>(), 4));
+            }
+
+            // === VOODOO DOLLS === //
+
+            if (npc.type == NPCID.Crab)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<AnglerVoodooDoll>(), 500));
+            }
+            if (npc.type == NPCID.Shark)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ArmsDealerVoodooDoll>(), 200));
+            }
+            if (npc.type == NPCID.DungeonSpirit)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CyborgVoodooDoll>(), 200));
+            }
+            if (npc.type == NPCID.UndeadMiner)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DemolitionistVoodooDoll>(), 100));
+            }
+            if (npc.type == NPCID.GreenSlime)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DryadVoodooDoll>(), 1000));
+            }
+            if (npc.type == NPCID.CochinealBeetle || npc.type == NPCID.CyanBeetle || npc.type == NPCID.LacBeetle)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DyeTraderVoodooDoll>(), 200));
+            }
+            if (npc.type == NPCID.GoblinScout)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GoblinTinkererVoodooDoll>(), 100));
+            }
+            if (npc.type == NPCID.Antlion)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GolferVoodooDoll>(), 500));
+            }
+            if (npc.type == NPCID.CursedSkull)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MechanicVoodooDoll>(), 200));
+            }
+            if (npc.type == NPCID.CaveBat)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MerchantVoodooDoll>(), 500));
+            }
+            if (npc.type == NPCID.Pinky)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<NurseVoodooDoll>(), 50));
+            }
+            if (npc.type == NPCID.DungeonSlime)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<OldManVoodooDoll>(), 50));
+            }
+            if (npc.type == NPCID.AngryNimbus)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PainterVoodooDoll>(), 200));
+            }
+            if (npc.type == NPCID.ShimmerSlime)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PartyGirlVoodooDoll>(), 200));
+            }
+            if (npc.type == NPCID.PirateCaptain)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PirateVoodooDoll>(), 50));
+            }
+            if (npc.type == NPCID.RainbowSlime)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PrincessVoodooDoll>(), 100));
+            }
+            if (npc.type == NPCID.Krampus)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SantaClausVoodooDoll>(), 100));
+            }
+            if (npc.type == NPCID.Skeleton)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SkeletonMerchantVoodooDoll>(), 500));
+            }
+            if (npc.type == NPCID.PossessedArmor)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SteampunkerVoodooDoll>(), 500));
+            }
+            if (npc.type == NPCID.WallCreeper)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<StylistVoodooDoll>(), 500));
+            }
+            if (npc.type == NPCID.DD2GoblinT1 || npc.type == NPCID.DD2GoblinT2 || npc.type == NPCID.DD2GoblinT3)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TavernkeepVoodooDoll>(), 200));
+            }
+            if (npc.type == NPCID.DemonTaxCollector)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TaxCollectorVoodooDoll>(), 100));
+            }
+            if (npc.type == NPCID.BlueSlime)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TravellingMerchantVoodooDoll>(), 1000));
+            }
+            if (npc.type == NPCID.GiantFungiBulb)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TruffleVoodooDoll>(), 100));
+            }
+            if (npc.type == NPCID.Bee)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<WitchDoctorVoodooDoll>(), 1000));
+            }
+            if (npc.type == NPCID.Tim || npc.type == NPCID.RuneWizard)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<WizardVoodooDoll>(), 50));
+            }
+            if (npc.type == NPCID.Bunny)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ZoologistVoodooDoll>(), 1000));
             }
 
         }

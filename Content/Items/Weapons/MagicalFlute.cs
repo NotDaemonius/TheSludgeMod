@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Common;
+using TheSludgeMod.Content.Items.Materials;
 using TheSludgeMod.Content.Projectiles.Weapons;
 
 namespace TheSludgeMod.Content.Items.Weapons
@@ -32,6 +33,16 @@ namespace TheSludgeMod.Content.Items.Weapons
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
             position = HelperFunctions.AdjustMuzzleOffset(player, ref position, velocity, 50f);
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ItemID.CrystalShard, 20)
+                .AddIngredient(ItemID.SoulofLight, 10)
+                .AddIngredient(ItemID.SoulofFright, 10)
+                .AddIngredient(ModContent.ItemType<Flute>(), 10)
+                .AddTile(TileID.Anvils)
+                .Register();
         }
     }
 }

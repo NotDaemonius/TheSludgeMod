@@ -18,7 +18,7 @@ namespace TheSludgeMod.Content.Items.Ammo
         }
         public override void SetDefaults()
         {
-            Item.damage = 12; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
+            Item.damage = 25; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
             Item.DamageType = DamageClass.Ranged;
             Item.width = 8;
             Item.height = 8;

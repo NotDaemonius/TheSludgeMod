@@ -28,5 +28,6 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.shootSpeed = 25f;
             Item.crit = 29;
         }
+        //Plantera drop
     }
 }

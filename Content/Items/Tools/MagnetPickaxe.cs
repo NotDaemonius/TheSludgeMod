@@ -31,6 +31,7 @@ namespace TheSludgeMod.Content.Items.Tools
             Item.attackSpeedOnlyAffectsWeaponAnimation = true;
             Item.useTurn = true;
         }
+        //Shadow Chest loot
         public override void HoldItem(Player player)
         {
             foreach (Item item in Main.ActiveItems)

@@ -28,5 +28,6 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.shootSpeed = 1f;
             Item.crit = 32;
         }
+        //Cultist drop
     }
 }

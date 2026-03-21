@@ -1,13 +1,14 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Common;
+using TheSludgeMod.Content.Items.Materials;
 using TheSludgeMod.Content.Projectiles.Weapons;
 
 namespace TheSludgeMod.Content.Items.Weapons
@@ -33,6 +34,14 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.autoReuse = true;
             Item.shoot = ProjectileID.GreenLaser;
 
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ItemID.LaserRifle)
+                .AddIngredient(ItemID.SpaceGun)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
         }
 
         public override Vector2? HoldoutOffset()

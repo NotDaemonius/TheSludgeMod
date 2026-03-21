@@ -29,6 +29,15 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.useAmmo = AmmoID.Bullet;
             Item.crit = 20;
         }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ItemID.LihzahrdBrick, 100)
+                .AddIngredient(ItemID.BeetleHusk, 2)
+                .AddIngredient(ItemID.GoldDust, 5)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
+        }
 
         public override bool CanConsumeAmmo(Item ammo, Player player)
         {

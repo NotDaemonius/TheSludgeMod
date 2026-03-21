@@ -27,6 +27,13 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.shootSpeed = 10f;
             Item.buffType = ModContent.BuffType<Buffs.SlimeHoardBuff>();
         }
+        public override void AddRecipes() //ADD CAUSTIC SLIME TO RECIPE WHEN ADDED (DUNGEON SLIME DROP)
+        {
+            CreateRecipe()
+                .AddIngredient(ItemID.SlimeStaff)
+                .AddTile(TileID.Anvils)
+                .Register();
+        }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             player.AddBuff(Item.buffType, 2);

@@ -29,6 +29,12 @@ namespace TheSludgeMod.Content.Items.Weapons
         }
         public override void AddRecipes()
         {
+            CreateRecipe()
+                .AddIngredient(ItemID.DeathSickle)
+                .AddIngredient(ItemID.ChlorophyteBar, 10)
+                .AddIngredient(ItemID.VialofVenom, 5)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
         }
     }
 }

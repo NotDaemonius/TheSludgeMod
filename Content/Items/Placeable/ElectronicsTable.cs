@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Content.Items.Aluminium;
 using TheSludgeMod.Content.Projectiles;
 
 namespace TheSludgeMod.Content.Items.Placeable
@@ -20,5 +21,12 @@ namespace TheSludgeMod.Content.Items.Placeable
 			Item.autoReuse = true;
 			Item.useTurn = true;
         }
-	}
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ModContent.ItemType<AluminiumBar>(), 15)
+                .AddTile(TileID.Anvils)
+                .Register();
+        }
+    }
 }
