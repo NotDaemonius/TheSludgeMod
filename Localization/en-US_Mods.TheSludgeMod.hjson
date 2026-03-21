@@ -1339,7 +1339,12 @@ Items: {
 
 	CthulhuEyeStaff: {
 		DisplayName: Cthulhu Eye Staff
+		Tooltip: Summons a miniature eye to fight for you
+	}
+
+	WoodTreeWand: {
 		Tooltip: ""
+		DisplayName: Wood Tree Wand
 	}
 }
 
@@ -1399,23 +1404,24 @@ Projectiles: {
 	LeadPaintProj.DisplayName: Lead Paint Proj
 	LeadPaintPuddle.DisplayName: Lead Paint Puddle
 	CthulhuEyeStaffProj.DisplayName: Cthulhu Eye Staff Proj
+	WoodTreeWandProj.DisplayName: Wood Tree Wand Proj
 }
 
 Tiles: {
 	RoseQuartzTile.MapEntry: Rose Quartz
 	RoseQuartzStoneTile.MapEntry: Rose Quartz Stone
-	ShadowvoidOre.MapEntry: Shadowvoid Ore
+	ShadowvoidOre.MapEntry: Shadowvoid
 	ShadowvoidBar.MapEntry: Shadowvoid Bar
 	ShadowvoidBrick.MapEntry: Shadowvoid Brick
 	ElectronicsTable.MapEntry: Electronics Table
-	ZincOreTile.MapEntry: Zinc Ore
-	NickelOreTile.MapEntry: Nickel Ore
-	AluminiumOreTile.MapEntry: Aluminium Ore
-	IridiumOreTile.MapEntry: Iridium Ore
+	ZincOreTile.MapEntry: Zinc
+	NickelOreTile.MapEntry: Nickel
+	AluminiumOreTile.MapEntry: Aluminium
+	IridiumOreTile.MapEntry: Iridium
 	NickelAnvilTile.MapEntry: Nickel Anvil
-	UraniumOreTile.MapEntry: Uranium Ore
-	OsmiumOreTile.MapEntry: Osmium Ore
-	BismuthOreTile.MapEntry: Bismuth Ore
+	UraniumOreTile.MapEntry: Uranium
+	OsmiumOreTile.MapEntry: Osmium
+	BismuthOreTile.MapEntry: Bismuth
 	OsmiumAnvilTile.MapEntry: Osmium Anvil
 	BismuthForgeTile.MapEntry: Bismuth Forge
 }
@@ -1477,8 +1483,8 @@ Buffs: {
 	}
 
 	CthulhuEyeBuff: {
-		DisplayName: Cthulhu Eye Buff
-		Description: Mods.TheSludgeMod.Buffs.CthulhuEyeBuff.Description
+		DisplayName: Cthulhu's Eye
+		Description: The eye will fight for you
 	}
 }
 
