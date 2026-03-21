@@ -1346,6 +1346,36 @@ Items: {
 		Tooltip: ""
 		DisplayName: Wood Tree Wand
 	}
+
+	BorealWoodTreeWand: {
+		DisplayName: Boreal Wood Tree Wand
+		Tooltip: ""
+	}
+
+	AshWoodTreeWand: {
+		Tooltip: ""
+		DisplayName: Ash Wood Tree Wand
+	}
+
+	EbonwoodTreeWand: {
+		DisplayName: Ebonwood Tree Wand
+		Tooltip: ""
+	}
+
+	PalmWoodTreeWand: {
+		DisplayName: Palm Wood Tree Wand
+		Tooltip: ""
+	}
+
+	RichMahoganyTreeWand: {
+		DisplayName: Rich Mahogany Tree Wand
+		Tooltip: ""
+	}
+
+	ShadewoodTreeWand: {
+		DisplayName: Shadewood Tree Wand
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1405,6 +1435,12 @@ Projectiles: {
 	LeadPaintPuddle.DisplayName: Lead Paint Puddle
 	CthulhuEyeStaffProj.DisplayName: Cthulhu Eye Staff Proj
 	WoodTreeWandProj.DisplayName: Wood Tree Wand Proj
+	AshWoodTreeWandProj.DisplayName: Ash Wood Tree Wand Proj
+	BorealWoodTreeWandProj.DisplayName: Boreal Wood Tree Wand Proj
+	EbonwoodTreeWandProj.DisplayName: Ebonwood Tree Wand Proj
+	PalmWoodTreeWandProj.DisplayName: Palm Wood Tree Wand Proj
+	RichMahoganyTreeWandProj.DisplayName: Rich Mahogany Tree Wand Proj
+	ShadewoodTreeWandProj.DisplayName: Shadewood Tree Wand Proj
 }
 
 Tiles: {

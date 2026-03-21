@@ -7,22 +7,22 @@ using TheSludgeMod.Content.Projectiles.Weapons;
 
 namespace TheSludgeMod.Content.Items.Weapons
 {
-    public class WoodTreeWand : ModItem
+    public class ShadewoodTreeWand : ModItem
     {
         public override void SetDefaults()
         {
             Item.width = 28;
             Item.height = 28;
-            Item.damage = 7;
+            Item.damage = 11;
             Item.DamageType = DamageClass.Magic;
-            Item.knockBack = 1.5f;
+            Item.knockBack = 2f;
             Item.mana = 2;
-            Item.useTime = 22;
-            Item.useAnimation = 22;
+            Item.useTime = 21;
+            Item.useAnimation = 21;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.autoReuse = true;
             Item.noMelee = true;
-            Item.shoot = ModContent.ProjectileType<WoodTreeWandProj>();
+            Item.shoot = ModContent.ProjectileType<ShadewoodTreeWandProj>();
             Item.shootSpeed = 8f;
             Item.value = Item.buyPrice(copper: 50);
             Item.rare = ItemRarityID.White;
@@ -39,7 +39,7 @@ namespace TheSludgeMod.Content.Items.Weapons
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.Wood, 20)
+                .AddIngredient(ItemID.Shadewood, 20)
                 .AddTile(TileID.WorkBenches)
                 .Register();
         }

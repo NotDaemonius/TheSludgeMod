@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace TheSludgeMod.Content.Projectiles.Weapons
 {
-    public class WoodTreeWandProj : ModProjectile
+    public class BorealWoodTreeWandProj : ModProjectile
     {
         private const int FrameSpeed = 4;
         private const float CurveMagnitude = 0.003f;
@@ -49,7 +49,7 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
 
             if (Main.rand.NextBool(4))
             {
-                int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.GrassBlades, Projectile.velocity.X * 0.3f, Projectile.velocity.Y * 0.3f, Scale: Main.rand.NextFloat(0.4f, 0.8f));
+                int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.GreenMoss, Projectile.velocity.X * 0.3f, Projectile.velocity.Y * 0.3f, Scale: Main.rand.NextFloat(0.4f, 0.8f));
                 Main.dust[dust].noGravity = true;
             }
         }
@@ -67,13 +67,13 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
 
             for (int i = 0; i < 8; i++)
             {
-                int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.GrassBlades, Main.rand.NextFloat(-2f, 2f), Main.rand.NextFloat(-2f, 2f), Alpha: 80, Scale: Main.rand.NextFloat(0.6f, 1.1f));
+                int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.GreenMoss, Main.rand.NextFloat(-2f, 2f), Main.rand.NextFloat(-2f, 2f), Alpha: 80, Scale: Main.rand.NextFloat(0.6f, 1.1f));
                 Main.dust[dust].noGravity = false;
             }
 
             for (int i = 0; i < 4; i++)
             {
-                int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.GrassBlades, Main.rand.NextFloat(-1.5f, 1.5f), Main.rand.NextFloat(-1.5f, 1.5f), Scale: Main.rand.NextFloat(0.5f, 0.9f));
+                int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.GreenMoss, Main.rand.NextFloat(-1.5f, 1.5f), Main.rand.NextFloat(-1.5f, 1.5f), Scale: Main.rand.NextFloat(0.5f, 0.9f));
                 Main.dust[dust].noGravity = true;
             }
         }
