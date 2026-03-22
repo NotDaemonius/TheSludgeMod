@@ -30,7 +30,7 @@ public class OsmiumCorseque : ModItem
     {
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ModContent.ItemType<OsmiumBar>(), 15);
-        recipe.AddTile(TileID.MythrilAnvil)
+        recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
 }
