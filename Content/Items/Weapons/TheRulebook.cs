@@ -31,7 +31,7 @@ namespace TheSludgeMod.Content.Items.Weapons
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.SpellTome, 1);
-            recipe.AddIngredient(ItemID.Football, 10);
+            recipe.AddIngredient(ItemID.Football, 100);
             recipe.AddTile(TileID.Bookcases);
             recipe.Register();
         }

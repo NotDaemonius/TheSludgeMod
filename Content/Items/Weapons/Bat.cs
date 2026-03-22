@@ -13,11 +13,12 @@ namespace TheSludgeMod.Content.Items.Weapons
     {
         public override void SetDefaults()
         {
-            Item.width = 30;
-            Item.height = 30;
+            Item.width = 48;
+            Item.height = 64;
             Item.scale = 1.5f;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.useTime = 35;
+            Item.useTurn = true;
             Item.useAnimation = 35;
             Item.autoReuse = true;
             Item.shootSpeed = 15;
@@ -33,7 +34,7 @@ namespace TheSludgeMod.Content.Items.Weapons
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.Wood, 9)
+            .AddIngredient(ItemID.Wood, 35)
             .AddTile(TileID.WorkBenches);
         }
     }

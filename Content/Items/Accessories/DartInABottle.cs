@@ -1,10 +1,11 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
 using Terraria.Enums;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -42,6 +43,7 @@ namespace TheSludgeMod.Content.Items.Accessories
         }
         public override void OnStarted(Player player, ref bool playSound)
         {
+            SoundEngine.PlaySound(SoundID.DoubleJump, player.Center);
             int offsetY = player.height;
             if (player.gravDir == -1f)
             offsetY = 0;
@@ -50,9 +52,9 @@ namespace TheSludgeMod.Content.Items.Accessories
             player.velocity = new Vector2(player.velocity.X, -9);
             SpawnCloudPoof(player, player.position + new Vector2(-34f, offsetY));
 
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 15; i++)
             {
-                Dust dust = Dust.NewDustDirect(player.position + new Vector2(-34f, offsetY), 102, 32, DustID.Cloud, -player.velocity.X * 0.5f, player.velocity.Y * 0.5f, 100, Color.Green, 1.5f);
+                Dust dust = Dust.NewDustDirect(player.position + new Vector2(-34f, offsetY), 102, 32, DustID.Smoke, -player.velocity.X * 0.5f, player.velocity.Y * 0.5f, 100, Color.White, 1.8f);
                 dust.velocity = dust.velocity * 0.5f - player.velocity * new Vector2(0.1f, 0.3f);
             }
         }

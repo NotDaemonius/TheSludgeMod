@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -48,6 +49,8 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
         }
         public override void OnKill(int timeLeft)
         {
+            SoundEngine.PlaySound(SoundID.NPCHit3);
+
             for (int i = 0; i < 18; i++)
             {
                 int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Terra, Main.rand.NextFloat(-4f, 4f), Main.rand.NextFloat(-4f, 4f), Alpha: 0, default, Scale: Main.rand.NextFloat(1.5f, 2.4f));
