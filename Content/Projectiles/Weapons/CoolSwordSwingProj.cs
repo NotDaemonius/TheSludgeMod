@@ -46,13 +46,6 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
                 SwingDirection = player.direction;
                 float midAngle = Projectile.velocity.ToRotation();
                 StartAngle = midAngle - (SwingArc / 2f) * SwingDirection;
-
-                if(Main.myPlayer == Projectile.owner && !ModContent.GetInstance<ClientConfig>().DisableScreenShake)
-                {
-                    Vector2 punchDir = Projectile.velocity.SafeNormalize(Vector2.UnitX);
-                    Main.instance.CameraModifiers.Add(
-                    new PunchCameraModifier(player.Center, punchDir, 2f, 6f, 8, 1000f, FullName));
-                }
             }
 
             if (!player.active || player.dead)
@@ -95,37 +88,30 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
                 spark.velocity = Main.rand.NextVector2Circular(6f, 6f);
                 spark.noGravity = Main.rand.NextBool(2);
             }
-
-            if (Main.myPlayer == Projectile.owner && !ModContent.GetInstance<ClientConfig>().DisableScreenShake)
-            {
-                Vector2 punchDir = (target.Center - Main.player[Projectile.owner].Center).SafeNormalize(Vector2.UnitY);
-                Main.instance.CameraModifiers.Add(new PunchCameraModifier(target.Center, punchDir, 7f, 9f, 7, 1000f, FullName + "Hit"));
-            }
         }
         public override bool PreDraw(ref Color lightColor)
         {
-            Texture2D tex = ModContent.Request<Texture2D>("TheSludgeMod/Content/Items/Weapons/CoolSword", AssetRequestMode.ImmediateLoad).Value;
+            Texture2D tex = ModContent.Request<Texture2D>("TheSludgeMod/Content/Items/Weapons/CoolSword").Value;
             Vector2 origin = tex.Size() / 2f;
             SpriteBatch sb = Main.spriteBatch;
+            SpriteEffects flip = SwingDirection < 0 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+            float rotOffset = flip == SpriteEffects.FlipHorizontally ? MathHelper.PiOver2 : 0f;
 
             for (int i = Projectile.oldPos.Length - 1; i >= 1; i--)
             {
                 if (Projectile.oldPos[i] == Vector2.Zero) continue;
-
                 float age = i / (float)Projectile.oldPos.Length;
-                float alpha = (1f - age) * 0.55f;
-                float scale = Projectile.scale * (1f + age * 0.15f);
-                sb.Draw(tex, Projectile.oldPos[i] + Projectile.Size / 2f - Main.screenPosition, null, new Color(255, 0, 0) * alpha, Projectile.oldRot[i], origin, scale, SpriteEffects.None, 0f);
+                sb.Draw(tex, Projectile.oldPos[i] + Projectile.Size / 2f - Main.screenPosition, null, new Color(255, 0, 0) * ((1f - age) * 0.55f), Projectile.oldRot[i] + rotOffset, origin, Projectile.scale * (1f + age * 0.15f), flip, 0f);
             }
 
+            float glowPulse = 0.38f + 0.12f * (float)Math.Sin(Main.timeForVisualEffects * 0.35f);
             sb.End();
             sb.Begin(SpriteSortMode.Immediate, BlendState.Additive, Main.DefaultSamplerState, DepthStencilState.None, RasterizerState.CullNone, null, Main.GameViewMatrix.TransformationMatrix);
-            float glowPulse = 0.38f + 0.12f * (float)Math.Sin(Main.timeForVisualEffects * 0.35f);
-            sb.Draw(tex, Projectile.Center - Main.screenPosition, null, new Color(255, 0, 0) * glowPulse, Projectile.rotation, origin, Projectile.scale * 1.18f, SpriteEffects.None, 0f);
-            sb.Draw(tex, Projectile.Center - Main.screenPosition, null, new Color(255, 0, 0) * (glowPulse * 0.55f), Projectile.rotation, origin, Projectile.scale * 1.02f, SpriteEffects.None,0f);
+            sb.Draw(tex, Projectile.Center - Main.screenPosition, null, new Color(255, 0, 0) * glowPulse, Projectile.rotation + rotOffset, origin, Projectile.scale * 1.18f, flip, 0f);
+            sb.Draw(tex, Projectile.Center - Main.screenPosition, null, new Color(255, 0, 0) * (glowPulse * 0.55f), Projectile.rotation + rotOffset, origin, Projectile.scale * 1.02f, flip, 0f);
             sb.End();
             sb.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, RasterizerState.CullNone, null, Main.GameViewMatrix.TransformationMatrix);
-            sb.Draw(tex, Projectile.Center - Main.screenPosition, null, lightColor, Projectile.rotation, origin, Projectile.scale, SpriteEffects.None, 0f);
+            sb.Draw(tex, Projectile.Center - Main.screenPosition, null, lightColor, Projectile.rotation + rotOffset, origin, Projectile.scale, flip, 0f);
 
             return false;
         }
