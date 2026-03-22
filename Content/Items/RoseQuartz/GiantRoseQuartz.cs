@@ -1,26 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TheSludgeMod.Content.Items.RoseQuartz
+namespace TheSludgeMod.Content.Items.RoseQuartz;
+
+public class GiantRoseQuartz : ModItem
 {
-    public class GiantRoseQuartz : ModItem
+    public override void SetDefaults() => Item.CloneDefaults(ItemID.LargeSapphire);
+
+    public override void AddRecipes()
     {
-        public override void SetDefaults()
-        {
-            Item.CloneDefaults(ItemID.LargeSapphire);
-          
-        }
-        public override void AddRecipes()
-        {
-            CreateRecipe()
-            .AddIngredient(ModContent.ItemType<RoseQuartz>(), 15)
-            .AddTile(TileID.Anvils)
-            .Register();
-        }
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ModContent.ItemType<RoseQuartz>(), 15);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
     }
 }

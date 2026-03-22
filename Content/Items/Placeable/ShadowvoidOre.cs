@@ -1,31 +1,24 @@
-using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TheSludgeMod.Content.Projectiles;
 using TheSludgeMod.Content.Rarities;
 
-namespace TheSludgeMod.Content.Items.Placeable
+namespace TheSludgeMod.Content.Items.Placeable;
+
+public class ShadowvoidOre : ModItem
 {
-	public class ShadowvoidOre : ModItem
+    public override void SetStaticDefaults() => Item.ResearchUnlockCount = 100;
+
+    public override void SetDefaults()
 	{
-		public override void SetStaticDefaults() 
-		{
-			Item.ResearchUnlockCount = 100;
-			ItemID.Sets.SortingPriorityMaterials[Type] = 58;
-		}
-		public override void SetDefaults()
-		{
-			Item.width = 12;
-			Item.height = 12;
-			Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.ShadowvoidOre>());
-			Item.useStyle = ItemUseStyleID.Swing;
-			Item.value = Item.buyPrice(gold: 15);
-			Item.rare = ModContent.RarityType<Indigo>();
-            Item.autoReuse = true;
-			Item.useTurn = true;
-            Item.material = true;
-        }
+		Item.width = 12;
+		Item.height = 12;
+		Item.DefaultToPlaceableTile(ModContent.TileType<Tiles.ShadowvoidOre>());
+		Item.useStyle = ItemUseStyleID.Swing;
+		Item.value = Item.buyPrice(gold: 15);
+		Item.rare = ModContent.RarityType<Indigo>();
+		Item.autoReuse = true;
+		Item.useTurn = true;
+		Item.material = true;
 	}
 }
