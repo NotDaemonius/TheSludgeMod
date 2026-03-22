@@ -69,11 +69,14 @@ public class LeadPaintPuddle : ModProjectile
     {
         Texture2D texture = TextureAssets.Projectile[Type].Value;
 
-        Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
-        for (int k = Projectile.oldPos.Length - 1; k > 0; k--)
+        if (Projectile.velocity != Vector2.Zero)
         {
-            Vector2 drawPos = (Projectile.oldPos[k] - Main.screenPosition) + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
-            Main.EntitySpriteDraw(texture, drawPos, null, lightColor, Projectile.rotation, drawOrigin, Projectile.scale * ((Projectile.oldPos.Length - k) / (float) Projectile.oldPos.Length), SpriteEffects.None, 0);
+            Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
+            for (int k = Projectile.oldPos.Length - 1; k > 0; k--)
+            {
+                Vector2 drawPos = (Projectile.oldPos[k] - Main.screenPosition) + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
+                Main.EntitySpriteDraw(texture, drawPos, null, lightColor * (1f - Projectile.alpha / 255f), Projectile.rotation, drawOrigin, Projectile.scale * ((Projectile.oldPos.Length - k) / (float) Projectile.oldPos.Length), SpriteEffects.None, 0);
+            }
         }
 
         Color drawColor = lightColor * (1f - Projectile.alpha / 255f);

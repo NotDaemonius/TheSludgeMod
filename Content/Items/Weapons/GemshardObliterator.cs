@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TheSludgeMod.Common;
 using TheSludgeMod.Content.NPCs.TheMainframe;
-using TheSludgeMod.Content.Projectiles.Weapons;
 
 namespace TheSludgeMod.Content.Items.Weapons
 {
@@ -41,23 +34,38 @@ namespace TheSludgeMod.Content.Items.Weapons
         {
             return new Vector2(-10f, 5f);
         }
+
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            int projIndex = Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<TheMainframeLaser>(), damage, knockback, player.whoAmI);
+            Vector2 aimDir = Vector2.Normalize(velocity);
+            Vector2 perpDir = new Vector2(-aimDir.Y, aimDir.X) * player.direction;
 
-            // After spawning, flip the ownership flags
+            // GetFrontHandPosition returns the actual world-space hand position for the
+            // current aim angle. MountedCenter is the body center — the distance from it
+            // to the muzzle tip changes as the arm rotates, so no single BARREL_LENGTH
+            // can satisfy both horizontal and vertical aiming simultaneously.
+            // The hand position IS the gun's rotation pivot, so BARREL_LENGTH measured
+            // from here is consistent at every angle.
+            Vector2 handPos = player.GetFrontHandPosition(
+                Player.CompositeArmStretchAmount.Full, velocity.ToRotation());
+
+            const float BARREL_LENGTH = 32f; // retune this — now measured from hand, not body center
+            const float BARREL_PERP = -5f;
+
+            Vector2 muzzlePos = handPos
+                + aimDir * BARREL_LENGTH
+                + perpDir * BARREL_PERP;
+
+            int projIndex = Projectile.NewProjectile(source, muzzlePos, velocity,
+                ModContent.ProjectileType<TheMainframeLaser>(), damage, knockback, player.whoAmI);
+
             Main.projectile[projIndex].friendly = true;
             Main.projectile[projIndex].hostile = false;
             Main.projectile[projIndex].DamageType = DamageClass.Ranged;
             Main.projectile[projIndex].usesLocalNPCImmunity = true;
             Main.projectile[projIndex].localNPCHitCooldown = 10;
 
-            return false; // return false so the default shoot doesn't also fire
-        }
-
-        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
-        {
-            position = HelperFunctions.AdjustMuzzleOffset(player, ref position, velocity, 20f);
+            return false;
         }
     }
-}   
+}
