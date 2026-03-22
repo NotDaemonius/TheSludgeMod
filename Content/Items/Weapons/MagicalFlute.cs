@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Common;
@@ -25,9 +26,9 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.crit = 6;
             Item.value = Item.buyPrice(gold: 4);
             Item.rare = ItemRarityID.Pink;
-            Item.UseSound = SoundID.Item35;
+            Item.UseSound = new SoundStyle("TheSludgeMod/Assets/Sounds/FluteC");
             Item.autoReuse = true;
-            Item.shoot = ProjectileID.QuarterNote;
+            Item.shoot = ModContent.ProjectileType<SilentQuarterNote>();
         }
 
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)

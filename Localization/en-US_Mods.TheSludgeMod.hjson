@@ -1442,6 +1442,7 @@ Projectiles: {
 	PalmWoodTreeWandProj.DisplayName: Palm Wood Tree Wand Proj
 	RichMahoganyTreeWandProj.DisplayName: Rich Mahogany Tree Wand Proj
 	ShadewoodTreeWandProj.DisplayName: Shadewood Tree Wand Proj
+	SilentQuarterNote.DisplayName: Silent Quarter Note
 }
 
 Tiles: {
