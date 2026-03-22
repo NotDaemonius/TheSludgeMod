@@ -1392,6 +1392,96 @@ Items: {
 		DisplayName: Mushroom Bathtub
 		Tooltip: ""
 	}
+
+	MushroomClock: {
+		DisplayName: Mushroom Clock
+		Tooltip: ""
+	}
+
+	MushroomBookcase: {
+		Tooltip: ""
+		DisplayName: Mushroom Bookcase
+	}
+
+	MushroomBed: {
+		Tooltip: ""
+		DisplayName: Mushroom Bed
+	}
+
+	MushroomChandelier: {
+		Tooltip: ""
+		DisplayName: Mushroom Chandelier
+	}
+
+	MushroomChair: {
+		Tooltip: ""
+		DisplayName: Mushroom Chair
+	}
+
+	MushroomDoor: {
+		Tooltip: ""
+		DisplayName: Mushroom Door
+	}
+
+	MushroomChest: {
+		DisplayName: Mushroom Chest
+		Tooltip: ""
+	}
+
+	MushroomDresser: {
+		DisplayName: Mushroom Dresser
+		Tooltip: ""
+	}
+
+	MushroomLamp: {
+		Tooltip: ""
+		DisplayName: Mushroom Lamp
+	}
+
+	MushroomLantern: {
+		DisplayName: Mushroom Lantern
+		Tooltip: ""
+	}
+
+	MushroomCandelabra: {
+		DisplayName: Mushroom Candelabra
+		Tooltip: ""
+	}
+
+	MushroomCandle: {
+		DisplayName: Mushroom Candle
+		Tooltip: ""
+	}
+
+	MushroomTable: {
+		DisplayName: Mushroom Table
+		Tooltip: ""
+	}
+
+	MushroomToilet: {
+		DisplayName: Mushroom Toilet
+		Tooltip: ""
+	}
+
+	MushroomSink: {
+		DisplayName: Mushroom Sink
+		Tooltip: ""
+	}
+
+	MushroomPiano: {
+		DisplayName: Mushroom Piano
+		Tooltip: ""
+	}
+
+	MushroomBench: {
+		DisplayName: Mushroom Bench
+		Tooltip: ""
+	}
+
+	MushroomSofa: {
+		DisplayName: Mushroom Sofa
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
