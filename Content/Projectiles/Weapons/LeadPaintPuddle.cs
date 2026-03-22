@@ -34,24 +34,16 @@ public class LeadPaintPuddle : ModProjectile
         if (Projectile.ai[1] == 0f)
         {
             Projectile.ai[0] = Main.rand.NextFloat(-0.25f, 0.25f);
-            if (Projectile.ai[0] == 0f)
-                Projectile.ai[0] = 0.1f;
+            if (Projectile.ai[0] == 0f) Projectile.ai[0] = 0.1f;
             Projectile.ai[1] = 1f;
         }
 
         Projectile.velocity.Y += 0.4f;
-
-        if (Projectile.velocity.Y > 12f)
-            Projectile.velocity.Y = 12f;
-
+        if (Projectile.velocity.Y > 12f) Projectile.velocity.Y = 12f;
         float speed = Projectile.velocity.Length();
         float spinFactor = MathHelper.Clamp(speed / 7f, 0f, 1f);
-
         Projectile.rotation += Projectile.ai[0] * spinFactor;
-
-
-        if (Projectile.timeLeft < 120)
-            Projectile.alpha = (int) (255 * (1f - Projectile.timeLeft / 120f));
+        if (Projectile.timeLeft < 120) Projectile.alpha = (int) (255 * (1f - Projectile.timeLeft / 120f));
     }
 
     public override bool OnTileCollide(Vector2 oldVelocity)

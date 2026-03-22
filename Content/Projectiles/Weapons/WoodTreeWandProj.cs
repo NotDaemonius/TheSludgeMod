@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
+﻿using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -10,10 +9,9 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
     {
         private const int FrameSpeed = 4;
         private const float CurveMagnitude = 0.003f;
-        public override void SetStaticDefaults()
-        {
-            Main.projFrames[Projectile.type] = 5;
-        }
+
+        public override void SetStaticDefaults() => Main.projFrames[Projectile.type] = 5;
+
         public override void SetDefaults()
         {
             Projectile.width = 14;
@@ -26,6 +24,7 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
             Projectile.ignoreWater = false;
             Projectile.velocity.Y += 0.05f;
         }
+
         public override void AI()
         {
             if (Projectile.ai[0] == 0f)
@@ -53,14 +52,11 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
                 Main.dust[dust].noGravity = true;
             }
         }
-        public override void OnKill(int timeLeft)
-        {
-            SpawnDeathDust();
-        }
-        public override void OnHitNPC(Terraria.NPC target, Terraria.NPC.HitInfo hit, int damageDone)
-        {
-            SpawnDeathDust();
-        }
+
+        public override void OnKill(int timeLeft) => SpawnDeathDust();
+
+        public override void OnHitNPC(Terraria.NPC target, Terraria.NPC.HitInfo hit, int damageDone) => SpawnDeathDust();
+
         private void SpawnDeathDust()
         {
             SoundEngine.PlaySound(SoundID.Grass, Projectile.position);

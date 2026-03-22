@@ -33,6 +33,7 @@ public class GlaiveProj : ModProjectile
         Projectile.DamageType = DamageClass.Melee;
         Projectile.tileCollide = false;
     }
+
     public override bool PreDraw(ref Color lightColor)
     {
         Texture2D texture = ModContent.Request<Texture2D>(Texture).Value;
@@ -49,23 +50,18 @@ public class GlaiveProj : ModProjectile
 
         return true;
     }
-    public override void OnSpawn(Terraria.DataStructures.IEntitySource source)
-    {
-        State[Projectile.whoAmI] = new ChainState(MaxChains, -1, new HashSet<int>());
-    }
+
+    public override void OnSpawn(Terraria.DataStructures.IEntitySource source) => State[Projectile.whoAmI] = new ChainState(MaxChains, -1, new HashSet<int>());
+
     public override void PostAI()
     {
-        if (!State.TryGetValue(Projectile.whoAmI, out var s) || s.TargetNPC < 0)
-            return;
+        if (!State.TryGetValue(Projectile.whoAmI, out var s) || s.TargetNPC < 0) return;
 
         NPC target = Main.npc[s.TargetNPC];
 
         if (!target.active)
         {
-            State[Projectile.whoAmI] = s with
-            {
-                TargetNPC = -1
-            };
+            State[Projectile.whoAmI] = s with {TargetNPC = -1};
             return;
         }
 
@@ -74,19 +70,16 @@ public class GlaiveProj : ModProjectile
         Projectile.velocity = Vector2.Lerp(Projectile.velocity, toTarget.SafeNormalize(Vector2.Zero) * speed, HomingStrength);
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4;
     }
+
     public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
-        if (!State.TryGetValue(Projectile.whoAmI, out var s))
-            return;
+        if (!State.TryGetValue(Projectile.whoAmI, out var s)) return;
 
         s.HitNPCs.Add(target.whoAmI);
 
         if (s.ChainsLeft <= 0)
         {
-            State[Projectile.whoAmI] = s with
-            {
-                TargetNPC = -1
-            };
+            State[Projectile.whoAmI] = s with {TargetNPC = -1};
             return;
         }
 
@@ -94,6 +87,7 @@ public class GlaiveProj : ModProjectile
         int nextIndex = next?.whoAmI ?? -1;
         State[Projectile.whoAmI] = new ChainState(s.ChainsLeft - 1, nextIndex, s.HitNPCs);
     }
+
     private static NPC FindNearestUnhit(Vector2 from, HashSet<int> alreadyHit)
     {
         NPC closest = null;
@@ -101,12 +95,8 @@ public class GlaiveProj : ModProjectile
 
         foreach (NPC npc in Main.ActiveNPCs)
         {
-            if (npc.friendly || npc.dontTakeDamage || npc.immortal)
-                continue;
-
-            if (alreadyHit.Contains(npc.whoAmI))
-                continue;
-
+            if (npc.friendly || npc.dontTakeDamage || npc.immortal) continue;
+            if (alreadyHit.Contains(npc.whoAmI)) continue;
             float dist = Vector2.DistanceSquared(from, npc.Center);
 
             if (dist < closestDist)
@@ -118,8 +108,6 @@ public class GlaiveProj : ModProjectile
 
         return closest;
     }
-    public override void OnKill(int timeLeft)
-    {
-        State.Remove(Projectile.whoAmI);
-    }
+
+    public override void OnKill(int timeLeft) => State.Remove(Projectile.whoAmI);
 }

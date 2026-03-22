@@ -28,7 +28,7 @@ public class MagicalFlute : ModItem
         Item.rare = ItemRarityID.Pink;
         Item.UseSound = new SoundStyle("TheSludgeMod/Assets/Sounds/FluteC"){Volume = 1f, PitchVariance = 1f};
         Item.autoReuse = true;
-        Item.shoot = ModContent.ProjectileType<SilentQuarterNote>();
+        Item.shoot = ModContent.ProjectileType<FluteBolt>();
     }
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) => position = HelperFunctions.AdjustMuzzleOffset(player, ref position, velocity, 50f);
