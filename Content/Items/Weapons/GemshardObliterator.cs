@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Common;
 using TheSludgeMod.Content.NPCs.TheMainframe;
 
 namespace TheSludgeMod.Content.Items.Weapons;
@@ -44,9 +45,3 @@ public class GemshardObliterator : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) => position = HelperFunctions.AdjustMuzzleOffset(player, ref position, velocity, 20f);
 }
-
-        {
-            position = HelperFunctions.AdjustMuzzleOffset(player, ref position, velocity, 20f);
-        }
-    }
-}   
