@@ -15,8 +15,5 @@ public class MainframeGhostSpooky : ModProjectile
         Projectile.timeLeft = 15;
     }
 
-    public override void AI()
-    {
-        Projectile.alpha = (int) MathHelper.Lerp(200f, 255f, (15f - Projectile.timeLeft) / 15f);
-    }
+    public override void AI() => Projectile.alpha = (int)MathHelper.Lerp(200f, 255f, (15f - Projectile.timeLeft) / 15f);
 }
