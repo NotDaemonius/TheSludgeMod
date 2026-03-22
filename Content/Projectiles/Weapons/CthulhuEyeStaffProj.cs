@@ -98,8 +98,7 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
                     Projectile.ai[0] = DASH_COOLDOWN;
                     Projectile.ai[1] = -1f;
                     Projectile.localAI[2] = 0;
-                }
-                else if (Projectile.localAI[0] <= 0)
+                } else if (Projectile.localAI[0] <= 0)
                 {
                     Projectile.velocity *= 0.3f;
                     Projectile.ai[0] = DASH_COOLDOWN;
@@ -141,8 +140,7 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
                 Projectile.velocity = Vector2.Zero;
                 Projectile.localAI[2] = 0;
                 _wanderDuration = 1;
-            }
-            else
+            } else
             {
                 float distT = MathHelper.Clamp((distToOwner - MAX_WANDER_DIST) / (MAX_WANDER_DIST * 3f), 0f, 1f);
                 float currentSpeed = IDLE_SPEED * MathHelper.Lerp(1f, MAX_SPEED_MULT, distT * distT);
@@ -151,8 +149,7 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
                 {
                     Projectile.velocity = toOwner.SafeNormalize(Vector2.Zero) * currentSpeed;
                     Projectile.localAI[2] = 0;
-                }
-                else
+                } else
                 {
                     float softcapT = MathHelper.Clamp((distToOwner / MAX_WANDER_DIST - SOFTCAP_START) / (1f - SOFTCAP_START), 0f, 1f);
 
@@ -168,19 +165,18 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
                     {
                         float angle = Main.rand.NextFloat(MathHelper.TwoPi);
                         float radius = Main.rand.NextFloat(WANDER_TARGET_RADIUS);
-                        Vector2 targetPoint = owner.Center + new Vector2((float)System.Math.Cos(angle), (float)System.Math.Sin(angle)) * radius;
+                        Vector2 targetPoint = owner.Center + new Vector2((float) System.Math.Cos(angle), (float) System.Math.Sin(angle)) * radius;
                         Vector2 toTarget = targetPoint - Projectile.Center;
                         Vector2 dir = toTarget.SafeNormalize(Vector2.Zero);
                         _wanderStartVel = Projectile.velocity;
                         _wanderTargetVel = dir * currentSpeed;
-                        int baseDuration = (int)(toTarget.Length() / currentSpeed);
-                        _wanderDuration = (int)MathHelper.Max(8, baseDuration * Main.rand.NextFloat(0.9f, 1.2f));
+                        int baseDuration = (int) (toTarget.Length() / currentSpeed);
+                        _wanderDuration = (int) MathHelper.Max(8, baseDuration * Main.rand.NextFloat(0.9f, 1.2f));
                         Projectile.localAI[2] = _wanderDuration;
-                    }
-                    else
+                    } else
                     {
                         Projectile.localAI[2]--;
-                        float t = 1f - Projectile.localAI[2] / (float)_wanderDuration;
+                        float t = 1f - Projectile.localAI[2] / (float) _wanderDuration;
                         float smoothstep = t * t * (3f - 2f * t);
                         Vector2 targetDir = _wanderTargetVel.SafeNormalize(Vector2.Zero);
                         Projectile.velocity = Vector2.Lerp(_wanderStartVel, targetDir * currentSpeed, smoothstep);
@@ -211,9 +207,14 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
             for (int i = 0; i < Main.maxNPCs; i++)
             {
                 NPC npc = Main.npc[i];
-                if (!npc.CanBeChasedBy()) continue;
+                if (!npc.CanBeChasedBy())
+                    continue;
                 float dist = Vector2.DistanceSquared(Projectile.Center, npc.Center);
-                if (dist < bestDist) { bestDist = dist; closest = npc; }
+                if (dist < bestDist)
+                {
+                    bestDist = dist;
+                    closest = npc;
+                }
             }
 
             return closest;
@@ -225,7 +226,7 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
                 Projectile.frameCounter = 0;
                 Projectile.localAI[1] = (Projectile.localAI[1] + 1) % Main.projFrames[Type];
             }
-            Projectile.frame = (int)Projectile.localAI[1];
+            Projectile.frame = (int) Projectile.localAI[1];
         }
     }
 }

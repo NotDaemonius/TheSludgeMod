@@ -2,7 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using System.Linq;
 
 namespace TheSludgeMod.Content.Projectiles.Weapons
 {
