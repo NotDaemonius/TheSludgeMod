@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ID;
+﻿using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TheSludgeMod.Content.Items.RoseQuartz
+namespace TheSludgeMod.Content.Items.RoseQuartz;
+
+public class RoseQuartz : ModItem
 {
-    public class RoseQuartz : ModItem
+    public override void SetStaticDefaults() => Item.ResearchUnlockCount = 15;
+
+    public override void SetDefaults()
     {
-        public override void SetStaticDefaults()
-        {
-            Item.ResearchUnlockCount = 15;
-        }
-        public override void SetDefaults()
-        {
-            Item.CloneDefaults(ItemID.Sapphire);
-            Item.createTile = ModContent.TileType<RoseQuartzTile>();
-            Item.material = true;
-        }
+        Item.CloneDefaults(ItemID.Sapphire);
+        Item.createTile = ModContent.TileType<RoseQuartzTile>();
+        Item.material = true;
     }
 }
