@@ -20,6 +20,7 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
         {
             return false;
         }
+
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             Player owner = Main.player[Projectile.owner];
