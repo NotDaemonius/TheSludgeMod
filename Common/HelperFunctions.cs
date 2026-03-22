@@ -9,10 +9,7 @@ public static class HelperFunctions
     {
         for (int i = 0; i < player.armor.Length; i++)
         {
-            if (player.armor[i] != null && !player.armor[i].IsAir && player.armor[i].type == ItemID)
-            {
-                return true;
-            }
+            if (player.armor[i] != null && !player.armor[i].IsAir && player.armor[i].type == ItemID) return true;
         }
 
         return false;
@@ -22,10 +19,7 @@ public static class HelperFunctions
     {
         for (int i = 0; i < player.armor.Length; i++)
         {
-            if (player.armor[i] != null && !player.armor[i].IsAir && player.armor[i].type == ItemID)
-            {
-                return true;
-            }
+            if (player.armor[i] != null && !player.armor[i].IsAir && player.armor[i].type == ItemID) return true;
         }
 
         return false;
@@ -34,11 +28,7 @@ public static class HelperFunctions
     public static Vector2 AdjustMuzzleOffset(Player player, ref Vector2 position, Vector2 velocity, float intensity)
     {
         Vector2 muzzleOffset = Vector2.Normalize(velocity) * intensity;
-
-        if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
-        {
-            position += muzzleOffset;
-        }
+        if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0)) position += muzzleOffset;
         return position;
     }
 }

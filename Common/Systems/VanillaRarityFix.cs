@@ -6,11 +6,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Rarities;
 
-/// <summary>
-/// Fixes item rarity scaling for items with high-tier prefixes.
-/// Ensures that Red and Purple rarity items don't have their rarity 
-/// incorrectly downgraded when applying prefixes.
-/// </summary>
 public class VanillaRarityFix : ModSystem
 {
     private Hook _prefixHook;
@@ -20,13 +15,7 @@ public class VanillaRarityFix : ModSystem
     {
         try
         {
-            var method = typeof(Item).GetMethod(
-                "Prefix",
-                BindingFlags.Public | BindingFlags.Instance,
-                null,
-                new[] { typeof(int) },
-                null
-            );
+            var method = typeof(Item).GetMethod("Prefix", BindingFlags.Public | BindingFlags.Instance, null, [typeof(int)], null);
 
             if (method == null)
             {
@@ -62,25 +51,17 @@ public class VanillaRarityFix : ModSystem
     {
         int baseRarity = self.rare;
         int baseValue = self.value;
-
         bool result = orig(self, prefixWeWant);
+        if (!result || baseValue <= 0) return result;
+        if (baseRarity != ItemRarityID.Red && baseRarity != ItemRarityID.Purple) return result;
 
-        if (!result || baseValue <= 0)
-            return result;
-
-        if (baseRarity != ItemRarityID.Red && baseRarity != ItemRarityID.Purple)
-            return result;
-
-        // Infer the prefix tier from the value multiplier.
-        // Prefix() applies: value = (int)(value * num * num)
-        // So numSq = finalValue / baseValue approximates num²
         float numSq = (float)self.value / baseValue;
         int offset = numSq switch
         {
-            >= 1.44f => 2,   // num >= 1.2
-            >= 1.1025f => 1,   // num >= 1.05
-            <= 0.7225f => -2,   // num <= 0.85
-            <= 0.9025f => -1,   // num <= 0.95
+            >= 1.44f => 2,
+            >= 1.1025f => 1,
+            <= 0.7225f => -2,
+            <= 0.9025f => -1,
             _ => 0
         };
 
@@ -95,7 +76,7 @@ public class VanillaRarityFix : ModSystem
                 _ => ItemRarityID.Red
             };
         }
-        else // Purple
+        else
         {
             self.rare = offset switch
             {

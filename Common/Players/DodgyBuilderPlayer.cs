@@ -9,18 +9,14 @@ namespace TheSludgeMod.Common.Players
         private int originalTileTargetX;
         private int originalTileTargetY;
         private bool offsetApplied;
-        public override void ResetEffects()
-        {
-            hasDodgyBuilder = false;
-        }
+
+        public override void ResetEffects() => hasDodgyBuilder = false;
+
         public override bool PreItemCheck()
         {
             offsetApplied = false;
 
-            if (hasDodgyBuilder
-                && Player.controlUseItem
-                && (Player.HeldItem.createTile >= 0 || Player.HeldItem.pick > 0)
-                && !Player.HeldItem.IsAir)
+            if (hasDodgyBuilder && Player.controlUseItem && (Player.HeldItem.createTile >= 0 || Player.HeldItem.pick > 0) && !Player.HeldItem.IsAir)
             {
                 originalTileTargetX = Player.tileTargetX;
                 originalTileTargetY = Player.tileTargetY;
@@ -31,6 +27,7 @@ namespace TheSludgeMod.Common.Players
 
             return true;
         }
+
         public override void PostItemCheck()
         {
             if (offsetApplied)

@@ -3,17 +3,16 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TheSludgeMod.Common.GlobalNPCs
+namespace TheSludgeMod.Common.GlobalNPCs;
+
+public class PainterNameOverride : GlobalNPC
 {
-    public class PainterNameOverride : GlobalNPC
+    public override void ModifyNPCNameList(NPC npc, List<string> nameList)
     {
-        public override void ModifyNPCNameList(NPC npc, List<string> nameList)
+        if (npc.type == NPCID.Painter)
         {
-            if (npc.type == NPCID.Painter)
-            {
-                nameList.Clear();
-                nameList.Add("Painter");
-            }
+            nameList.Clear();
+            nameList.Add("Painter");
         }
     }
 }

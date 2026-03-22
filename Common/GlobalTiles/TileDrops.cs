@@ -3,16 +3,15 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Items.Junk;
 
-namespace TheSludgeMod.Common.GlobalTiles
+namespace TheSludgeMod.Common.GlobalTiles;
+
+public class TileDrops : GlobalTile
 {
-    public class TileDrops : GlobalTile
+    public override void KillTile(int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem)
     {
-        public override void KillTile(int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem)
+        if (type == TileID.Dirt && !fail && Main.rand.NextBool(2000))
         {
-            if (type == TileID.Dirt && !fail && Main.rand.NextBool(2000))
-            {
-                Item.NewItem(new Terraria.DataStructures.EntitySource_TileBreak(i, j),  i * 16,  j * 16,  16,  16, ModContent.ItemType<SpeckOfDust>());
-            }
+            Item.NewItem(new Terraria.DataStructures.EntitySource_TileBreak(i, j),  i * 16,  j * 16,  16,  16, ModContent.ItemType<SpeckOfDust>());
         }
     }
 }
