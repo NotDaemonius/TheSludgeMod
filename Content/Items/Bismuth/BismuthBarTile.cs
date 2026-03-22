@@ -22,8 +22,8 @@ public class BismuthBarTile : ModTile
 		AddMapEntry(new Color(107, 29, 86));
 	}
 
-	public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak) {
-
+	public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak)
+	{
 		if (!WorldGen.SolidTileAllowBottomSlope(i, j + 1)) WorldGen.KillTile(i, j);
 		return true;
 	}

@@ -22,8 +22,8 @@ public class IridiumBarTile : ModTile
 		AddMapEntry(new Color(194, 93, 212));
 	}
 
-	public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak) {
-
+	public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak) 
+	{
 		if (!WorldGen.SolidTileAllowBottomSlope(i, j + 1)) WorldGen.KillTile(i, j);
 		return true;
 	}
