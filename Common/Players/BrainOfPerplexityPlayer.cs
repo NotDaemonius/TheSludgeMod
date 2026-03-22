@@ -1,18 +1,20 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using System;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 using TheSludgeMod.Content.Buffs;
 
 namespace TheSludgeMod.Common.Players;
+
 public class BrainOfPerplexityPlayer : ModPlayer
 {
     public bool hasBrainOfPerplexity;
+    public bool JustDodged;
 
-    private const float DodgeChance = 1f / 3f;
     private const int ConfusionDuration = 600;
     private const float ConfusionRadius = 500f;
-    private const int BuffDuration = 240; // 4 seconds
+    private const int BuffDuration = 240;
 
     public override void ResetEffects()
     {
@@ -24,11 +26,13 @@ public class BrainOfPerplexityPlayer : ModPlayer
         if (!hasBrainOfPerplexity || Player.HasBuff(ModContent.BuffType<PerplexityBuff>()))
             return false;
 
-        if (Main.rand.NextFloat() >= DodgeChance)
+        float dodgeChance = MathHelper.Lerp(0.1f, 2f / 5f, MathF.Min(info.Damage / 500, 1));
+        dodgeChance = 0;
+        if (Main.rand.NextFloat() >= dodgeChance)
             return false;
 
+        JustDodged = true;
         Player.AddBuff(ModContent.BuffType<PerplexityBuff>(), BuffDuration);
-
         Player.BrainOfConfusionDodge();
 
         CombatText.NewText(Player.Hitbox, new Color(225, 35, 55), "DODGE!", true, false);

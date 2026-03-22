@@ -53,21 +53,31 @@ namespace TheSludgeMod.Common.Systems
             float orbitScale = 1f - gemCount * 0.06f;
             float orbitRadius = (gemCount - 1f) * 4f;
 
-            switch ((int)gemCount)
+            switch ((int) gemCount)
             {
-                case 2: orbitRadius += 10f; break;
-                case 3: orbitRadius += 8f; break;
-                case 4: orbitRadius += 6f; break;
-                case 5: orbitRadius += 6f; break;
-                case 6: orbitRadius += 2f; break;
+                case 2:
+                    orbitRadius += 10f;
+                    break;
+                case 3:
+                    orbitRadius += 8f;
+                    break;
+                case 4:
+                    orbitRadius += 6f;
+                    break;
+                case 5:
+                    orbitRadius += 6f;
+                    break;
+                case 6:
+                    orbitRadius += 2f;
+                    break;
             }
 
             float angleOffset = drawinfo.drawPlayer.miscCounter / 300f * MathHelper.TwoPi;
             float anglePerGem = MathHelper.TwoPi / gemCount;
 
             Vector2 centerPos = new Vector2(
-                (int)(drawinfo.Position.X - Main.screenPosition.X + drawinfo.drawPlayer.width * 0.5f),
-                (int)(drawinfo.Position.Y - Main.screenPosition.Y + drawinfo.drawPlayer.height - 80f)
+                (int) (drawinfo.Position.X - Main.screenPosition.X + drawinfo.drawPlayer.width * 0.5f),
+                (int) (drawinfo.Position.Y - Main.screenPosition.Y + drawinfo.drawPlayer.height - 80f)
             );
 
             Color gemColor = new Color(250, 250, 250, Main.mouseTextColor / 2);
@@ -125,13 +135,11 @@ namespace TheSludgeMod.Common.Systems
                 {
                     self.gem = type - 1522;
                     self.ownedLargeGems[self.gem] = true;
-                }
-                else if (type == _giantRoseQuartzType)
+                } else if (type == _giantRoseQuartzType)
                 {
                     self.gem = 7;
                     self.ownedLargeGems[7] = true;
-                }
-                else if (type == ItemID.LargeAmber)
+                } else if (type == ItemID.LargeAmber)
                 {
                     self.gem = 6;
                     self.ownedLargeGems[6] = true;

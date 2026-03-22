@@ -1,9 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.Enums;
 using Terraria.ID;
@@ -44,7 +39,7 @@ namespace TheSludgeMod.Content.Items.Accessories
         {
             int offsetY = player.height;
             if (player.gravDir == -1f)
-            offsetY = 0;
+                offsetY = 0;
 
             offsetY -= 16;
             player.velocity = new Vector2(player.velocity.X, -9);
@@ -64,7 +59,7 @@ namespace TheSludgeMod.Content.Items.Accessories
         {
             int offsetY = player.height - 6;
             if (player.gravDir == -1f)
-            offsetY = 6;
+                offsetY = 6;
 
             Vector2 spawnPos = new Vector2(player.position.X, player.position.Y + offsetY);
 

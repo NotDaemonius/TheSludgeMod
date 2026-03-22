@@ -228,8 +228,8 @@ Items: {
 	BloodThinner: {
 		Tooltip:
 			'''
-			[c/ff0000:Doubles the length of potion sickness, but]
-			[c/ffff77:triples] [c/ff0000:the effectiveness of health potions.]
+			Doubles the length of potion sickness, but
+			triples the effectiveness of health potions
 			'''
 		DisplayName: Blood Thinner
 	}
@@ -1118,6 +1118,7 @@ Items: {
 		Tooltip:
 			'''
 			Has a chance to dodge attacks
+			Chance increases depending on the amount of damage taken
 			Temporarily increase critical chance and summon damage after dodge
 			Confuses all nearby enemies after being struck
 			'''
