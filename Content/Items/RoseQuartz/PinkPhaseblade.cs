@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TheSludgeMod.Content.Items.RoseQuartz
+namespace TheSludgeMod.Content.Items.RoseQuartz;
+
+public class PinkPhaseblade : ModItem
 {
-    public class PinkPhaseblade : ModItem
+    public override void SetDefaults()
     {
-        public override void SetDefaults()
-        {
-            Item.CloneDefaults(ItemID.BluePhaseblade);
-            Item.material = true;
-        }
-        public override void AddRecipes()
-        {
-            CreateRecipe()
-            .AddIngredient(ModContent.ItemType<RoseQuartz>(), 15)
-            .AddIngredient(ItemID.MeteoriteBar, 15)
-            .AddTile(TileID.Anvils)
-            .Register();
-        }
+        Item.CloneDefaults(ItemID.BluePhaseblade);
+        Item.material = true;
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ModContent.ItemType<RoseQuartz>(), 15);
+        recipe.AddIngredient(ItemID.MeteoriteBar, 15);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
     }
 }
