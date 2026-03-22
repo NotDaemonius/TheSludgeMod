@@ -64,7 +64,7 @@ namespace TheSludgeMod.Content.Projectiles.Consumables
 
             for (int i = 0; i < 20; i++)
             {
-                int dustIndex = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Water, Main.rand.NextFloat(-4f, 4f), Main.rand.NextFloat(-6f, -1f), 0, hueColor, Main.rand.NextFloat(0.8f, 1.4f));
+                int dustIndex = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Water, Main.rand.NextFloat(-4f, 4f), Main.rand.NextFloat(-6f, -1f), 0, Color.White, Main.rand.NextFloat(0.8f, 1.4f));
                 Main.dust[dustIndex].noGravity = false;
                 Main.dust[dustIndex].velocity *= 1.5f;
             }

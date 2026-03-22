@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -58,6 +59,16 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
             return false;
         }
 
-        public override void OnKill(int timeLeft){}
+        public override void OnKill(int timeLeft)
+        {
+            SoundEngine.PlaySound(SoundID.Dig);
+
+            for (int i = 0; i < 8; i++)
+            {
+                int dustIndex = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Clay, Main.rand.NextFloat(-2f, 2f), Main.rand.NextFloat(-3f, -1f), 0, Color.White, Main.rand.NextFloat(0.8f, 1.4f));
+                Main.dust[dustIndex].noGravity = false;
+                Main.dust[dustIndex].velocity *= 0.5f;
+            }
+        }
     }
 }

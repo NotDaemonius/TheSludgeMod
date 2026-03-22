@@ -19,7 +19,7 @@ namespace TheSludgeMod.Common.Players
 
             if (hasDodgyBuilder
                 && Player.controlUseItem
-                && Player.HeldItem.createTile >= 0
+                && (Player.HeldItem.createTile >= 0 || Player.HeldItem.pick > 0)
                 && !Player.HeldItem.IsAir)
             {
                 originalTileTargetX = Player.tileTargetX;

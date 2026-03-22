@@ -11,7 +11,7 @@ Items: {
 
 	MagnetPickaxe: {
 		DisplayName: Magnet Pickaxe
-		Tooltip: Sucks and Fucks Up Ores
+		Tooltip: Attracts nearby dropped items when held
 	}
 
 	Bat: {

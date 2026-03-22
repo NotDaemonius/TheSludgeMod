@@ -16,8 +16,9 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.autoReuse = true;
             Item.DamageType = DamageClass.Melee;
             Item.damage = 400;
-            Item.knockBack = 5.5f;
-            Item.value = Item.buyPrice(platinum: 3);
+            Item.crit = 14;
+            Item.knockBack = 6.5f;
+            Item.value = Item.buyPrice(gold: 20);
             Item.rare = ItemRarityID.Red;
             Item.UseSound = SoundID.Item1;
             Item.useTurn = true;

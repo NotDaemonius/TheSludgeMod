@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Items.Accessories.Balloons;
+using TheSludgeMod.Content.Items.Nickel;
 
 namespace TheSludgeMod.Common.Systems
 {
@@ -48,6 +49,9 @@ namespace TheSludgeMod.Common.Systems
             );
 
             RecipeGroup.RegisterGroup(AnyShinyBalloon, balloonGroup);
+
+            int ironBarGroupID = RecipeGroup.recipeGroupIDs["IronBar"];
+            RecipeGroup.recipeGroups[ironBarGroupID].ValidItems.Add(ModContent.ItemType<NickelBar>());
         }
     }
 }
