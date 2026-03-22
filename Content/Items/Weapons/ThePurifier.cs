@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Common;
 
 namespace TheSludgeMod.Content.Items.Weapons;
 
@@ -40,6 +41,9 @@ public class ThePurifier : ModItem
     }
 
     public override bool CanConsumeAmmo(Item ammo, Player player) => Main.rand.NextFloat() >= 0.66f;
+
+    public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) =>
+        position = HelperFunctions.AdjustMuzzleOffset(player, ref position, velocity, 28f);
 
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {

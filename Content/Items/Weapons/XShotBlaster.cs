@@ -23,7 +23,7 @@ public class XShotBlaster : ModItem
         Item.rare = ItemRarityID.LightRed;
         Item.UseSound = SoundID.Item11;
         Item.autoReuse = true;
-        Item.shoot = ProjectileID.Bullet; 
+        Item.shoot = ProjectileID.Bullet;
         Item.shootSpeed = 16f;
         Item.useAmmo = AmmoID.Bullet;
         Item.crit = 2;
@@ -31,11 +31,13 @@ public class XShotBlaster : ModItem
 
     public override bool CanConsumeAmmo(Item ammo, Player player) => Main.rand.NextFloat() >= 0.5f;
 
+    public override Vector2? HoldoutOffset() => new Vector2(-10, 0);
+
     public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
     {
         Vector2 offset = velocity.RotatedBy(MathHelper.PiOver2);
         offset.Normalize();
-        offset *= 4f; 
+        offset *= 4f;
         Vector2 position1 = position + offset;
         Vector2 position2 = position - offset;
         int proj1 = Projectile.NewProjectile(source, position1, velocity, type, damage, knockback, player.whoAmI);
