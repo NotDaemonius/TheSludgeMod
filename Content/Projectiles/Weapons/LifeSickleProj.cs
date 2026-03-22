@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -37,5 +38,17 @@ namespace TheSludgeMod.Content.Projectiles.Weapons
         }
 
         public override void PostAI() => Lighting.AddLight(Projectile.Center, 1.0f, 0.4f, 0.7f);
+
+        public override void OnKill(int timeLeft)
+        {
+            SoundEngine.PlaySound(SoundID.NPCDeath3);
+
+            for (int i = 0; i < 40; i++)
+            {
+                int dustIndex = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.PinkTorch, Main.rand.NextFloat(-2f, 2f), Main.rand.NextFloat(-3f, -1f), 0, Color.White, Main.rand.NextFloat(1.5f, 2f));
+                Main.dust[dustIndex].noGravity = true;
+                Main.dust[dustIndex].velocity *= 0.5f;
+            }
+        }
     }
 }
