@@ -1,6 +1,8 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Common;
 using TheSludgeMod.Content.Projectiles.Weapons;
 
 namespace TheSludgeMod.Content.Items.Weapons;
@@ -35,4 +37,7 @@ public class GunGnir : ModItem
         recipe.AddTile(TileID.MythrilAnvil);
         recipe.Register();
     }
+
+    public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) =>
+        position = HelperFunctions.AdjustMuzzleOffset(player, ref position, velocity, 28f);
 }

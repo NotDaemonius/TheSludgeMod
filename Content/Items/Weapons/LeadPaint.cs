@@ -19,6 +19,7 @@ public class LeadPaint : ModItem
         Item.useStyle = ItemUseStyleID.Swing;
         Item.noMelee = true;
         Item.consumable = false;
+        Item.noUseGraphic = true;
         Item.shoot = ModContent.ProjectileType<LeadPaintProj>();
         Item.shootSpeed = 7.5f;
         Item.value = Item.buyPrice(silver: 80);
@@ -29,9 +30,9 @@ public class LeadPaint : ModItem
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.LeadBar, 10);
-            recipe.AddIngredient(ItemID.WhitePaint, 1);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.Register();
+        recipe.AddIngredient(ItemID.LeadBar, 10);
+        recipe.AddIngredient(ItemID.WhitePaint, 1);
+        recipe.AddTile(TileID.WorkBenches);
+        recipe.Register();
     }
 }
