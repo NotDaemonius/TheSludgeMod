@@ -1377,6 +1377,21 @@ Items: {
 		DisplayName: Shadewood Tree Wand
 		Tooltip: ""
 	}
+
+	MushroomPlatform: {
+		DisplayName: Mushroom Platform
+		Tooltip: ""
+	}
+
+	MushroomWorkbench: {
+		DisplayName: Mushroom Workbench
+		Tooltip: ""
+	}
+
+	MushroomBathtub: {
+		DisplayName: Mushroom Bathtub
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
