@@ -1,26 +1,22 @@
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TheSludgeMod.Content.Projectiles.Weapons
+namespace TheSludgeMod.Content.Projectiles.Weapons;
+
+public class CDProj : ModProjectile
 {
-    public class CDProj : ModProjectile
+    public override void SetDefaults()
     {
-        public override void SetDefaults()
-        {
-            Projectile.CloneDefaults(ProjectileID.ThornChakram);
-            Projectile.width = 32;
-            Projectile.height = 32;
-            Projectile.DamageType = DamageClass.Magic;
-        }
-        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-        {
-            if (Main.rand.NextBool(2))
-            {
-                target.AddBuff(BuffID.Poisoned, 420);
-            }
-        }
+        Projectile.CloneDefaults(ProjectileID.ThornChakram);
+        Projectile.width = 32;
+        Projectile.height = 32;
+        Projectile.DamageType = DamageClass.Magic;
+    }
+
+    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+    {
+        if (Main.rand.NextBool(2)) target.AddBuff(BuffID.Poisoned, 420);
     }
 }
 

@@ -1,5 +1,6 @@
-﻿using MonoMod.RuntimeDetour;
+﻿using System;
 using System.Reflection;
+using MonoMod.RuntimeDetour;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -12,45 +13,55 @@ public class VanillaRarityFix : ModSystem
 
     public override void Load()
     {
-        var method = typeof(Item).GetMethod(
-            "Prefix",
-            BindingFlags.Public | BindingFlags.Instance,
-            null,
-            new[] { typeof(int) },
-            null
-        );
-        _prefixHook = new Hook(method, OnPrefix);
+        try
+        {
+            var method = typeof(Item).GetMethod("Prefix", BindingFlags.Public | BindingFlags.Instance, null, [typeof(int)], null);
+
+            if (method == null)
+            {
+                Mod.Logger.Error("Failed to find Item.Prefix method for hooking");
+                return;
+            }
+
+            _prefixHook = new Hook(method, OnPrefix);
+        }
+        catch (Exception ex)
+        {
+            Mod.Logger.Error($"Failed to create Item.Prefix hook: {ex.Message}");
+        }
     }
 
     public override void Unload()
     {
-        _prefixHook?.Dispose();
-        _prefixHook = null;
+        try
+        {
+            if (_prefixHook != null)
+            {
+                _prefixHook.Dispose();
+                _prefixHook = null;
+            }
+        }
+        catch (Exception ex)
+        {
+            Mod.Logger.Error($"Failed to dispose Item.Prefix hook: {ex.Message}");
+        }
     }
 
     private static bool OnPrefix(orig_Prefix orig, Item self, int prefixWeWant)
     {
         int baseRarity = self.rare;
         int baseValue = self.value;
-
         bool result = orig(self, prefixWeWant);
+        if (!result || baseValue <= 0) return result;
+        if (baseRarity != ItemRarityID.Red && baseRarity != ItemRarityID.Purple) return result;
 
-        if (!result || baseValue <= 0)
-            return result;
-
-        if (baseRarity != ItemRarityID.Red && baseRarity != ItemRarityID.Purple)
-            return result;
-
-        // Infer the prefix tier from the value multiplier.
-        // Prefix() applies: value = (int)(value * num * num)
-        // So numSq = finalValue / baseValue approximates num²
         float numSq = (float)self.value / baseValue;
         int offset = numSq switch
         {
-            >= 1.44f => 2,   // num >= 1.2
-            >= 1.1025f => 1,   // num >= 1.05
-            <= 0.7225f => -2,   // num <= 0.85
-            <= 0.9025f => -1,   // num <= 0.95
+            >= 1.44f => 2,
+            >= 1.1025f => 1,
+            <= 0.7225f => -2,
+            <= 0.9025f => -1,
             _ => 0
         };
 
@@ -65,7 +76,7 @@ public class VanillaRarityFix : ModSystem
                 _ => ItemRarityID.Red
             };
         }
-        else // Purple
+        else
         {
             self.rare = offset switch
             {

@@ -11,7 +11,7 @@ Items: {
 
 	MagnetPickaxe: {
 		DisplayName: Magnet Pickaxe
-		Tooltip: Sucks and Fucks Up Ores
+		Tooltip: Attracts nearby dropped items when held
 	}
 
 	Bat: {
@@ -228,8 +228,8 @@ Items: {
 	BloodThinner: {
 		Tooltip:
 			'''
-			[c/ff0000:Doubles the length of potion sickness, but]
-			[c/ffff77:triples] [c/ff0000:the effectiveness of health potions.]
+			Doubles the length of potion sickness, but
+			triples the effectiveness of health potions
 			'''
 		DisplayName: Blood Thinner
 	}
@@ -1118,6 +1118,7 @@ Items: {
 		Tooltip:
 			'''
 			Has a chance to dodge attacks
+			Chance increases depending on the amount of damage taken
 			Temporarily increase critical chance and summon damage after dodge
 			Confuses all nearby enemies after being struck
 			'''
@@ -1322,6 +1323,60 @@ Items: {
 		DisplayName: Frostflaming Mace
 		Tooltip: ""
 	}
+
+	Steroids: {
+		DisplayName: Steroids
+		Tooltip:
+			'''
+			Provides a 50% damage increase for 15 seconds
+			After the 15 seconds is up, decreases damage by 20% and movement speed by 20% for 60 seconds
+			'''
+	}
+
+	LeadPaint: {
+		DisplayName: Lead Paint
+		Tooltip: ""
+	}
+
+	CthulhuEyeStaff: {
+		DisplayName: Cthulhu Eye Staff
+		Tooltip: Summons a miniature eye to fight for you
+	}
+
+	WoodTreeWand: {
+		Tooltip: ""
+		DisplayName: Wood Tree Wand
+	}
+
+	BorealWoodTreeWand: {
+		DisplayName: Boreal Wood Tree Wand
+		Tooltip: ""
+	}
+
+	AshWoodTreeWand: {
+		Tooltip: ""
+		DisplayName: Ash Wood Tree Wand
+	}
+
+	EbonwoodTreeWand: {
+		DisplayName: Ebonwood Tree Wand
+		Tooltip: ""
+	}
+
+	PalmWoodTreeWand: {
+		DisplayName: Palm Wood Tree Wand
+		Tooltip: ""
+	}
+
+	RichMahoganyTreeWand: {
+		DisplayName: Rich Mahogany Tree Wand
+		Tooltip: ""
+	}
+
+	ShadewoodTreeWand: {
+		DisplayName: Shadewood Tree Wand
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1377,23 +1432,35 @@ Projectiles: {
 	WaterBalloonProj.DisplayName: Water Balloon Proj
 	GlaiveProj.DisplayName: Glaive Proj
 	FrostflamingMaceProj.DisplayName: Frostflaming Mace Proj
+	LeadPaintProj.DisplayName: Lead Paint Proj
+	LeadPaintPuddle.DisplayName: Lead Paint Puddle
+	CthulhuEyeStaffProj.DisplayName: Cthulhu Eye Staff Proj
+	WoodTreeWandProj.DisplayName: Wood Tree Wand Proj
+	AshWoodTreeWandProj.DisplayName: Ash Wood Tree Wand Proj
+	BorealWoodTreeWandProj.DisplayName: Boreal Wood Tree Wand Proj
+	EbonwoodTreeWandProj.DisplayName: Ebonwood Tree Wand Proj
+	PalmWoodTreeWandProj.DisplayName: Palm Wood Tree Wand Proj
+	RichMahoganyTreeWandProj.DisplayName: Rich Mahogany Tree Wand Proj
+	ShadewoodTreeWandProj.DisplayName: Shadewood Tree Wand Proj
+	SilentQuarterNote.DisplayName: Silent Quarter Note
+	FluteBolt.DisplayName: Flute Bolt
 }
 
 Tiles: {
 	RoseQuartzTile.MapEntry: Rose Quartz
 	RoseQuartzStoneTile.MapEntry: Rose Quartz Stone
-	ShadowvoidOre.MapEntry: Shadowvoid Ore
+	ShadowvoidOre.MapEntry: Shadowvoid
 	ShadowvoidBar.MapEntry: Shadowvoid Bar
 	ShadowvoidBrick.MapEntry: Shadowvoid Brick
 	ElectronicsTable.MapEntry: Electronics Table
-	ZincOreTile.MapEntry: Zinc Ore
-	NickelOreTile.MapEntry: Nickel Ore
-	AluminiumOreTile.MapEntry: Aluminium Ore
-	IridiumOreTile.MapEntry: Iridium Ore
+	ZincOreTile.MapEntry: Zinc
+	NickelOreTile.MapEntry: Nickel
+	AluminiumOreTile.MapEntry: Aluminium
+	IridiumOreTile.MapEntry: Iridium
 	NickelAnvilTile.MapEntry: Nickel Anvil
-	UraniumOreTile.MapEntry: Uranium Ore
-	OsmiumOreTile.MapEntry: Osmium Ore
-	BismuthOreTile.MapEntry: Bismuth Ore
+	UraniumOreTile.MapEntry: Uranium
+	OsmiumOreTile.MapEntry: Osmium
+	BismuthOreTile.MapEntry: Bismuth
 	OsmiumAnvilTile.MapEntry: Osmium Anvil
 	BismuthForgeTile.MapEntry: Bismuth Forge
 }
@@ -1443,6 +1510,21 @@ Buffs: {
 		DisplayName: Deodorant
 		Description: NPCs will like you much more now that you don't stink.
 	}
+
+	SteroidsBuff: {
+		DisplayName: Steroid Boost
+		Description: The devil shivers when a nice guy gets mad...
+	}
+
+	SteroidsDebuff: {
+		DisplayName: Steroid Crash
+		Description: Owwww! Ouch... Owie...
+	}
+
+	CthulhuEyeBuff: {
+		DisplayName: Cthulhu's Eye
+		Description: The eye will fight for you
+	}
 }
 
 Configs: {
@@ -1459,9 +1541,13 @@ Configs: {
 NPCs: {
 	TheMainframe.DisplayName: The Mainframe
 	TheMainframeHand.DisplayName: The Mainframe Hand
+	OrangeSlime.DisplayName: Orange Slime
 }
 
-Bestiary.TheMainframe: A colossal, flying mechanical abomination with the processing power of a billion universes. It uses this power puerly for rage and hatred. And lasers.
+Bestiary: {
+	TheMainframe: A colossal, flying mechanical abomination with the processing power of a billion universes. It uses this power puerly for rage and hatred. And lasers.
+	OrangeSlime: A massive, gelatinous creature that struggles to jump due to its size, opting to instead rapidly hop through the caverns.
+}
 
 Prefixes: {
 	Flimsy.DisplayName: Flimsy

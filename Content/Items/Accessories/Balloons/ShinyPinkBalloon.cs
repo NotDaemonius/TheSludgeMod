@@ -1,24 +1,21 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.DataStructures;
 
-namespace TheSludgeMod.Content.Items.Accessories.Balloons
+namespace TheSludgeMod.Content.Items.Accessories.Balloons;
+
+[AutoloadEquip(EquipType.Balloon)]
+
+public class ShinyPinkBalloon : ModItem
 {
-    [AutoloadEquip(EquipType.Balloon)]
-    public class ShinyPinkBalloon : ModItem
+    public override void SetDefaults()
     {
-        public override void SetDefaults()
-        {
-            Item.width = 18;
-            Item.height = 32;
-            Item.accessory = true;
-            Item.rare = ItemRarityID.Blue;
-            Item.value = Item.buyPrice(gold: 1, silver: 50);
-        }
-        public override void UpdateAccessory(Player player, bool hideVisual)
-        {
-            player.jumpBoost = true;
-        }
+        Item.width = 18;
+        Item.height = 32;
+        Item.accessory = true;
+        Item.rare = ItemRarityID.Blue;
+        Item.value = Item.buyPrice(gold: 1, silver: 50);
     }
+
+    public override void UpdateAccessory(Player player, bool hideVisual) => player.jumpBoost = true;
 }

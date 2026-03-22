@@ -2,14 +2,11 @@
 using Terraria.ModLoader;
 
 namespace TheSludgeMod.Content.Buffs;
+
 public class PerplexityBuff : ModBuff
 {
-public override void SetStaticDefaults()
-{
-    Main.debuff[Type] = false;
-    Main.buffNoSave[Type] = true;
-    Main.buffNoTimeDisplay[Type] = false;
-}
+
+    public override void SetStaticDefaults() => Main.buffNoSave[Type] = true;
 
     public override void Update(Player player, ref int buffIndex)
     {

@@ -518,7 +518,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                         return;
                     }
 
-                    if (Main.rand.NextBool(100))
+                    if (Main.rand.NextBool(100) && SwitchedToSecondPhase)
                     {
                         Vector2 dustSpawn = new Vector2(Main.rand.Next(-121, 121), Main.rand.Next(-91, 91));
                         Vector2 dustVelocity = Main.rand.NextVector2Unit() * Main.rand.Next(2, 10);

@@ -1,31 +1,31 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TheSludgeMod.Content.Items.Accessories
+namespace TheSludgeMod.Content.Items.Accessories;
+
+[AutoloadEquip(EquipType.Face)]
+
+public class Headlamp : ModItem
 {
-    public class Headlamp : ModItem
+    public override void SetDefaults()
     {
-        public override void SetDefaults()
-        {
-            Item.width = 32;
-            Item.height = 32;
-            Item.accessory = true;
-            Item.value = Item.sellPrice(gold: 1);
-            Item.rare = ItemRarityID.Blue;
-        }
-        public override void UpdateAccessory(Player player, bool hideVisual)
-        {
-            Lighting.AddLight((int)(player.Center.X / 16f), (int)(player.Center.Y / 16f), 0.9f, 0.85f, 0.7f);
-        }
-        public override void AddRecipes()
-        {
-            CreateRecipe()
-                .AddIngredient(ItemID.FallenStar, 5)
-                .AddIngredient(ItemID.Glass, 10)
-                .AddTile(TileID.Anvils)
-                .Register();
-        }
+        Item.width = 32;
+        Item.height = 32;
+        Item.accessory = true;
+        Item.vanity = true;
+        Item.value = Item.sellPrice(gold: 1);
+        Item.rare = ItemRarityID.Blue;
+    }
+
+    public override void UpdateAccessory(Player player, bool hideVisual) => Lighting.AddLight((int)(player.Center.X / 16f), (int)(player.Center.Y / 16f), 0.9f, 0.85f, 0.7f);
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.FallenStar, 5);
+        recipe.AddIngredient(ItemID.Glass, 10);
+        recipe.AddTile(TileID.Anvils);
+        recipe.Register();
     }
 }

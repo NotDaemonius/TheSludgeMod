@@ -60,7 +60,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
         private float spinMaxSpeed;
         private float spinSpeedUp;
         private float spinDirection;
-        float poo;
+        float accelValue;
 
         float currentSpin;
 
@@ -177,8 +177,8 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
                     pushback *= 0.9f;
 
                     rotSpeed = MathF.Min(0.2f, rotSpeed + 0.01f);
-                    poo = MathF.Min(spinMaxSpeed, poo + spinSpeedUp);
-                    currentSpin += poo;
+                    accelValue = MathF.Min(spinMaxSpeed, accelValue + spinSpeedUp);
+                    currentSpin += accelValue;
 
                     Vector2 targetPos2 = Parent.Center + new Vector2(spinRadius, 0).RotatedBy(RotationThing + currentSpin * spinDirection) * new Vector2(3, 3);
                     NPC.Center = Vector2.Lerp(NPC.Center, targetPos2, rotSpeed);
@@ -224,7 +224,7 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
             spinSpeedUp = rotSpeedup;
             spinDirection = roDir;
             currentSpin = 0;
-            poo = 0;
+            accelValue = 0;
         }
 
         public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
