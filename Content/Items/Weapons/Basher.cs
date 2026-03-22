@@ -46,16 +46,14 @@ namespace TheSludgeMod.Content.Items.Weapons
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI, 0, player.direction);
-
             float numberProjectiles = 10;
             float rotation = MathHelper.ToRadians(5);
             for (int i = 0; i < numberProjectiles; i++)
             {
                 position += Vector2.Normalize(velocity) * 10f;
-                Vector2 peturbedSpeed = velocity.RotatedBy(MathHelper.Lerp(-rotation * i, rotation * i, i / (numberProjectiles - 1)));
+                Vector2 peturbedSpeed = velocity.RotatedBy(MathHelper.Lerp(-rotation * i, rotation * i, i / (numberProjectiles - 1)) * player.direction);
                 Projectile.NewProjectile(source, position, peturbedSpeed, 967, damage, knockback, player.whoAmI);
             }
-
             return false;
         }
     }
