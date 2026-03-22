@@ -26,7 +26,11 @@ namespace TheSludgeMod.Content.Items.Weapons
             Item.crit = 6;
             Item.value = Item.buyPrice(gold: 4);
             Item.rare = ItemRarityID.Pink;
-            Item.UseSound = new SoundStyle("TheSludgeMod/Assets/Sounds/FluteC");
+            Item.UseSound = new SoundStyle("TheSludgeMod/Assets/Sounds/FluteC")
+            {
+                Volume = 1f,
+                PitchVariance = 1f,
+            };
             Item.autoReuse = true;
             Item.shoot = ModContent.ProjectileType<SilentQuarterNote>();
         }
