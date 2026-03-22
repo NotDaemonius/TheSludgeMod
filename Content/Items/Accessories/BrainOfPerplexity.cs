@@ -16,13 +16,7 @@ public class BrainOfPerplexity : ModItem
         Item.accessory = true;
     }
 
-    public override bool CanEquipAccessory(Player player, int slot, bool modded)
-    {
-        return player.brainOfConfusionItem == null || player.brainOfConfusionItem.IsAir;
-    }
+    public override bool CanEquipAccessory(Player player, int slot, bool modded) => player.brainOfConfusionItem == null || player.brainOfConfusionItem.IsAir;
 
-    public override void UpdateAccessory(Player player, bool hideVisual)
-    {
-        player.GetModPlayer<BrainOfPerplexityPlayer>().hasBrainOfPerplexity = true;
-    }
+    public override void UpdateAccessory(Player player, bool hideVisual) => player.GetModPlayer<BrainOfPerplexityPlayer>().hasBrainOfPerplexity = true;
 }

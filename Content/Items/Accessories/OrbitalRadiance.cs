@@ -24,13 +24,13 @@ public class OrbitalRadiance : ModItem
         {
             float orbitAngle = (Main.GameUpdateCount * 0.05f) + (i * MathHelper.TwoPi / 5f);
             Vector2 spawnPos = player.Center + orbitAngle.ToRotationVector2() * 50;
-
             bool exists = false;
 
             for (int j = 0; j < Main.maxProjectiles; j++)
             {
                 Projectile p = Main.projectile[j];
-                if (p.active && p.owner == player.whoAmI && p.type == 731 && p.ai[1] == i + 1)
+
+                if (p.active && p.owner == player.whoAmI && p.type == ProjectileID.ThunderStaffShot && p.ai[1] == i + 1)
                 {
                     p.Center = spawnPos;
                     p.timeLeft = 10;
@@ -39,10 +39,8 @@ public class OrbitalRadiance : ModItem
                     p.penetrate = -1;
                     p.usesLocalNPCImmunity = true;
                     p.localNPCHitCooldown = 60;
-
                     float angleToPlayer = (player.Center - p.Center).ToRotation();
                     p.rotation = angleToPlayer + MathHelper.ToRadians(90f);
-
                     exists = true;
                     break;
                 }
@@ -53,7 +51,6 @@ public class OrbitalRadiance : ModItem
                 SpawningOrb = true;
                 int proj = Projectile.NewProjectile(player.GetSource_Accessory(Item), spawnPos, Vector2.Zero, 731, 20, 0, player.whoAmI);
                 SpawningOrb = false;
-
                 Main.projectile[proj].ai[1] = i + 1;
                 Main.projectile[proj].soundDelay = -1;
                 Main.projectile[proj].tileCollide = false;

@@ -17,16 +17,13 @@ public class BloodThinner : ModItem
         Item.rare = ItemRarityID.LightPurple;
     }
 
-    public override void UpdateAccessory(Player player, bool hideVisual)
-    {
-        player.GetModPlayer<BloodThinnerPlayer>().bloodThinnerEquipped = true;
-    }
+    public override void UpdateAccessory(Player player, bool hideVisual) => player.GetModPlayer<BloodThinnerPlayer>().bloodThinnerEquipped = true;
 
     public override void AddRecipes()
     {
         Recipe recipe = CreateRecipe();
-        recipe.AddIngredient(ItemID.ChlorophyteBar, 1);
-        recipe.AddIngredient(ItemID.LifeFruit, 1);
+        recipe.AddIngredient(ItemID.ChlorophyteBar);
+        recipe.AddIngredient(ItemID.LifeFruit);
         recipe.AddIngredient(ItemID.LifeCrystal, 5);
         recipe.AddIngredient<Plastic>(30);
         recipe.AddTile(TileID.Furnaces);
