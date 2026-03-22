@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace TheSludgeMod.Content.Items.Weapons
+namespace TheSludgeMod.Content.Projectiles.Weapons
 {
     public class GiantToothbrushProj : ModProjectile
     {
