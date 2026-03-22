@@ -22,12 +22,8 @@ public class TheMainFrameSpark : ModDust
     {
         dust.scale -= 0.05f;
         dust.alpha += 5;
-
         dust.velocity = new Vector2(dust.velocity.X * 0.95f, dust.velocity.Y);
-
-        if (dust.alpha >= 255)
-            dust.active = false;
-
+        if (dust.alpha >= 255) dust.active = false;
         return false;
     }
 }

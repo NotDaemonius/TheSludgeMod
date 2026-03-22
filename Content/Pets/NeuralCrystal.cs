@@ -2,24 +2,20 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TheSludgeMod.Content.Pets
-{
-    public class NeuralCrystal : ModItem
-    {
-        public override void SetDefaults()
-        {
-            Item.CloneDefaults(ItemID.DukeFishronPetItem);
-            Item.shoot = ModContent.ProjectileType<NeuralCrystalProj>();
-            Item.buffType = ModContent.BuffType<NeuralCrystalBuff>();
-        }
-        public override bool? UseItem(Player player)
-        {
-            if (player.whoAmI == Main.myPlayer)
-            {
-                player.AddBuff(Item.buffType, 3600);
-            }
+namespace TheSludgeMod.Content.Pets;
 
-            return true;
-        }
+public class NeuralCrystal : ModItem
+{
+    public override void SetDefaults()
+    {
+        Item.CloneDefaults(ItemID.DukeFishronPetItem);
+        Item.shoot = ModContent.ProjectileType<NeuralCrystalProj>();
+        Item.buffType = ModContent.BuffType<NeuralCrystalBuff>();
+    }
+
+    public override bool? UseItem(Player player)
+    {
+        if (player.whoAmI == Main.myPlayer) player.AddBuff(Item.buffType, 3600);
+        return true;
     }
 }
