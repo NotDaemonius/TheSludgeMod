@@ -21,7 +21,7 @@ public class VanillaRecipes : ModSystem
         paa.Register();
 
         Recipe pab = Recipe.Create(ItemID.PaperAirplaneB);
-        pab.AddIngredient<Paper>(1;
+        pab.AddIngredient<Paper>();
         pab.Register();
 
         Recipe necromantic = Recipe.Create(ItemID.NecromanticScroll);

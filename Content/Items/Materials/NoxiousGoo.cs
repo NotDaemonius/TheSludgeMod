@@ -4,15 +4,15 @@ using Terraria.ModLoader;
 
 namespace TheSludgeMod.Content.Items.Materials;
 
-public class Flute : ModItem
+public class NoxiousGoo : ModItem
 {
 	public override void SetDefaults()
 	{
 		Item.width = 16;
 		Item.height = 16;
-		Item.rare = ItemRarityID.Orange;
+		Item.rare = ItemRarityID.LightRed;
         Item.maxStack = 9999;
         Item.material = true;
-        Item.value = Item.buyPrice(gold: 1);
+        Item.value = Item.buyPrice(silver: 5);
     }
 }

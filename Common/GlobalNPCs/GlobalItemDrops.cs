@@ -7,6 +7,7 @@ using TheSludgeMod.Content.Items.Junk;
 using TheSludgeMod.Content.Items.Tools;
 using TheSludgeMod.Content.Items.Weapons;
 using TheSludgeMod.Content.Items.Accessories.VoodooDolls;
+using TheSludgeMod.Content.Items.Materials;
 
 namespace TheSludgeMod.Common.GlobalNPCs;
 
@@ -81,6 +82,11 @@ public class GlobalItemDrops : GlobalNPC
         if (npc.type == NPCID.EyeofCthulhu)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CthulhuEyeStaff>(), 4));
+        }
+
+        if (npc.type == NPCID.ToxicSludge)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<NoxiousGoo>(), 10));
         }
 
         // === VOODOO DOLLS === //

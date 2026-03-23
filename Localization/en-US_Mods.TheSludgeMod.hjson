@@ -1482,6 +1482,11 @@ Items: {
 		DisplayName: Mushroom Sofa
 		Tooltip: ""
 	}
+
+	NoxiousGoo: {
+		DisplayName: Noxious Goo
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
