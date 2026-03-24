@@ -2,6 +2,7 @@
 using Terraria.GameContent.Metadata;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
 namespace TheSludgeMod.Content.Tiles.MushroomBiome;
 
@@ -24,7 +25,7 @@ public class MushroomGrass : ModTile
         TileID.Sets.NeedsGrassFraming[Type] = true;
         TileID.Sets.NeedsGrassFramingDirt[Type] = TileID.Mud;
         TileID.Sets.CanBeDugByShovel[Type] = true;
-
+        AddMapEntry(new Color(204, 127, 63));
 
     }
 

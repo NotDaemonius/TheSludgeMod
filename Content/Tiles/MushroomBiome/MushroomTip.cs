@@ -1,5 +1,7 @@
 ﻿using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
 namespace TheSludgeMod.Content.Tiles.MushroomBiome;
 
@@ -14,6 +16,8 @@ public class MushroomTip : ModTile
         Main.tileNoFail[Type] = true;
         Main.tileFrameImportant[Type] = true;
         Main.tileBlockLight[Type] = false;
+        AddMapEntry(new Color(237, 160, 69));
+        Main.tileAxe[Type] = true;
     }
 
     public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY)
@@ -26,7 +30,7 @@ public class MushroomTip : ModTile
             124 => CapWidths[2], // 60px
             _ => CapWidths[0]
         };
-        height = 44;
+        height = 46;
         offsetY = -28; // lift the cap up above the stalk
     }
 

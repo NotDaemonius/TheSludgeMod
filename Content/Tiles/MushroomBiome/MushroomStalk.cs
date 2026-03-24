@@ -1,6 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
 namespace TheSludgeMod.Content.Tiles.MushroomBiome;
 
@@ -13,9 +14,9 @@ public class MushroomStalk : ModTile
         Main.tileNoFail[Type] = true;
         Main.tileFrameImportant[Type] = true; // CRITICAL — without this frames aren't saved or synced
         Main.tileBlockLight[Type] = false;
-
+        AddMapEntry(new Color(237, 160, 69));
         TileID.Sets.IsATreeTrunk[Type] = true;
-
+        Main.tileAxe[Type] = true;
         // Tell Terraria each sprite frame is 18px tall, not the default 16px
         // This is what causes the "bottom half only" problem if missing
 

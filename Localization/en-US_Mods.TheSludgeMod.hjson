@@ -1487,6 +1487,16 @@ Items: {
 		DisplayName: Noxious Goo
 		Tooltip: ""
 	}
+
+	MushroomGrassSeeds: {
+		DisplayName: Mushroom Grass Seeds
+		Tooltip: ""
+	}
+
+	MushroomBlock: {
+		DisplayName: Mushroom Block
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1573,6 +1583,7 @@ Tiles: {
 	BismuthOreTile.MapEntry: Bismuth
 	OsmiumAnvilTile.MapEntry: Osmium Anvil
 	BismuthForgeTile.MapEntry: Bismuth Forge
+	MushroomBlockTile.MapEntry: Mushroom Block Tile
 }
 
 WorldGen: {
