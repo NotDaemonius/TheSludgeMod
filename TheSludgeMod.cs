@@ -4,8 +4,10 @@ using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent;
+using Terraria.Graphics.Effects;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Content.Skies;
 
 namespace TheSludgeMod;
 
@@ -17,7 +19,8 @@ public class TheSludgeMod : Mod
 
     public override void Load()
     {
-        if (Main.dedServ) return;
+        if (Main.dedServ)
+            return;
 
         try
         {
@@ -28,13 +31,14 @@ public class TheSludgeMod : Mod
             {
                 TextureAssets.Npc[NPCID.SkeletronHead] = _modSkeletronHead;
 
-                _unloadActions.Add(() => {if (TextureAssets.Npc[NPCID.SkeletronHead] == _modSkeletronHead) TextureAssets.Npc[NPCID.SkeletronHead] = _vanillaSkeletronHead;});
+                _unloadActions.Add(() => { if (TextureAssets.Npc[NPCID.SkeletronHead] == _modSkeletronHead) TextureAssets.Npc[NPCID.SkeletronHead] = _vanillaSkeletronHead; });
             }
-        }
-        catch (Exception ex)
+        } catch (Exception ex)
         {
             Logger.Error($"Failed to load custom Skeletron texture: {ex.Message}");
         }
+
+        SkyManager.Instance["TheSludgeMod:MushroomSky"] = new MushroomSky();
     }
 
     public override void Unload()
@@ -43,13 +47,12 @@ public class TheSludgeMod : Mod
         {
             try
             {
-                foreach (var action in _unloadActions) action.Invoke();
-            }
-            catch (Exception ex)
+                foreach (var action in _unloadActions)
+                    action.Invoke();
+            } catch (Exception ex)
             {
                 Logger.Error($"Failed to restore vanilla Skeletron texture: {ex.Message}");
-            }
-            finally
+            } finally
             {
                 _unloadActions.Clear();
                 _vanillaSkeletronHead = null;

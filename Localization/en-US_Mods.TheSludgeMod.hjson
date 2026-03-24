@@ -1681,3 +1681,10 @@ Prefixes: {
 	Demolishing.DisplayName: Demolishing
 	Piercing.DisplayName: Piercing
 }
+
+Biomes: {
+	MushroomBiome: {
+		DisplayName: Mushroom Biome
+		TownNPCDialogueName: the Mushroom Biome
+	}
+}
