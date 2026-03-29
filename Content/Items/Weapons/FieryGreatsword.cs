@@ -66,5 +66,6 @@ public class FieryGreatsword : ModItem
         recipe.AddIngredient(ItemID.HellstoneBar, 50);
         recipe.AddIngredient(ItemID.Obsidian, 200);
         recipe.AddTile(TileID.MythrilAnvil);
+        recipe.Register();
     }
 }
