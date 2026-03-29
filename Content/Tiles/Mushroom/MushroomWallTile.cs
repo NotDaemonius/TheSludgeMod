@@ -6,17 +6,14 @@ using Terraria.ModLoader;
 
 namespace TheSludgeMod.Content.Tiles.Mushroom;
 
-public class MushroomBlockTile : ModTile
+public class MushroomWallTile : ModWall
 {
     public override void SetStaticDefaults()
     {
-        Main.tileMergeDirt[Type] = true;
-        Main.tileSolid[Type] = true;
-        Main.tileBlockLight[Type] = true;
-        LocalizedText name = CreateMapEntryName();
+        Main.wallHouse[Type] = true;
         AddMapEntry(new Color(237, 160, 69));
         DustType = DustID.Pumpkin;
-        VanillaFallbackOnModDeletion = TileID.MushroomBlock;
+        VanillaFallbackOnModDeletion = WallID.Mushroom;
         HitSound = SoundID.Dig;
     }
 }

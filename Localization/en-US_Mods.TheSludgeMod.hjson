@@ -1497,6 +1497,16 @@ Items: {
 		DisplayName: Mushroom Block
 		Tooltip: ""
 	}
+
+	MushroomWall: {
+		Tooltip: ""
+		DisplayName: Mushroom Wall
+	}
+
+	MushroomBeam: {
+		Tooltip: ""
+		DisplayName: Mushroom Beam
+	}
 }
 
 Projectiles: {
