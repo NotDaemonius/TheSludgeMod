@@ -29,5 +29,6 @@ public class ToyZenith : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Zenith);
         recipe.AddTile(TileID.MythrilAnvil);
+        recipe.Register();
     }
 }

@@ -29,5 +29,6 @@ public class TopazBlade : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Topaz, 10);
         recipe.AddTile(TileID.Anvils);
+        recipe.Register();
     }
 }

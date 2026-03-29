@@ -29,5 +29,6 @@ public class AmberBlade : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Amber, 10);
         recipe.AddTile(TileID.Anvils);
+        recipe.Register();
     }
 }

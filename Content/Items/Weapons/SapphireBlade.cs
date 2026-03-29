@@ -29,5 +29,6 @@ public class SapphireBlade : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Sapphire, 10);
         recipe.AddTile(TileID.Anvils);
+        recipe.Register();
     }
 }

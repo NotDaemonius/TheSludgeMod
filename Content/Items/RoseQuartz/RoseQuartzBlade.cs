@@ -29,5 +29,6 @@ public class RoseQuartzBlade : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ModContent.ItemType<RoseQuartz>(), 10);
         recipe.AddTile(TileID.Anvils);
+        recipe.Register();
     }
 }

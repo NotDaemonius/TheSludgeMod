@@ -20,6 +20,7 @@ public class WebRopeWhip : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.WebRope, 100);
         recipe.AddTile(TileID.WorkBenches);
+        recipe.Register();
     }
 
     public override bool MeleePrefix() => true;

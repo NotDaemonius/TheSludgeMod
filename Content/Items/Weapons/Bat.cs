@@ -31,5 +31,6 @@ public class Bat : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Wood, 35);
         recipe.AddTile(TileID.WorkBenches);
+        recipe.Register();
     }
 }

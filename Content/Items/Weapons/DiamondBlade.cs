@@ -29,5 +29,6 @@ public class DiamondBlade : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Diamond, 10);
         recipe.AddTile(TileID.Anvils);
+        recipe.Register();
     }
 }

@@ -20,6 +20,7 @@ public class RopeWhip : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Rope, 100);
         recipe.AddTile(TileID.WorkBenches);
+        recipe.Register();
     }
 
     public override bool MeleePrefix() => true;

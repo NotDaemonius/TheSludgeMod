@@ -28,5 +28,6 @@ public class StarkaKitchenRules : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Pearlwood, 999);
         recipe.AddTile(TileID.MythrilAnvil);
+        recipe.Register();
     }
 }

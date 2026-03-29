@@ -33,5 +33,6 @@ public class Deodorant : ModItem
         recipe.AddIngredient(ItemID.Waterleaf);
         recipe.AddIngredient(ItemID.PinkGel);
         recipe.AddTile(TileID.Bottles);
+        recipe.Register();
     }
 }

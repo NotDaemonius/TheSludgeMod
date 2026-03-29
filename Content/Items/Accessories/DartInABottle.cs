@@ -23,6 +23,7 @@ public class DartInABottle : ModItem
         recipe.AddIngredient(ItemID.DartTrap);
         recipe.AddIngredient(ItemID.Bottle);
         recipe.AddTile(TileID.TinkerersWorkbench);
+        recipe.Register();
     }
 }
 

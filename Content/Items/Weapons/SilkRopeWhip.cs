@@ -20,6 +20,7 @@ public class SilkRopeWhip : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.SilkRope, 100);
         recipe.AddTile(TileID.Loom);
+        recipe.Register();
     }
 
     public override bool MeleePrefix() => true;

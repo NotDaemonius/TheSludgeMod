@@ -29,5 +29,6 @@ public class RubyBlade : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Ruby, 10);
         recipe.AddTile(TileID.Anvils);
+        recipe.Register();
     }
 }
