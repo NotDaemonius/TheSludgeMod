@@ -1507,6 +1507,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: Mushroom Beam
 	}
+
+	TheBowne: {
+		DisplayName: The Bowne
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
