@@ -84,6 +84,11 @@ public class GlobalItemDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CthulhuEyeStaff>(), 4));
         }
 
+        if (npc.type == NPCID.SkeletronHead)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<TheBowne>(), 4));
+        }
+
         if (npc.type == NPCID.ToxicSludge)
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<NoxiousGoo>(), 10));

@@ -1512,6 +1512,16 @@ Items: {
 		DisplayName: The Bowne
 		Tooltip: ""
 	}
+
+	StarterBag: {
+		DisplayName: Starter Bag
+		Tooltip: ""
+	}
+
+	StickyNote: {
+		DisplayName: Sticky Note
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1599,6 +1609,7 @@ Tiles: {
 	OsmiumAnvilTile.MapEntry: Osmium Anvil
 	BismuthForgeTile.MapEntry: Bismuth Forge
 	MushroomBlockTile.MapEntry: Mushroom Block Tile
+	StickyNoteTile.MapEntry: Sticky Note Tile
 }
 
 WorldGen: {
