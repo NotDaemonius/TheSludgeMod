@@ -1520,7 +1520,65 @@ Items: {
 
 	StickyNote: {
 		DisplayName: Sticky Note
-		Tooltip: ""
+		Tooltip: 
+		'''
+		Works like a 1x1 sign
+		Can be stuck to walls
+		'''
+	}
+
+	BlueStickyNote: {
+		DisplayName: Blue Sticky Note
+		Tooltip: 
+		'''
+		Works like a 1x1 sign
+		Can be stuck to walls
+		'''
+	}
+
+	GreenStickyNote: {
+		DisplayName: Green Sticky Note
+		Tooltip: 
+		'''
+		Works like a 1x1 sign
+		Can be stuck to walls
+		'''
+	}
+
+	OrangeStickyNote: {
+		DisplayName: Orange Sticky Note
+		Tooltip: 
+		'''
+		Works like a 1x1 sign
+		Can be stuck to walls
+		'''
+	}
+
+	PinkStickyNote: {
+		DisplayName: Pink Sticky Note
+		Tooltip: 
+		'''
+		Works like a 1x1 sign
+		Can be stuck to walls
+		'''
+	}
+
+	PurpleStickyNote: {
+		DisplayName: Purple Sticky Note
+		Tooltip: 
+		'''
+		Works like a 1x1 sign
+		Can be stuck to walls
+		'''
+	}
+
+	RedStickyNote: {
+		DisplayName: Red Sticky Note
+		Tooltip: 
+		'''
+		Works like a 1x1 sign
+		Can be stuck to walls
+		'''
 	}
 }
 
@@ -1610,6 +1668,12 @@ Tiles: {
 	BismuthForgeTile.MapEntry: Bismuth Forge
 	MushroomBlockTile.MapEntry: Mushroom Block Tile
 	StickyNoteTile.MapEntry: Sticky Note Tile
+	BlueStickyNoteTile.MapEntry: Blue Sticky Note Tile
+	GreenStickyNoteTile.MapEntry: Green Sticky Note Tile
+	OrangeStickyNoteTile.MapEntry: Orange Sticky Note Tile
+	PinkStickyNoteTile.MapEntry: Pink Sticky Note Tile
+	PurpleStickyNoteTile.MapEntry: Purple Sticky Note Tile
+	RedStickyNoteTile.MapEntry: Red Sticky Note Tile
 }
 
 WorldGen: {

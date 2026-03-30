@@ -8,7 +8,7 @@ using Terraria.ObjectData;
 
 namespace TheSludgeMod.Content.Tiles;
 
-public class StickyNoteTile : ModTile
+public class PurpleStickyNoteTile : ModTile
 {
     public override void SetStaticDefaults()
     {
@@ -25,8 +25,8 @@ public class StickyNoteTile : ModTile
         TileObjectData.newTile.AnchorBottom = AnchorData.Empty;
         TileObjectData.newTile.AnchorWall = true;
         TileObjectData.addTile(Type);
-        AddMapEntry(new Color(255, 220, 80), CreateMapEntryName());
-        DustType = DustID.Confetti_Yellow;
+        AddMapEntry(new Color(234, 140, 245), CreateMapEntryName());
+        DustType = DustID.Grubby;
     }
 
     public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
