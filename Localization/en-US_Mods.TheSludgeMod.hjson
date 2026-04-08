@@ -1520,66 +1520,69 @@ Items: {
 
 	StickyNote: {
 		DisplayName: Sticky Note
-		Tooltip: 
-		'''
-		Works like a 1x1 sign
-		Can be stuck to walls
-		'''
+		Tooltip:
+			'''
+			Works like a 1x1 sign
+			Can be stuck to walls
+			'''
 	}
 
 	BlueStickyNote: {
 		DisplayName: Blue Sticky Note
-		Tooltip: 
-		'''
-		Works like a 1x1 sign
-		Can be stuck to walls
-		'''
+		Tooltip:
+			'''
+			Works like a 1x1 sign
+			Can be stuck to walls
+			'''
 	}
 
 	GreenStickyNote: {
 		DisplayName: Green Sticky Note
-		Tooltip: 
-		'''
-		Works like a 1x1 sign
-		Can be stuck to walls
-		'''
+		Tooltip:
+			'''
+			Works like a 1x1 sign
+			Can be stuck to walls
+			'''
 	}
 
 	OrangeStickyNote: {
 		DisplayName: Orange Sticky Note
-		Tooltip: 
-		'''
-		Works like a 1x1 sign
-		Can be stuck to walls
-		'''
+		Tooltip:
+			'''
+			Works like a 1x1 sign
+			Can be stuck to walls
+			'''
 	}
 
 	PinkStickyNote: {
 		DisplayName: Pink Sticky Note
-		Tooltip: 
-		'''
-		Works like a 1x1 sign
-		Can be stuck to walls
-		'''
+		Tooltip:
+			'''
+			Works like a 1x1 sign
+			Can be stuck to walls
+			'''
 	}
 
 	PurpleStickyNote: {
 		DisplayName: Purple Sticky Note
-		Tooltip: 
-		'''
-		Works like a 1x1 sign
-		Can be stuck to walls
-		'''
+		Tooltip:
+			'''
+			Works like a 1x1 sign
+			Can be stuck to walls
+			'''
 	}
 
 	RedStickyNote: {
 		DisplayName: Red Sticky Note
-		Tooltip: 
-		'''
-		Works like a 1x1 sign
-		Can be stuck to walls
-		'''
+		Tooltip:
+			'''
+			Works like a 1x1 sign
+			Can be stuck to walls
+			'''
 	}
+
+	Placeables.FormattedBannerTooltip: "{$CommonItemTooltip.BannerBonus}{0}"
+	OrangeSlimeBanner.DisplayName: Orange Slime Banner
 }
 
 Projectiles: {
