@@ -1583,6 +1583,19 @@ Items: {
 
 	Placeables.FormattedBannerTooltip: "{$CommonItemTooltip.BannerBonus}{0}"
 	OrangeSlimeBanner.DisplayName: Orange Slime Banner
+
+	VeneratedTreads: {
+		Tooltip:
+			'''
+			Allows wing flight, slow fall, ultra fast running, and extra mobility on ice
+			30% increased movement speed
+			Provides the ability to walk on all liquids
+			Grants immunity to fall damage, fire blocks, and adds 7 seconds of immunity to lava
+			Reduces damage from touching lava
+			Provides the effects of Magiluminescence and Flipper
+			'''
+		DisplayName: Venerated Treads
+	}
 }
 
 Projectiles: {
