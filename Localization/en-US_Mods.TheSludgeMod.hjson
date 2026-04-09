@@ -1599,12 +1599,26 @@ Items: {
 
 	BoxOfChocolates: {
 		DisplayName: Box Of Chocolates
-		Tooltip: ""
+		Tooltip: 
+		'''
+		Gives a random item of Orange rarity or less when opened
+		Right Click to open
+		'''
 	}
 
 	EssenceOfPurity: {
 		DisplayName: Essence Of Purity
 		Tooltip: ""
+	}
+
+	HamsterBall: {
+		DisplayName: Hamster Ball
+		Tooltip: 
+		'''
+		Summons a hamster ball mount
+		Your speed and jump height are greatly increased, but
+		you cannot use items or wings while mounted
+		'''
 	}
 }
 
@@ -1762,6 +1776,11 @@ Buffs: {
 	CthulhuEyeBuff: {
 		DisplayName: Cthulhu's Eye
 		Description: The eye will fight for you
+	}
+
+	HamsterBallBuff: {
+		DisplayName: Hamster Ball
+		Description: You are trapped in a hamster ball!
 	}
 }
 
