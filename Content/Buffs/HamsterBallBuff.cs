@@ -5,5 +5,9 @@ namespace TheSludgeMod.Content.Buffs;
 
 public class HamsterBallBuff : ModBuff
 {
-    public override void SetStaticDefaults() => Main.buffNoTimeDisplay[Type] = true;
+    public override void SetStaticDefaults()
+    {
+        Main.buffNoTimeDisplay[Type] = true;
+        Main.buffNoSave[Type] = true;
+    }
 }
