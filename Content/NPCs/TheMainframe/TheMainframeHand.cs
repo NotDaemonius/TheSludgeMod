@@ -85,17 +85,22 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
         {
             NPC.width = 62;
             NPC.height = 26;
+
+            NPC.aiStyle = -1;
+
             NPC.damage = 7;
             NPC.defense = 0;
             NPC.lifeMax = 500000;
-            NPC.DiscourageDespawn(1000);
-            NPC.dontTakeDamage = true;
-            NPC.HitSound = SoundID.NPCHit9;
-            NPC.DeathSound = SoundID.NPCDeath11;
+
             NPC.noGravity = true;
             NPC.noTileCollide = true;
             NPC.netAlways = true;
-            NPC.aiStyle = -1;
+            NPC.dontTakeDamage = true;
+
+            NPC.HitSound = SoundID.NPCHit9;
+            NPC.DeathSound = SoundID.NPCDeath11;
+
+            NPC.DiscourageDespawn(1000);
         }
 
         public override void FindFrame(int frameHeight)

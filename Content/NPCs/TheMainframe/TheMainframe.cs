@@ -154,32 +154,26 @@ namespace TheSludgeMod.Content.NPCs.TheMainframe
             NPC.width = 242;
             NPC.height = 182;
 
+            NPC.value = Item.buyPrice(gold: 18);
+            NPC.rarity = 3;
+            NPC.aiStyle = -1;
+
             NPC.damage = 60;
-            NPC.knockBackResist = 0f;
-
-
             NPC.defense = 25;
             NPC.lifeMax = 35000;
+            NPC.knockBackResist = 0f;
+
+            NPC.noGravity = true;
+            NPC.noTileCollide = true;
+            NPC.boss = true;
+            NPC.npcSlots = 10f;
 
             NPC.HitSound = SoundID.NPCHit4;
             NPC.DeathSound = SoundID.NPCDeath1;
 
-            NPC.noGravity = true;
-            NPC.noTileCollide = true;
-
-            NPC.value = Item.buyPrice(gold: 18);
-            NPC.rarity = 3;
-
             NPC.SpawnWithHigherTime(30);
 
-            NPC.boss = true;
-            NPC.npcSlots = 10f;
-            NPC.aiStyle = -1;
-
-            if (!Main.dedServ)
-            {
-                Music = MusicLoader.GetMusicSlot(Mod, "Assets/Music/TheMainframeTheme");
-            }
+            if (!Main.dedServ) Music = MusicLoader.GetMusicSlot(Mod, "Assets/Music/TheMainframeTheme");
         }
 
         public override void ModifyNPCLoot(NPCLoot npcLoot)
