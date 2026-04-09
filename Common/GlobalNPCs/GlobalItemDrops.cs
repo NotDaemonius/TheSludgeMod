@@ -94,6 +94,11 @@ public class GlobalItemDrops : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<NoxiousGoo>(), 10));
         }
 
+        if (npc.friendly == true)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<EssenceOfPurity>(), 25));
+        }
+
         // === VOODOO DOLLS === //
 
         if (npc.type == NPCID.Crab)
