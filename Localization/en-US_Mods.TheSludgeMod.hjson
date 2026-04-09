@@ -1596,6 +1596,11 @@ Items: {
 			'''
 		DisplayName: Venerated Treads
 	}
+
+	BoxOfChocolates: {
+		DisplayName: Box Of Chocolates
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1663,6 +1668,7 @@ Projectiles: {
 	ShadewoodTreeWandProj.DisplayName: Shadewood Tree Wand Proj
 	SilentQuarterNote.DisplayName: Silent Quarter Note
 	FluteBolt.DisplayName: Flute Bolt
+	ThePurifierProjectile.DisplayName: The Purifier Projectile
 }
 
 Tiles: {

@@ -1,9 +1,9 @@
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Common;
+using TheSludgeMod.Content.Projectiles.Weapons;
 
 namespace TheSludgeMod.Content.Items.Weapons;
 
@@ -24,9 +24,8 @@ public class ThePurifier : ModItem
         Item.rare = ItemRarityID.Lime;
         Item.UseSound = SoundID.Item11;
         Item.autoReuse = true;
-        Item.shoot = ProjectileID.Bullet;
-        Item.shootSpeed = 18f;
-        Item.useAmmo = AmmoID.Bullet;
+        Item.shoot = ModContent.ProjectileType<ThePurifierProjectile>();
+        Item.shootSpeed = 12f;
         Item.crit = 20;
     }
 
@@ -44,23 +43,4 @@ public class ThePurifier : ModItem
 
     public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) =>
         position = HelperFunctions.AdjustMuzzleOffset(player, ref position, velocity, 28f);
-
-    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-    {
-        Vector2 offset = velocity.RotatedBy(MathHelper.PiOver2);
-        offset.Normalize();
-        offset *= 4f;
-        Vector2 position1 = position + offset;
-        Vector2 position2 = position - offset;
-        int proj1 = Projectile.NewProjectile(source, position1, velocity, type, damage, knockback, player.whoAmI);
-        int proj2 = Projectile.NewProjectile(source, position2, velocity, type, damage, knockback, player.whoAmI);
-        int proj3 = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
-        Main.projectile[proj1].usesLocalNPCImmunity = true;
-        Main.projectile[proj1].localNPCHitCooldown = -1;
-        Main.projectile[proj2].usesLocalNPCImmunity = true;
-        Main.projectile[proj2].localNPCHitCooldown = -1;
-        Main.projectile[proj3].usesLocalNPCImmunity = true;
-        Main.projectile[proj3].localNPCHitCooldown = -1;
-        return false;
-    }
 }
