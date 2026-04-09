@@ -1597,6 +1597,11 @@ Items: {
 		DisplayName: Venerated Treads
 	}
 
+	BoxOfChocolates: {
+		DisplayName: Box Of Chocolates
+		Tooltip: ""
+	}
+
 	EssenceOfPurity: {
 		DisplayName: Essence Of Purity
 		Tooltip: ""
@@ -1668,6 +1673,7 @@ Projectiles: {
 	ShadewoodTreeWandProj.DisplayName: Shadewood Tree Wand Proj
 	SilentQuarterNote.DisplayName: Silent Quarter Note
 	FluteBolt.DisplayName: Flute Bolt
+	ThePurifierProjectile.DisplayName: The Purifier Projectile
 }
 
 Tiles: {
