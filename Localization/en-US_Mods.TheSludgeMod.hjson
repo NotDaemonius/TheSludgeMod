@@ -1510,7 +1510,7 @@ Items: {
 
 	TheBowne: {
 		DisplayName: The Bowne
-		Tooltip: ""
+		Tooltip: "Converts wooden arrows into bone arrows"
 	}
 
 	StarterBag: {

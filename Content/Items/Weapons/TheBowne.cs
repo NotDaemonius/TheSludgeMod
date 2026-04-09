@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
 namespace TheSludgeMod.Content.Items.Weapons;
 
@@ -24,5 +25,10 @@ public class TheBowne : ModItem
         Item.shoot = ProjectileID.PurificationPowder;
         Item.shootSpeed = 9.5f;
         Item.useAmmo = AmmoID.Arrow;
+    }
+
+    public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+    {
+        if (type == ProjectileID.WoodenArrowFriendly) type = ProjectileID.BoneArrowFromMerchant;
     }
 }
