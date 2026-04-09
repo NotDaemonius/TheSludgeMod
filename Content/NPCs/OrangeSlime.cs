@@ -24,18 +24,22 @@ public class OrangeSlime : ModNPC
     {
         NPC.width = 44;
         NPC.height = 44;
-        NPC.lifeMax = 600;
-        NPC.damage = 35;
-        NPC.defense = 15;
-        NPC.knockBackResist = 0.5f;
         NPC.alpha = 50;
-        NPC.friendly = false;
-        NPC.HitSound = SoundID.NPCHit1;
-        NPC.DeathSound = SoundID.NPCDeath1;
+        AnimationType = NPCID.RainbowSlime;
+
         NPC.value = Item.buyPrice(silver: 20);
         NPC.aiStyle = NPCAIStyleID.Slime;
-        AnimationType = NPCID.RainbowSlime;
+
+        NPC.damage = 35;
+        NPC.defense = 15;
+        NPC.lifeMax = 600;
+        NPC.knockBackResist = 0.5f;
+
+        NPC.friendly = false;
         NPC.noGravity = false;
+
+        NPC.HitSound = SoundID.NPCHit1;
+        NPC.DeathSound = SoundID.NPCDeath1;
     }
 
     public override void AI()
