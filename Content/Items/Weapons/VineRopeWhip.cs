@@ -20,6 +20,7 @@ public class VineRopeWhip : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.VineRope, 100);
         recipe.AddTile(TileID.WorkBenches);
+        recipe.Register();
     }
 
     public override bool MeleePrefix() => true;

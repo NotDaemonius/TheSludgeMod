@@ -17,6 +17,11 @@ namespace TheSludgeMod.Common.GlobalTiles
 {
     internal static class FurnitureCommon
     {
+        public static LocalizedText GetText(string key)
+        {
+            return Language.GetOrRegister("Mods.TheSludgeMod." + key);
+        }
+
         public static bool BedRightClick(int i, int j)
         {
             Player player = Main.LocalPlayer;
@@ -27,6 +32,7 @@ namespace TheSludgeMod.Common.GlobalTiles
             {
                 spawnY--;
             }
+
 
             if (!Player.IsHoveringOverABottomSideOfABed(i, j))
             {

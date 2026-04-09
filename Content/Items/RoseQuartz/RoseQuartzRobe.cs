@@ -35,4 +35,12 @@ public class RoseQuartzRobe : ModItem
         robes = true;
         equipSlot = EquipLoader.GetEquipSlot(Mod, Name, EquipType.Legs);
     }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Robe);
+        recipe.AddIngredient(ModContent.ItemType<RoseQuartz>(), 10);
+        recipe.Register();
+    }
 }

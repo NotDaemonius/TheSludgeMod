@@ -15,7 +15,7 @@ public class MushroomBlockTile : ModTile
         Main.tileBlockLight[Type] = true;
         LocalizedText name = CreateMapEntryName();
         AddMapEntry(new Color(237, 160, 69));
-        DustType = DustID.Shadowflame;
+        DustType = DustID.Pumpkin;
         VanillaFallbackOnModDeletion = TileID.MushroomBlock;
         HitSound = SoundID.Dig;
     }

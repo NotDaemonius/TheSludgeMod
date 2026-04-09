@@ -29,5 +29,6 @@ public class EmeraldBlade : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Emerald, 10);
         recipe.AddTile(TileID.Anvils);
+        recipe.Register();
     }
 }

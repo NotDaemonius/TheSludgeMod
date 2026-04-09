@@ -29,5 +29,6 @@ public class AmethystBlade : ModItem
         Recipe recipe = CreateRecipe();
         recipe.AddIngredient(ItemID.Amethyst, 10);
         recipe.AddTile(TileID.Anvils);
+        recipe.Register();
     }
 }

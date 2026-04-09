@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Tiles.Mushroom;
 
@@ -9,5 +10,14 @@ public class MushroomSofa : ModItem
     public override void SetDefaults()
     {
         Item.DefaultToPlaceableTile(ModContent.TileType<MushroomSofaTile>());
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Mushroom, 5);
+        recipe.AddIngredient(ItemID.Silk, 2);
+        recipe.AddTile(TileID.Sawmill);
+        recipe.Register();
     }
 }

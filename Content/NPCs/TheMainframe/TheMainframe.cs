@@ -18,7 +18,7 @@ using TheSludgeMod.Content.Items.Materials;
 using TheSludgeMod.Content.Items.Placeable;
 using TheSludgeMod.Content.Items.Vanity;
 using TheSludgeMod.Content.Items.Weapons;
-using TheSludgeMod.Content.Pets;
+using TheSludgeMod.Content.Items.Equipment;
 
 namespace TheSludgeMod.Content.NPCs.TheMainframe
 {

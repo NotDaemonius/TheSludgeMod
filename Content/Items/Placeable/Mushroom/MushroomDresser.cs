@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using TheSludgeMod.Content.Tiles.Mushroom;
 
@@ -9,5 +10,13 @@ public class MushroomDresser : ModItem
     public override void SetDefaults()
     {
         Item.DefaultToPlaceableTile(ModContent.TileType<MushroomDresserTile>());
+    }
+
+    public override void AddRecipes()
+    {
+        Recipe recipe = CreateRecipe();
+        recipe.AddIngredient(ItemID.Mushroom, 16);
+        recipe.AddTile(TileID.Sawmill);
+        recipe.Register();
     }
 }

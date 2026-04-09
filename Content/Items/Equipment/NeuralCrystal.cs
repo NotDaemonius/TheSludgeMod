@@ -1,8 +1,9 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheSludgeMod.Content.Pets;
 
-namespace TheSludgeMod.Content.Pets;
+namespace TheSludgeMod.Content.Items.Equipment;
 
 public class NeuralCrystal : ModItem
 {
