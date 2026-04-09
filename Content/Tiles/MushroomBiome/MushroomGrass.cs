@@ -1,8 +1,8 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.GameContent.Metadata;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace TheSludgeMod.Content.Tiles.MushroomBiome;
 
@@ -63,9 +63,8 @@ public class MushroomGrass : ModTile
 
     private static readonly short[] CapFrameXValues = { 4, 64, 124 };
 
-    public static bool GrowMyShroom(int i, int y)
+    public bool GrowMyShroom(int i, int y)
     {
-        int groundType = ModContent.TileType<MushroomGrass>();
         int stalkType = ModContent.TileType<MushroomStalk>();
         int capType = ModContent.TileType<MushroomTip>();
 
@@ -73,26 +72,22 @@ public class MushroomGrass : ModTile
             return false;
 
         bool validGround = Main.tile[i, y].HasTile && !Main.tile[i, y].IsActuated
-                        && Main.tile[i, y].TileType == groundType
-                        && Main.tile[i - 1, y].HasTile && Main.tile[i - 1, y].TileType == groundType
-                        && Main.tile[i + 1, y].HasTile && Main.tile[i + 1, y].TileType == groundType
+                        && Main.tile[i, y].TileType == Type
+                        && Main.tile[i - 1, y].HasTile && Main.tile[i - 1, y].TileType == Type
+                        && Main.tile[i + 1, y].HasTile && Main.tile[i + 1, y].TileType == Type
+                        && (Main.tile[i - 1, y - 1].HasTile && (Main.tile[i - 1, y - 1].TileType == stalkType || Main.tile[i - 1, y - 1].TileType == Type))
+                        && (Main.tile[i + 1, y - 1].HasTile && (Main.tile[i - 1, y - 1].TileType == stalkType || Main.tile[i - 1, y - 1].TileType == Type))
                         && Main.tile[i, y - 1].WallType == 0;
 
-        bool enoughSpace = WorldGen.EmptyTileCheck(i - 2, i + 2, y - 13, y - 3, groundType)
-                        && WorldGen.EmptyTileCheck(i - 1, i + 1, y - 3, y - 1, groundType);
+        bool enoughSpace = WorldGen.EmptyTileCheck(i - 2, i + 2, y - 13, y - 3, Type)
+                        && WorldGen.EmptyTileCheck(i - 1, i + 1, y - 3, y - 1, Type);
 
         if (!validGround || !enoughSpace)
             return false;
 
-        if (WorldGen.gen && WorldGen.genRand.Next(3) != 0)
-        {
-            Tile center = Main.tile[i, y];
-            center.IsHalfBlock = false;
-            center.Slope = SlopeType.Solid;
-        }
-
-        if (Main.tile[i, y].IsHalfBlock || Main.tile[i, y].Slope != SlopeType.Solid)
-            return false;
+        Tile center = Main.tile[i, y];
+        center.IsHalfBlock = false;
+        center.Slope = SlopeType.Solid;
 
         int shroomHeight = WorldGen.genRand.Next(4, 11);
         int topTileY = y - shroomHeight;
@@ -104,8 +99,8 @@ public class MushroomGrass : ModTile
             Tile stalk = Main.tile[i, j];
             stalk.HasTile = true;
             stalk.TileType = (ushort) stalkType;
-            stalk.TileFrameX = (short) (WorldGen.genRand.Next(3) * 18); // 0, 18, or 36
-            stalk.TileFrameY = 0;
+            stalk.TileFrameX = 0;
+            stalk.TileFrameY = (short) (WorldGen.genRand.Next(3) * 18);
         }
 
         // Cap tile

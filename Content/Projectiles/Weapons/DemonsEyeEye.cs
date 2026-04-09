@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.Audio;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -18,7 +20,7 @@ public class DemonsEyeEye : ModProjectile
         Projectile.timeLeft = 600;
         Projectile.ignoreWater = true;
         Projectile.tileCollide = true;
-        AIType = ProjectileID.Bullet;
+        AIType = ProjectileID.WoodenArrowFriendly;
     }
 
     public override void OnKill(int timeLeft)
@@ -34,5 +36,18 @@ public class DemonsEyeEye : ModProjectile
 
         Gore.NewGore(Projectile.GetSource_Death(), Projectile.position, new Vector2(Main.rand.NextFloat(-2f, 2f), Main.rand.NextFloat(-2f, 2f)), 1);
         Gore.NewGore(Projectile.GetSource_Death(), Projectile.position, new Vector2(Main.rand.NextFloat(-2f, 2f), Main.rand.NextFloat(-2f, 2f)), 2);
+    }
+
+    public override bool PreDraw(ref Color lightColor)
+    {
+        Texture2D tex = TextureAssets.Projectile[Type].Value;
+        Vector2 origin = tex.Size() / 2f;
+
+        SpriteEffects spriteEffects = SpriteEffects.None;
+        if (Projectile.velocity.X > 0)
+            spriteEffects = SpriteEffects.FlipHorizontally;
+
+        Main.EntitySpriteDraw(tex, Projectile.Center - Main.screenPosition, null, lightColor, Projectile.rotation, origin, Projectile.scale, spriteEffects, 0);
+        return false;
     }
 }
