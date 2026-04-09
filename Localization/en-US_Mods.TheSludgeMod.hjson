@@ -26,7 +26,7 @@ Items: {
 
 	DartInABottle: {
 		DisplayName: Dart In A Bottle
-		Tooltip: Allows the holder to double jump
+		Tooltip: Allows the holder to double jump, shooting a dart downwards
 	}
 
 	RoseQuartz: {
@@ -271,7 +271,7 @@ Items: {
 
 	ElectronicsTable: {
 		DisplayName: Electronics Table
-		Tooltip: ""
+		Tooltip: "Used for most recipes requiring Electronics"
 	}
 
 	Scythophant: {
@@ -791,7 +791,7 @@ Items: {
 
 	BigBullet: {
 		DisplayName: Big Bullet
-		Tooltip: ""
+		Tooltip: "Twice as powerful but half the speed of a regular bullet"
 	}
 
 	UraniumGreathelmHead: {
@@ -1025,7 +1025,7 @@ Items: {
 	}
 
 	SlimyUmbrella: {
-		Tooltip: ""
+		Tooltip: "Summons the Slime Rain"
 		DisplayName: Slimy Umbrella
 	}
 
@@ -1515,7 +1515,7 @@ Items: {
 
 	StarterBag: {
 		DisplayName: Starter Bag
-		Tooltip: ""
+		Tooltip: "Right Click to open"
 	}
 
 	StickyNote: {
