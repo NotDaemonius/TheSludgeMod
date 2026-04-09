@@ -1760,7 +1760,12 @@ Configs: {
 
 		DisableScreenShake: {
 			Label: Disable Screen Shake
-			Tooltip: Disables screen shake for all weapons
+			Tooltip: Disables screen shake for all weapons.
+		}
+
+		DisableBossSpawnSuppression: {
+			Label: Disable Boss Spawn Suppression
+			Tooltip: "Disables natural enemy spawns when a boss is active."
 		}
 	}
 }
