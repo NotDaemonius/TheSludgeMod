@@ -20,6 +20,7 @@ public class DemonsEye : ModItem
         Item.damage = 13;
         Item.knockBack = -1;
         Item.crit = 6;
+        Item.mana = 5;
         Item.value = Item.buyPrice(gold: 1);
         Item.rare = ItemRarityID.Blue;
         Item.UseSound = SoundID.Item1;

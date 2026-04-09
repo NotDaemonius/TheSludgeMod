@@ -24,6 +24,7 @@ public class MagicalFlute : ModItem
         Item.damage = 45;
         Item.knockBack = 2;
         Item.crit = 6;
+        Item.mana = 5;
         Item.value = Item.buyPrice(gold: 4);
         Item.rare = ItemRarityID.Pink;
         Item.UseSound = new SoundStyle("TheSludgeMod/Assets/Sounds/FluteC"){Volume = 1f, PitchVariance = 1f};

@@ -95,21 +95,21 @@ Items: {
 
 	CoolSword: {
 		DisplayName: Cool Sword
-		Tooltip: "[c/770000:The souls of polarity given form once more.]"
+		Tooltip: "[c/770000:The souls of polarity given form once more]"
 	}
 
 	Basher: {
 		Tooltip:
 			'''
 			[c/7700ff:'In highschool, they used to call me Basher, because]
-			[c/7700ff:I used to bash people's heads in the lockers.']
+			[c/7700ff:I used to bash people's heads in the lockers']
 			'''
 		DisplayName: Basher
 	}
 
 	ShadowvoidBar: {
 		DisplayName: Shadowvoid Bar
-		Tooltip: "[c/7700ff:Contains the darkness of a million universes.]"
+		Tooltip: "[c/7700ff:Contains the darkness of a million universes]"
 	}
 
 	ShadowvoidOre: {
@@ -123,7 +123,7 @@ Items: {
 	}
 
 	SquareBomb: {
-		Tooltip: A small explosion that will destroy most tiles in a square shape.
+		Tooltip: A small explosion that will destroy most tiles in a square shape
 		DisplayName: Square Bomb
 	}
 
@@ -131,8 +131,8 @@ Items: {
 		DisplayName: Sticky Square Bomb
 		Tooltip:
 			'''
-			A small explosion that will destroy most tiles in a square shape.
-			Tossing may be difficult.
+			A small explosion that will destroy most tiles in a square shape
+			Tossing may be difficult
 			'''
 	}
 
@@ -140,14 +140,14 @@ Items: {
 		DisplayName: Bouncy Square Bomb
 		Tooltip:
 			'''
-			A small explosion that will destroy most tiles in a square shape.
-			Very bouncy.
+			A small explosion that will destroy most tiles in a square shape
+			Very bouncy
 			'''
 	}
 
 	OrbitalRadiance: {
 		DisplayName: Orbital Radiance
-		Tooltip: "[c/55ffff:Summons 5 deadly glowing orbs around the player.]"
+		Tooltip: "[c/55ffff:Summons 5 deadly glowing orbs around the player]"
 	}
 
 	PlaceholderItem: {
@@ -212,7 +212,7 @@ Items: {
 
 	ToySword: {
 		DisplayName: Toy Sword
-		Tooltip: Batteries not included.
+		Tooltip: Batteries not included
 	}
 
 	TheRulebook: {
@@ -276,7 +276,7 @@ Items: {
 
 	Scythophant: {
 		DisplayName: Scythophant
-		Tooltip: "[c/0000ff:Spins around the player when held and shoots a spiral of shadow fireballs.]"
+		Tooltip: "[c/0000ff:Spins around the player when held and shoots a spiral of shadow fireballs]"
 	}
 
 	RoseQuartzGemsparkBlock: {
@@ -736,12 +736,12 @@ Items: {
 
 	IceArrow: {
 		DisplayName: Ice Arrow
-		Tooltip: Briefly slows down enemies on hit.
+		Tooltip: Briefly slows down enemies on hit
 	}
 
 	DodgyBuilder: {
 		DisplayName: Dodgy Builder
-		Tooltip: Makes block placement inconsistent when in inventory.
+		Tooltip: Makes block placement inconsistent when in inventory
 	}
 
 	ScoutingPotion: {
@@ -776,7 +776,7 @@ Items: {
 
 	MagicalFlute: {
 		DisplayName: Magical Flute
-		Tooltip: Makes block placement inconsistent when in inventory.
+		Tooltip: ""
 	}
 
 	GalaxyBlaster: {
@@ -980,7 +980,7 @@ Items: {
 	}
 
 	SolunarChronowarper: {
-		Tooltip: A powerful ancient artifact that cycles time when used.
+		Tooltip: A powerful ancient artifact that cycles time when used
 		DisplayName: Solunar Chronowarper
 	}
 
@@ -1295,7 +1295,7 @@ Items: {
 	}
 
 	StarkaKitchenRules: {
-		Tooltip: Eat nicely.
+		Tooltip: Eat nicely!
 		DisplayName: Starka Kitchen Rules
 	}
 
@@ -1315,7 +1315,7 @@ Items: {
 	}
 
 	Glaive: {
-		Tooltip: Jumps between up to 4 enemies.
+		Tooltip: Jumps between up to 4 enemies
 		DisplayName: Glaive
 	}
 
@@ -1510,7 +1510,7 @@ Items: {
 
 	TheBowne: {
 		DisplayName: The Bowne
-		Tooltip: "Converts wooden arrows into bone arrows"
+		Tooltip: Converts wooden arrows into bone arrows
 	}
 
 	StarterBag: {
@@ -1729,13 +1729,13 @@ Buffs: {
 	}
 
 	NeuralShardBuff: {
-		Description: A shard of the Mainframe's essence is following you.
+		Description: A shard of the Mainframe's essence is following you
 		DisplayName: Neural Shards
 	}
 
 	DeodorantBuff: {
 		DisplayName: Deodorant
-		Description: NPCs will like you much more now that you don't stink.
+		Description: NPCs will like you much more now that you don't stink
 	}
 
 	SteroidsBuff: {
@@ -1760,7 +1760,7 @@ Configs: {
 
 		DisableScreenShake: {
 			Label: Disable Screen Shake
-			Tooltip: Disables screen shake for all weapons.
+			Tooltip: Disables screen shake for all weapons
 		}
 	}
 }
