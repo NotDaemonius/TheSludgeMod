@@ -12,10 +12,10 @@ public class DemonsEye : ModItem
         Item.width = 40;
         Item.height = 40;
         Item.useStyle = ItemUseStyleID.Swing;
-        Item.useTime = 20;
-        Item.useAnimation = 20;
+        Item.useTime = 25;
+        Item.useAnimation = 25;
         Item.autoReuse = true;
-        Item.shootSpeed = 15;
+        Item.shootSpeed = 10;
         Item.DamageType = DamageClass.Magic;
         Item.damage = 13;
         Item.knockBack = -1;
