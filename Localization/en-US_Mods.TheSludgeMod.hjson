@@ -1771,7 +1771,7 @@ Configs: {
 
 		DisableBossSpawnSuppression: {
 			Label: Disable Boss Spawn Suppression
-			Tooltip: "Disables natural enemy spawns when a boss is active."
+			Tooltip: Disables natural enemy spawns when a boss is active.
 		}
 	}
 }

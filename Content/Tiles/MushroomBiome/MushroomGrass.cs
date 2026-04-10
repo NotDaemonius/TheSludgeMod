@@ -52,10 +52,12 @@ public class MushroomGrass : ModTile
             }
         }
 
+        /*
         if (WorldGen.genRand.NextBool(10) && !up.HasTile && !up2.HasTile && !(up.LiquidAmount > 0 && up2.LiquidAmount > 0) && !tile.LeftSlope && !tile.RightSlope && !tile.IsHalfBlock)
         {
             GrowMyShroom(i, j);
         }
+        */
     }
 
     private static bool HasLava(int i, int y) =>
@@ -63,58 +65,5 @@ public class MushroomGrass : ModTile
 
     private static readonly short[] CapFrameXValues = { 4, 64, 124 };
 
-    public bool GrowMyShroom(int i, int y)
-    {
-        int stalkType = ModContent.TileType<MushroomStalk>();
-        int capType = ModContent.TileType<MushroomTip>();
 
-        if (HasLava(i - 1, y - 1) || HasLava(i, y - 1) || HasLava(i + 1, y - 1))
-            return false;
-
-        bool validGround = Main.tile[i, y].HasTile && !Main.tile[i, y].IsActuated
-                        && Main.tile[i, y].TileType == Type
-                        && Main.tile[i - 1, y].HasTile && Main.tile[i - 1, y].TileType == Type
-                        && Main.tile[i + 1, y].HasTile && Main.tile[i + 1, y].TileType == Type
-                        && (Main.tile[i - 1, y - 1].HasTile && (Main.tile[i - 1, y - 1].TileType == stalkType || Main.tile[i - 1, y - 1].TileType == Type))
-                        && (Main.tile[i + 1, y - 1].HasTile && (Main.tile[i - 1, y - 1].TileType == stalkType || Main.tile[i - 1, y - 1].TileType == Type))
-                        && Main.tile[i, y - 1].WallType == 0;
-
-        bool enoughSpace = WorldGen.EmptyTileCheck(i - 2, i + 2, y - 13, y - 3, Type)
-                        && WorldGen.EmptyTileCheck(i - 1, i + 1, y - 3, y - 1, Type);
-
-        if (!validGround || !enoughSpace)
-            return false;
-
-        Tile center = Main.tile[i, y];
-        center.IsHalfBlock = false;
-        center.Slope = SlopeType.Solid;
-
-        int shroomHeight = WorldGen.genRand.Next(4, 11);
-        int topTileY = y - shroomHeight;
-
-        // All stalk tiles use frameY=0 (regular stalk row) when a cap is present.
-        // frameY=19 (tip row) is only for stalk-only trees with no cap tile above them.
-        for (int j = topTileY + 1; j < y; j++)
-        {
-            Tile stalk = Main.tile[i, j];
-            stalk.HasTile = true;
-            stalk.TileType = (ushort) stalkType;
-            stalk.TileFrameX = 0;
-            stalk.TileFrameY = (short) (WorldGen.genRand.Next(3) * 18);
-        }
-
-        // Cap tile
-        Tile cap = Main.tile[i, topTileY];
-        cap.HasTile = true;
-        cap.TileType = (ushort) capType;
-        cap.TileFrameX = CapFrameXValues[WorldGen.genRand.Next(3)];
-        cap.TileFrameY = 0;
-
-        WorldGen.RangeFrame(i - 2, topTileY - 1, i + 2, y + 1);
-
-        if (Main.netMode == NetmodeID.Server)
-            NetMessage.SendTileSquare(-1, i - 1, topTileY, 3, shroomHeight, TileChangeType.None);
-
-        return true;
-    }
 }

@@ -28,7 +28,7 @@ public class BoxOfChocolates : ModItem
         {
             if (!ContentSamples.ItemsByType.TryGetValue(Main._rand.Next(0, ItemLoader.ItemCount), out chosenItem))
                 continue;
-            if (chosenItem.rare <= ItemRarityID.Orange && !chosenItem.IsAir)
+            if (chosenItem.OriginalRarity <= ItemRarityID.Orange && !chosenItem.IsAir)
                 break;
         }
 

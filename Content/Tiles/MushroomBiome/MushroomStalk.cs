@@ -1,7 +1,7 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 
 namespace TheSludgeMod.Content.Tiles.MushroomBiome;
 
@@ -28,13 +28,32 @@ public class MushroomStalk : ModTile
     public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY)
     {
         width = 16;
-        height = 18;
-        offsetY = 2; // shift down 2px to align correctly with the tile grid
+        height = 16;
     }
 
     public override bool TileFrame(int i, int j, ref bool resetFrame, ref bool noBreak)
     {
         // Prevent vanilla framing logic from overwriting our custom frames
         return false;
+    }
+
+    public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
+    {
+        if (fail)
+            return;
+
+        int ny = j;
+        while (true)
+        {
+            ny--;
+            Tile dig = Main.tile[i, ny];
+            if (dig.HasTile && dig.TileType == Type || dig.TileType == (ushort) ModContent.TileType<MushroomTip>())
+            {
+                dig.HasTile = false;
+            } else
+            {
+                break;
+            }
+        }
     }
 }
