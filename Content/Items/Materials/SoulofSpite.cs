@@ -21,10 +21,11 @@ public class SoulofSpite : ModItem
     {
         Item.width = 18;
         Item.height = 18;
-        Item.maxStack = Item.CommonMaxStack;
-        Item.value = 8000;
+
         Item.rare = ItemRarityID.Pink;
+        Item.value = 8000;
         Item.material = true;
+        Item.maxStack = Item.CommonMaxStack;
     }
 
     public override void PostUpdate() => Lighting.AddLight(Item.Center, Color.WhiteSmoke.ToVector3() * 0.55f * Main.essScale);

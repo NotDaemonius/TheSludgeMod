@@ -26,7 +26,7 @@ Items: {
 
 	DartInABottle: {
 		DisplayName: Dart In A Bottle
-		Tooltip: Allows the holder to double jump
+		Tooltip: Allows the holder to double jump, shooting a dart downwards
 	}
 
 	RoseQuartz: {
@@ -271,7 +271,7 @@ Items: {
 
 	ElectronicsTable: {
 		DisplayName: Electronics Table
-		Tooltip: ""
+		Tooltip: "Used for most recipes requiring Electronics"
 	}
 
 	Scythophant: {
@@ -791,7 +791,7 @@ Items: {
 
 	BigBullet: {
 		DisplayName: Big Bullet
-		Tooltip: ""
+		Tooltip: "Twice as powerful but half the speed of a regular bullet"
 	}
 
 	UraniumGreathelmHead: {
@@ -1025,7 +1025,7 @@ Items: {
 	}
 
 	SlimyUmbrella: {
-		Tooltip: ""
+		Tooltip: "Summons the Slime Rain"
 		DisplayName: Slimy Umbrella
 	}
 
@@ -1515,7 +1515,7 @@ Items: {
 
 	StarterBag: {
 		DisplayName: Starter Bag
-		Tooltip: ""
+		Tooltip: "Right Click to open"
 	}
 
 	StickyNote: {
@@ -1599,7 +1599,61 @@ Items: {
 
 	BoxOfChocolates: {
 		DisplayName: Box Of Chocolates
+		Tooltip:
+			'''
+			Gives a random item of Orange rarity or less when opened
+			Right Click to open
+			'''
+	}
+
+	EssenceOfPurity: {
+		DisplayName: Essence Of Purity
 		Tooltip: ""
+	}
+
+	HamsterBall: {
+		DisplayName: Hamster Ball
+		Tooltip:
+			'''
+			Summons a hamster ball mount
+			Your speed and jump height are greatly increased, but
+			you cannot use items or wings while mounted
+			'''
+	}
+
+	WoodCrystal: {
+		DisplayName: Wood Crystal
+		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
+	}
+
+	BorealWoodCrystal: {
+		DisplayName: Boreal Wood Crystal
+		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
+	}
+
+	AshWoodCrystal: {
+		DisplayName: Ash Wood Crystal
+		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
+	}
+
+	EbonwoodCrystal: {
+		DisplayName: Ebonwood Crystal
+		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
+	}
+
+	PalmWoodCrystal: {
+		DisplayName: Palm Wood Crystal
+		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
+	}
+
+	RichMahoganyCrystal: {
+		DisplayName: Rich Mahogany Crystal
+		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
+	}
+
+	ShadewoodCrystal: {
+		DisplayName: Shadewood Crystal
+		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
 	}
 }
 
@@ -1669,6 +1723,13 @@ Projectiles: {
 	SilentQuarterNote.DisplayName: Silent Quarter Note
 	FluteBolt.DisplayName: Flute Bolt
 	ThePurifierProjectile.DisplayName: The Purifier Projectile
+	WoodCrystalProj.DisplayName: Wood Crystal Proj
+	BorealWoodCrystalProj.DisplayName: Boreal Wood Crystal Proj
+	AshWoodCrystalProj.DisplayName: Ash Wood Crystal Proj
+	EbonwoodCrystalProj.DisplayName: Ebonwood Crystal Proj
+	PalmWoodCrystalProj.DisplayName: Palm Wood Crystal Proj
+	RichMahoganyCrystalProj.DisplayName: Rich Mahogany Crystal Proj
+	ShadewoodCrystalProj.DisplayName: Shadewood Crystal Proj
 }
 
 Tiles: {
@@ -1757,6 +1818,46 @@ Buffs: {
 	CthulhuEyeBuff: {
 		DisplayName: Cthulhu's Eye
 		Description: The eye will fight for you
+	}
+
+	HamsterBallBuff: {
+		DisplayName: Hamster Ball
+		Description: You are trapped in a hamster ball!
+	}
+
+	WoodCrystalBuff: {
+		DisplayName: Wood Crystal
+		Description: Shoots leaves at nearby enemies
+	}
+
+	BorealWoodCrystalBuff: {
+		DisplayName: Boreal Wood Crystal
+		Description: Shoots leaves at nearby enemies
+	}
+
+	AshWoodCrystalBuff: {
+		DisplayName: Ash Wood Crystal
+		Description: Shoots leaves at nearby enemies
+	}
+
+	EbonwoodCrystalBuff: {
+		DisplayName: Ebonwood Crystal
+		Description: Shoots leaves at nearby enemies
+	}
+
+	PalmWoodCrystalBuff: {
+		DisplayName: Palm Wood Crystal
+		Description: Shoots leaves at nearby enemies
+	}
+
+	RichMahoganyCrystalBuff: {
+		DisplayName: Rich Mahogany Crystal
+		Description: Shoots leaves at nearby enemies
+	}
+
+	ShadewoodCrystalBuff: {
+		DisplayName: Shadewood Crystal
+		Description: Shoots leaves at nearby enemies
 	}
 }
 
