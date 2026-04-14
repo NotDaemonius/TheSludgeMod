@@ -19,7 +19,7 @@ public class HardmodeEvilSwap : ModSystem
     private static void SwapHardmodeEvil(On_WorldGen.orig_smCallBack orig, object threadContext)
     {
         WorldGen.crimson = !WorldGen.crimson;
-        orig(threadContext);
+        orig.Invoke(threadContext);
         WorldGen.crimson = !WorldGen.crimson;
     }
 }

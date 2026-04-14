@@ -9,7 +9,8 @@ namespace TheSludgeMod.Common.Players
 
         public override void PostUpdateRunSpeeds()
         {
-            if (CalamityLoaded) return;
+            if (CalamityLoaded)
+                return;
             Player.maxRunSpeed += 1f;
             Player.runAcceleration += 0.01f;
             Player.jumpHeight += 4;

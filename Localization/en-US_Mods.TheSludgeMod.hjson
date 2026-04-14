@@ -271,7 +271,7 @@ Items: {
 
 	ElectronicsTable: {
 		DisplayName: Electronics Table
-		Tooltip: "Used for most recipes requiring Electronics"
+		Tooltip: Used for most recipes requiring Electronics
 	}
 
 	Scythophant: {
@@ -791,7 +791,7 @@ Items: {
 
 	BigBullet: {
 		DisplayName: Big Bullet
-		Tooltip: "Twice as powerful but half the speed of a regular bullet"
+		Tooltip: Twice as powerful but half the speed of a regular bullet
 	}
 
 	UraniumGreathelmHead: {
@@ -1025,7 +1025,7 @@ Items: {
 	}
 
 	SlimyUmbrella: {
-		Tooltip: "Summons the Slime Rain"
+		Tooltip: Summons the Slime Rain
 		DisplayName: Slimy Umbrella
 	}
 
@@ -1515,7 +1515,7 @@ Items: {
 
 	StarterBag: {
 		DisplayName: Starter Bag
-		Tooltip: "Right Click to open"
+		Tooltip: Right Click to open
 	}
 
 	StickyNote: {
@@ -1623,37 +1623,37 @@ Items: {
 
 	WoodCrystal: {
 		DisplayName: Wood Crystal
-		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
+		Tooltip: Summons a leaf crystal to shoot at nearby enemies
 	}
 
 	BorealWoodCrystal: {
 		DisplayName: Boreal Wood Crystal
-		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
+		Tooltip: Summons a leaf crystal to shoot at nearby enemies
 	}
 
 	AshWoodCrystal: {
 		DisplayName: Ash Wood Crystal
-		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
+		Tooltip: Summons a leaf crystal to shoot at nearby enemies
 	}
 
 	EbonwoodCrystal: {
 		DisplayName: Ebonwood Crystal
-		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
+		Tooltip: Summons a leaf crystal to shoot at nearby enemies
 	}
 
 	PalmWoodCrystal: {
 		DisplayName: Palm Wood Crystal
-		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
+		Tooltip: Summons a leaf crystal to shoot at nearby enemies
 	}
 
 	RichMahoganyCrystal: {
 		DisplayName: Rich Mahogany Crystal
-		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
+		Tooltip: Summons a leaf crystal to shoot at nearby enemies
 	}
 
 	ShadewoodCrystal: {
 		DisplayName: Shadewood Crystal
-		Tooltip: "Summons a leaf crystal to shoot at nearby enemies"
+		Tooltip: Summons a leaf crystal to shoot at nearby enemies
 	}
 }
 
@@ -1881,6 +1881,8 @@ NPCs: {
 	TheMainframe.DisplayName: The Mainframe
 	TheMainframeHand.DisplayName: The Mainframe Hand
 	OrangeSlime.DisplayName: Orange Slime
+	TheStalker.DisplayName: The Stalker
+	Stalker.DisplayName: Stalker
 }
 
 Bestiary: {
