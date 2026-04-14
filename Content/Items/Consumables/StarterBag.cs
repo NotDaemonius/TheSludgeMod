@@ -28,5 +28,16 @@ public class StarterBag : ModItem
         itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<ZincBow>()));
         itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<WoodTreeWand>()));
         itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<RopeWhip>()));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<WoodCrystal>()));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.Shuriken, 1, 100, 100));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.WoodenArrow, 1, 100, 100));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.Torch, 1, 50, 50));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.Rope, 1, 50, 50));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.LesserHealingPotion, 1, 10, 10));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.RecallPotion, 1, 3, 3));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.ShinePotion, 1, 2, 2));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.SpelunkerPotion, 1, 2, 2));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.ManaCrystal));
+        itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.Chest));
     }
 }
